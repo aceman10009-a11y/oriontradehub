@@ -93,13 +93,19 @@ useEffect(() => {
 
   onPriceUpdate(candles[candles.length - 1].close);
 }, [candles, onPriceUpdate]);
-  // SCALE
-  const highs = candles.map((c) => c.high);
-  const lows = candles.map((c) => c.low);
+ // SCALE
+const highs = candles.map((c) => c.high);
+const lows = candles.map((c) => c.low);
 
-  const max = Math.max(...highs, 1);
-  const min = Math.min(...lows, 0.1);
-  const range = max - min || 1;
+const highest = Math.max(...highs);
+const lowest = Math.min(...lows);
+
+const padding = (highest - lowest) * 0.15;
+
+const max = highest + padding;
+const min = lowest - padding;
+
+const range = max - min || 1;
 
   return (
     <div
@@ -133,10 +139,10 @@ useEffect(() => {
           const isGreen = c.close >= c.open;
 
          const height =
-  Math.max(((c.high - c.low) / range) * 100, 11);
+  Math.max(((c.high - c.low) / range) * 100, 45);
 
 const bodyHeight =
-  Math.max(((Math.abs(c.close - c.open) / range) * 100), 6);
+  Math.max(((Math.abs(c.close - c.open) / range) * 50), 31);
 
           const bottom =
             ((Math.min(c.open, c.close) - min) / range) * 100;
