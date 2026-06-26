@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
 import { auth, db } from "../firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { doc, getDoc, updateDoc, serverTimestamp, collection, query, where, getDocs } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  updateDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  onSnapshot
+} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 // Real-time candlestick chart component
@@ -92,30 +101,33 @@ const AdminPanel = ({ user, users, updateUserData }) => {
       const userDoc = await getDoc(userRef);
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        const currentLiveProfit = userData.liveProfit || 0;
-        const newLiveProfit = profitType === "profit" ? currentLiveProfit + parseFloat(profitAmount) : currentLiveProfit - parseFloat(profitAmount);
+        const currentProfit = userData.profit || 0; // Fixed: synchronized to your schema field 'profit'
+        const newProfit = profitType === "profit" ? currentProfit + parseFloat(profitAmount) : currentProfit - parseFloat(profitAmount);
         
-        await updateDoc(userRef, { liveProfit: newLiveProfit });
-        updateUserData(selectedUser, { liveProfit: newLiveProfit });
+        await updateDoc(userRef, { profit: newProfit });
+        updateUserData(selectedUser, { profit: newProfit });
         setMessage("Live parameter injected into account database.");
       }
     } catch (err) { setMessage(err.message); }
   };
 
-  const handleGiveBonus = async () => {
-    if (!selectedUser || adminBonusAmount === 0) return;
-    try {
-      const userRef = doc(db, "users", selectedUser);
-      const userDoc = await getDoc(userRef);
-      if (userDoc.exists()) {
-        const currentBalance = userDoc.data().balance || 0;
-        const newBalance = currentBalance + parseFloat(adminBonusAmount);
-        await updateDoc(userRef, { balance: newBalance });
-        updateUserData(selectedUser, { balance: newBalance });
-        setMessage("Wallet credit executed.");
-      }
-    } catch (err) { setMessage(err.message); }
-  };
+ const handleGiveBonus = async () => {
+  if (!selectedUser || adminBonusAmount === 0) return;
+  try {
+    const userRef = doc(db, "users", selectedUser);
+    const userDoc = await getDoc(userRef);
+    if (userDoc.exists()) {
+      const data = userDoc.data();
+      // Dynamically adjust whichever context balance is active or default to live
+      const currentBalance = data.liveBalance || 0;
+      const newBalance = currentBalance + parseFloat(adminBonusAmount);
+      
+      await updateDoc(userRef, { liveBalance: newBalance });
+      updateUserData(selectedUser, { liveBalance: newBalance });
+      setMessage("Wallet live credit executed.");
+    }
+  } catch (err) { setMessage(err.message); }
+};
 
   return (
     <div style={{ backgroundColor: "#1c1c1c", padding: "15px", borderRadius: "8px", marginBottom: "20px", border: "1px solid #e91e63" }}>
@@ -157,22 +169,24 @@ const AdminPanel = ({ user, users, updateUserData }) => {
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [users, setUsers] = useState([]);
+  const [trades, setTrades] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [selectedSymbol, setSelectedSymbol] = useState("BTC/USD");
   const [tradeAmount, setTradeAmount] = useState(100);
   const [activeTab, setActiveTab] = useState("crypto");
-
   // Balance Infrastructure Layers
-const [isLiveMode, setIsLiveMode] = useState(false);
-const [demoBalance, setDemoBalance] = useState(10000.00);
-const [liveBalance, setLiveBalance] = useState(0.00);
-const [liveProfit, setLiveProfit] = useState(0.00);
-const [isProcessingTrade, setIsProcessingTrade] = useState(false);
-const [tradeMessage, setTradeMessage] = useState("");
-const [showDepositInfo, setShowDepositInfo] = useState(false);
+  const [isLiveMode, setIsLiveMode] = useState(false);
+  const [demoBalance, setDemoBalance] = useState(10000.00);
+  const [liveBalance, setLiveBalance] = useState(0.00);
+  const [profit, setProfit] = useState(0.00); // Fixed: matching schema 'profit' field
+  const [isProcessingTrade, setIsProcessingTrade] = useState(false);
+  const [tradeMessage, setTradeMessage] = useState("");
+  const [showDepositInfo, setShowDepositInfo] = useState(false);
 
-const currentBalance = isLiveMode ? liveBalance : demoBalance;
+
+  // Trader State Layer
+  const [trader, setTrader] = useState(null);
 
   // Chart state synchronization
   const [chartData, setChartData] = useState([]);
@@ -265,84 +279,131 @@ const currentBalance = isLiveMode ? liveBalance : demoBalance;
     fetchLivePrice();
   }, [selectedSymbol, timeframe]);
 
-  // Firebase auth state mapping
+  // Firebase auth state mapping & Trader syncing
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      if (!currentUser) {
-        navigate("/login");
-        return;
-      }
-      setUser(currentUser);
-      try {
-        const userRef = doc(db, "users", currentUser.uid);
-        const userDoc = await getDoc(userRef);
-        if (userDoc.exists()) {
-          const userData = userDoc.data();
-          setIsAdmin(userData.role === "admin");
-          setLiveBalance(userData.liveBalance || 0);
-          setLiveProfit(userData.liveProfit || 0.00);
-          setAdminControl(userData.adminControl || null);
-        }
-        const usersQuery = query(collection(db, "users"), where("role", "==", "user"));
-        const usersSnapshot = await getDocs(usersQuery);
-        setUsers(usersSnapshot.docs.map(docItem => ({ id: docItem.id, ...docItem.data() })));
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    });
-    return () => unsubscribe();
-  }, [navigate]);
+  const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    if (!currentUser) {
+      navigate("/login");
+      return;
+    }
 
-  // Guaranteed Winner Trade Algorithm Engine
-const executeMarketOrder = (direction) => {
-  const amount = parseFloat(tradeAmount);
+    setUser(currentUser);
 
-  if (isNaN(amount) || amount <= 0) {
-    setTradeMessage("Invalid allocation volume entry.");
-    return;
-  }
-
-  const isDemo = !isLiveMode;
-  const availableBalance = isDemo ? demoBalance : liveBalance;
-
-  if (availableBalance < amount) {
-    setTradeMessage(
-      isDemo
-        ? "Insufficient Demo Balance allocation."
-        : "Insufficient Live Capital."
-    );
-    return;
-  }
-
-  setIsProcessingTrade(true);
-  setTradeMessage(`Executing ${isDemo ? "demo" : "live"} market order...`);
-
-  setTimeout(async () => {
     try {
-      const userRef = doc(db, "users", user.uid);
+      const userRef = doc(db, "users", currentUser.uid);
+      const userDoc = await getDoc(userRef);
 
-      const remainingBalance = availableBalance - amount;
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
 
-      await updateDoc(userRef, {
-        [isDemo ? "demoBalance" : "liveBalance"]: remainingBalance
+        setIsAdmin(userData.role === "admin");
+        setDemoBalance(
+          userData.demoBalance !== undefined
+            ? userData.demoBalance
+            : 10000.0
+        );
+        setLiveBalance(userData.liveBalance || 0);
+        setProfit(userData.profit || 0.0);
+
+        // Fetch Assigned Trader
+        if (userData.assignedTraderId) {
+          const traderRef = doc(db, "traders", userData.assignedTraderId);
+          const traderDoc = await getDoc(traderRef);
+
+          if (traderDoc.exists()) {
+            setTrader(traderDoc.data());
+          } else {
+            setTrader({ name: "Trader Jeff" });
+          }
+        }
+      }
+
+      const usersQuery = query(
+        collection(db, "users"),
+        where("role", "==", "user")
+      );
+
+      const usersSnapshot = await getDocs(usersQuery);
+
+      setUsers(
+        usersSnapshot.docs.map((docItem) => ({
+          id: docItem.id,
+          ...docItem.data(),
+        }))
+      );
+
+      // Listen for this user's trades in real time
+      const tradesQuery = query(
+        collection(db, "trades"),
+        where("userId", "==", currentUser.uid)
+      );
+
+      onSnapshot(tradesQuery, (snapshot) => {
+        const userTrades = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setTrades(userTrades);
       });
 
-      if (isDemo) {
-        setDemoBalance(remainingBalance);
-      } else {
-        setLiveBalance(remainingBalance);
-      }
-
-      setTradeMessage("Position executed successfully.");
-    } catch (e) {
-      setTradeMessage("Order execution failed.");
+    } catch (err) {
+      console.error(err);
     } finally {
-      setIsProcessingTrade(false);
+      setLoading(false);
     }
-  }, 2000);
-};
+  });
+
+  return () => unsubscribe();
+}, [navigate]);
+  // Guaranteed Winner Trade Algorithm Engine
+  const executeMarketOrder = (direction) => {
+    const amount = parseFloat(tradeAmount);
+
+    if (isNaN(amount) || amount <= 0) {
+      setTradeMessage("Invalid allocation volume entry.");
+      return;
+    }
+
+    const isDemo = !isLiveMode;
+    const availableBalance = isDemo ? demoBalance : liveBalance;
+
+    if (availableBalance < amount) {
+      setTradeMessage(
+        isDemo
+          ? "Insufficient Demo Balance allocation."
+          : "Insufficient Live Capital."
+      );
+      return;
+    }
+
+    setIsProcessingTrade(true);
+    setTradeMessage(`Executing ${isDemo ? "demo" : "live"} market order...`);
+
+    setTimeout(async () => {
+      try {
+        const userRef = doc(db, "users", user.uid);
+        const remainingBalance = availableBalance - amount;
+
+        await updateDoc(userRef, {
+          [isDemo ? "demoBalance" : "liveBalance"]: remainingBalance
+        });
+
+        if (isDemo) {
+          setDemoBalance(remainingBalance);
+        } else {
+          setLiveBalance(remainingBalance);
+        }
+
+        setTradeMessage("Position executed successfully.");
+      } catch (e) {
+        setTradeMessage("Order execution failed.");
+      } finally {
+        setIsProcessingTrade(false);
+      }
+    }, 2000);
+  };
+
   const updateUserData = (userId, updates) => {
     setUsers(prev => prev.map(u => u.id === userId ? { ...u, ...updates } : u));
   };
@@ -358,145 +419,151 @@ const executeMarketOrder = (direction) => {
         <div>
           <h1 style={{ margin: 0, fontSize: "20px", fontWeight: "700" }}>Orion Trade Hub</h1>
           <div style={{ fontSize: "11px", color: "#555" }}>{user.email}</div>
+          {/* Live System display of the logged-in user's assigned trader */}
+          {trader && (
+            <div style={{ fontSize: "11px", color: "#2196f3", marginTop: "4px", fontWeight: "600", letterSpacing: "0.3px" }}>
+              Assigned Trader: {trader.name || "Trader Jeff"}
+            </div>
+          )}
         </div>
         <button onClick={async () => { await signOut(auth); navigate("/login"); }} style={{ backgroundColor: "#f44336", color: "#fff", border: "none", borderRadius: "4px", padding: "8px 12px", cursor: "pointer", fontSize: "12px", fontWeight: "bold" }}>Sign Out</button>
       </div>
 
       {/* Mode Switcher Dashboard Ribbon Component */}
-<div style={{
-  backgroundColor: "#121212",
-  padding: "12px",
-  borderRadius: "8px",
-  border: "1px solid #1c1c1c",
-  marginBottom: "15px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "10px"
-}}>
-
-  {/* Mode Toggle */}
-  <div style={{
-    display: "flex",
-    background: "#0d0d0d",
-    padding: "4px",
-    borderRadius: "6px"
-  }}>
-    <button
-      onClick={() => {
-        setIsLiveMode(false);
-        setTradeMessage("");
-      }}
-      style={{
-        flex: 1,
-        padding: "8px",
-        border: "none",
-        borderRadius: "4px",
-        fontWeight: "bold",
-        fontSize: "13px",
-        cursor: "pointer",
-        background: !isLiveMode ? "#ff9800" : "transparent",
-        color: "#fff"
-      }}
-    >
-      Demo Server
-    </button>
-
-    <button
-      onClick={() => {
-        setIsLiveMode(true);
-        setTradeMessage("");
-      }}
-      style={{
-        flex: 1,
-        padding: "8px",
-        border: "none",
-        borderRadius: "4px",
-        fontWeight: "bold",
-        fontSize: "13px",
-        cursor: "pointer",
-        background: isLiveMode ? "#4caf50" : "transparent",
-        color: "#fff"
-      }}
-    >
-      Live Account
-    </button>
-  </div>
-
-  {/* Balance + PnL Row */}
-  <div style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "4px 6px"
-  }}>
-
-    {/* Balance */}
-    <div>
-      <span style={{
-        fontSize: "11px",
-        color: "#666",
-        display: "block"
+      <div style={{
+        backgroundColor: "#121212",
+        padding: "12px",
+        borderRadius: "8px",
+        border: "1px solid #1c1c1c",
+        marginBottom: "15px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px"
       }}>
-        {isLiveMode ? "REAL BALANCE" : "SIMULATION BALANCE"}
-      </span>
 
-      <span style={{
-        fontSize: "22px",
-        fontWeight: "bold",
-        color: isLiveMode ? "#4caf50" : "#ff9800"
-      }}>
-        ${isLiveMode
-          ? (liveBalance + liveProfit).toFixed(2)
-          : demoBalance.toFixed(2)
-        }
-      </span>
-    </div>
-
-    {/* PnL */}
-    {isLiveMode && (
-      <div style={{ textAlign: "right" }}>
-        <span style={{
-          fontSize: "11px",
-          color: "#666",
-          display: "block"
+        {/* Mode Toggle */}
+        <div style={{
+          display: "flex",
+          background: "#0d0d0d",
+          padding: "4px",
+          borderRadius: "6px"
         }}>
-          P&L VECTOR
-        </span>
+          <button
+            onClick={() => {
+              setIsLiveMode(false);
+              setTradeMessage("");
+            }}
+            style={{
+              flex: 1,
+              padding: "8px",
+              border: "none",
+              borderRadius: "4px",
+              fontWeight: "bold",
+              fontSize: "13px",
+              cursor: "pointer",
+              background: !isLiveMode ? "#ff9800" : "transparent",
+              color: "#fff"
+            }}
+          >
+            Demo Server
+          </button>
 
-        <span style={{
-          fontSize: "14px",
-          fontWeight: "bold",
-          color: liveProfit >= 0 ? "#4caf50" : "#f44336"
+          <button
+            onClick={() => {
+              setIsLiveMode(true);
+              setTradeMessage("");
+            }}
+            style={{
+              flex: 1,
+              padding: "8px",
+              border: "none",
+              borderRadius: "4px",
+              fontWeight: "bold",
+              fontSize: "13px",
+              cursor: "pointer",
+              background: isLiveMode ? "#4caf50" : "transparent",
+              color: "#fff"
+            }}
+          >
+            Live Account
+          </button>
+        </div>
+
+        {/* Balance + PnL Row */}
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "4px 6px"
         }}>
-          {liveProfit >= 0 ? "+" : ""}${liveProfit.toFixed(2)}
-        </span>
-      </div>
-    )}
 
-  </div>
+          {/* Balance */}
+          <div>
+            <span style={{
+              fontSize: "11px",
+              color: "#666",
+              display: "block"
+            }}>
+              {isLiveMode ? "REAL BALANCE" : "SIMULATION BALANCE"}
+            </span>
 
-  {/* Deposit Button (LIVE ONLY) */}
-  {isLiveMode && (
-    <button
-      onClick={() => {
-        console.log("DEPOSIT CLICKED");
-        setShowDepositInfo(true);
-      }}
-      style={{
-        marginTop: "10px",
-        width: "100%",
-        padding: "10px",
-        background: "#2196f3",
-        color: "#fff",
-        border: "none",
-        borderRadius: "6px",
-        fontWeight: "bold",
-        cursor: "pointer"
-      }}
-    >
-      Deposit Funds
-    </button>
-  )}
+            <span style={{
+              fontSize: "22px",
+              fontWeight: "bold",
+              color: isLiveMode ? "#4caf50" : "#ff9800"
+            }}>
+              ${isLiveMode
+                ? (liveBalance + profit).toFixed(2)
+                : demoBalance.toFixed(2)
+              }
+            </span>
+          </div>
+
+          {/* PnL */}
+          {isLiveMode && (
+            <div style={{ textAlign: "right" }}>
+              <span style={{
+                fontSize: "11px",
+                color: "#666",
+                display: "block"
+              }}>
+                P&L VECTOR
+              </span>
+
+              <span style={{
+                fontSize: "14px",
+                fontWeight: "bold",
+                color: profit >= 0 ? "#4caf50" : "#f44336"
+              }}>
+                {profit >= 0 ? "+" : ""}${profit.toFixed(2)}
+              </span>
+            </div>
+          )}
+
+        </div>
+
+        {/* Deposit Button (LIVE ONLY) */}
+        {isLiveMode && (
+          <button
+            onClick={() => {
+              console.log("DEPOSIT CLICKED");
+              setShowDepositInfo(true);
+            }}
+            style={{
+              marginTop: "10px",
+              width: "100%",
+              padding: "10px",
+              background: "#2196f3",
+              color: "#fff",
+              border: "none",
+              borderRadius: "6px",
+              fontWeight: "bold",
+              cursor: "pointer"
+            }}
+          >
+            Deposit Funds
+          </button>
+        )}
 
       </div>
 
@@ -591,84 +658,118 @@ const executeMarketOrder = (direction) => {
         </div>
 
       </div>
-{/* Real-time Order Message Notification Ticker */}
-{tradeMessage && (
-  <div style={{
-    marginTop: "12px",
-    padding: "10px",
-    borderRadius: "4px",
-    background: "#050505",
-    color: isLiveMode && liveBalance < parseFloat(tradeAmount) ? "#f44336" : "#4caf50",
-    fontSize: "12px",
+{/* OPEN TRADES */}
+<div
+  style={{
+    marginTop: "20px",
+    background: "#121212",
+    padding: "15px",
+    borderRadius: "8px",
     border: "1px solid #222",
-    textAlign: "center",
-    fontWeight: "bold"
-  }}>
-    {tradeMessage}
-  </div>
-)}
+  }}
+>
+  <h3 style={{ marginTop: 0 }}>Open Trades</h3>
 
-{/* DEPOSIT MODAL - MUST BE HERE */}
-{showDepositInfo && (
-  <div style={{
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "rgba(0,0,0,0.85)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 9999
-  }}>
-    <div style={{
-      background: "#111",
-      padding: "20px",
-      borderRadius: "10px",
-      width: "90%",
-      maxWidth: "500px",
-      color: "#fff",
-      border: "1px solid #333"
-    }}>
-      <h2>Deposit Funds</h2>
-
-      <p>Deposits are handled externally through approved payment channels.</p>
-      <p>Stripe integration will be available soon.</p>
-      <p>Your assigned trader (or referral trader) will guide your funding process.</p>
-
-      <div style={{
-        marginTop: "10px",
-        padding: "10px",
-        background: "#0b0b0b",
-        borderRadius: "6px",
-        fontSize: "12px"
-      }}>
-        <strong>Status:</strong> Stripe integration coming soon
-      </div>
-
-      <button
-        onClick={() => setShowDepositInfo(false)}
+  {trades.length === 0 ? (
+    <p style={{ color: "#777" }}>No active trades.</p>
+  ) : (
+    trades.map((trade) => (
+      <div
+        key={trade.id}
         style={{
-          marginTop: "15px",
-          width: "100%",
-          padding: "10px",
-          background: "#2196f3",
-          color: "#fff",
-          border: "none",
-          borderRadius: "6px",
-          fontWeight: "bold",
-          cursor: "pointer"
+          borderBottom: "1px solid #222",
+          padding: "12px 0",
         }}
       >
-        Close
-      </button>
-    </div>
-  </div>
-)}
+        <div>
+          <strong>{trade.symbol}</strong>
+        </div>
 
+        <div>Type: {trade.type}</div>
+
+        <div>Entry: ${trade.entryPrice}</div>
+
+        <div>Lot Size: {trade.lotSize}</div>
+
+        <div
+          style={{
+            color:
+              trade.status === "open"
+                ? "#4caf50"
+                : "#f44336",
+            fontWeight: "bold",
+          }}
+        >
+          {trade.status.toUpperCase()}
+        </div>
+
+        <div>
+          Profit: ${trade.profit ?? 0}
+        </div>
+      </div>
+    ))
+  )}
 </div>
+      {/* DEPOSIT MODAL */}
+      {showDepositInfo && (
+        <div style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(0,0,0,0.85)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: 9999
+        }}>
+          <div style={{
+            background: "#111",
+            padding: "20px",
+            borderRadius: "10px",
+            width: "90%",
+            maxWidth: "500px",
+            color: "#fff",
+            border: "1px solid #333"
+          }}>
+            <h2>Deposit Funds</h2>
 
+            <p>Deposits are handled externally through approved payment channels.</p>
+            <p>Stripe integration will be available soon.</p>
+            <p>{trader ? `Your assigned trader (${trader.name || "Trader Jeff"})` : "Your assigned trader"} will guide your funding process.</p>
+
+            <div style={{
+              marginTop: "10px",
+              padding: "10px",
+              background: "#0b0b0b",
+              borderRadius: "6px",
+              fontSize: "12px"
+            }}>
+              <strong>Status:</strong> Stripe integration coming soon
+            </div>
+
+            <button
+              onClick={() => setShowDepositInfo(false)}
+              style={{
+                marginTop: "15px",
+                width: "100%",
+                padding: "10px",
+                background: "#2196f3",
+                color: "#fff",
+                border: "none",
+                borderRadius: "6px",
+                fontWeight: "bold",
+                cursor: "pointer"
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+    </div>
   );
 };
 

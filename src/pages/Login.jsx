@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { auth, db } from "../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -15,15 +16,40 @@ export default function Login() {
     setLoading(true);
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      localStorage.setItem("userId", userCredential.user.uid);
+
+      const uid = userCredential.user.uid;
+      const userRef = doc(db, "users", uid);
+      const userSnap = await getDoc(userRef);
+
+      if (!userSnap.exists()) {
+        alert("User record not found.");
+        return;
+      }
+
+      const userData = userSnap.data();
+
+      // Support both old and new role formats
+      const roles = userData.roles || [];
+      const role = userData.role || "";
+
+      if (roles.includes("admin") || role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (err) {
       alert(err.message);
     } finally {
       setLoading(false);
     }
   };
-
   return (
     <div style={{ padding: "20px" }}>
       <h1>Login</h1>

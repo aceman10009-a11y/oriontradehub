@@ -28,24 +28,33 @@ export default function Signup() {
       await setDoc(doc(db, "users", user.uid), {
         email: user.email,
 
+        // User Profile
+        name: "",
+
         // SYSTEM MODES
-        accountType: "demo", // always start in demo
-        liveEnabled: true,   // live exists, but funding is external
+        accountType: "demo",
+        liveEnabled: true,
 
         // DEMO WALLET
         demoBalance: 10000,
         demoProfit: 0,
 
-        // LIVE WALLET (externally funded later)
+        // LIVE WALLET
         liveBalance: 0,
         liveProfit: 0,
 
+        // MASTER PROFIT
+        profit: 0,
+
         // RELATIONSHIP SYSTEM
         referredBy: referralCode.trim() || null,
-        assignedTrader: null,
+        assignedTraderId: null,
         traderStatus: "pending",
 
-        // STRIPE STAGE FLAG
+        // ROLES
+        roles: ["user"],
+
+        // PAYMENT STATUS
         stripeStatus: "coming_soon",
 
         createdAt: serverTimestamp(),
@@ -67,22 +76,26 @@ export default function Signup() {
         <input
           type="email"
           placeholder="Email"
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="password"
           placeholder="Password"
+          autoComplete="new-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="text"
@@ -91,15 +104,23 @@ export default function Signup() {
           onChange={(e) => setReferralCode(e.target.value)}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <button disabled={loading}>
           {loading ? "Creating account..." : "Create Account"}
         </button>
       </form>
 
-      <p style={{ fontSize: "12px", marginTop: "15px", color: "#666" }}>
-        Stripe integration coming soon. Live funding is currently handled externally by your broker.
+      <p
+        style={{
+          fontSize: "12px",
+          marginTop: "15px",
+          color: "#666",
+        }}
+      >
+        Stripe integration coming soon. Live funding is currently handled
+        externally by your broker.
       </p>
     </div>
   );
