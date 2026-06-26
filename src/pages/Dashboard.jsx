@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import markets from "../data/markets";
 import { auth, db } from "../firebase/config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import MarketChart from "../components/MarketChart";
+import {
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+
 import {
   doc,
   getDoc,
@@ -9,9 +16,8 @@ import {
   query,
   where,
   getDocs,
-  onSnapshot
+  onSnapshot,
 } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 
 // Real-time candlestick chart component
 const CandlestickChart = ({ symbol, timeframe, setTimeframe, currentPrice, priceChange, chartData, isLoading }) => {
@@ -192,41 +198,12 @@ const Dashboard = () => {
   const [chartData, setChartData] = useState([]);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [priceChange, setPriceChange] = useState(0);
-  const [timeframe, setTimeframe] = useState("1d");
+  const [timeframe, setTimeframe] = useState("1m");
   const [isChartLoading, setIsChartLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  const marketData = {
-    crypto: [
-      { symbol: "BTC/USD", name: "Bitcoin" }, { symbol: "ETH/USD", name: "Ethereum" },
-      { symbol: "BNB/USD", name: "BNB Coin" }, { symbol: "SOL/USD", name: "Solana" },
-      { symbol: "XRP/USD", name: "Ripple XRP" }, { symbol: "ADA/USD", name: "Cardano" },
-      { symbol: "DOGE/USD", name: "Dogecoin" }, { symbol: "SHIB/USD", name: "Shiba Inu" },
-      { symbol: "DOT/USD", name: "Polkadot" }, { symbol: "MATIC/USD", name: "Polygon" }
-    ],
-    fiat: [
-      { symbol: "EUR/USD", name: "Euro FX" }, { symbol: "GBP/USD", name: "Pound Sterling" },
-      { symbol: "JPY/USD", name: "Japanese Yen" }, { symbol: "AUD/USD", name: "Australian Dollar" },
-      { symbol: "CAD/USD", name: "Canadian Dollar" }, { symbol: "CHF/USD", name: "Swiss Franc" },
-      { symbol: "CNH/USD", name: "Offshore Renminbi" }, { symbol: "HKD/USD", name: "Hong Kong Dollar" },
-      { symbol: "NZD/USD", name: "New Zealand Dollar" }, { symbol: "SGD/USD", name: "Singapore Dollar" }
-    ],
-    usStocks: [
-      { symbol: "AAPL/USD", name: "Apple Inc." }, { symbol: "MSFT/USD", name: "Microsoft Corp." },
-      { symbol: "NVDA/USD", name: "NVIDIA Corporation" }, { symbol: "AMZN/USD", name: "Amazon.com Inc." },
-      { symbol: "GOOGL/USD", name: "Alphabet Inc." }, { symbol: "META/USD", name: "Meta Platforms" },
-      { symbol: "TSLA/USD", name: "Tesla Motors" }, { symbol: "BRK/USD", name: "Berkshire Hathaway" },
-      { symbol: "JPM/USD", name: "JPMorgan Chase & Co" }, { symbol: "LLY/USD", name: "Eli Lilly & Co" }
-    ],
-    euStocks: [
-      { symbol: "ASML/USD", name: "ASML Holding (NL)" }, { symbol: "MC/USD", name: "LVMH Moët Hennessy (FR)" },
-      { symbol: "SAP/USD", name: "SAP SE (DE)" }, { symbol: "NESN/USD", name: "Nestlé S.A. (CH)" },
-      { symbol: "NOVOB/USD", name: "Novo Nordisk (DK)" }, { symbol: "SIE/USD", name: "Siemens AG (DE)" },
-      { symbol: "AIR/USD", name: "Airbus SE (FR)" }, { symbol: "TTE/USD", name: "TotalEnergies (FR)" },
-      { symbol: "BMW/USD", name: "BMW Group (DE)" }, { symbol: "VOW3/USD", name: "Volkswagen (DE)" }
-    ]
-  };
+const marketData = markets;
 
   // Syncing Live chart feeds
   useEffect(() => {
@@ -564,26 +541,112 @@ const Dashboard = () => {
             Deposit Funds
           </button>
         )}
+{/* Admin Panel Entry Block */}
+{isAdmin && (
+  <AdminPanel
+    user={user}
+    users={users}
+    updateUserData={updateUserData}
+  />
+)}
 
-      </div>
+{/* Timeframe Buttons */}
+<div style={{ display: "flex", gap: "6px", marginBottom: "10px" }}>
+  {["1m", "5m", "10m", "30m", "1h", "1d", "1w"].map((tf) => (
+    <button
+      key={tf}
+      onClick={() => setTimeframe(tf)}
+      style={{
+        padding: "6px 10px",
+        fontSize: "12px",
+        borderRadius: "5px",
+        border: "1px solid #333",
+        background: timeframe === tf ? "#4caf50" : "#111",
+        color: "#fff",
+        cursor: "pointer"
+      }}
+    >
+      {tf}
+    </button>
+  ))}
+</div>
 
-      {/* Admin Panel Entry Block */}
-      {isAdmin && <AdminPanel user={user} users={users} updateUserData={updateUserData} />}
+{/* Chart Component (KEEP THIS EXACTLY BELOW) */}
+<MarketChart
+  symbol={selectedSymbol}
+  timeframe={timeframe}
+  onPriceUpdate={(price) => {
+    setCurrentPrice(price);
+  }}
+/>
+{/* Open Trades Panel */}
+<div style={{
+  marginTop: "15px",
+  backgroundColor: "#121212",
+  padding: "12px",
+  borderRadius: "8px",
+  border: "1px solid #1c1c1c"
+}}>
+  <h3 style={{
+    marginTop: 0,
+    fontSize: "14px",
+    borderBottom: "1px solid #222",
+    paddingBottom: "8px"
+  }}>
+    Open Trades
+  </h3>
 
-      {/* Candlestick Chart Window Canvas */}
-      <CandlestickChart 
-        symbol={selectedSymbol} 
-        timeframe={timeframe} 
-        setTimeframe={setTimeframe} 
-        currentPrice={currentPrice} 
-        priceChange={priceChange} 
-        chartData={chartData} 
-        isLoading={isChartLoading} 
-      />
+  {trades.length === 0 ? (
+    <div style={{ color: "#777", fontSize: "12px", padding: "10px" }}>
+      No active trades yet.
+    </div>
+  ) : (
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      {trades.map((trade) => (
+        <div
+          key={trade.id}
+          style={{
+            backgroundColor: "#0d0d0d",
+            padding: "10px",
+            borderRadius: "6px",
+            border: "1px solid #222"
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <strong>{trade.symbol}</strong>
+            <span style={{
+              color: trade.type === "BUY" ? "#4caf50" : "#f44336",
+              fontWeight: "bold"
+            }}>
+              {trade.type}
+            </span>
+          </div>
 
-      {/* Mobile-Optimized Unified Control Blocks */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        
+          <div style={{ fontSize: "11px", color: "#888", marginTop: "6px" }}>
+            Entry: ${trade.entryPrice}
+          </div>
+
+          <div style={{ fontSize: "11px", color: "#888" }}>
+            Lot Size: {trade.lotSize}
+          </div>
+
+          <div style={{ fontSize: "11px", color: "#888" }}>
+            Status: {trade.status}
+          </div>
+
+          <div style={{
+            marginTop: "6px",
+            fontSize: "12px",
+            fontWeight: "bold",
+            color: trade.profit >= 0 ? "#4caf50" : "#f44336"
+          }}>
+            Profit: ${trade.profit}
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
         {/* Index Selector Component */}
         <div style={{ backgroundColor: "#121212", padding: "12px", borderRadius: "8px", border: "1px solid #1c1c1c" }}>
           
