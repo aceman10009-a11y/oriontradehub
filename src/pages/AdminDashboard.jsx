@@ -179,7 +179,17 @@ export default function AdminDashboard() {
       </p>
 
      <p>
-  <strong>Current Profit:</strong> ${trade.profit}
+  <strong>
+    {trade.profit >= 0 ? "Current Profit:" : "Current Loss:"}
+  </strong>{" "}
+  <span
+    style={{
+      color: trade.profit >= 0 ? "green" : "red",
+      fontWeight: "bold",
+    }}
+  >
+    ${Math.abs(trade.profit)}
+  </span>
 </p>
 
 <input

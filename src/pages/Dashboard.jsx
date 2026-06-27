@@ -267,33 +267,36 @@ const marketData = markets;
     setUser(currentUser);
 
     try {
-      const userRef = doc(db, "users", currentUser.uid);
-      const userDoc = await getDoc(userRef);
+     const userRef = doc(db, "users", currentUser.uid);
 
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
+onSnapshot(userRef, async (userSnapshot) => {
+  if (!userSnapshot.exists()) return;
 
-        setIsAdmin(userData.role === "admin");
-        setDemoBalance(
-          userData.demoBalance !== undefined
-            ? userData.demoBalance
-            : 10000.0
-        );
-        setLiveBalance(userData.liveBalance || 0);
-        setProfit(userData.profit || 0.0);
+  const userData = userSnapshot.data();
 
-        // Fetch Assigned Trader
-        if (userData.assignedTraderId) {
-          const traderRef = doc(db, "traders", userData.assignedTraderId);
-          const traderDoc = await getDoc(traderRef);
+  setIsAdmin(userData.role === "admin");
 
-          if (traderDoc.exists()) {
-            setTrader(traderDoc.data());
-          } else {
-            setTrader({ name: "Trader Jeff" });
-          }
-        }
-      }
+  setDemoBalance(
+    userData.demoBalance !== undefined
+      ? userData.demoBalance
+      : 10000.0
+  );
+
+  setLiveBalance(userData.liveBalance || 0);
+
+  setProfit(userData.profit || 0);
+
+  if (userData.assignedTraderId) {
+    const traderRef = doc(db, "traders", userData.assignedTraderId);
+    const traderDoc = await getDoc(traderRef);
+
+    if (traderDoc.exists()) {
+      setTrader(traderDoc.data());
+    } else {
+      setTrader({ name: "Trader Jeff" });
+    }
+  }
+});
 
       const usersQuery = query(
         collection(db, "users"),
@@ -634,14 +637,18 @@ const marketData = markets;
             Status: {trade.status}
           </div>
 
-          <div style={{
-            marginTop: "6px",
-            fontSize: "12px",
-            fontWeight: "bold",
-            color: trade.profit >= 0 ? "#4caf50" : "#f44336"
-          }}>
-            Profit: ${trade.profit}
-          </div>
+        <div
+  style={{
+    marginTop: "6px",
+    fontSize: "12px",
+    fontWeight: "bold",
+    color: (trade.profit ?? 0) >= 0 ? "#4caf50" : "#f44336",
+  }}
+>
+  {(trade.profit ?? 0) >= 0
+    ? `Profit: $${trade.profit ?? 0}`
+    : `Loss: $${Math.abs(trade.profit ?? 0)}`}
+</div>
         </div>
       ))}
     </div>
@@ -766,9 +773,16 @@ const marketData = markets;
           {trade.status.toUpperCase()}
         </div>
 
-        <div>
-          Profit: ${trade.profit ?? 0}
-        </div>
+        <div
+  style={{
+    color: (trade.profit ?? 0) >= 0 ? "#4caf50" : "#f44336",
+    fontWeight: "bold",
+  }}
+>
+  {(trade.profit ?? 0) >= 0
+    ? `Profit: $${trade.profit ?? 0}`
+    : `Loss: $${Math.abs(trade.profit ?? 0)}`}
+</div>
       </div>
     ))
   )}

@@ -49,13 +49,27 @@ export default function UserTradingDashboard() {
               borderRadius: "8px",
             }}
           >
-            <h3>{trade.symbol}</h3>
+            <h3 style={{ color: "red" }}>
+  USER TRADING DASHBOARD - {trade.symbol}
+</h3>
 
             <p><strong>Type:</strong> {trade.type}</p>
             <p><strong>Entry:</strong> {trade.entryPrice}</p>
             <p><strong>Lot Size:</strong> {trade.lotSize}</p>
             <p><strong>Status:</strong> {trade.status}</p>
-            <p><strong>Profit:</strong> ${trade.profit}</p>
+            <p>
+              <strong>
+                {trade.profit >= 0 ? "Profit:" : "Loss:"}
+              </strong>{" "}
+              <span
+                style={{
+                  color: trade.profit >= 0 ? "#16a34a" : "#dc2626",
+                  fontWeight: "bold",
+                }}
+              >
+                ${Math.abs(trade.profit)}
+              </span>
+            </p>
           </div>
         ))
       )}
