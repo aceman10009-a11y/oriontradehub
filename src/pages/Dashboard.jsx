@@ -14,6 +14,13 @@ import {
 import MarketChart from "../components/MarketChart";
 import { createTrade, calculatePnL } from "../core/tradingEngine";
 import { timeframes } from "../core/marketEngine";
+
+// New imports
+import TopBar from "../components/dashboard/TopBar";
+import PortfolioHeader from "../components/dashboard/PortfolioHeader";
+import TradingPanel from "../components/dashboard/TradingPanel";
+import PositionsPanel from "../components/dashboard/PositionsPanel";
+
 const Dashboard = () => {
   const navigate = useNavigate();
 
@@ -22,6 +29,7 @@ const Dashboard = () => {
   const [selectedSymbol, setSelectedSymbol] = useState("BTC/USD");
   const [tradeAmount, setTradeAmount] = useState(100);
   const [isLiveMode, setIsLiveMode] = useState(false);
+  const [selectedTimeframe, setSelectedTimeframe] = useState("1m");
 
   const [demoBalance, setDemoBalance] = useState(10000);
   const [liveBalance, setLiveBalance] = useState(0);
@@ -80,24 +88,16 @@ const Dashboard = () => {
     <div style={styles.page}>
 
       {/* TOP BAR */}
-      <div style={styles.topbar}>
-        <div>
-          <div style={{ fontWeight: 800 }}>ORION TRADE HUB</div>
-          <div style={{ fontSize: 12, opacity: 0.6 }}>{user?.email}</div>
-        </div>
-
-        <div style={{ display: "flex", gap: 10 }}>
-          <button onClick={() => setIsLiveMode(false)} style={btn(!isLiveMode)}>
-            Demo
-          </button>
-          <button onClick={() => setIsLiveMode(true)} style={btn(isLiveMode)}>
-            Live
-          </button>
-          <button onClick={() => signOut(auth)} style={btn(false)}>
-            Logout
-          </button>
-        </div>
-      </div>
+     <TopBar
+  user={user}
+  isLiveMode={isLiveMode}
+  setIsLiveMode={setIsLiveMode}
+  selectedSymbol={selectedSymbol}
+  selectedTimeframe={selectedTimeframe}
+  setSelectedTimeframe={setSelectedTimeframe}
+  demoBalance={demoBalance}
+  liveBalance={liveBalance}
+/>
 
       {/* MAIN GRID */}
       <div style={{
@@ -136,7 +136,7 @@ const Dashboard = () => {
           <div style={{ height: 420 }}>
             <MarketChart
               symbol={selectedSymbol}
-              timeframe="1m"
+              timeframe={selectedTimeframe}
               onPriceUpdate={setCurrentPrice}
             />
           </div>
@@ -199,17 +199,6 @@ const styles = {
     minHeight: "100vh",
     color: "#fff",
     fontFamily: "system-ui"
-  },
-
-  topbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: 16,
-    borderBottom: "1px solid #222",
-    position: "sticky",
-    top: 0,
-    background: "#0b0f14",
-    zIndex: 10
   },
 
   grid: {
