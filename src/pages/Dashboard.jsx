@@ -1,853 +1,277 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import markets from "../data/markets";
+import React, { useEffect, useState } from "react";
 import { auth, db } from "../firebase/config";
-import MarketChart from "../components/MarketChart";
-import {
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 import {
   doc,
-  getDoc,
-  updateDoc,
+  onSnapshot,
   collection,
   query,
   where,
-  getDocs,
-  onSnapshot,
 } from "firebase/firestore";
 
-// Real-time candlestick chart component
-const CandlestickChart = ({ symbol, timeframe, setTimeframe, currentPrice, priceChange, chartData, isLoading }) => {
-  if (isLoading) {
-    return (
-      <div style={{ backgroundColor: "#121212", padding: "20px", borderRadius: "8px", height: "260px", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff" }}>
-        Loading market asset feeds...
-      </div>
-    );
-  }
-
-  const highs = chartData.map(c => c.high);
-  const lows = chartData.map(c => c.low);
-  const maxPrice = Math.max(...highs) * 1.01;
-  const minPrice = Math.min(...lows) * 0.99;
-  const priceRange = maxPrice - minPrice || 1;
-
-  return (
-    <div style={{ backgroundColor: "#121212", padding: "15px", borderRadius: "8px", marginBottom: "20px", border: "1px solid #222" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "15px" }}>
-        <div>
-          <h3 style={{ margin: 0, fontSize: "20px", letterSpacing: "0.5px" }}>{symbol}</h3>
-          <div style={{ display: "flex", gap: "5px", marginTop: "8px" }}>
-            {"1h 1d 1w".split(" ").map((t) => (
-              <button
-                key={t}
-                onClick={() => setTimeframe(t)}
-                style={{
-                  padding: "4px 12px",
-                  fontSize: "11px",
-                  borderRadius: "4px",
-                  border: "1px solid #333",
-                  backgroundColor: timeframe === t ? "#2196f3" : "#1c1c1c",
-                  color: "#fff",
-                  cursor: "pointer",
-                  fontWeight: "bold"
-                }}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div style={{ textAlign: "right" }}>
-          <div style={{ fontSize: "20px", fontWeight: "bold", color: "#fff" }}>${currentPrice.toFixed(currentPrice < 1 ? 4 : 2)}</div>
-          <div style={{ color: priceChange >= 0 ? "#4caf50" : "#f44336", fontSize: "13px", marginTop: "2px" }}>
-            {priceChange >= 0 ? "+" : ""}{priceChange.toFixed(2)} ({((priceChange / (currentPrice || 1)) * 100).toFixed(2)}%)
-          </div>
-        </div>
-      </div>
-      
-      <div style={{ height: "180px", display: "flex", alignItems: "flex-end", position: "relative", borderBottom: "1px solid #333", borderLeft: "1px solid #222", padding: "5px 0", overflow: "hidden" }}>
-        {chartData.map((candle, index) => {
-          const heightPercent = ((candle.high - candle.low) / priceRange) * 100;
-          const bottomPercent = ((candle.low - minPrice) / priceRange) * 100;
-          const bodyHeightPercent = (Math.abs(candle.close - candle.open) / priceRange) * 100;
-          const bodyBottomPercent = ((Math.min(candle.open, candle.close) - minPrice) / priceRange) * 100;
-          const isGreen = candle.close >= candle.open;
-
-          return (
-            <div key={index} style={{ flex: 1, height: "100%", position: "relative", margin: "0 1px" }}>
-              <div style={{ position: "absolute", width: "1px", height: `${heightPercent}%`, backgroundColor: isGreen ? "#4caf50" : "#f44336", bottom: `${bottomPercent}%`, left: "50%", transform: "translateX(-50%)", opacity: 0.6 }} />
-              <div style={{ position: "absolute", width: "100%", height: `${Math.max(bodyHeightPercent, 2.5)}%`, backgroundColor: isGreen ? "#4caf50" : "#f44336", bottom: `${bodyBottomPercent}%`, left: 0, borderRadius: "1px" }} />
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-// Admin Panel Component
-const AdminPanel = ({ user, users, updateUserData }) => {
-  const [selectedUser, setSelectedUser] = useState("");
-  const [profitAmount, setProfitAmount] = useState(0);
-  const [profitType, setProfitType] = useState("profit");
-  const [message, setMessage] = useState("");
-  const [adminBonusAmount, setAdminBonusAmount] = useState(0);
-
-  const handleInfluenceTrading = async () => {
-    if (!selectedUser || profitAmount === 0) {
-      setMessage("Please select a target and input an allocation.");
-      return;
-    }
-    try {
-      const userRef = doc(db, "users", selectedUser);
-      const userDoc = await getDoc(userRef);
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        const currentProfit = userData.profit || 0; // Fixed: synchronized to your schema field 'profit'
-        const newProfit = profitType === "profit" ? currentProfit + parseFloat(profitAmount) : currentProfit - parseFloat(profitAmount);
-        
-        await updateDoc(userRef, { profit: newProfit });
-        updateUserData(selectedUser, { profit: newProfit });
-        setMessage("Live parameter injected into account database.");
-      }
-    } catch (err) { setMessage(err.message); }
-  };
-
- const handleGiveBonus = async () => {
-  if (!selectedUser || adminBonusAmount === 0) return;
-  try {
-    const userRef = doc(db, "users", selectedUser);
-    const userDoc = await getDoc(userRef);
-    if (userDoc.exists()) {
-      const data = userDoc.data();
-      // Dynamically adjust whichever context balance is active or default to live
-      const currentBalance = data.liveBalance || 0;
-      const newBalance = currentBalance + parseFloat(adminBonusAmount);
-      
-      await updateDoc(userRef, { liveBalance: newBalance });
-      updateUserData(selectedUser, { liveBalance: newBalance });
-      setMessage("Wallet live credit executed.");
-    }
-  } catch (err) { setMessage(err.message); }
-};
-
-  return (
-    <div style={{ backgroundColor: "#1c1c1c", padding: "15px", borderRadius: "8px", marginBottom: "20px", border: "1px solid #e91e63" }}>
-      <h3 style={{ color: "#e91e63", marginTop: 0, fontSize: "16px" }}>Terminal Parameters (Admin Only)</h3>
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "10px" }}>
-        <div>
-          <label style={{ display: "block", fontSize: "11px", color: "#aaa", marginBottom: "4px" }}>User Target</label>
-          <select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)} style={{ width: "100%", padding: "10px", background: "#0b0b0b", color: "#fff", border: "1px solid #333", borderRadius: "4px" }}>
-            <option value="">Select Target User...</option>
-            {users.map((u) => <option key={u.id} value={u.id}>{u.email || u.id}</option>)}
-          </select>
-        </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <div style={{ flex: 1 }}>
-            <input type="number" placeholder="Amount ($)" onChange={(e) => setProfitAmount(e.target.value)} style={{ width: "88%", padding: "10px", background: "#0b0b0b", color: "#fff", border: "1px solid #333", borderRadius: "4px" }} />
-          </div>
-          <div style={{ flex: 1 }}>
-            <select value={profitType} onChange={(e) => setProfitType(e.target.value)} style={{ width: "100%", padding: "10px", background: "#0b0b0b", color: "#fff", border: "1px solid #333", borderRadius: "4px" }}>
-              <option value="profit">Inject Profit</option>
-              <option value="loss">Inject Loss</option>
-            </select>
-          </div>
-        </div>
-        <button onClick={handleInfluenceTrading} style={{ padding: "10px", background: "#e91e63", color: "#fff", border: "none", borderRadius: "4px", cursor: "pointer", fontWeight: "bold" }}>Apply Market Vector</button>
-        
-        <div style={{ borderTop: "1px solid #333", paddingTop: "12px", marginTop: "5px" }}>
-          <label style={{ display: "block", fontSize: "11px", color: "#aaa", marginBottom: "4px" }}>Direct Balance Adjust</label>
-          <div style={{ display: "flex", gap: "10px" }}>
-            <input type="number" onChange={(e) => setAdminBonusAmount(e.target.value)} placeholder="0.00" style={{ flex: 1, padding: "10px", background: "#0b0b0b", color: "#fff", border: "1px solid #333", borderRadius: "4px" }} />
-            <button onClick={handleGiveBonus} style={{ padding: "10px 15px", background: "#2196f3", color: "#fff", border: "none", borderRadius: "4px", cursor: "pointer", fontWeight: "bold" }}>Grant</button>
-          </div>
-        </div>
-      </div>
-      {message && <div style={{ marginTop: "10px", color: "#aaa", fontSize: "12px" }}>{message}</div>}
-    </div>
-  );
-};
-
+import MarketChart from "../components/MarketChart";
+import { createTrade, calculatePnL } from "../core/tradingEngine";
+import { timeframes } from "../core/marketEngine";
 const Dashboard = () => {
-  const [user, setUser] = useState(null);
-  const [users, setUsers] = useState([]);
-  const [trades, setTrades] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [selectedSymbol, setSelectedSymbol] = useState("BTC/USD");
-  const [tradeAmount, setTradeAmount] = useState(100);
-  const [activeTab, setActiveTab] = useState("crypto");
-  // Balance Infrastructure Layers
-  const [isLiveMode, setIsLiveMode] = useState(false);
-  const [demoBalance, setDemoBalance] = useState(10000.00);
-  const [liveBalance, setLiveBalance] = useState(0.00);
-  const [profit, setProfit] = useState(0.00); // Fixed: matching schema 'profit' field
-  const [isProcessingTrade, setIsProcessingTrade] = useState(false);
-  const [tradeMessage, setTradeMessage] = useState("");
-  const [showDepositInfo, setShowDepositInfo] = useState(false);
-
-
-  // Trader State Layer
-  const [trader, setTrader] = useState(null);
-
-  // Chart state synchronization
-  const [chartData, setChartData] = useState([]);
-  const [currentPrice, setCurrentPrice] = useState(0);
-  const [priceChange, setPriceChange] = useState(0);
-  const [timeframe, setTimeframe] = useState("1m");
-  const [isChartLoading, setIsChartLoading] = useState(true);
-
   const navigate = useNavigate();
 
-const marketData = markets;
+  const [user, setUser] = useState(null);
+  const [trades, setTrades] = useState([]);
+  const [selectedSymbol, setSelectedSymbol] = useState("BTC/USD");
+  const [tradeAmount, setTradeAmount] = useState(100);
+  const [isLiveMode, setIsLiveMode] = useState(false);
 
-  // Syncing Live chart feeds
+  const [demoBalance, setDemoBalance] = useState(10000);
+  const [liveBalance, setLiveBalance] = useState(0);
+
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // detect mobile
   useEffect(() => {
-    const generateMockData = (basePrice) => {
-      const data = [];
-      let price = basePrice || 100;
-      let candleCount = timeframe === "1h" ? 25 : timeframe === "1w" ? 45 : 40;
+    const check = () => setIsMobile(window.innerWidth < 900);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
-      for (let i = 0; i < candleCount; i++) {
-        const open = price;
-        const close = price + (Math.random() - 0.5) * (price * 0.015);
-        const high = Math.max(open, close) + Math.random() * (price * 0.008);
-        const low = Math.min(open, close) - Math.random() * (price * 0.008);
-        data.push({ open, high, low, close });
-        price = close;
-      }
-      return data;
-    };
-
-    const fetchLivePrice = async () => {
-      try {
-        const baseSymbol = selectedSymbol.split('/')[0];
-        if (baseSymbol === 'BTC' || baseSymbol === 'ETH') {
-          const id = baseSymbol === 'BTC' ? 'bitcoin' : 'ethereum';
-          const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_24hr_change=true`);
-          const data = await response.json();
-          const price = data[id].usd;
-          setCurrentPrice(price);
-          setPriceChange(price * (data[id].usd_24h_change / 100));
-          setChartData(generateMockData(price));
-        } else {
-          const seeds = {
-            BNB: 580, SOL: 145, XRP: 0.55, ADA: 0.45, DOGE: 0.14, SHIB: 0.00002, DOT: 6.50, MATIC: 0.70,
-            EUR: 1.08, GBP: 1.27, JPY: 0.0063, AUD: 0.66, CAD: 0.73, CHF: 1.12, CNH: 0.14, HKD: 0.13, NZD: 0.61, SGD: 0.74,
-            AAPL: 180, MSFT: 420, NVDA: 900, AMZN: 185, GOOGL: 175, META: 475, TSLA: 170, BRK: 410, JPM: 195, LLY: 800,
-            ASML: 950, MC: 830, SAP: 180, NESN: 100, NOVOB: 130, SIE: 170, AIR: 150, TTE: 68, BMW: 105, VOW3: 120
-          };
-          const mockPrice = seeds[baseSymbol] || 100;
-          setCurrentPrice(mockPrice);
-          setPriceChange((Math.random() - 0.5) * (mockPrice * 0.02));
-          setChartData(generateMockData(mockPrice));
-        }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setIsChartLoading(false);
-      }
-    };
-
-    fetchLivePrice();
-  }, [selectedSymbol, timeframe]);
-
-  // Firebase auth state mapping & Trader syncing
+  // auth + firestore sync
   useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-    if (!currentUser) {
-      navigate("/login");
-      return;
-    }
+    const unsub = onAuthStateChanged(auth, (u) => {
+      if (!u) return navigate("/login");
+      setUser(u);
 
-    setUser(currentUser);
+      const ref = doc(db, "users", u.uid);
 
-    try {
-     const userRef = doc(db, "users", currentUser.uid);
-
-onSnapshot(userRef, async (userSnapshot) => {
-  if (!userSnapshot.exists()) return;
-
-  const userData = userSnapshot.data();
-
-  setIsAdmin(userData.role === "admin");
-
-  setDemoBalance(
-    userData.demoBalance !== undefined
-      ? userData.demoBalance
-      : 10000.0
-  );
-
-  setLiveBalance(userData.liveBalance || 0);
-
-  setProfit(userData.profit || 0);
-
-  if (userData.assignedTraderId) {
-    const traderRef = doc(db, "traders", userData.assignedTraderId);
-    const traderDoc = await getDoc(traderRef);
-
-    if (traderDoc.exists()) {
-      setTrader(traderDoc.data());
-    } else {
-      setTrader({ name: "Trader Jeff" });
-    }
-  }
-});
-
-      const usersQuery = query(
-        collection(db, "users"),
-        where("role", "==", "user")
-      );
-
-      const usersSnapshot = await getDocs(usersQuery);
-
-      setUsers(
-        usersSnapshot.docs.map((docItem) => ({
-          id: docItem.id,
-          ...docItem.data(),
-        }))
-      );
-
-      // Listen for this user's trades in real time
-      const tradesQuery = query(
-        collection(db, "trades"),
-        where("userId", "==", currentUser.uid)
-      );
-
-      onSnapshot(tradesQuery, (snapshot) => {
-        const userTrades = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        setTrades(userTrades);
+      const unsubUser = onSnapshot(ref, (snap) => {
+        if (!snap.exists()) return;
+        const d = snap.data();
+        setDemoBalance(d.demoBalance || 10000);
+        setLiveBalance(d.liveBalance || 0);
       });
 
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  });
-
-  return () => unsubscribe();
-}, [navigate]);
-  // Guaranteed Winner Trade Algorithm Engine
-  const executeMarketOrder = (direction) => {
-    const amount = parseFloat(tradeAmount);
-
-    if (isNaN(amount) || amount <= 0) {
-      setTradeMessage("Invalid allocation volume entry.");
-      return;
-    }
-
-    const isDemo = !isLiveMode;
-    const availableBalance = isDemo ? demoBalance : liveBalance;
-
-    if (availableBalance < amount) {
-      setTradeMessage(
-        isDemo
-          ? "Insufficient Demo Balance allocation."
-          : "Insufficient Live Capital."
+      const q = query(
+        collection(db, "trades"),
+        where("userId", "==", u.uid)
       );
-      return;
-    }
 
-    setIsProcessingTrade(true);
-    setTradeMessage(`Executing ${isDemo ? "demo" : "live"} market order...`);
+      const unsubTrades = onSnapshot(q, (snap) => {
+        setTrades(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+      });
 
-    setTimeout(async () => {
-      try {
-        const userRef = doc(db, "users", user.uid);
-        const remainingBalance = availableBalance - amount;
+      return () => {
+        unsubUser();
+        unsubTrades();
+      };
+    });
 
-        await updateDoc(userRef, {
-          [isDemo ? "demoBalance" : "liveBalance"]: remainingBalance
-        });
+    return () => unsub();
+  }, [navigate]);
 
-        if (isDemo) {
-          setDemoBalance(remainingBalance);
-        } else {
-          setLiveBalance(remainingBalance);
-        }
-
-        setTradeMessage("Position executed successfully.");
-      } catch (e) {
-        setTradeMessage("Order execution failed.");
-      } finally {
-        setIsProcessingTrade(false);
-      }
-    }, 2000);
+  const executeTrade = (side) => {
+    alert(`${side} trade executed (hook your backend here)`);
   };
 
-  const updateUserData = (userId, updates) => {
-    setUsers(prev => prev.map(u => u.id === userId ? { ...u, ...updates } : u));
-  };
-
-  if (loading) return <div style={{ color: "#fff", padding: "20px", background: "#0b0b0b", minHeight: "100vh" }}>Loading core engine...</div>;
-  if (!user) return null;
+  const pnl = trades.reduce((a, t) => a + (t.profit || 0), 0);
 
   return (
-    <div style={{ padding: "12px", backgroundColor: "#0b0b0b", minHeight: "100vh", color: "#fff", fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
-      
-      {/* Header Framework */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "15px", paddingBottom: "10px", borderBottom: "1px solid #1a1a1a" }}>
+    <div style={styles.page}>
+
+      {/* TOP BAR */}
+      <div style={styles.topbar}>
         <div>
-          <h1 style={{ margin: 0, fontSize: "20px", fontWeight: "700" }}>Orion Trade Hub</h1>
-          <div style={{ fontSize: "11px", color: "#555" }}>{user.email}</div>
-          {/* Live System display of the logged-in user's assigned trader */}
-          {trader && (
-            <div style={{ fontSize: "11px", color: "#2196f3", marginTop: "4px", fontWeight: "600", letterSpacing: "0.3px" }}>
-              Assigned Trader: {trader.name || "Trader Jeff"}
-            </div>
-          )}
+          <div style={{ fontWeight: 800 }}>ORION TRADE HUB</div>
+          <div style={{ fontSize: 12, opacity: 0.6 }}>{user?.email}</div>
         </div>
-        <button onClick={async () => { await signOut(auth); navigate("/login"); }} style={{ backgroundColor: "#f44336", color: "#fff", border: "none", borderRadius: "4px", padding: "8px 12px", cursor: "pointer", fontSize: "12px", fontWeight: "bold" }}>Sign Out</button>
+
+        <div style={{ display: "flex", gap: 10 }}>
+          <button onClick={() => setIsLiveMode(false)} style={btn(!isLiveMode)}>
+            Demo
+          </button>
+          <button onClick={() => setIsLiveMode(true)} style={btn(isLiveMode)}>
+            Live
+          </button>
+          <button onClick={() => signOut(auth)} style={btn(false)}>
+            Logout
+          </button>
+        </div>
       </div>
 
-      {/* Mode Switcher Dashboard Ribbon Component */}
+      {/* MAIN GRID */}
       <div style={{
-        backgroundColor: "#121212",
-        padding: "12px",
-        borderRadius: "8px",
-        border: "1px solid #1c1c1c",
-        marginBottom: "15px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px"
+        ...styles.grid,
+        gridTemplateColumns: isMobile ? "1fr" : "280px 1fr 320px"
       }}>
 
-        {/* Mode Toggle */}
-        <div style={{
-          display: "flex",
-          background: "#0d0d0d",
-          padding: "4px",
-          borderRadius: "6px"
-        }}>
-          <button
-            onClick={() => {
-              setIsLiveMode(false);
-              setTradeMessage("");
-            }}
-            style={{
-              flex: 1,
-              padding: "8px",
-              border: "none",
-              borderRadius: "4px",
-              fontWeight: "bold",
-              fontSize: "13px",
-              cursor: "pointer",
-              background: !isLiveMode ? "#ff9800" : "transparent",
-              color: "#fff"
-            }}
-          >
-            Demo Server
-          </button>
+        {/* LEFT PANEL */}
+        <div style={styles.panel}>
+          <h3>Markets</h3>
 
-          <button
-            onClick={() => {
-              setIsLiveMode(true);
-              setTradeMessage("");
-            }}
-            style={{
-              flex: 1,
-              padding: "8px",
-              border: "none",
-              borderRadius: "4px",
-              fontWeight: "bold",
-              fontSize: "13px",
-              cursor: "pointer",
-              background: isLiveMode ? "#4caf50" : "transparent",
-              color: "#fff"
-            }}
-          >
-            Live Account
-          </button>
-        </div>
-
-        {/* Balance + PnL Row */}
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "4px 6px"
-        }}>
-
-          {/* Balance */}
-          <div>
-            <span style={{
-              fontSize: "11px",
-              color: "#666",
-              display: "block"
-            }}>
-              {isLiveMode ? "REAL BALANCE" : "SIMULATION BALANCE"}
-            </span>
-
-            <span style={{
-              fontSize: "22px",
-              fontWeight: "bold",
-              color: isLiveMode ? "#4caf50" : "#ff9800"
-            }}>
-              ${isLiveMode
-                ? (liveBalance + profit).toFixed(2)
-                : demoBalance.toFixed(2)
-              }
-            </span>
-          </div>
-
-          {/* PnL */}
-          {isLiveMode && (
-            <div style={{ textAlign: "right" }}>
-              <span style={{
-                fontSize: "11px",
-                color: "#666",
-                display: "block"
-              }}>
-                P&L VECTOR
-              </span>
-
-              <span style={{
-                fontSize: "14px",
-                fontWeight: "bold",
-                color: profit >= 0 ? "#4caf50" : "#f44336"
-              }}>
-                {profit >= 0 ? "+" : ""}${profit.toFixed(2)}
-              </span>
-            </div>
-          )}
-
-        </div>
-
-        {/* Deposit Button (LIVE ONLY) */}
-        {isLiveMode && (
-          <button
-            onClick={() => {
-              console.log("DEPOSIT CLICKED");
-              setShowDepositInfo(true);
-            }}
-            style={{
-              marginTop: "10px",
-              width: "100%",
-              padding: "10px",
-              background: "#2196f3",
-              color: "#fff",
-              border: "none",
-              borderRadius: "6px",
-              fontWeight: "bold",
-              cursor: "pointer"
-            }}
-          >
-            Deposit Funds
-          </button>
-        )}
-{/* Admin Panel Entry Block */}
-{isAdmin && (
-  <AdminPanel
-    user={user}
-    users={users}
-    updateUserData={updateUserData}
-  />
-)}
-
-{/* Timeframe Buttons */}
-<div style={{ display: "flex", gap: "6px", marginBottom: "10px" }}>
-  {["1m", "5m", "10m", "30m", "1h", "1d", "1w"].map((tf) => (
-    <button
-      key={tf}
-      onClick={() => setTimeframe(tf)}
-      style={{
-        padding: "6px 10px",
-        fontSize: "12px",
-        borderRadius: "5px",
-        border: "1px solid #333",
-        background: timeframe === tf ? "#4caf50" : "#111",
-        color: "#fff",
-        cursor: "pointer"
-      }}
-    >
-      {tf}
-    </button>
-  ))}
-</div>
-
-{/* Chart Component (KEEP THIS EXACTLY BELOW) */}
-<MarketChart
-  symbol={selectedSymbol}
-  timeframe={timeframe}
-  onPriceUpdate={(price) => {
-    setCurrentPrice(price);
-  }}
-/>
-{/* Open Trades Panel */}
-<div style={{
-  marginTop: "15px",
-  backgroundColor: "#121212",
-  padding: "12px",
-  borderRadius: "8px",
-  border: "1px solid #1c1c1c"
-}}>
-  <h3 style={{
-    marginTop: 0,
-    fontSize: "14px",
-    borderBottom: "1px solid #222",
-    paddingBottom: "8px"
-  }}>
-    Open Trades
-  </h3>
-
-  {trades.length === 0 ? (
-    <div style={{ color: "#777", fontSize: "12px", padding: "10px" }}>
-      No active trades yet.
-    </div>
-  ) : (
-    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-      {trades.map((trade) => (
-        <div
-          key={trade.id}
-          style={{
-            backgroundColor: "#0d0d0d",
-            padding: "10px",
-            borderRadius: "6px",
-            border: "1px solid #222"
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <strong>{trade.symbol}</strong>
-            <span style={{
-              color: trade.type === "BUY" ? "#4caf50" : "#f44336",
-              fontWeight: "bold"
-            }}>
-              {trade.type}
-            </span>
-          </div>
-
-          <div style={{ fontSize: "11px", color: "#888", marginTop: "6px" }}>
-            Entry: ${trade.entryPrice}
-          </div>
-
-          <div style={{ fontSize: "11px", color: "#888" }}>
-            Lot Size: {trade.lotSize}
-          </div>
-
-          <div style={{ fontSize: "11px", color: "#888" }}>
-            Status: {trade.status}
-          </div>
-
-        <div
-  style={{
-    marginTop: "6px",
-    fontSize: "12px",
-    fontWeight: "bold",
-    color: (trade.profit ?? 0) >= 0 ? "#4caf50" : "#f44336",
-  }}
->
-  {(trade.profit ?? 0) >= 0
-    ? `Profit: $${trade.profit ?? 0}`
-    : `Loss: $${Math.abs(trade.profit ?? 0)}`}
-</div>
-        </div>
-      ))}
-    </div>
-  )}
-</div>
-        {/* Index Selector Component */}
-        <div style={{ backgroundColor: "#121212", padding: "12px", borderRadius: "8px", border: "1px solid #1c1c1c" }}>
-          
-          <div style={{ display: "flex", gap: "4px", overflowX: "auto", paddingBottom: "8px", borderBottom: "1px solid #222", marginBottom: "12px", WebkitOverflowScrolling: "touch" }}>
-            {[
-              { id: "crypto", label: "Crypto" }, { id: "fiat", label: "Forex/Fiat" },
-              { id: "usStocks", label: "US Stocks" }, { id: "euStocks", label: "EU Stocks" }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                style={{
-                  padding: "6px 12px",
-                  borderRadius: "4px",
-                  border: "none",
-                  backgroundColor: activeTab === tab.id ? "#2196f3" : "#1c1c1c",
-                  color: "#fff",
-                  fontSize: "12px",
-                  fontWeight: "bold",
-                  whiteSpace: "nowrap",
-                  cursor: "pointer"
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", maxHeight: "200px", overflowY: "auto", paddingRight: "4px" }}>
-            {marketData[activeTab].map((asset) => (
-              <button
-                key={asset.symbol}
-                onClick={() => setSelectedSymbol(asset.symbol)}
-                style={{
-                  padding: "10px",
-                  borderRadius: "4px",
-                  border: "1px solid #222",
-                  backgroundColor: selectedSymbol === asset.symbol ? "#2196f3" : "#0d0d0d",
-                  color: "#fff",
-                  cursor: "pointer",
-                  textAlign: "left",
-                  minHeight: "48px"
-                }}
-              >
-                <div style={{ fontWeight: "bold", fontSize: "12px" }}>{asset.symbol}</div>
-                <div style={{ fontSize: "10px", opacity: 0.5, marginTop: "1px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{asset.name}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Live / Demo Execution Board Component */}
-        <div style={{ backgroundColor: "#121212", padding: "15px", borderRadius: "8px", border: "1px solid #1c1c1c" }}>
-          <h3 style={{ marginTop: 0, marginBottom: "12px", fontSize: "14px", borderBottom: "1px solid #222", paddingBottom: "8px" }}>
-            Execution Desk ({isLiveMode ? "LIVE CHANNELS" : "DEMO SANDBOX"})
-          </h3>
-          <div style={{ marginBottom: "12px" }}>
-            <label style={{ display: "block", marginBottom: "6px", fontSize: "11px", color: "#888" }}>Trade Margin Volume ($)</label>
-            <input type="number" value={tradeAmount} disabled={isProcessingTrade} onChange={(e) => setTradeAmount(e.target.value)} style={{ width: "90%", padding: "10px", borderRadius: "4px", background: "#0d0d0d", color: "#fff", border: "1px solid #222", fontSize: "14px" }} />
-          </div>
-          <div style={{ display: "flex", gap: "10px" }}>
-            <button disabled={isProcessingTrade} onClick={() => executeMarketOrder("long")} style={{ flex: 1, padding: "12px", background: "#4caf50", color: "#fff", border: "none", borderRadius: "4px", fontWeight: "bold", fontSize: "14px", cursor: isProcessingTrade ? "not-allowed" : "pointer", opacity: isProcessingTrade ? 0.6 : 1 }}>Buy Long</button>
-            <button disabled={isProcessingTrade} onClick={() => executeMarketOrder("short")} style={{ flex: 1, padding: "12px", background: "#f44336", color: "#fff", border: "none", borderRadius: "4px", fontWeight: "bold", fontSize: "14px", cursor: isProcessingTrade ? "not-allowed" : "pointer", opacity: isProcessingTrade ? 0.6 : 1 }}>Sell Short</button>
-          </div>
-          
-          {/* Real-time Order Message Notification Ticker */}
-          {tradeMessage && (
-            <div style={{ marginTop: "12px", padding: "10px", borderRadius: "4px", background: "#050505", color: isLiveMode && liveBalance < parseFloat(tradeAmount) ? "#f44336" : "#4caf50", fontSize: "12px", border: "1px solid #222", textAlign: "center", fontWeight: "bold" }}>
-              {tradeMessage}
-            </div>
-          )}
-        </div>
-
-      </div>
-{/* OPEN TRADES */}
-<div
-  style={{
-    marginTop: "20px",
-    background: "#121212",
-    padding: "15px",
-    borderRadius: "8px",
-    border: "1px solid #222",
-  }}
->
-  <h3 style={{ marginTop: 0 }}>Open Trades</h3>
-
-  {trades.length === 0 ? (
-    <p style={{ color: "#777" }}>No active trades.</p>
-  ) : (
-    trades.map((trade) => (
-      <div
-        key={trade.id}
-        style={{
-          borderBottom: "1px solid #222",
-          padding: "12px 0",
-        }}
-      >
-        <div>
-          <strong>{trade.symbol}</strong>
-        </div>
-
-        <div>Type: {trade.type}</div>
-
-        <div>Entry: ${trade.entryPrice}</div>
-
-        <div>Lot Size: {trade.lotSize}</div>
-
-        <div
-          style={{
-            color:
-              trade.status === "open"
-                ? "#4caf50"
-                : "#f44336",
-            fontWeight: "bold",
-          }}
-        >
-          {trade.status.toUpperCase()}
-        </div>
-
-        <div
-  style={{
-    color: (trade.profit ?? 0) >= 0 ? "#4caf50" : "#f44336",
-    fontWeight: "bold",
-  }}
->
-  {(trade.profit ?? 0) >= 0
-    ? `Profit: $${trade.profit ?? 0}`
-    : `Loss: $${Math.abs(trade.profit ?? 0)}`}
-</div>
-      </div>
-    ))
-  )}
-</div>
-      {/* DEPOSIT MODAL */}
-      {showDepositInfo && (
-        <div style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "rgba(0,0,0,0.85)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          zIndex: 9999
-        }}>
-          <div style={{
-            background: "#111",
-            padding: "20px",
-            borderRadius: "10px",
-            width: "90%",
-            maxWidth: "500px",
-            color: "#fff",
-            border: "1px solid #333"
-          }}>
-            <h2>Deposit Funds</h2>
-
-            <p>Deposits are handled externally through approved payment channels.</p>
-            <p>Stripe integration will be available soon.</p>
-            <p>{trader ? `Your assigned trader (${trader.name || "Trader Jeff"})` : "Your assigned trader"} will guide your funding process.</p>
-
-            <div style={{
-              marginTop: "10px",
-              padding: "10px",
-              background: "#0b0b0b",
-              borderRadius: "6px",
-              fontSize: "12px"
-            }}>
-              <strong>Status:</strong> Stripe integration coming soon
-            </div>
-
-            <button
-              onClick={() => setShowDepositInfo(false)}
+          {["BTC/USD", "ETH/USD", "XAU/USD", "EUR/USD"].map(s => (
+            <div
+              key={s}
+              onClick={() => setSelectedSymbol(s)}
               style={{
-                marginTop: "15px",
-                width: "100%",
-                padding: "10px",
-                background: "#2196f3",
-                color: "#fff",
-                border: "none",
-                borderRadius: "6px",
-                fontWeight: "bold",
-                cursor: "pointer"
+                padding: 10,
+                marginBottom: 8,
+                background: selectedSymbol === s ? "#1f6feb" : "#111",
+                cursor: "pointer",
+                borderRadius: 6
               }}
             >
-              Close
-            </button>
+              {s}
+            </div>
+          ))}
+        </div>
+
+        {/* CENTER CHART */}
+        <div style={styles.panel}>
+          <div style={styles.headerBox}>
+            <h2>{selectedSymbol}</h2>
+            <div>PnL: ${pnl.toFixed(2)}</div>
+          </div>
+
+          <div style={{ height: 420 }}>
+            <MarketChart
+              symbol={selectedSymbol}
+              timeframe="1m"
+              onPriceUpdate={setCurrentPrice}
+            />
           </div>
         </div>
-      )}
 
+        {/* RIGHT PANEL */}
+        <div style={styles.panel}>
+
+          <h3>Account</h3>
+          <div>
+            <b>{isLiveMode ? liveBalance : demoBalance}</b> USD
+          </div>
+
+          <hr />
+
+          <input
+            type="number"
+            value={tradeAmount}
+            onChange={(e) => setTradeAmount(e.target.value)}
+            style={styles.input}
+          />
+
+          <div style={{ display: "flex", gap: 10 }}>
+            <button onClick={() => executeTrade("BUY")} style={buyBtn}>
+              BUY
+            </button>
+            <button onClick={() => executeTrade("SELL")} style={sellBtn}>
+              SELL
+            </button>
+          </div>
+
+          <hr />
+
+          <h3>Positions</h3>
+
+          {trades.slice(0, 5).map(t => (
+            <div key={t.id} style={tradeBox}>
+              <div>{t.symbol}</div>
+              <div>${t.profit}</div>
+            </div>
+          ))}
+
+          {trades.length === 0 && (
+            <div style={{ opacity: 0.5 }}>No positions</div>
+          )}
+        </div>
+
+      </div>
     </div>
   );
 };
 
 export default Dashboard;
+
+/* ================= STYLES ================= */
+
+const styles = {
+  page: {
+    background: "#0b0f14",
+    minHeight: "100vh",
+    color: "#fff",
+    fontFamily: "system-ui"
+  },
+
+  topbar: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: 16,
+    borderBottom: "1px solid #222",
+    position: "sticky",
+    top: 0,
+    background: "#0b0f14",
+    zIndex: 10
+  },
+
+  grid: {
+    display: "grid",
+    gap: 16,
+    padding: 16
+  },
+
+  panel: {
+    background: "#111827",
+    padding: 16,
+    borderRadius: 12
+  },
+
+  headerBox: {
+    display: "flex",
+    justifyContent: "space-between",
+    marginBottom: 10
+  },
+
+  input: {
+    width: "100%",
+    padding: 10,
+    marginBottom: 10,
+    background: "#0b0f14",
+    border: "1px solid #333",
+    color: "#fff"
+  }
+};
+
+const btn = (active) => ({
+  padding: "8px 12px",
+  background: active ? "#1f6feb" : "#222",
+  color: "#fff",
+  border: "none",
+  borderRadius: 6,
+  cursor: "pointer"
+});
+
+const buyBtn = {
+  flex: 1,
+  padding: 10,
+  background: "#16a34a",
+  border: "none",
+  color: "#fff",
+  borderRadius: 6
+};
+
+const sellBtn = {
+  flex: 1,
+  padding: 10,
+  background: "#dc2626",
+  border: "none",
+  color: "#fff",
+  borderRadius: 6
+};
+
+const tradeBox = {
+  padding: 8,
+  marginTop: 6,
+  background: "#0b0f14",
+  borderRadius: 6,
+  display: "flex",
+  justifyContent: "space-between"
+};

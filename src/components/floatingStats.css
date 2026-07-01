@@ -1,0 +1,283 @@
+.floating-wrapper{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:4;
+}
+
+/* ---------- CARD ---------- */
+
+.floating-card{
+
+    position:absolute;
+
+    width:170px;
+
+    padding:18px;
+
+    border-radius:22px;
+
+    background:rgba(10,15,24,.58);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.45),
+        0 0 35px rgba(17,153,250,.10);
+
+    animation:floating 7s ease-in-out infinite;
+
+}
+
+.floating-title{
+
+    display:block;
+
+    color:#8d99aa;
+
+    font-size:12px;
+
+    letter-spacing:.08em;
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+}
+
+.floating-card h3{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:26px;
+
+    font-weight:800;
+
+    letter-spacing:-.03em;
+
+}
+
+.green{
+
+    margin-top:8px;
+
+    color:#21d07a;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.red{
+
+    margin-top:8px;
+
+    color:#ff6262;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+/* ---------- DESKTOP ---------- */
+
+.float-1{
+
+    top:18%;
+    left:6%;
+
+    animation-delay:0s;
+
+}
+
+.float-2{
+
+    top:22%;
+    right:6%;
+
+    animation-delay:1.5s;
+
+}
+
+.float-3{
+
+    bottom:16%;
+    left:8%;
+
+    animation-delay:3s;
+
+}
+
+.float-4{
+
+    bottom:12%;
+    right:8%;
+
+    animation-delay:4.5s;
+
+}
+
+/* ---------- FLOAT ---------- */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-14px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ---------- PHONE ---------- */
+
+@media(max-width:900px){
+
+    .floating-card{
+
+        width:145px;
+
+        padding:15px;
+
+    }
+
+    .floating-card h3{
+
+        font-size:22px;
+
+    }
+
+    .float-1{
+
+        top:14%;
+        left:50%;
+        transform:translateX(-50%);
+
+    }
+
+    .float-2{
+
+        top:33%;
+        right:18px;
+
+    }
+
+    .float-3{
+
+        bottom:24%;
+        left:18px;
+
+    }
+
+    .float-4{
+
+        bottom:8%;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .floating-card{
+
+        width:130px;
+
+        padding:14px;
+
+        border-radius:18px;
+
+    }
+
+    .floating-card h3{
+
+        font-size:19px;
+
+    }
+
+    .floating-title{
+
+        font-size:10px;
+
+    }
+
+    .green,
+    .red{
+
+        font-size:11px;
+
+    }
+
+    .float-1{
+
+        top:13%;
+        left:50%;
+        transform:translateX(-50%);
+
+    }
+
+    .float-2{
+
+        top:36%;
+        right:12px;
+
+    }
+
+    .float-3{
+
+        bottom:28%;
+        left:12px;
+
+    }
+
+    .float-4{
+
+        bottom:10%;
+        left:50%;
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media(max-width:390px){
+
+    .floating-card{
+
+        width:118px;
+
+        padding:12px;
+
+    }
+
+    .floating-card h3{
+
+        font-size:17px;
+
+    }
+
+}
