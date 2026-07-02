@@ -6,41 +6,44 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDetails from "./pages/UserDetails";
+import AppModal from "./components/AppModal";
 
 export default function App() {
   return (
-    <Routes>
-      {/* Landing Page */}
-      <Route path="/" element={<Home />} />
-      
-      {/* Authentication */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      
-      {/* 
-        TEMPORARY FIX: Removed <ProtectedRoute> wrapper to diagnose 
-        why the page isn't updating or showing changes.
-      */}
-      <Route path="/dashboard" element={<Dashboard />} />
+    <>
+      {/* GLOBAL MODAL (IMPORTANT: must be outside Routes) */}
+      <AppModal />
 
-      {/* Protected Admin Dashboards */}
-      <Route
-        path="/admin"
-        element={
-          <ProtectedRoute>
-            <AdminDashboard />
-          </ProtectedRoute>
-        }
-      />
+      <Routes>
+        {/* Landing Page */}
+        <Route path="/" element={<Home />} />
 
-      <Route
-        path="/admin/user/:id"
-        element={
-          <ProtectedRoute>
-            <UserDetails />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+        {/* Authentication */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Protected Admin Dashboards */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin/user/:id"
+          element={
+            <ProtectedRoute>
+              <UserDetails />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
   );
 }

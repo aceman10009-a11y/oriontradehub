@@ -1,6 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <style>{`
@@ -35,6 +49,7 @@ const Navbar = () => {
           gap:12px;
           text-decoration:none;
           color:white;
+          cursor:pointer;
         }
 
         .logo-star{
@@ -69,15 +84,17 @@ const Navbar = () => {
           gap:34px;
         }
 
-        .orion-links a{
+        .orion-links button{
+          background:none;
+          border:none;
           color:#b7c2d0;
-          text-decoration:none;
           font-size:14px;
-          transition:.25s;
           font-weight:500;
+          cursor:pointer;
+          transition:.25s;
         }
 
-        .orion-links a:hover{
+        .orion-links button:hover{
           color:white;
         }
 
@@ -108,51 +125,55 @@ const Navbar = () => {
           color:white;
           padding:12px 24px;
           border-radius:999px;
-
-          background:
-          linear-gradient(135deg,#1296ff,#0d5dff);
-
-          box-shadow:
-          0 0 30px rgba(18,150,255,.35);
-
+          background:linear-gradient(135deg,#1296ff,#0d5dff);
+          box-shadow:0 0 30px rgba(18,150,255,.35);
           transition:.35s;
           font-weight:700;
         }
 
         .open-btn:hover{
           transform:translateY(-2px);
-          box-shadow:
-          0 0 45px rgba(18,150,255,.55);
+          box-shadow:0 0 45px rgba(18,150,255,.55);
         }
+          .highlight-open-account{
+  animation:highlightOpenAccount 1s ease-in-out infinite;
+}
+
+@keyframes highlightOpenAccount{
+
+  0%{
+    transform:scale(1);
+    box-shadow:0 0 30px rgba(18,150,255,.35);
+  }
+
+  50%{
+    transform:scale(1.08);
+    box-shadow:
+      0 0 25px #22a7ff,
+      0 0 55px rgba(34,167,255,.9),
+      0 0 90px rgba(34,167,255,.45);
+  }
+
+  100%{
+    transform:scale(1);
+    box-shadow:0 0 30px rgba(18,150,255,.35);
+  }
+
+}
 
         @keyframes pulseStar{
-
-          0%{
-            transform:scale(1);
-          }
-
-          50%{
-            transform:scale(1.25);
-          }
-
-          100%{
-            transform:scale(1);
-          }
-
+          0%{transform:scale(1);}
+          50%{transform:scale(1.25);}
+          100%{transform:scale(1);}
         }
 
-        /* ---------- MOBILE ---------- */
-
         @media(max-width:900px){
-
           .orion-links{
             display:none;
           }
-
         }
 
         @media(max-width:640px){
-
           .orion-navbar{
             height:66px;
           }
@@ -170,68 +191,67 @@ const Navbar = () => {
           }
 
           .open-btn{
-
             padding:11px 18px;
-
             font-size:13px;
-
           }
-
         }
-
       `}</style>
 
       <header className="orion-navbar">
 
         <div className="orion-nav-inner">
 
-          <a href="/" className="orion-logo">
-
+          <div
+            className="orion-logo"
+            onClick={() => scrollToSection("hero")}
+          >
             <div className="logo-star"></div>
 
             <div>
-
-              <div className="logo-text">
-                ORION
-              </div>
-
-              <span className="logo-small">
-                TRADE HUB
-              </span>
-
+              <div className="logo-text">ORION</div>
+              <span className="logo-small">TRADE HUB</span>
             </div>
-
-          </a>
+          </div>
 
           <nav className="orion-links">
 
-            <a href="#features">
-              Features
-            </a>
+  <button onClick={() => scrollToSection("features")}>
+    Features
+  </button>
 
-            <a href="#markets">
-              Markets
-            </a>
+  <button onClick={() => scrollToSection("markets")}>
+    Markets
+  </button>
 
-            <a href="#coin">
-              Orion Coin
-            </a>
+  <button onClick={() => scrollToSection("orion-coin")}>
+    Orion Coin
+  </button>
 
-            <a href="#contact">
-              Support
-            </a>
+  <button onClick={() => scrollToSection("contact")}>
+    Support
+  </button>
 
-          </nav>
+ <button onClick={() => scrollToSection("about")}>
+    About
+ </button>
+</nav>
 
           <div className="orion-actions">
 
-            <button className="login-btn">
+            <button
+              className="login-btn"
+              onClick={() => navigate("/login")}
+            >
               Sign In
             </button>
 
-            <button className="open-btn">
-              Open Account
-            </button>
+            <button
+  id="open-account-btn"
+  className="open-btn"
+  onClick={() => navigate("/signup")}
+>
+  Open Account
+</button>
 
           </div>
 

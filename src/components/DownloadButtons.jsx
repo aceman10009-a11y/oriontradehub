@@ -83,50 +83,6 @@ const DownloadButtons = () => {
 
         }
       `}</style>
-
-      <div className="download-buttons">
-
-        <div className="store-btn">
-
-          <div className="store-icon">
-            🍎
-          </div>
-
-          <div>
-
-            <span className="store-small">
-              Download on the
-            </span>
-
-            <div className="store-name">
-              App Store
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className="store-btn">
-
-          <div className="store-icon">
-            ▶️
-          </div>
-
-          <div>
-
-            <span className="store-small">
-              Get it on
-            </span>
-
-            <div className="store-name">
-              Google Play
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
     </>
   );
 };

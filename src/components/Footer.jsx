@@ -1,284 +1,116 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [modalText, setModalText] = useState("");
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const openModal = (text) => {
+    setModalText(text);
+    setShowModal(true);
+  };
 
   return (
     <>
-      <style>{`
-        .footer{
-
-          position:relative;
-
-          padding:70px 24px 40px;
-
-          border-top:1px solid rgba(255,255,255,.06);
-
-          background:rgba(6,8,12,.92);
-
-        }
-
-        .footer-container{
-
-          width:min(1280px,100%);
-
-          margin:auto;
-
-        }
-
-        .footer-top{
-
-          display:flex;
-
-          justify-content:space-between;
-
-          align-items:flex-start;
-
-          gap:40px;
-
-          flex-wrap:wrap;
-
-        }
-
-        .footer-brand{
-
-          max-width:420px;
-
-        }
-
-        .footer-logo{
-
-          font-size:28px;
-
-          font-weight:900;
-
-          letter-spacing:.08em;
-
-          color:#ffffff;
-
-        }
-
-        .footer-tag{
-
-          margin-top:18px;
-
-          color:#98a8b8;
-
-          line-height:1.8;
-
-          font-size:15px;
-
-        }
-
-        .footer-links{
-
-          display:grid;
-
-          grid-template-columns:repeat(2,minmax(140px,1fr));
-
-          gap:35px;
-
-        }
-
-        .footer-title{
-
-          color:#ffffff;
-
-          font-size:15px;
-
-          font-weight:700;
-
-          margin-bottom:18px;
-
-        }
-
-        .footer-link{
-
-          display:block;
-
-          margin-bottom:12px;
-
-          color:#93a2b3;
-
-          text-decoration:none;
-
-          transition:.25s;
-
-        }
-
-        .footer-link:hover{
-
-          color:#20a4ff;
-
-        }
-
-        .footer-bottom{
-
-          margin-top:50px;
-
-          padding-top:28px;
-
-          border-top:1px solid rgba(255,255,255,.06);
-
-          display:flex;
-
-          justify-content:space-between;
-
-          align-items:center;
-
-          flex-wrap:wrap;
-
-          gap:16px;
-
-        }
-
-        .footer-copy{
-
-          color:#728296;
-
-          font-size:14px;
-
-        }
-
-        .footer-status{
-
-          color:#21d07a;
-
-          font-size:14px;
-
-          font-weight:700;
-
-        }
-
-        @media(max-width:768px){
-
-          .footer{
-
-            padding:55px 18px 35px;
-
-          }
-
-          .footer-top{
-
-            flex-direction:column;
-
-          }
-
-          .footer-links{
-
-            grid-template-columns:1fr;
-
-            width:100%;
-
-          }
-
-          .footer-bottom{
-
-            flex-direction:column;
-
-            text-align:center;
-
-          }
-
-        }
-
-      `}</style>
-
-      <footer className="footer">
-
-        <div className="footer-container">
-
-          <div className="footer-top">
-
-            <div className="footer-brand">
-
-              <div className="footer-logo">
-                ORION
-              </div>
-
-              <div className="footer-tag">
-                Orion Trade Hub provides institutional-grade access to
-                global financial markets through secure, high-performance
-                trading technology.
-              </div>
-
-            </div>
-
-            <div className="footer-links">
-
-              <div>
-
-                <div className="footer-title">
-                  Platform
-                </div>
-
-                <a href="#" className="footer-link">
-                  Markets
-                </a>
-
-                <a href="#" className="footer-link">
-                  Trading
-                </a>
-
-                <a href="#" className="footer-link">
-                  Mobile App
-                </a>
-
-                <a href="#" className="footer-link">
-                  Security
-                </a>
-
-              </div>
-
-              <div>
-
-                <div className="footer-title">
-                  Company
-                </div>
-
-                <a href="#" className="footer-link">
-                  About
-                </a>
-
-                <a href="#" className="footer-link">
-                  Support
-                </a>
-
-                <a href="#" className="footer-link">
-                  Contact
-                </a>
-
-                <a href="#" className="footer-link">
-                  Careers
-                </a>
-
-              </div>
-
-            </div>
-
+      <footer
+        style={{
+          background: "#070a0f",
+          padding: "60px 20px",
+          color: "#fff",
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+            gap: "30px",
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+        >
+          {/* Platform */}
+          <div>
+            <h4>Platform</h4>
+            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("markets")}>Markets</p>
+            <p style={{ cursor: "pointer" }} onClick={() => navigate("/signup")}>Trading</p>
+            <p style={{ cursor: "pointer" }} onClick={() =>
+              openModal("Mobile apps are currently under maintenance. They will be available soon.")
+            }>
+              Mobile App
+            </p>
+            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("security")}>
+              Security
+            </p>
           </div>
 
-          <div className="footer-bottom">
+          {/* Company */}
+          <div>
+            <h4>Company</h4>
+            <p>About</p>
 
-            <div className="footer-copy">
+            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("contact")}>
+              Support
+            </p>
 
-              © {2026} Orion Trade Hub.
-              All Rights Reserved.
+            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("contact")}>
+              Contact
+            </p>
 
-            </div>
-
-            <div className="footer-status">
-
-              ● Systems Operational
-
-            </div>
-
+            <p style={{ cursor: "pointer" }} onClick={() =>
+              openModal("Careers are coming soon. We are currently building our hiring program.")
+            }>
+              Careers
+            </p>
           </div>
-
         </div>
-
       </footer>
 
+      {/* MODAL */}
+      {showModal && (
+        <div
+          onClick={() => setShowModal(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.7)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            style={{
+              background: "#111827",
+              padding: "30px",
+              borderRadius: "12px",
+              maxWidth: "420px",
+              color: "#fff",
+            }}
+          >
+            <p>{modalText}</p>
+            <button
+              onClick={() => setShowModal(false)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 18px",
+                borderRadius: "8px",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

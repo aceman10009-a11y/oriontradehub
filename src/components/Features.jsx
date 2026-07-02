@@ -89,7 +89,7 @@ const Features = () => {
 
       `}</style>
 
-      <section className="features-section">
+      <section id="features" className="features-section">
 
         <div className="features-glow-left"></div>
 

@@ -10,6 +10,38 @@ const timeframeSettings = {
   "1w": { speed: 5000, volatility: 0.05, candles: 20 },
 };
 
+const assetProfiles = {
+  "BTC/USD": {
+    volatility: 0.012,
+    drift: 0.0006,
+  },
+
+  "ETH/USD": {
+    volatility: 0.015,
+    drift: 0.0007,
+  },
+
+  "SOL/USD": {
+    volatility: 0.022,
+    drift: 0.0009,
+  },
+
+  "XAU/USD": {
+    volatility: 0.004,
+    drift: 0.0001,
+  },
+
+  "EUR/USD": {
+    volatility: 0.0015,
+    drift: 0.00002,
+  },
+
+  NASDAQ: {
+    volatility: 0.006,
+    drift: 0.0003,
+  },
+};
+
 export default function MarketChart({
   symbol = "BTC/USD",
   timeframe = "1m",
@@ -20,47 +52,85 @@ export default function MarketChart({
   const priceRef = useRef(100);
   const intervalRef = useRef(null);
 
-  const settings = timeframeSettings[timeframe] || timeframeSettings["1m"];
+  const baseSettings =
+    timeframeSettings[timeframe] || timeframeSettings["1m"];
+
+  const assetSettings =
+    assetProfiles[symbol] || {
+      volatility: 0.006,
+      drift: 0.0003,
+    };
+
+  const settings = {
+    ...baseSettings,
+    volatility: assetSettings.volatility,
+    drift: assetSettings.drift,
+  };
 
   // SAFE candle generator (now inside component)
-  function generateCandle(prevPrice) {
-    const open = prevPrice;
+ function generateCandle(prevPrice) {
+  const open = prevPrice;
 
-    const change =
-      (Math.random() - 0.5) *
-      (open * settings.volatility);
+  // Natural market drift + random movement
+  const drift = open * settings.drift;
+  const randomMove =
+    (Math.random() - 0.5) * open * settings.volatility;
 
-    const close = open + change;
+  const close = Math.max(0.0001, open + drift + randomMove);
 
-    const high =
-      Math.max(open, close) +
-      Math.random() * (open * settings.volatility * 0.5);
+  // More realistic wick sizes
+  const wickSize =
+    open * settings.volatility * (0.15 + Math.random() * 0.35);
 
-    const low =
-      Math.min(open, close) -
-      Math.random() * (open * settings.volatility * 0.5);
+  const high = Math.max(open, close) + wickSize;
+  const low = Math.max(
+    0.0001,
+    Math.min(open, close) - wickSize
+  );
 
-    return { open, high, low, close };
+  return {
+    open,
+    high,
+    low,
+    close,
+  };
+}
+
+// INIT + LIVE STREAM
+useEffect(() => {
+  setCandles([]);
+
+  const fallbackPrices = {
+  "BTC/USD": 118000,
+  "ETH/USD": 4200,
+  "SOL/USD": 170,
+  "XAU/USD": 3380,
+  "EUR/USD": 1.17,
+  "NASDAQ": 23941,
+};
+
+const basePrice =
+  currentPrice ||
+  fallbackPrices[symbol] ||
+  100;
+
+  priceRef.current = basePrice;
+
+  const initial = [];
+  let base = basePrice;
+
+  for (let i = 0; i < settings.candles; i++) {
+    const candle = generateCandle(base);
+    base = candle.close;
+    initial.push(candle);
   }
 
-  // INIT + LIVE STREAM
-  useEffect(() => {
-    const basePrice = currentPrice || 100;
+  setCandles(initial);
+  priceRef.current = base;
 
-    priceRef.current = basePrice;
-
-    const initial = [];
-    let base = basePrice;
-
-    for (let i = 0; i < settings.candles; i++) {
-      const candle = generateCandle(base);
-      base = candle.close;
-      initial.push(candle);
-    }
-
-    setCandles(initial);
-    priceRef.current = base;
-
+  if (intervalRef.current) {
+    clearInterval(intervalRef.current);
+  }
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
@@ -75,7 +145,6 @@ export default function MarketChart({
         const updated = [...prev.slice(-settings.candles), newCandle];
 
         priceRef.current = newCandle.close;
-
         return updated;
       });
     }, settings.speed);
@@ -88,102 +157,122 @@ export default function MarketChart({
 
     onPriceUpdate(candles[candles.length - 1].close);
   }, [candles, onPriceUpdate]);
-useEffect(() => {
-  if (!onPriceUpdate || candles.length === 0) return;
 
-  onPriceUpdate(candles[candles.length - 1].close);
-}, [candles, onPriceUpdate]);
- // SCALE
-const highs = candles.map((c) => c.high);
-const lows = candles.map((c) => c.low);
+  // SCALE
+  const highs = candles.map((c) => c.high);
+  const lows = candles.map((c) => c.low);
 
-const highest = Math.max(...highs);
-const lowest = Math.min(...lows);
+  const highest = Math.max(...highs);
+  const lowest = Math.min(...lows);
 
-const padding = (highest - lowest) * 0.15;
+  const padding = (highest - lowest) * 0.15;
 
-const max = highest + padding;
-const min = lowest - padding;
+  const max = highest + padding;
+  const min = lowest - padding;
 
-const range = max - min || 1;
+  const range = max - min || 1;
+
+  return (
+   <div
+  style={{
+    background: "#0b0b0b",
+    border: "1px solid #222",
+    borderRadius: "8px",
+    padding: "10px",
+    marginBottom: "15px",
+    overflow: "hidden",
+    position: "relative",
+    width: "100%",
+    boxSizing: "border-box",
+  }}
+>
+  {/* Header */}
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: "10px",
+    }}
+  >
+    <strong style={{ color: "#fff" }}>{symbol}</strong>
+
+    <span
+      style={{
+        color: "#888",
+        fontSize: "12px",
+      }}
+    >
+      LIVE • {timeframe}
+    </span>
+  </div>
+
+  {/* Chart */}
+  <div
+    style={{
+      height: "220px",
+      display: "flex",
+      alignItems: "flex-end",
+      marginTop: "10px",
+      gap: "2px",
+      overflow: "hidden",
+      width: "100%",
+      position: "relative",
+      boxSizing: "border-box",
+    }}
+  >
+       {candles.map((c, i) => {
+  const isGreen = c.close >= c.open;
+
+  const height =
+    Math.max(((c.high - c.low) / range) * 100, 45);
+
+  const bodyHeight =
+    Math.max((Math.abs(c.close - c.open) / range) * 50, 3.1);
+
+  const bottom =
+    ((Math.min(c.open, c.close) - min) / range) * 100;
 
   return (
     <div
+      key={i}
       style={{
-        background: "#0b0b0b",
-        border: "1px solid #222",
-        borderRadius: "8px",
-        padding: "10px",
-        marginBottom: "15px",
+        flex: "1 1 0",
+        minWidth: 0,
+        position: "relative",
+        height: "100%",
+        overflow: "hidden",
       }}
     >
-      {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <strong style={{ color: "#fff" }}>{symbol}</strong>
-        <span style={{ color: "#888", fontSize: "12px" }}>
-          LIVE • {timeframe}
-        </span>
-      </div>
-
-      {/* Chart */}
+      {/* Wick */}
       <div
         style={{
-          height: "220px",
-          display: "flex",
-          alignItems: "flex-end",
-          marginTop: "10px",
-          gap: "2px",
+          position: "absolute",
+          left: "50%",
+          bottom: `${((c.low - min) / range) * 100}%`,
+          width: "1px",
+          height: `${height}%`,
+          background: isGreen ? "#4caf50" : "#f44336",
+          transform: "translateX(-50%)",
+          opacity: 0.7,
         }}
-      >
-        {candles.map((c, i) => {
-          const isGreen = c.close >= c.open;
+      />
 
-         const height =
-  Math.max(((c.high - c.low) / range) * 100, 45);
-
-const bodyHeight =
-  Math.max(((Math.abs(c.close - c.open) / range) * 50), 31);
-
-          const bottom =
-            ((Math.min(c.open, c.close) - min) / range) * 100;
-
-          return (
-            <div
-              key={i}
-              style={{
-                flex: 1,
-                position: "relative",
-                height: "100%",
-              }}
-            >
-              {/* wick */}
-              <div
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  bottom: `${((c.low - min) / range) * 100}%`,
-                  width: "1px",
-                  height: `${height}%`,
-                  background: isGreen ? "#4caf50" : "#f44336",
-                  transform: "translateX(-50%)",
-                  opacity: 0.7,
-                }}
-              />
-
-              {/* body */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: `${bottom}%`,
-                  width: "100%",
-                  height: `${Math.max(bodyHeight, 1.5)}%`,
-                  background: isGreen ? "#4caf50" : "#f44336",
-                  borderRadius: "1px",
-                }}
-              />
-            </div>
-          );
-        })}
+      {/* Body */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: `${bottom}%`,
+          left: "15%",
+          width: "70%",
+          height: `${Math.max(bodyHeight, 3.1)}%`,
+          background: isGreen ? "#4caf50" : "#f44336",
+          borderRadius: "2px",
+        }}
+      />
+    </div>
+  );
+})}
       </div>
     </div>
   );

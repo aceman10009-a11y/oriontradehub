@@ -119,7 +119,7 @@ const MobileShowcase = () => {
 
       `}</style>
 
-      <section className="mobile-showcase">
+      <section id="mobile-app" className="mobile-showcase">
 
         <div className="blur-left"></div>
 

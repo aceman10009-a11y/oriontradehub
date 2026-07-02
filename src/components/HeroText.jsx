@@ -268,19 +268,62 @@ const HeroText = () => {
 
         <div className="hero-buttons">
 
-          <button className="primary-btn">
+  <button
+    className="primary-btn"
+    onClick={() => {
 
-            Open Live Account
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
 
-          </button>
+      setTimeout(() => {
 
-          <button className="secondary-btn">
+        const button = document.getElementById("open-account-btn");
 
-            Explore Platform
+        if (!button) return;
 
-          </button>
+        button.classList.add("highlight-open-account");
 
-        </div>
+        button.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+
+        setTimeout(() => {
+          button.classList.remove("highlight-open-account");
+        }, 5000);
+
+      }, 700);
+
+    }}
+  >
+
+    Open Live Account
+
+  </button>
+
+  <button
+    className="secondary-btn"
+    onClick={() => {
+
+      const section = document.getElementById("markets");
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+    }}
+  >
+
+    Explore Platform
+
+  </button>
+
+</div>
 
         <div className="hero-trust">
 

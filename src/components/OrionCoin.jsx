@@ -223,7 +223,7 @@ const OrionCoin = () => {
 
       `}</style>
 
-      <section className="coin-section">
+      <section id="orion-coin" className="coin-section">
 
         <div className="coin-card">
 

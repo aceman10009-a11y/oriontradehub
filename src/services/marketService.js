@@ -42,3 +42,39 @@ export function generateCandle(previousClose) {
     close
   };
 }
+const API_KEY = import.meta.env.VITE_TWELVEDATA_API_KEY;
+
+const BASE_URL = "https://api.twelvedata.com";
+export async function getLiveQuote(symbol) {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/price?symbol=${encodeURIComponent(symbol)}&apikey=${API_KEY}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (data.status === "error") {
+      throw new Error(data.message);
+    }
+
+    return Number(data.price);
+  } catch (error) {
+    console.error(`Failed to fetch ${symbol}:`, error);
+    return null;
+  }
+}
+export async function getLiveQuotes(symbols) {
+  const results = {};
+
+  await Promise.all(
+    symbols.map(async (symbol) => {
+      results[symbol] = await getLiveQuote(symbol);
+    })
+  );
+
+  return results;
+}

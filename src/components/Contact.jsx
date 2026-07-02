@@ -190,7 +190,7 @@ const Contact = () => {
 
       `}</style>
 
-      <section className="contact-section">
+      <section id="contact" className="contact-section">
 
         <div className="contact-card">
 
@@ -212,9 +212,9 @@ const Contact = () => {
 
             <a
               className="contact-btn"
-              href="mailto:support@oriontradehub.com"
+              href="mailto:brokerage@oriontradehub.com"
             >
-              📧 support@oriontradehub.com
+              📧 brokerage@oriontradehub.com
             </a>
 
             <a

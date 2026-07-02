@@ -6,6 +6,7 @@ import FloatingStats from "./FloatingStats";
 const Hero = () => {
   return (
     <section
+      id="hero"
       style={{
         position: "relative",
         minHeight: "100vh",
