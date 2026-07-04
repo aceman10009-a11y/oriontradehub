@@ -67,13 +67,6 @@ const SecurityMobile = () => {
           }}
         >
           <h3 style={{ marginBottom: "15px" }}>LIVE MARKET SNAPSHOT</h3>
-
-          <div style={{ display: "grid", gap: "12px" }}>
-            <div>BTC/USD — $61,565.29 — 0.00%</div>
-            <div>ETH/USD — $1,696.26 — 0.00%</div>
-            <div>FOREX — 128 Pairs — Live</div>
-            <div>CLIENTS — 214K+ Worldwide</div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "../assets/orion-constellation-bg.png";
+import bg from "../assets/images/orion-constellation-bg.png";
 
 const HeroBackground = () => {
   return (

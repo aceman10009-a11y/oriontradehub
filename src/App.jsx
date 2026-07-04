@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDetails from "./pages/UserDetails";
 import AppModal from "./components/AppModal";
+import Security from "./pages/Security";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         {/* Landing Page */}
         <Route path="/" element={<Home />} />
+        <Route path="/security" element={<Security />} />
 
         {/* Authentication */}
         <Route path="/login" element={<Login />} />
