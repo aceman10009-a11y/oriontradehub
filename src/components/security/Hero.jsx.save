@@ -1,0 +1,147 @@
+import { motion, useReducedMotion } from "framer-motion";
+import "./Hero.css";
+
+const Hero = () => {
+  const reduceMotion = useReducedMotion();
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 30 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    }),
+  };
+
+  return (
+    <section className="security-hero">
+      {/* Background Effects */}
+      <div className="security-grid" />
+      <div className="security-orb orb-cyan" />
+      <div className="security-orb orb-indigo" />
+      <div className="security-vignette" />
+
+      <div className="security-hero-container">
+        {/* Left Content */}
+        <motion.div
+          className="security-hero-content"
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.span
+            className="security-badge"
+            variants={fadeUp}
+            custom={0}
+          >
+            INSTITUTIONAL • MULTI-LAYER PROTECTION
+          </motion.span>
+
+          <motion.h1
+            className="security-title"
+            variants={fadeUp}
+            custom={0.15}
+          >
+            Institutional-Grade
+            <br />
+            Security
+          </motion.h1>
+
+          <motion.p
+            className="security-description"
+            variants={fadeUp}
+            custom={0.3}
+          >
+            Orion Trade Hub protects digital assets using enterprise-grade
+            encryption, continuous threat monitoring, multi-layer account
+            protection, and resilient infrastructure designed for modern
+            financial markets.
+          </motion.p>
+
+          
+            
+            
+            
+      
+            
+
+            
+              
+            
+          
+        
+
+        {/* Right Graphic */}
+        <motion.div
+          className="security-graphic"
+          initial={{
+            opacity: 0,
+            scale: reduceMotion ? 1 : 0.85,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.25,
+          }}
+        >
+        <div className="shield-wrapper"></div>
+
+  <div className="shield-system">
+
+    <div className="ring ring-one" />
+
+    <div className="ring ring-two" />
+
+    <div className="ring ring-three" />
+
+    <div className="shield-core">
+
+              <svg
+                viewBox="0 0 64 64"
+                className="shield-icon"
+              >
+                <path
+                  d="M32 6
+                     L52 14
+                     V28
+                     C52 42
+                     42 53
+                     32 58
+                     C22 53
+                     12 42
+                     12 28
+                     V14
+                     Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                />
+
+                <path
+                  d="M24 31
+                     L30 37
+                     L42 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+            </div>
+
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

@@ -46,7 +46,6 @@ const Home = () => {
 
       <Hero />
 
-      {/* CRITICAL FIX: anchor targets for navbar scroll */}
       <section id="features">
         <Features />
       </section>
@@ -63,7 +62,8 @@ const Home = () => {
         <SecurityMobile />
       </section>
 
-      <section id="orion-coin">
+      {/* FIXED: unified naming */}
+      <section id="orioncoin">
         <OrionCoin />
       </section>
 
@@ -74,7 +74,7 @@ const Home = () => {
       <section id="contact">
         <Contact />
       </section>
-      
+
       <section id="about">
         <div style={{ padding: "100px 20px", textAlign: "center" }}>
           <h2>About Orion Trade Hub</h2>

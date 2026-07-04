@@ -1,10 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToSection = (id) => {
+const scrollToSection = (id) => {
+  // Security page sections
+  if (id === "about" || id === "support") {
+    if (window.location.pathname !== "/security") {
+      navigate("/security");
+
+      setTimeout(() => {
+        const section = document.getElementById(id);
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 300);
+
+      return;
+    }
+
     const section = document.getElementById(id);
 
     if (section) {
@@ -13,8 +33,25 @@ const Navbar = () => {
         block: "start",
       });
     }
-  };
 
+    return;
+  }
+
+  // Home page sections
+  if (window.location.pathname !== "/") {
+    navigate(`/#${id}`);
+    return;
+  }
+
+  const section = document.getElementById(id);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
   return (
     <>
       <style>{`

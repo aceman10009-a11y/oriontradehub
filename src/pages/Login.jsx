@@ -1,9 +1,62 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 import loginBackground from "../assets/auth/login-background.webp";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      localStorage.setItem("userId", userCredential.user.uid);
+
+      const uid = userCredential.user.uid;
+
+      const userRef = doc(db, "users", uid);
+      const userSnap = await getDoc(userRef);
+
+      if (!userSnap.exists()) {
+        alert("User record not found.");
+        setLoading(false);
+        return;
+      }
+
+      const userData = userSnap.data();
+
+      const roles = userData.roles || [];
+      const role = userData.role || "";
+
+      if (roles.includes("admin") || role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
+    } catch (err) {
+      console.error("Firebase Login Error:", err);
+      console.error("Code:", err.code);
+      console.error("Message:", err.message);
+
+      alert(`${err.code}\n${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div
@@ -50,7 +103,7 @@ const Login = () => {
           Sign in to access your Orion Trade Hub account.
         </p>
 
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleLogin}>
           <div className="form-section">
             <h4>Account Login</h4>
 
@@ -59,6 +112,8 @@ const Login = () => {
               name="email"
               placeholder="Email Address"
               autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
 
@@ -68,6 +123,8 @@ const Login = () => {
                 name="password"
                 placeholder="Password"
                 autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
 
@@ -115,8 +172,12 @@ const Login = () => {
             </Link>
           </div>
 
-          <button type="submit" className="submit-btn">
-            Sign In
+          <button
+            type="submit"
+            className="submit-btn"
+            disabled={loading}
+          >
+            {loading ? "Signing In..." : "Sign In"}
           </button>
 
           <p

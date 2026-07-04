@@ -1,0 +1,103 @@
+/* =========================================
+   COMPLIANCE
+========================================= */
+
+.compliance-section{
+    padding:90px 24px;
+}
+
+.compliance-header{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 60px;
+}
+
+.compliance-header span{
+    color:var(--cyan);
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.compliance-header h2{
+    margin-top:16px;
+    font-size:clamp(2rem,4vw,3rem);
+    color:#fff;
+}
+
+.compliance-header p{
+    margin-top:18px;
+    color:rgba(255,255,255,.72);
+    line-height:1.8;
+}
+
+.compliance-grid{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+}
+
+.compliance-card{
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+}
+
+.compliance-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(0,229,255,.35);
+
+    box-shadow:0 20px 45px rgba(0,229,255,.10);
+}
+
+.compliance-card h3{
+
+    color:#fff;
+
+    margin-bottom:14px;
+}
+
+.compliance-card p{
+
+    color:rgba(255,255,255,.70);
+
+    line-height:1.8;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .compliance-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .compliance-section{
+
+        padding:70px 20px;
+    }
+
+}

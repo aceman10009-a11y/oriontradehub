@@ -1,11 +1,146 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+
+import {
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+
+import {
+  doc,
+  setDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+
+import { auth, db } from "../firebase/config";
+import { useNavigate } from "react-router-dom";
+
 import signupBackground from "../assets/auth/signup-background.png";
 
 const Signup = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
+  const [profession, setProfession] = useState("");
+
+  const [securityQuestion1, setSecurityQuestion1] = useState("");
+  const [securityAnswer1, setSecurityAnswer1] = useState("");
+
+  const [securityQuestion2, setSecurityQuestion2] = useState("");
+  const [securityAnswer2, setSecurityAnswer2] = useState("");
+
+  const [referralCode, setReferralCode] = useState("");
+  const [referralSource, setReferralSource] = useState("");
+
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSignup = async (e) => {
+  e.preventDefault();
+
+  setLoading(true);
+
+  try {
+
+    const userCredential =
+      await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+    const user = userCredential.user;
+
+    await setDoc(doc(db, "users", user.uid), {
+
+      email,
+
+      name: fullName,
+
+      phone,
+
+      profession,
+
+      securityQuestion1,
+
+      securityAnswer1,
+
+      securityQuestion2,
+
+      securityAnswer2,
+
+      referredBy: referralCode || null,
+
+      referralSource,
+
+      accountType: "demo",
+
+      liveEnabled: true,
+
+      demoBalance: 10000,
+
+      demoProfit: 0,
+
+      liveBalance: 0,
+
+      liveProfit: 0,
+
+      profit: 0,
+
+      assignedTraderId: null,
+
+      traderStatus: "pending",
+
+      roles: ["user"],
+
+      stripeStatus: "coming_soon",
+
+      createdAt: serverTimestamp(),
+
+    });
+
+    navigate("/dashboard");
+
+  } catch (err) {
+
+    let message = "Something went wrong.";
+
+switch (err.code) {
+  case "auth/invalid-credential":
+    message = "Incorrect email or password.";
+    break;
+
+  case "auth/email-already-in-use":
+    message = "An account already exists with this email.";
+    break;
+
+  case "auth/weak-password":
+    message = "Password must be at least 6 characters.";
+    break;
+
+  case "auth/invalid-email":
+    message = "Please enter a valid email address.";
+    break;
+
+  case "auth/network-request-failed":
+    message = "Network error. Please check your connection.";
+    break;
+
+  default:
+    message = err.message;
+}
+
+alert(message);
+
+  } finally {
+
+    setLoading(false);
+
+  }
+};
 
   return (
     <div
@@ -42,26 +177,28 @@ const Signup = () => {
       >
         <h2>Create Account</h2>
 
-        <form className="auth-form">
+        <form
+  className="auth-form"
+  onSubmit={handleSignup}
+>
           {/* PERSONAL */}
           <div className="form-section">
             <h4>Personal Information</h4>
+         <input
+          type="text"
+         placeholder="Full Name"
+         value={fullName}
+          onChange={(e)=>setFullName(e.target.value)}
+            required
+         />
 
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              autoComplete="name"
-              required
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              autoComplete="email"
-              required
-            />
+          <input
+  type="email"
+  placeholder="Email Address"
+  value={email}
+  onChange={(e)=>setEmail(e.target.value)}
+  required
+/>
           </div>
 
           {/* SECURITY */}
@@ -69,13 +206,12 @@ const Signup = () => {
             <h4>Security</h4>
 
             <div className="password-wrapper">
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                autoComplete="new-password"
-                required
-              />
+             <input
+  type={showPassword ? "text" : "password"}
+  value={password}
+  onChange={(e)=>setPassword(e.target.value)}
+  required
+/>
 
               <button
                 type="button"
@@ -90,35 +226,44 @@ const Signup = () => {
               Use 8+ characters with uppercase, lowercase, number & symbol.
             </small>
 
-            <select name="securityQuestion1" required>
+            <select
+  value={securityQuestion1}
+  onChange={(e) => setSecurityQuestion1(e.target.value)}
+  required
+>
               <option value="">Security Question 1</option>
               <option>What is your mother’s maiden name?</option>
               <option>What city were you born in?</option>
               <option>What was your first pet’s name?</option>
             </select>
+<input
+  type="text"
+  placeholder="Answer"
+  autoComplete="off"
+  value={securityAnswer1}
+  onChange={(e) => setSecurityAnswer1(e.target.value)}
+  required
+/>
 
-            <input
-              type="text"
-              name="securityAnswer1"
-              placeholder="Answer"
-              autoComplete="off"
-              required
-            />
-
-            <select name="securityQuestion2" required>
+<select
+  value={securityQuestion2}
+  onChange={(e) => setSecurityQuestion2(e.target.value)}
+  required
+>
               <option value="">Security Question 2</option>
               <option>What is your favorite food?</option>
               <option>What was your first school?</option>
               <option>What is your childhood nickname?</option>
             </select>
 
-            <input
-              type="text"
-              name="securityAnswer2"
-              placeholder="Answer"
-              autoComplete="off"
-              required
-            />
+          <input
+  type="text"
+  placeholder="Answer"
+  autoComplete="off"
+  value={securityAnswer2}
+  onChange={(e) => setSecurityAnswer2(e.target.value)}
+  required
+/>
           </div>
 
           {/* CONTACT */}
@@ -126,32 +271,32 @@ const Signup = () => {
             <h4>Contact Details</h4>
 
             <PhoneInput
-              value={phone}
-              onChange={setPhone}
-              defaultCountry="US"
-              international
-              className="phone-input"
-              required
-            />
+  value={phone}
+  onChange={setPhone}
+  defaultCountry="US"
+  international
+  className="phone-input"
+/>
 
             <input
-              type="text"
-              name="profession"
-              placeholder="Profession (e.g. Nurse, Investor, CEO, Student)"
-              autoComplete="organization-title"
-              required
-            />
+  type="text"
+  placeholder="Profession (e.g. Nurse, Investor, CEO, Student)"
+  autoComplete="organization-title"
+  value={profession}
+  onChange={(e) => setProfession(e.target.value)}
+  required
+/>
           </div>
 
           {/* PROFILE */}
           <div className="form-section">
             <h4>Profile</h4>
-
-            <input
-              type="text"
-              name="referral"
-              placeholder="Referral Code (optional)"
-            />
+<input
+  type="text"
+  placeholder="Referral Code (optional)"
+  value={referralCode}
+  onChange={(e) => setReferralCode(e.target.value)}
+/>
 
             <select name="referralSource" required>
               <option value="">How did you hear about us?</option>
@@ -165,9 +310,13 @@ const Signup = () => {
             </select>
           </div>
 
-          <button type="submit" className="submit-btn">
-            Create Account
-          </button>
+       <button
+  type="submit"
+  className="submit-btn"
+  disabled={loading}
+>
+  {loading ? "Creating Account..." : "Create Account"}
+</button>
         </form>
       </div>
     </div>

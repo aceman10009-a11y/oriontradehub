@@ -7,8 +7,44 @@ const Footer = () => {
   const [modalText, setModalText] = useState("");
 
   const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    const securitySections = ["about", "support"];
+
+    // SECURITY PAGE SECTIONS
+    if (securitySections.includes(id)) {
+      navigate("/security");
+
+      // wait for route + DOM render
+      setTimeout(() => {
+        const el = document.getElementById(id);
+
+        if (el) {
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        } else {
+          // second retry (fixes slow render devices)
+          setTimeout(() => {
+            document.getElementById(id)?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, 400);
+        }
+      }, 600);
+
+      return;
+    }
+
+    // HOME PAGE SECTIONS
+    navigate("/");
+
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 300);
   };
 
   const openModal = (text) => {
@@ -38,13 +74,26 @@ const Footer = () => {
           {/* Platform */}
           <div>
             <h4>Platform</h4>
-            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("markets")}>Markets</p>
-            <p style={{ cursor: "pointer" }} onClick={() => navigate("/signup")}>Trading</p>
-            <p style={{ cursor: "pointer" }} onClick={() =>
-              openModal("Mobile apps are currently under maintenance. They will be available soon.")
-            }>
+
+            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("markets")}>
+              Markets
+            </p>
+
+            <p style={{ cursor: "pointer" }} onClick={() => navigate("/signup")}>
+              Trading
+            </p>
+
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                openModal(
+                  "Mobile apps are currently under maintenance. They will be available soon."
+                )
+              }
+            >
               Mobile App
             </p>
+
             <p style={{ cursor: "pointer" }} onClick={() => scrollTo("security")}>
               Security
             </p>
@@ -53,9 +102,10 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h4>Company</h4>
+
             <p>About</p>
 
-            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("contact")}>
+            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("support")}>
               Support
             </p>
 
@@ -63,9 +113,14 @@ const Footer = () => {
               Contact
             </p>
 
-            <p style={{ cursor: "pointer" }} onClick={() =>
-              openModal("Careers are coming soon. We are currently building our hiring program.")
-            }>
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                openModal(
+                  "Careers are coming soon. We are currently building our hiring program."
+                )
+              }
+            >
               Careers
             </p>
           </div>
