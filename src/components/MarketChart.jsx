@@ -8,6 +8,7 @@ const timeframeSettings = {
   "1h": { speed: 2500, volatility: 0.02, candles: 40 },
   "1d": { speed: 3500, volatility: 0.03, candles: 30 },
   "1w": { speed: 5000, volatility: 0.05, candles: 20 },
+  "1mo": { speed: 7000, volatility: 0.08, candles: 15 },
 };
 
 const assetProfiles = {
