@@ -1,98 +1,79 @@
-const markets = {
-  crypto: [
-    { symbol: "BTC/USD", name: "Bitcoin" },
-    { symbol: "ETH/USD", name: "Ethereum" },
-    { symbol: "BNB/USD", name: "BNB" },
-    { symbol: "SOL/USD", name: "Solana" },
-    { symbol: "XRP/USD", name: "XRP" },
-    { symbol: "ADA/USD", name: "Cardano" },
-    { symbol: "DOGE/USD", name: "Dogecoin" },
-    { symbol: "SHIB/USD", name: "Shiba Inu" },
-    { symbol: "AVAX/USD", name: "Avalanche" },
-    { symbol: "DOT/USD", name: "Polkadot" },
-    { symbol: "LINK/USD", name: "Chainlink" },
-    { symbol: "LTC/USD", name: "Litecoin" },
-    { symbol: "BCH/USD", name: "Bitcoin Cash" },
-    { symbol: "TRX/USD", name: "TRON" },
-    { symbol: "UNI/USD", name: "Uniswap" },
-    { symbol: "ATOM/USD", name: "Cosmos" },
-    { symbol: "NEAR/USD", name: "NEAR Protocol" },
-    { symbol: "APT/USD", name: "Aptos" },
-    { symbol: "ARB/USD", name: "Arbitrum" },
-    { symbol: "OP/USD", name: "Optimism" },
-    { symbol: "SUI/USD", name: "Sui" },
-    { symbol: "PEPE/USD", name: "Pepe" },
-    { symbol: "ICP/USD", name: "Internet Computer" },
-    { symbol: "FIL/USD", name: "Filecoin" },
-    { symbol: "HBAR/USD", name: "Hedera" },
-    { symbol: "ETC/USD", name: "Ethereum Classic" },
-    { symbol: "XLM/USD", name: "Stellar" },
-    { symbol: "AAVE/USD", name: "Aave" },
-    { symbol: "MKR/USD", name: "Maker" },
-    { symbol: "INJ/USD", name: "Injective" }
-  ],
-  fiat: [
-    { symbol: "EUR/USD", name: "Euro / US Dollar" },
-    { symbol: "GBP/USD", name: "British Pound / US Dollar" },
-  { symbol: "USD/JPY", name: "US Dollar / Japanese Yen" },
-  { symbol: "USD/CHF", name: "US Dollar / Swiss Franc" },
-  { symbol: "AUD/USD", name: "Australian Dollar / US Dollar" },
-  { symbol: "NZD/USD", name: "New Zealand Dollar / US Dollar" },
-  { symbol: "USD/CAD", name: "US Dollar / Canadian Dollar" },
-  { symbol: "EUR/GBP", name: "Euro / British Pound" },
-  { symbol: "EUR/JPY", name: "Euro / Japanese Yen" },
-  { symbol: "GBP/JPY", name: "British Pound / Japanese Yen" },
-  { symbol: "EUR/CHF", name: "Euro / Swiss Franc" },
-  { symbol: "AUD/JPY", name: "Australian Dollar / Japanese Yen" },
-  { symbol: "CHF/JPY", name: "Swiss Franc / Japanese Yen" },
-  { symbol: "EUR/AUD", name: "Euro / Australian Dollar" },
-  { symbol: "GBP/AUD", name: "British Pound / Australian Dollar" },
-  { symbol: "AUD/CAD", name: "Australian Dollar / Canadian Dollar" },
-  { symbol: "CAD/JPY", name: "Canadian Dollar / Japanese Yen" },
-  { symbol: "NZD/JPY", name: "New Zealand Dollar / Japanese Yen" },
-  { symbol: "EUR/CAD", name: "Euro / Canadian Dollar" },
-  { symbol: "GBP/CAD", name: "British Pound / Canadian Dollar" }
-  ],
-  usStocks: [
-    { symbol: "AAPL/USD", name: "Apple" },
-    { symbol: "MSFT/USD", name: "Microsoft" },
-    { symbol: "NVDA/USD", name: "NVIDIA" },
-    { symbol: "AMZN/USD", name: "Amazon" },
-    { symbol: "GOOGL/USD", name: "Alphabet" },
-    { symbol: "META/USD", name: "Meta Platforms" },
-    { symbol: "TSLA/USD", name: "Tesla" },
-    { symbol: "NFLX/USD", name: "Netflix" },
-    { symbol: "AMD/USD", name: "AMD" },
-    { symbol: "INTC/USD", name: "Intel" },
-    { symbol: "CRM/USD", name: "Salesforce" },
-    { symbol: "ORCL/USD", name: "Oracle" },
-    { symbol: "UBER/USD", name: "Uber" },
-    { symbol: "SHOP/USD", name: "Shopify" },
-    { symbol: "PYPL/USD", name: "PayPal" },
-    { symbol: "JPM/USD", name: "JPMorgan Chase" },
-    { symbol: "BAC/USD", name: "Bank of America" },
-    { symbol: "GS/USD", name: "Goldman Sachs" },
-    { symbol: "V/USD", name: "Visa" },
-    { symbol: "MA/USD", name: "Mastercard" }
-  ],
+// src/data/markets.js
 
-  euStocks: [
-    { symbol: "ASML/USD", name: "ASML" },
-    { symbol: "SAP/USD", name: "SAP" },
-    { symbol: "NOVO/USD", name: "Novo Nordisk" },
-    { symbol: "SIE/USD", name: "Siemens" },
-    { symbol: "AIR/USD", name: "Airbus" },
-    { symbol: "MC/USD", name: "LVMH" },
-    { symbol: "BMW/USD", name: "BMW" },
-    { symbol: "VOW3/USD", name: "Volkswagen" },
-    { symbol: "ADS/USD", name: "Adidas" },
-    { symbol: "NESN/USD", name: "Nestlé" },
-    { symbol: "RMS/USD", name: "Hermès" },
-    { symbol: "SAN/USD", name: "Sanofi" },
-    { symbol: "BNP/USD", name: "BNP Paribas" },
-    { symbol: "TTE/USD", name: "TotalEnergies" },
-    { symbol: "BARC/USD", name: "Barclays" }
-  ]
-};
+export const markets = [
+  // =========================
+  // CRYPTO
+  // =========================
+  {
+    id: "BTC/USD",
+    name: "Bitcoin",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "BTCUSDT",
+  },
+  {
+    id: "ETH/USD",
+    name: "Ethereum",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "ETHUSDT",
+  },
+  {
+    id: "SOL/USD",
+    name: "Solana",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "SOLUSDT",
+  },
 
-export default markets;
+  // =========================
+  // FOREX
+  // =========================
+  {
+    id: "EUR/USD",
+    name: "Euro / US Dollar",
+    category: "Forex",
+    provider: "twelveData",
+    exchangeSymbol: "EUR/USD",
+  },
+  {
+    id: "GBP/USD",
+    name: "British Pound / US Dollar",
+    category: "Forex",
+    provider: "twelveData",
+    exchangeSymbol: "GBP/USD",
+  },
+
+  // =========================
+  // COMMODITIES
+  // =========================
+  {
+    id: "XAU/USD",
+    name: "Gold",
+    category: "Commodities",
+    provider: "twelveData",
+    exchangeSymbol: "XAU/USD",
+  },
+
+  // =========================
+  // INDICES
+  // =========================
+  {
+    id: "NASDAQ",
+    name: "NASDAQ 100",
+    category: "Indices",
+    provider: "twelveData",
+    exchangeSymbol: "IXIC",
+  },
+
+  // =========================
+  // STOCKS
+  // =========================
+  {
+    id: "AAPL",
+    name: "Apple",
+    category: "US Stocks",
+    provider: "twelveData",
+    exchangeSymbol: "AAPL",
+  },
+];

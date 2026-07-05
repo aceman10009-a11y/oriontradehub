@@ -1,3 +1,5 @@
+import marketDataAggregator from "./aggregator/marketDataAggregator";
+
 const streams = [
   "btcusdt",
   "ethusdt",
@@ -29,9 +31,23 @@ socket.onmessage = (event) => {
     symbol,
     price: Number(data.c),
     change: Number(data.P),
+    timestamp: Date.now(),
+    source: "binance",
   };
 
+  // Send update to the centralized Market Data Aggregator
+  marketDataAggregator.updatePrice(symbol, prices[symbol]);
+
+  // Keep existing subscribers working
   listeners.forEach((callback) => callback({ ...prices }));
+};
+
+socket.onerror = (error) => {
+  console.error("Binance WebSocket Error:", error);
+};
+
+socket.onclose = () => {
+  console.warn("Binance WebSocket Closed");
 };
 
 export function subscribePrices(callback) {

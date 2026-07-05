@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { auth, db } from "../firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { subscribeToPrice } from "../services/marketDataService";
+import { markets } from "../data/markets";
+import Watchlist from "../components/watchlist/Watchlist";
 
 import {
   doc,
@@ -11,15 +14,17 @@ import {
   where,
 } from "firebase/firestore";
 
-import MarketChart from "../components/MarketChart";
+import TradingViewChart from "../components/tradingview/TradingViewChart";
 import { createTrade, calculatePnL } from "../core/tradingEngine";
 import { timeframes } from "../core/marketEngine";
+import { getTradingViewSymbol } from "../utils/tradingViewSymbols";
 
 // New imports
 import TopBar from "../components/dashboard/TopBar";
 import PortfolioHeader from "../components/dashboard/PortfolioHeader";
 import TradingPanel from "../components/dashboard/TradingPanel";
 import PositionsPanel from "../components/dashboard/PositionsPanel";
+import MarketHeader from "../components/market/MarketHeader";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -30,12 +35,28 @@ const Dashboard = () => {
   const [tradeAmount, setTradeAmount] = useState(100);
   const [isLiveMode, setIsLiveMode] = useState(false);
   const [selectedTimeframe, setSelectedTimeframe] = useState("1m");
+  const [marketConnected, setMarketConnected] = useState(false);
+  const [marketSearch, setMarketSearch] = useState("");
 
   const [demoBalance, setDemoBalance] = useState(10000);
   const [liveBalance, setLiveBalance] = useState(0);
 
   const [currentPrice, setCurrentPrice] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+useEffect(() => {
+  const unsubscribe = subscribeToPrice(
+    selectedSymbol,
+    setCurrentPrice,
+    setMarketConnected
+  );
+
+  return () => {
+    unsubscribe();
+  };
+}, [selectedSymbol]);
+useEffect(() => {
+  console.log("Market connected:", marketConnected);
+}, [marketConnected]);
 
   // detect mobile
   useEffect(() => {
@@ -105,42 +126,70 @@ const Dashboard = () => {
         gridTemplateColumns: isMobile ? "1fr" : "280px 1fr 320px"
       }}>
 
-        {/* LEFT PANEL */}
-        <div style={styles.panel}>
-          <h3>Markets</h3>
+       {/* LEFT PANEL */}
 
-          {["BTC/USD", "ETH/USD", "XAU/USD", "EUR/USD"].map(s => (
-            <div
-              key={s}
-              onClick={() => setSelectedSymbol(s)}
-              style={{
-                padding: 10,
-                marginBottom: 8,
-                background: selectedSymbol === s ? "#1f6feb" : "#111",
-                cursor: "pointer",
-                borderRadius: 6
-              }}
-            >
-              {s}
-            </div>
-          ))}
-        </div>
+<div
+  style={{
+    ...styles.panel,
+    display: "flex",
+    flexDirection: "column",
+    gap: 12,
+  }}
+>
+  <input
+    type="text"
+    placeholder="Search markets..."
+    value={marketSearch}
+    onChange={(e) => setMarketSearch(e.target.value)}
+    style={{
+      width: "100%",
+      padding: "12px",
+      background: "#0b0f14",
+      color: "#fff",
+      border: "1px solid #2b3442",
+      borderRadius: 10,
+      outline: "none",
+      boxSizing: "border-box",
+    }}
+  />
+
+  <div
+    style={{
+      overflowY: "auto",
+      maxHeight: isMobile ? "350px" : "700px",
+    }}
+  >
+    <Watchlist
+      selectedSymbol={selectedSymbol}
+      setSelectedSymbol={setSelectedSymbol}
+      search={marketSearch}
+    />
+  </div>
+</div>
 
         {/* CENTER CHART */}
-        <div style={styles.panel}>
-          <div style={styles.headerBox}>
-            <h2>{selectedSymbol}</h2>
-            <div>PnL: ${pnl.toFixed(2)}</div>
-          </div>
+     {/* CENTER CHART */}
+<div style={styles.panel}>
+  <MarketHeader
+    symbol={selectedSymbol}
+    price={currentPrice}
+    connected={marketConnected}
+  />
 
-          <div style={{ height: 420 }}>
-            <MarketChart
-              symbol={selectedSymbol}
-              timeframe={selectedTimeframe}
-              onPriceUpdate={setCurrentPrice}
-            />
-          </div>
-        </div>
+  <div style={styles.headerBox}>
+    <div>
+      Total P/L: <strong>${pnl.toFixed(2)}</strong>
+    </div>
+  </div>
+
+  <div style={{ height: 420 }}>
+  <TradingViewChart
+  symbol={selectedSymbol}
+  timeframe={selectedTimeframe}
+  currentPrice={currentPrice}
+/>
+  </div>
+</div>
 
         {/* RIGHT PANEL */}
         <div style={styles.panel}>

@@ -153,12 +153,6 @@ const basePrice =
     return () => clearInterval(intervalRef.current);
   }, [symbol, timeframe, currentPrice]);
 
-  useEffect(() => {
-    if (!onPriceUpdate || candles.length === 0) return;
-
-    onPriceUpdate(candles[candles.length - 1].close);
-  }, [candles, onPriceUpdate]);
-
   // SCALE
   const highs = candles.map((c) => c.high);
   const lows = candles.map((c) => c.low);
