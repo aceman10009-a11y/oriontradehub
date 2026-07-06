@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import { auth, db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import loginBackground from "../assets/auth/login-background.webp";
@@ -23,6 +26,17 @@ const Login = () => {
         email,
         password
       );
+      const user = userCredential.user;
+
+if (!user.emailVerified) {
+  await signOut(auth);
+
+  alert(
+    "Please verify your email before signing in.\n\nCheck your inbox or spam folder."
+  );
+
+  return;
+}
 
       localStorage.setItem("userId", userCredential.user.uid);
 

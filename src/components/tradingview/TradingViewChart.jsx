@@ -7,32 +7,35 @@ export default function TradingViewChart({
   const container = useRef(null);
 
   useEffect(() => {
-    if (!container.current) return;
+    const node = container.current;
 
-    // Remove any previous widget
-    container.current.innerHTML = "";
+    if (!node) return;
+
+    // Clear any previous widget
+    while (node.firstChild) {
+      node.removeChild(node.firstChild);
+    }
 
     const script = document.createElement("script");
 
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-
     script.type = "text/javascript";
     script.async = true;
 
     const intervals = {
-  "1m": "1",
-  "5m": "5",
-  "10m": "10",
-  "30m": "30",
-  "1h": "60",
-  "1d": "D",
-  "1w": "W",
-  "1mo": "M",
-};
+      "1m": "1",
+      "5m": "5",
+      "10m": "10",
+      "30m": "30",
+      "1h": "60",
+      "1d": "D",
+      "1w": "W",
+      "1mo": "M",
+    };
 
-const interval =
-  intervals[timeframe] || "1";
+    const interval = intervals[timeframe] || "1";
+
     script.innerHTML = JSON.stringify({
       autosize: true,
       symbol,
@@ -50,14 +53,14 @@ const interval =
       gridColor: "#1f2937",
     });
 
-    container.current.appendChild(script);
+    node.appendChild(script);
 
     return () => {
-      if (container.current) {
-        container.current.innerHTML = "";
+      while (node.firstChild) {
+        node.removeChild(node.firstChild);
       }
     };
-  }, [symbol]);
+  }, [symbol, timeframe]);
 
   return (
     <div
@@ -69,6 +72,7 @@ const interval =
     >
       <div
         ref={container}
+        className="tradingview-widget-container__widget"
         style={{
           width: "100%",
           height: "100%",

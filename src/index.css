@@ -203,12 +203,12 @@ section {
         min-height: 48px;
     }
 
-}
 .auth-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
+
 .form-section {
   background: rgba(255,255,255,.04);
   padding: 18px;
@@ -231,10 +231,22 @@ section {
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,.08);
   background: rgba(255,255,255,.05);
-  color: #fff;
+  color: #ffffff;
   outline: none;
   transition: .25s;
   font-size: 15px;
+  appearance: none;
+}
+
+/* Dropdown options */
+.auth-form select option {
+  background: #0b0f14;
+  color: #ffffff;
+}
+
+/* Placeholder option */
+.auth-form select option[value=""] {
+  color: #9ca3af;
 }
 
 .auth-form input:focus,
@@ -242,6 +254,7 @@ section {
   border-color: var(--cyan);
   box-shadow: 0 0 0 3px rgba(0,229,255,.12);
 }
+
 .row {
   display: flex;
   gap: 10px;
@@ -282,6 +295,30 @@ section {
   margin-top: 8px;
 }
 
+/* Container */
+.phone-input .PhoneInputCountry {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 0 10px;
+  margin-right: 8px;
+}
+
+/* Country dropdown */
+.phone-input select {
+  background: #0b0f14 !important;
+  color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Country list */
+.phone-input option {
+  background: #0b0f14 !important;
+  color: #ffffff !important;
+}
+
+/* Phone number input */
 .phone-input input {
   width: 100% !important;
   padding: 14px !important;
@@ -291,7 +328,8 @@ section {
   color: #fff !important;
 }
 
-.phone-input input:focus {
+.phone-input input:focus,
+.phone-input select:focus {
   border-color: var(--cyan) !important;
   box-shadow: 0 0 0 3px rgba(0,229,255,.12);
 }
@@ -310,4 +348,4 @@ section {
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-}
+}}

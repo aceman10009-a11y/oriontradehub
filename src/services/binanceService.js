@@ -1,54 +1,103 @@
 import marketDataAggregator from "./aggregator/marketDataAggregator";
 
-const streams = [
-  "btcusdt",
-  "ethusdt",
-  "solusdt",
-  "bnbusdt",
-  "xrpusdt",
-  "adausdt",
-  "dogeusdt",
-];
+const SYMBOL_MAP = {
+  BTCUSDT: "BTC/USD",
+  ETHUSDT: "ETH/USD",
+  SOLUSDT: "SOL/USD",
+  BNBUSDT: "BNB/USD",
+  XRPUSDT: "XRP/USD",
+  ADAUSDT: "ADA/USD",
+  DOGEUSDT: "DOGE/USD",
+};
 
-const socket = new WebSocket(
-  `wss://stream.binance.com:9443/stream?streams=${streams
-    .map((s) => `${s}@miniTicker`)
-    .join("/")}`
-);
+const streams = Object.keys(SYMBOL_MAP)
+  .map((symbol) => `${symbol.toLowerCase()}@miniTicker`)
+  .join("/");
+
+let socket = null;
+let reconnectTimer = null;
 
 const prices = {};
-
 const listeners = [];
 
-socket.onmessage = (event) => {
-  const message = JSON.parse(event.data);
+function notifyListeners() {
+  const snapshot = { ...prices };
+  listeners.forEach((callback) => callback(snapshot));
+}
 
-  const data = message.data;
+function connect() {
+  // Prevent duplicate sockets
+  if (
+    socket &&
+    (socket.readyState === WebSocket.OPEN ||
+      socket.readyState === WebSocket.CONNECTING)
+  ) {
+    return;
+  }
 
-  const symbol = data.s.replace("USDT", "/USD");
+  console.log("🚀 Starting Binance Market Engine...");
 
-  prices[symbol] = {
-    symbol,
-    price: Number(data.c),
-    change: Number(data.P),
-    timestamp: Date.now(),
-    source: "binance",
+  socket = new WebSocket(
+    `wss://stream.binance.com:9443/stream?streams=${streams}`
+  );
+
+  socket.onopen = () => {
+    console.log("✅ Binance Market Engine Connected");
   };
 
-  // Send update to the centralized Market Data Aggregator
-  marketDataAggregator.updatePrice(symbol, prices[symbol]);
+  socket.onmessage = (event) => {
+    const message = JSON.parse(event.data);
 
-  // Keep existing subscribers working
-  listeners.forEach((callback) => callback({ ...prices }));
-};
+    if (!message.data) return;
 
-socket.onerror = (error) => {
-  console.error("Binance WebSocket Error:", error);
-};
+    const data = message.data;
 
-socket.onclose = () => {
-  console.warn("Binance WebSocket Closed");
-};
+    const symbol = SYMBOL_MAP[data.s];
+
+    if (!symbol) return;
+
+    prices[symbol] = {
+      symbol,
+      price: Number(data.c),
+      change: Number(data.P),
+      timestamp: Date.now(),
+      source: "binance",
+    };
+
+    marketDataAggregator.updatePrice(symbol, prices[symbol]);
+
+    notifyListeners();
+  };
+
+  socket.onerror = (error) => {
+    console.error("❌ Binance WebSocket Error:", error);
+  };
+
+  socket.onclose = () => {
+    console.warn("⚠️ Binance disconnected. Reconnecting in 2 seconds...");
+
+    socket = null;
+
+    clearTimeout(reconnectTimer);
+
+    reconnectTimer = setTimeout(() => {
+      connect();
+    }, 2000);
+  };
+}
+
+export function startBinanceService() {
+  connect();
+}
+
+export function stopBinanceService() {
+  clearTimeout(reconnectTimer);
+
+  if (socket) {
+    socket.close();
+    socket = null;
+  }
+}
 
 export function subscribePrices(callback) {
   listeners.push(callback);

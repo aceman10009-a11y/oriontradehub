@@ -4,6 +4,8 @@ import "react-phone-number-input/style.css";
 
 import {
   createUserWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
 } from "firebase/auth";
 
 import {
@@ -39,110 +41,106 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  setLoading(true);
+    setLoading(true);
 
-  try {
+    try {
+      const userCredential =
+        await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
 
-    const userCredential =
-      await createUserWithEmailAndPassword(
-        auth,
+      const user = userCredential.user;
+
+      await setDoc(doc(db, "users", user.uid), {
         email,
-        password
+
+        name: fullName,
+
+        phone,
+
+        profession,
+
+        securityQuestion1,
+
+        securityAnswer1,
+
+        securityQuestion2,
+
+        securityAnswer2,
+
+        referredBy: referralCode || null,
+
+        referralSource,
+
+        accountType: "demo",
+
+        liveEnabled: true,
+
+        demoBalance: 10000,
+
+        demoProfit: 0,
+
+        liveBalance: 0,
+
+        liveProfit: 0,
+
+        profit: 0,
+
+        assignedTraderId: null,
+
+        traderStatus: "pending",
+
+        roles: ["user"],
+
+        stripeStatus: "coming_soon",
+
+        createdAt: serverTimestamp(),
+      });
+
+      await sendEmailVerification(user);
+
+      await signOut(auth);
+
+      alert(
+        "Your account has been created successfully!\n\nA verification email has been sent to your email address.\n\nPlease verify your email before signing in."
       );
 
-    const user = userCredential.user;
+      navigate("/verify-email");
+    } catch (err) {
+      let message = "Something went wrong.";
 
-    await setDoc(doc(db, "users", user.uid), {
+      switch (err.code) {
+        case "auth/email-already-in-use":
+          message = "An account already exists with this email.";
+          break;
 
-      email,
+        case "auth/weak-password":
+          message = "Password must be at least 6 characters.";
+          break;
 
-      name: fullName,
+        case "auth/invalid-email":
+          message = "Please enter a valid email address.";
+          break;
 
-      phone,
+        case "auth/network-request-failed":
+          message = "Please check your internet connection.";
+          break;
 
-      profession,
+        default:
+          message = err.message;
+      }
 
-      securityQuestion1,
+      alert(message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-      securityAnswer1,
-
-      securityQuestion2,
-
-      securityAnswer2,
-
-      referredBy: referralCode || null,
-
-      referralSource,
-
-      accountType: "demo",
-
-      liveEnabled: true,
-
-      demoBalance: 10000,
-
-      demoProfit: 0,
-
-      liveBalance: 0,
-
-      liveProfit: 0,
-
-      profit: 0,
-
-      assignedTraderId: null,
-
-      traderStatus: "pending",
-
-      roles: ["user"],
-
-      stripeStatus: "coming_soon",
-
-      createdAt: serverTimestamp(),
-
-    });
-
-    navigate("/dashboard");
-
-  } catch (err) {
-
-    let message = "Something went wrong.";
-
-switch (err.code) {
-  case "auth/invalid-credential":
-    message = "Incorrect email or password.";
-    break;
-
-  case "auth/email-already-in-use":
-    message = "An account already exists with this email.";
-    break;
-
-  case "auth/weak-password":
-    message = "Password must be at least 6 characters.";
-    break;
-
-  case "auth/invalid-email":
-    message = "Please enter a valid email address.";
-    break;
-
-  case "auth/network-request-failed":
-    message = "Network error. Please check your connection.";
-    break;
-
-  default:
-    message = err.message;
-}
-
-alert(message);
-
-  } finally {
-
-    setLoading(false);
-
-  }
-};
-
-  return (
+   return (
     <div
       style={{
         minHeight: "100vh",
@@ -298,7 +296,11 @@ alert(message);
   onChange={(e) => setReferralCode(e.target.value)}
 />
 
-            <select name="referralSource" required>
+            <select
+  value={referralSource}
+  onChange={(e) => setReferralSource(e.target.value)}
+  required
+>
               <option value="">How did you hear about us?</option>
               <option>Google</option>
               <option>Facebook</option>
