@@ -1,11 +1,13 @@
-// src/services/marketDataService.js
-
 import marketDataAggregator from "./aggregator/marketDataAggregator";
 
 export function subscribeToPrice(symbol, onPrice, onStatus) {
-  // If we already have a cached value, mark the connection as live.
-  if (marketDataAggregator.getLatestPrice(symbol)) {
+  const latest = marketDataAggregator.getLatestPrice(symbol);
+
+  if (latest) {
+    onPrice(latest.price);
     onStatus?.(true);
+  } else {
+    onStatus?.(false);
   }
 
   const unsubscribe = marketDataAggregator.subscribe(symbol, (data) => {
@@ -13,7 +15,5 @@ export function subscribeToPrice(symbol, onPrice, onStatus) {
     onStatus?.(true);
   });
 
-  return () => {
-    unsubscribe();
-  };
+  return unsubscribe;
 }

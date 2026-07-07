@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { toast } from "react-toastify";
 
 import {
   createUserWithEmailAndPassword,
@@ -105,10 +106,9 @@ const Signup = () => {
 
       await signOut(auth);
 
-      alert(
-        "Your account has been created successfully!\n\nA verification email has been sent to your email address.\n\nPlease verify your email before signing in."
-      );
-
+  toast.success(
+  "Account created successfully! Please check your inbox or spam folder to verify your email before signing in."
+);
       navigate("/verify-email");
     } catch (err) {
       let message = "Something went wrong.";
@@ -134,7 +134,7 @@ const Signup = () => {
           message = err.message;
       }
 
-      alert(message);
+      toast.error(message);
     } finally {
       setLoading(false);
     }

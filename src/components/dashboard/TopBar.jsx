@@ -3,6 +3,8 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { useNavigate } from "react-router-dom";
 import { timeframes } from "../../core/marketEngine";
+import SettingsModal from "./SettingsModal";
+import NotificationModal from "./NotificationModal";
 
 export default function TopBar({
   user,
@@ -17,6 +19,8 @@ export default function TopBar({
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
+const [showSettings, setShowSettings] = useState(false);
+const [showNotifications, setShowNotifications] = useState(false);
 
   const balance = isLiveMode ? liveBalance : demoBalance;
 
@@ -24,6 +28,18 @@ export default function TopBar({
     await signOut(auth);
     navigate("/login");
   };
+  const handleNotifications = () => {
+  toast.info(
+    "You have no new notifications. Account updates, deposits, withdrawals and trading activity will appear here.",
+    {
+      autoClose: 5000,
+    }
+  );
+};
+
+const handleSettings = () => {
+  setShowSettings(true);
+};
 
   return (
     <header
@@ -206,35 +222,37 @@ export default function TopBar({
           flexWrap: "wrap",
         }}
       >
-        <button
-          title="Notifications"
-          style={{
-            width: "42px",
-            height: "42px",
-            borderRadius: "10px",
-            border: "1px solid #2b3139",
-            background: "#111827",
-            color: "#fff",
-            cursor: "pointer",
-          }}
-        >
-          🔔
-        </button>
+   <button
+  title="Notifications"
+  onClick={() => setShowNotifications(true)}
+  style={{
+    width: "42px",
+    height: "42px",
+    borderRadius: "10px",
+    border: "1px solid #2b3139",
+    background: "#111827",
+    color: "#fff",
+    cursor: "pointer",
+  }}
+>
+  🔔
+</button>
 
-        <button
-          title="Settings"
-          style={{
-            width: "42px",
-            height: "42px",
-            borderRadius: "10px",
-            border: "1px solid #2b3139",
-            background: "#111827",
-            color: "#fff",
-            cursor: "pointer",
-          }}
-        >
-          ⚙️
-        </button>
+       <button
+  title="Settings"
+  onClick={handleSettings}
+  style={{
+    width: "42px",
+    height: "42px",
+    borderRadius: "10px",
+    border: "1px solid #2b3139",
+    background: "#111827",
+    color: "#fff",
+    cursor: "pointer",
+  }}
+>
+  ⚙️
+</button>
 
         <div
           style={{
@@ -302,7 +320,7 @@ export default function TopBar({
         </div>
       </div>
 
-      {/* TIMEFRAME BAR */}
+            {/* TIMEFRAME BAR */}
       <div
         style={{
           display: "flex",
@@ -333,7 +351,22 @@ export default function TopBar({
           </button>
         ))}
       </div>
+
+
+      {/* SETTINGS MODAL */}
+      <SettingsModal
+        show={showSettings}
+        setShowSettings={setShowSettings}
+        user={user}
+      />
+
+
+      {/* NOTIFICATIONS MODAL */}
+      <NotificationModal
+        show={showNotifications}
+        setShowNotifications={setShowNotifications}
+      />
+
     </header>
   );
 }
- 

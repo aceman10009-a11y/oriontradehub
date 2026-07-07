@@ -4,24 +4,28 @@ export default function TradingViewChart({
   symbol = "BINANCE:BTCUSDT",
   timeframe = "1m",
 }) {
-  const container = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const node = container.current;
+    if (!containerRef.current) return;
 
-    if (!node) return;
+    containerRef.current.innerHTML = "";
 
-    // Clear any previous widget
-    while (node.firstChild) {
-      node.removeChild(node.firstChild);
-    }
+    const widget = document.createElement("div");
+    widget.className = "tradingview-widget-container__widget";
+    widget.style.width = "100%";
+    widget.style.height = "100%";
+
+    containerRef.current.appendChild(widget);
 
     const script = document.createElement("script");
 
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-    script.type = "text/javascript";
+
     script.async = true;
+
+    script.type = "text/javascript";
 
     const intervals = {
       "1m": "1",
@@ -34,55 +38,40 @@ export default function TradingViewChart({
       "1mo": "M",
     };
 
-    const interval = intervals[timeframe] || "1";
-
     script.innerHTML = JSON.stringify({
       autosize: true,
       symbol,
-      interval,
+      interval: intervals[timeframe] || "1",
       timezone: "Etc/UTC",
       theme: "dark",
       style: "1",
       locale: "en",
       allow_symbol_change: false,
-      hide_top_toolbar: false,
-      hide_legend: false,
       withdateranges: true,
+      hide_side_toolbar: false,
+      hide_top_toolbar: false,
       save_image: false,
       backgroundColor: "#0b0f14",
       gridColor: "#1f2937",
+      studies: [],
     });
 
-    node.appendChild(script);
+    widget.appendChild(script);
 
     return () => {
-      while (node.firstChild) {
-        node.removeChild(node.firstChild);
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
       }
     };
   }, [symbol, timeframe]);
 
   return (
     <div
-      className="tradingview-widget-container"
+      ref={containerRef}
       style={{
         width: "100%",
-        height: "500px",
+        height: "100%",
       }}
-    >
-      <div
-        ref={container}
-        className="tradingview-widget-container__widget"
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-      />
-
-      <div
-        className="tradingview-widget-copyright"
-        style={{ display: "none" }}
-      />
-    </div>
+    />
   );
 }

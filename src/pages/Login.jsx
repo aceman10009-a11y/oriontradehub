@@ -1,60 +1,71 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { auth, db } from "../firebase/config";
+
 import { doc, getDoc } from "firebase/firestore";
+
+import { auth, db } from "../firebase/config";
+
 import loginBackground from "../assets/auth/login-background.webp";
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential =
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
       const user = userCredential.user;
 
-if (!user.emailVerified) {
-  await signOut(auth);
-
-  alert(
-    "Please verify your email before signing in.\n\nCheck your inbox or spam folder."
+      // Block login if email is not verified
+     if (!user.emailVerified) {
+  toast.warning(
+    "Please verify your email before signing in. Check your inbox or spam folder."
   );
 
+  await signOut(auth);
+
+  navigate("/verify-email");
   return;
 }
 
-      localStorage.setItem("userId", userCredential.user.uid);
+      localStorage.setItem("userId", user.uid);
 
-      const uid = userCredential.user.uid;
+      const userRef = doc(db, "users", user.uid);
 
-      const userRef = doc(db, "users", uid);
       const userSnap = await getDoc(userRef);
 
       if (!userSnap.exists()) {
-        alert("User record not found.");
-        setLoading(false);
+        toast.error("User record not found.");
         return;
       }
 
       const userData = userSnap.data();
 
       const roles = userData.roles || [];
+
       const role = userData.role || "";
+
+      toast.success("Login successful.");
 
       if (roles.includes("admin") || role === "admin") {
         navigate("/admin");
@@ -62,17 +73,35 @@ if (!user.emailVerified) {
         navigate("/dashboard");
       }
     } catch (err) {
-      console.error("Firebase Login Error:", err);
-      console.error("Code:", err.code);
-      console.error("Message:", err.message);
+      let message = "Unable to sign in.";
 
-      alert(`${err.code}\n${err.message}`);
+      switch (err.code) {
+        case "auth/invalid-credential":
+          message = "Incorrect email or password.";
+          break;
+
+        case "auth/user-not-found":
+          message = "No account exists with this email.";
+          break;
+
+        case "auth/wrong-password":
+          message = "Incorrect password.";
+          break;
+
+        case "auth/network-request-failed":
+          message = "Please check your internet connection.";
+          break;
+
+        default:
+          message = err.message;
+      }
+
+      toast.error(message);
     } finally {
       setLoading(false);
     }
   };
-
-  return (
+      return (
     <div
       style={{
         minHeight: "100vh",
@@ -81,6 +110,7 @@ if (!user.emailVerified) {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
+        padding: "20px",
       }}
     >
       {/* Overlay */}
@@ -99,10 +129,12 @@ if (!user.emailVerified) {
           zIndex: 2,
           width: "100%",
           maxWidth: "450px",
-          background: "rgba(10,12,18,0.85)",
-          padding: "30px",
-          borderRadius: "16px",
+          background: "rgba(10,12,18,0.88)",
+          padding: "32px",
+          borderRadius: "18px",
           color: "#fff",
+          border: "1px solid rgba(255,255,255,.08)",
+          boxShadow: "0 20px 60px rgba(0,0,0,.35)",
         }}
       >
         <h2 style={{ marginBottom: "8px" }}>Welcome Back</h2>
@@ -123,7 +155,6 @@ if (!user.emailVerified) {
 
             <input
               type="email"
-              name="email"
               placeholder="Email Address"
               autoComplete="email"
               value={email}
@@ -134,7 +165,6 @@ if (!user.emailVerified) {
             <div className="password-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
-                name="password"
                 placeholder="Password"
                 autoComplete="current-password"
                 value={password}
@@ -157,8 +187,7 @@ if (!user.emailVerified) {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginTop: "10px",
-              marginBottom: "20px",
+              margin: "18px 0",
               fontSize: "14px",
             }}
           >

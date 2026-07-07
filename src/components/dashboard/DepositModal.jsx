@@ -40,10 +40,11 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
           Deposit Gateway
         </h2>
 
-        <p style={{ fontSize: "12px", color: "#9ca3af", lineHeight: 1.5 }}>
-          All deposits are processed through secure institutional escrow routing
-          channels. Funds are credited after compliance verification.
-        </p>
+       <p style={{ fontSize: "12px", color: "#9ca3af", lineHeight: 1.7 }}>
+  Deposits are handled manually by your assigned account manager to ensure
+  secure funding, identity verification, and regulatory compliance. Once your
+  payment has been confirmed, your trading balance will be updated promptly.
+</p>
 
         {/* INFO BOX */}
         <div
@@ -56,7 +57,9 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
           }}
         >
           <div style={{ fontSize: "12px", color: "#d1d5db" }}>
-            Managed by:
+            For deposit assistance, please contact your assigned account manager
+            via email or any secure communication channel. They will provide you with the necessary
+            instructions and support to complete your deposit securely.
           </div>
 
           <div
@@ -80,7 +83,7 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
               letterSpacing: "0.05em",
             }}
           >
-            Secure Channel: ACTIVE
+            Compliance Status: VERIFIED
           </div>
         </div>
 
@@ -93,8 +96,7 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
             lineHeight: 1.4,
           }}
         >
-          Deposits are irreversible once processed. Ensure wallet verification
-          before proceeding.
+          To begin a deposit, please contact your assigned account manager. Payment instructions will be provided after verification of your trading account.
         </div>
 
         {/* CLOSE BUTTON */}
@@ -115,7 +117,7 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
             letterSpacing: "0.05em",
           }}
         >
-          Close
+          Contact Account Manager
         </button>
       </div>
     </div>

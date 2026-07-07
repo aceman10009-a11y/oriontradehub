@@ -349,3 +349,46 @@ section {
   font-size: 13px;
   font-weight: 600;
 }}
+/* ==========================================
+   ORION TRADE HUB TOASTS
+========================================== */
+
+.Toastify__toast {
+  background: rgba(10, 12, 18, 0.95) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.Toastify__toast-body {
+  color: #ffffff;
+}
+
+.Toastify__close-button {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.Toastify__progress-bar {
+  background: linear-gradient(90deg, #00d4ff, #0066ff);
+}
+
+.Toastify__toast--success {
+  border-left: 4px solid #00e676;
+}
+
+.Toastify__toast--error {
+  border-left: 4px solid #ff4d4f;
+}
+
+.Toastify__toast--warning {
+  border-left: 4px solid #ffb020;
+}
+
+.Toastify__toast--info {
+  border-left: 4px solid #00d4ff;
+}

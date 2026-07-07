@@ -9,6 +9,7 @@ import UserDetails from "./pages/UserDetails";
 import AppModal from "./components/AppModal";
 import Security from "./pages/Security";
 import VerifyEmail from "./pages/VerifyEmail";
+import ForgotPassword from "./pages/ForgotPassword";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
