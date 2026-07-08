@@ -1,0 +1,18 @@
+{
+  "accountSettings": "Paramètres du compte",
+  "manageSettings": "Gérez votre profil, votre sécurité, vos préférences de trading et votre expérience.",
+  "profile": "Profil",
+  "security": "Sécurité",
+  "appearance": "Apparence",
+  "notifications": "Notifications",
+  "tradingPreferences": "Préférences de trading",
+  "accessibility": "Accessibilité",
+  "privacy": "Confidentialité",
+  "saveChanges": "Enregistrer les modifications",
+  "language": "Langue",
+  "theme": "Thème",
+  "dark": "Sombre",
+  "light": "Clair",
+  "systemDefault": "Système",
+  "saved": "Paramètres enregistrés"
+}

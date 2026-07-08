@@ -56,51 +56,94 @@ const Signup = () => {
 
       const user = userCredential.user;
 
-      await setDoc(doc(db, "users", user.uid), {
-        email,
+     await setDoc(doc(db, "users", user.uid), {
+  uid: user.uid,
 
-        name: fullName,
+  email,
 
-        phone,
+  name: fullName,
 
-        profession,
+  photoURL: "",
 
-        securityQuestion1,
+  phone,
 
-        securityAnswer1,
+  profession,
 
-        securityQuestion2,
+  country: "",
 
-        securityAnswer2,
+  language: "English",
 
-        referredBy: referralCode || null,
+  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 
-        referralSource,
+  securityQuestion1,
 
-        accountType: "demo",
+  securityAnswer1,
 
-        liveEnabled: true,
+  securityQuestion2,
 
-        demoBalance: 10000,
+  securityAnswer2,
 
-        demoProfit: 0,
+  referredBy: referralCode || null,
 
-        liveBalance: 0,
+  referralSource,
 
-        liveProfit: 0,
+  accountType: "demo",
 
-        profit: 0,
+  liveEnabled: true,
 
-        assignedTraderId: null,
+  demoBalance: 10000,
 
-        traderStatus: "pending",
+  demoProfit: 0,
 
-        roles: ["user"],
+  liveBalance: 0,
 
-        stripeStatus: "coming_soon",
+  liveProfit: 0,
 
-        createdAt: serverTimestamp(),
-      });
+  profit: 0,
+
+  assignedTraderId: null,
+
+  traderStatus: "pending",
+
+  roles: ["user"],
+
+  stripeStatus: "coming_soon",
+
+  // Appearance
+  theme: "dark",
+
+  fontSize: "medium",
+
+  brightness: 100,
+
+  // Notification preferences
+  notifications: {
+    trades: true,
+    deposits: true,
+    withdrawals: true,
+    news: true,
+    promotions: false,
+    email: true,
+    browser: true,
+    sound: true,
+  },
+
+  // Trading preferences
+  tradingPreferences: {
+    defaultMarket: "Forex",
+    defaultTimeframe: "1H",
+    preferredCurrency: "USD",
+    autoRefresh: true,
+  },
+
+  // Verification foundation
+  verificationStatus: "not_eligible",
+  verificationEligible: false,
+
+  createdAt: serverTimestamp(),
+
+  updatedAt: serverTimestamp(),
+});
 
       await sendEmailVerification(user);
 

@@ -13,9 +13,11 @@
     "@emailjs/browser": "^4.4.1",
     "firebase": "^12.15.0",
     "framer-motion": "^12.42.0",
+    "i18next": "^26.3.4",
     "lightweight-charts": "^5.2.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "react-i18next": "^17.0.8",
     "react-phone-number-input": "^3.4.17",
     "react-router-dom": "^7.18.0",
     "react-toastify": "^11.1.0"

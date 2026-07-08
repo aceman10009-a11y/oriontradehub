@@ -1,11 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SettingsModal({
   show,
   setShowSettings,
-  user,
 }) {
+  const navigate = useNavigate();
+
   if (!show) return null;
+
+  const openSettings = () => {
+    setShowSettings(false);
+    navigate("/settings");
+  };
 
   return (
     <div
@@ -25,54 +32,30 @@ export default function SettingsModal({
           width: "100%",
           maxWidth: 420,
           background: "#111827",
-          border: "1px solid #293548",
           borderRadius: 14,
-          padding: 20,
+          padding: 24,
           color: "#fff",
+          textAlign: "center",
         }}
       >
-        <h2 style={{ marginTop: 0 }}>
+
+        <h2>
           Account Settings
         </h2>
 
-        <div
+        <p
           style={{
-            background: "#0b0f14",
-            padding: 14,
-            borderRadius: 10,
-            marginBottom: 12,
+            color:"#9ca3af",
+            lineHeight:1.5,
           }}
         >
-          <div style={{ color:"#9ca3af", fontSize:12 }}>
-            Email
-          </div>
-
-          <div style={{ fontWeight:700 }}>
-            {user?.email || "User"}
-          </div>
-        </div>
-
-
-        <div
-          style={{
-            background:"#0b0f14",
-            padding:14,
-            borderRadius:10,
-            marginBottom:12,
-          }}
-        >
-          <div style={{color:"#9ca3af",fontSize:12}}>
-            Account Security
-          </div>
-
-          <div style={{marginTop:5}}>
-            Email verification enabled
-          </div>
-        </div>
+          Manage your profile, security, appearance,
+          notifications, and trading preferences.
+        </p>
 
 
         <button
-          onClick={() => setShowSettings(false)}
+          onClick={openSettings}
           style={{
             width:"100%",
             padding:12,
@@ -81,6 +64,24 @@ export default function SettingsModal({
             background:"#1199fa",
             color:"#fff",
             fontWeight:700,
+            cursor:"pointer",
+            marginBottom:10,
+          }}
+        >
+          Open Settings
+        </button>
+
+
+        <button
+          onClick={() => setShowSettings(false)}
+          style={{
+            width:"100%",
+            padding:12,
+            border:"1px solid #374151",
+            borderRadius:10,
+            background:"transparent",
+            color:"#fff",
+            fontWeight:600,
             cursor:"pointer",
           }}
         >

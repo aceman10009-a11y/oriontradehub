@@ -1,0 +1,18 @@
+{
+  "accountSettings": "Account Settings",
+  "manageSettings": "Manage your profile, security, trading preferences and platform experience.",
+  "profile": "Profile",
+  "security": "Security",
+  "appearance": "Appearance",
+  "notifications": "Notifications",
+  "tradingPreferences": "Trading Preferences",
+  "accessibility": "Accessibility",
+  "privacy": "Privacy",
+  "saveChanges": "Save Changes",
+  "language": "Language",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light",
+  "systemDefault": "System Default",
+  "saved": "Settings saved successfully"
+}

@@ -10,6 +10,7 @@ import AppModal from "./components/AppModal";
 import Security from "./pages/Security";
 import VerifyEmail from "./pages/VerifyEmail";
 import ForgotPassword from "./pages/ForgotPassword";
+import Settings from "./pages/Settings";
 
 export default function App() {
   return (
@@ -30,6 +31,15 @@ export default function App() {
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route
+  path="/settings"
+  element={
+    <ProtectedRoute>
+      <Settings />
+    </ProtectedRoute>
+  }
+/>
 
         {/* Protected Admin Dashboards */}
         <Route

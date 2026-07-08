@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { auth, db } from "../firebase/config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { db } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { subscribeToPrice } from "../services/marketDataService";
-import { markets } from "../data/markets";
 import Watchlist from "../components/watchlist/Watchlist";
 import { toast } from "react-toastify";
 import WithdrawModal from "../components/dashboard/WithdrawModal";
@@ -17,21 +16,15 @@ import {
 } from "firebase/firestore";
 
 import TradingViewChart from "../components/tradingview/TradingViewChart";
-import { createTrade, calculatePnL } from "../core/tradingEngine";
-import { timeframes } from "../core/marketEngine";
-import { getTradingViewSymbol } from "../utils/tradingViewSymbols";
 
-// New imports
+// Dashboard Components
 import TopBar from "../components/dashboard/TopBar";
-import PortfolioHeader from "../components/dashboard/PortfolioHeader";
-import TradingPanel from "../components/dashboard/TradingPanel";
-import PositionsPanel from "../components/dashboard/PositionsPanel";
 import MarketHeader from "../components/market/MarketHeader";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { user, profile } = useAuth();
 
-  const [user, setUser] = useState(null);
   const [trades, setTrades] = useState([]);
   const [selectedSymbol, setSelectedSymbol] = useState("BTC/USD");
   const [tradeAmount, setTradeAmount] = useState(100);
@@ -47,101 +40,117 @@ const Dashboard = () => {
 
   const [currentPrice, setCurrentPrice] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-useEffect(() => {
-  const unsubscribe = subscribeToPrice(
-    selectedSymbol,
-    setCurrentPrice,
-    setMarketConnected
-  );
 
-  return () => {
-    unsubscribe();
-  };
-}, [selectedSymbol]);
-useEffect(() => {
-  console.log("Market connected:", marketConnected);
-}, [marketConnected]);
+  useEffect(() => {
+    const unsubscribe = subscribeToPrice(
+      selectedSymbol,
+      setCurrentPrice,
+      setMarketConnected
+    );
 
-  // detect mobile
+    return unsubscribe;
+  }, [selectedSymbol]);
+
+  // Detect mobile
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 900);
+
     check();
+
     window.addEventListener("resize", check);
+
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // auth + firestore sync
+  // Redirect if not authenticated
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
-      if (!u) return navigate("/login");
-      setUser(u);
+    if (user === null) return;
 
-      const ref = doc(db, "users", u.uid);
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
 
-      const unsubUser = onSnapshot(ref, (snap) => {
-        if (!snap.exists()) return;
-        const d = snap.data();
-        setDemoBalance(d.demoBalance || 10000);
-        setLiveBalance(d.liveBalance || 0);
-      });
+  // Firestore sync
+  useEffect(() => {
+    if (!user) return;
 
-      const q = query(
-        collection(db, "trades"),
-        where("userId", "==", u.uid)
-      );
+    const userRef = doc(db, "users", user.uid);
 
-      const unsubTrades = onSnapshot(q, (snap) => {
-        setTrades(snap.docs.map(d => ({ id: d.id, ...d.data() })));
-      });
+    const unsubscribeUser = onSnapshot(userRef, (snapshot) => {
+      if (!snapshot.exists()) return;
 
-      return () => {
-        unsubUser();
-        unsubTrades();
-      };
+      const data = snapshot.data();
+
+      setDemoBalance(data.demoBalance || 10000);
+      setLiveBalance(data.liveBalance || 0);
     });
 
-    return () => unsub();
-  }, [navigate]);
-
-const executeTrade = (action) => {
-  if (action === "deposit") {
-    toast.info(
-      "Deposits are processed manually by your assigned account manager. Please contact support to fund your investment account.",
-      {
-        autoClose: 6000,
-      }
+    const tradesQuery = query(
+      collection(db, "trades"),
+      where("userId", "==", user.uid)
     );
-    return;
-  }
 
-  if (action === "withdraw") {
-    toast.info(
-      "Withdrawal requests are reviewed and processed by your assigned account manager. Please contact support to initiate a withdrawal.",
-      {
-        autoClose: 6000,
-      }
-    );
-  }
-};
-  const pnl = trades.reduce((a, t) => a + (t.profit || 0), 0);
-const filteredHistory = trades.filter((trade) => {
-  switch (historyFilter) {
-    case "OPEN":
-      return trade.status === "OPEN";
+    const unsubscribeTrades = onSnapshot(tradesQuery, (snapshot) => {
+      setTrades(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      );
+    });
 
-    case "CLOSED":
-      return trade.status === "CLOSED";
+    return () => {
+      unsubscribeUser();
+      unsubscribeTrades();
+    };
+  }, [user]);
 
-    case "PROFIT":
-      return (trade.profit || 0) > 0;
+  const executeTrade = (action) => {
+    if (action === "deposit") {
+      toast.info(
+        "Deposits are processed manually by your assigned account manager. Please contact support to fund your investment account.",
+        {
+          autoClose: 6000,
+        }
+      );
+      return;
+    }
 
-    case "LOSS":
-      return (trade.profit || 0) < 0;
+    if (action === "withdraw") {
+      toast.info(
+        "Withdrawal requests are reviewed and processed by your assigned account manager. Please contact support to initiate a withdrawal.",
+        {
+          autoClose: 6000,
+        }
+      );
+    }
+  };
 
-    default:
-      return true;
-  }
-});
+  const pnl = trades.reduce(
+    (total, trade) => total + (trade.profit || 0),
+    0
+  );
+
+  const filteredHistory = trades.filter((trade) => {
+    switch (historyFilter) {
+      case "OPEN":
+        return trade.status === "OPEN";
+
+      case "CLOSED":
+        return trade.status === "CLOSED";
+
+      case "PROFIT":
+        return (trade.profit || 0) > 0;
+
+      case "LOSS":
+        return (trade.profit || 0) < 0;
+
+      default:
+        return true;
+    }
+  });
+
   return (
     <div style={styles.page}>
 
