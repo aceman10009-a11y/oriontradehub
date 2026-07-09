@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { useNavigate } from "react-router-dom";
@@ -18,9 +18,19 @@ export default function TopBar({
 }) {
   const navigate = useNavigate();
 
-  const [search, setSearch] = useState("");
 const [showSettings, setShowSettings] = useState(false);
 const [showNotifications, setShowNotifications] = useState(false);
+const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   const balance = isLiveMode ? liveBalance : demoBalance;
 
@@ -28,14 +38,6 @@ const [showNotifications, setShowNotifications] = useState(false);
     await signOut(auth);
     navigate("/login");
   };
-  const handleNotifications = () => {
-  toast.info(
-    "You have no new notifications. Account updates, deposits, withdrawals and trading activity will appear here.",
-    {
-      autoClose: 5000,
-    }
-  );
-};
 
 const handleSettings = () => {
   setShowSettings(true);
@@ -52,14 +54,14 @@ const handleSettings = () => {
       }}
       >
       <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "16px 24px",
-          flexWrap: "wrap",
-          gap: "16px",
-        }}
+       style={{
+  display: "flex",
+  flexDirection: isMobile ? "column" : "row",
+  justifyContent: "space-between",
+  alignItems: isMobile ? "stretch" : "center",
+  padding: isMobile ? "16px" : "16px 24px",
+  gap: "16px",
+}}
       >
         {/* LEFT */}
 
@@ -113,40 +115,47 @@ const handleSettings = () => {
           </div>
         </div>
 
-        {/* SEARCH */}
+       <div
+  style={{
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  }}
+>
+  <span
+    style={{
+      color: "#9ca3af",
+      fontSize: 13,
+    }}
+  >
+    Welcome back,
+  </span>
 
-        <div
-          style={{
-            flex: 1,
-            minWidth: "220px",
-            maxWidth: "420px",
-          }}
-        >
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={`Search ${selectedSymbol}`}
-            style={{
-              width: "100%",
-              padding: "11px 14px",
-              background: "#111827",
-              color: "#fff",
-              border: "1px solid #293548",
-              borderRadius: "10px",
-              outline: "none",
-            }}
-          />
-        </div>
+  <span
+    style={{
+      color: "#fff",
+      fontSize: isMobile ? 18 : 20,
+      fontWeight: 700,
+    }}
+  >
+    {user?.displayName ||
+      user?.email?.split("@")[0] ||
+      "Investor"}
+  </span>
+</div>
 
         {/* RIGHT */}
 
         <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
+         style={{
+  display: "flex",
+  justifyContent: isMobile ? "center" : "flex-end",
+  alignItems: "center",
+  gap: "12px",
+  flexWrap: "wrap",
+  width: isMobile ? "100%" : "auto",
+}}
         >
           <button
             onClick={() => setIsLiveMode(false)}
@@ -193,7 +202,7 @@ const handleSettings = () => {
               }}
             >
               ACCOUNT
-            </div>
+                       </div>
 
             <div
               style={{
@@ -214,56 +223,60 @@ const handleSettings = () => {
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: isMobile ? "center" : "flex-start",
           gap: "12px",
-          padding: "12px 24px",
+          padding: isMobile ? "16px" : "12px 24px",
           borderTop: "1px solid #161b22",
           borderBottom: "1px solid #161b22",
           background: "#0f141b",
           flexWrap: "wrap",
         }}
       >
-   <button
-  title="Notifications"
-  onClick={() => setShowNotifications(true)}
-  style={{
-    width: "42px",
-    height: "42px",
-    borderRadius: "10px",
-    border: "1px solid #2b3139",
-    background: "#111827",
-    color: "#fff",
-    cursor: "pointer",
-  }}
->
-  🔔
-</button>
+        <button
+          title="Notifications"
+          onClick={() => setShowNotifications(true)}
+          style={{
+            width: "42px",
+            height: "42px",
+            borderRadius: "10px",
+            border: "1px solid #2b3139",
+            background: "#111827",
+            color: "#fff",
+            cursor: "pointer",
+          }}
+        >
+          🔔
+        </button>
 
-       <button
-  title="Settings"
-  onClick={handleSettings}
-  style={{
-    width: "42px",
-    height: "42px",
-    borderRadius: "10px",
-    border: "1px solid #2b3139",
-    background: "#111827",
-    color: "#fff",
-    cursor: "pointer",
-  }}
->
-  ⚙️
-</button>
+        <button
+          title="Settings"
+          onClick={handleSettings}
+          style={{
+            width: "42px",
+            height: "42px",
+            borderRadius: "10px",
+            border: "1px solid #2b3139",
+            background: "#111827",
+            color: "#fff",
+            cursor: "pointer",
+          }}
+        >
+          ⚙️
+        </button>
 
         <div
           style={{
-            marginLeft: "auto",
+            marginLeft: isMobile ? 0 : "auto",
+            width: isMobile ? "100%" : "auto",
             display: "flex",
             alignItems: "center",
+            justifyContent: isMobile ? "center" : "flex-start",
             gap: "12px",
             background: "#111827",
             border: "1px solid #2b3139",
             borderRadius: "12px",
-            padding: "8px 12px",
+            padding: "10px 14px",
+            flexWrap: isMobile ? "wrap" : "nowrap",
           }}
         >
           <div
@@ -277,12 +290,17 @@ const handleSettings = () => {
               alignItems: "center",
               color: "#fff",
               fontWeight: 800,
+              flexShrink: 0,
             }}
           >
-            J
+            {user?.email?.charAt(0).toUpperCase() || "U"}
           </div>
 
-          <div>
+          <div
+            style={{
+              textAlign: isMobile ? "center" : "left",
+            }}
+          >
             <div
               style={{
                 color: "#fff",
@@ -290,13 +308,14 @@ const handleSettings = () => {
                 fontSize: "13px",
               }}
             >
-              Trader Jeff
+              {user?.email?.split("@")[0] || "User"}
             </div>
 
             <div
               style={{
                 color: "#7d8590",
                 fontSize: "11px",
+                wordBreak: "break-word",
               }}
             >
               {user?.email || "user@orion"}
@@ -313,6 +332,7 @@ const handleSettings = () => {
               background: "#f23645",
               color: "#fff",
               fontWeight: 700,
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Sign Out
@@ -320,15 +340,17 @@ const handleSettings = () => {
         </div>
       </div>
 
-            {/* TIMEFRAME BAR */}
+      {/* TIMEFRAME BAR */}
+
       <div
         style={{
           display: "flex",
           gap: "8px",
           overflowX: "auto",
-          padding: "12px 20px",
+          padding: isMobile ? "12px 16px" : "12px 20px",
           background: "#0f141b",
           borderTop: "1px solid #1c2432",
+          scrollbarWidth: "none",
         }}
       >
         {timeframes.map((tf) => (
@@ -341,6 +363,7 @@ const handleSettings = () => {
               borderRadius: "8px",
               cursor: "pointer",
               whiteSpace: "nowrap",
+              flexShrink: 0,
               background:
                 selectedTimeframe === tf ? "#1199fa" : "#161b22",
               color: "#fff",
@@ -352,16 +375,12 @@ const handleSettings = () => {
         ))}
       </div>
 
-
-      {/* SETTINGS MODAL */}
       <SettingsModal
         show={showSettings}
         setShowSettings={setShowSettings}
         user={user}
       />
 
-
-      {/* NOTIFICATIONS MODAL */}
       <NotificationModal
         show={showNotifications}
         setShowNotifications={setShowNotifications}

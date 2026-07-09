@@ -6,6 +6,7 @@ import { subscribeToPrice } from "../services/marketDataService";
 import Watchlist from "../components/watchlist/Watchlist";
 import { toast } from "react-toastify";
 import WithdrawModal from "../components/dashboard/WithdrawModal";
+import { useTranslation } from "react-i18next";
 
 import {
   doc,
@@ -23,6 +24,7 @@ import MarketHeader from "../components/market/MarketHeader";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { user, profile } = useAuth();
 
   const [trades, setTrades] = useState([]);
@@ -167,11 +169,19 @@ const Dashboard = () => {
 />
 
       {/* MAIN GRID */}
-      <div style={{
-        ...styles.grid,
-        gridTemplateColumns: isMobile ? "1fr" : "280px 1fr 320px"
-      }}>
-
+      <div
+  style={{
+    ...styles.grid,
+    gridTemplateColumns: isMobile
+      ? "1fr"
+      : "280px minmax(0,1fr) 340px",
+    alignItems: "start",
+    width: "100%",
+    maxWidth: "1700px",
+    margin: "0 auto",
+    padding: isMobile ? 12 : 20,
+  }}
+>
        {/* LEFT PANEL */}
 
 <div
@@ -221,12 +231,12 @@ const Dashboard = () => {
     price={currentPrice}
     connected={marketConnected}
   />
-<div
+   <div
   style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexWrap: "wrap",
+    display: "grid",
+    gridTemplateColumns: isMobile
+      ? "1fr 1fr"
+      : "repeat(4, 1fr)",
     gap: "16px",
     marginBottom: "18px",
     padding: "14px",
@@ -298,7 +308,12 @@ const Dashboard = () => {
   </div>
 </div>
 
-  <div style={{ height: 420 }}>
+     <div
+  style={{
+    height: isMobile ? 320 : 420,
+    width: "100%",
+  }}
+>
   <TradingViewChart
   symbol={selectedSymbol}
   timeframe={selectedTimeframe}
@@ -366,6 +381,7 @@ const Dashboard = () => {
     gap: 8,
     margin: "15px 0",
     flexWrap: "wrap",
+    justifyContent: isMobile ? "center" : "flex-start",
   }}
 >
   {["ALL", "OPEN", "CLOSED", "PROFIT", "LOSS"].map((filter) => (
@@ -390,6 +406,7 @@ const Dashboard = () => {
 <div
   style={{
     overflowX: "auto",
+    width: "100%",
   }}
 >
   <table
@@ -496,7 +513,13 @@ const Dashboard = () => {
 
 <hr />
 
-<div style={{ display: "flex", gap: 10 }}>
+<div
+  style={{
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    gap: 10,
+  }}
+>
            <button
   onClick={() => executeTrade("deposit")}
   style={buyBtn}
@@ -520,6 +543,7 @@ const Dashboard = () => {
   style={{
     overflowX: "auto",
     marginTop: 12,
+    width: "100%",
   }}
 >
   <table
@@ -621,17 +645,18 @@ const styles = {
     fontFamily: "system-ui"
   },
 
-  grid: {
-    display: "grid",
-    gap: 16,
-    padding: 16
-  },
-
-  panel: {
-    background: "#111827",
-    padding: 16,
-    borderRadius: 12
-  },
+ grid: {
+  display: "grid",
+  gap: 20,
+  width: "100%",
+},
+panel: {
+  background: "#111827",
+  padding: 16,
+  borderRadius: 12,
+  border: "1px solid #1f2937",
+  overflow: "hidden",
+},
 
   headerBox: {
     display: "flex",

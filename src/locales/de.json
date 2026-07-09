@@ -14,5 +14,60 @@
   "dark": "Dunkel",
   "light": "Hell",
   "systemDefault": "Systemstandard",
-  "saved": "Einstellungen gespeichert"
+  "saved": "Einstellungen gespeichert ",
+  "changePassword": "Passwort ändern",
+  "currentPassword": "Aktuelles Passwort",
+  "newPassword": "Neues Passwort",
+  "confirmNewPassword": "Neues Passwort bestätigen",
+  "updatePassword": "Passwort aktualisieren",
+  "passwordUpdated": "Passwort erfolgreich aktualisiert",
+    "dashboard": "Dashboard",
+  "welcomeBack": "Willkommen zurück",
+  "connected": "VERBUNDEN",
+  "live": "LIVE",
+  "offline": "OFFLINE",
+
+  "selectedMarket": "Ausgewählter Markt",
+  "currentPrice": "Aktueller Preis",
+  "totalProfit": "Gesamtgewinn",
+  "connection": "Verbindung",
+
+  "accountOverview": "Kontenübersicht",
+  "demoBalance": "Demokonto",
+  "liveBalance": "Live-Konto",
+  "equity": "Eigenkapital",
+  "freeMargin": "Freie Margin",
+  "openPositions": "Offene Positionen",
+
+  "tradingHistory": "Handelsverlauf",
+  "all": "ALLE",
+  "open": "OFFEN",
+  "closed": "GESCHLOSSEN",
+  "profit": "GEWINN",
+  "loss": "VERLUST",
+
+  "symbol": "Symbol",
+  "amount": "Betrag",
+  "status": "Status",
+
+  "winningTrades": "Gewinntrades",
+  "losingTrades": "Verlusttrades",
+  "winRate": "Gewinnquote",
+  "accountStatus": "Kontostatus",
+  "verified": "Verifiziert",
+  "pending": "Ausstehend",
+
+  "deposit": "Einzahlen",
+  "withdraw": "Auszahlen",
+
+  "asset": "Anlage",
+  "type": "Typ",
+
+  "noTradingHistory": "Keine Handelshistorie vorhanden.",
+  "noPositions": "Keine offenen Positionen.",
+
+  "demo": "DEMO",
+  "liveUpper": "LIVE",
+  "signOut": "Abmelden"
 }
+

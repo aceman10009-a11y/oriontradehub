@@ -1,18 +1,53 @@
 {
-  "accountSettings": "Account Settings",
-  "manageSettings": "Manage your profile, security, trading preferences and platform experience.",
-  "profile": "Profile",
-  "security": "Security",
-  "appearance": "Appearance",
+  "dashboard": "Dashboard",
+  "welcomeBack": "Welcome back",
+  "connected": "CONNECTED",
+  "live": "LIVE",
+  "offline": "OFFLINE",
+
+  "selectedMarket": "Selected Market",
+  "currentPrice": "Current Price",
+  "totalProfit": "Total Profit",
+  "connection": "Connection",
+
+  "accountOverview": "Account Overview",
+  "demoBalance": "Demo Balance",
+  "liveBalance": "Live Balance",
+  "equity": "Equity",
+  "freeMargin": "Free Margin",
+  "openPositions": "Open Positions",
+
+  "tradingHistory": "Trading History",
+  "all": "ALL",
+  "open": "OPEN",
+  "closed": "CLOSED",
+  "profit": "PROFIT",
+  "loss": "LOSS",
+
+  "symbol": "Symbol",
+  "amount": "Amount",
+  "status": "Status",
+
+  "winningTrades": "Winning Trades",
+  "losingTrades": "Losing Trades",
+  "winRate": "Win Rate",
+  "accountStatus": "Account Status",
+  "verified": "Verified",
+  "pending": "Pending",
+
+  "deposit": "Deposit",
+  "withdraw": "Withdraw",
+
+  "asset": "Asset",
+  "type": "Type",
+
+  "noTradingHistory": "No trading history available.",
+  "noPositions": "No active positions.",
+
+  "demo": "DEMO",
+  "liveUpper": "LIVE",
+  "signOut": "Sign Out",
+
   "notifications": "Notifications",
-  "tradingPreferences": "Trading Preferences",
-  "accessibility": "Accessibility",
-  "privacy": "Privacy",
-  "saveChanges": "Save Changes",
-  "language": "Language",
-  "theme": "Theme",
-  "dark": "Dark",
-  "light": "Light",
-  "systemDefault": "System Default",
-  "saved": "Settings saved successfully"
+  "settings": "Settings"
 }
