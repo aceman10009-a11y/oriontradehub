@@ -111,22 +111,16 @@
   "danish": "Duński",
   "finnish": "Fiński",
   "polish": "Polski",
-
   "welcomeBackLogin": "Witamy ponownie",
   "loginSubtitle": "Zaloguj się, aby uzyskać dostęp do swojego konta Orion Trade Hub.",
   "emailAddress": "Adres e-mail",
-
   "show": "Pokaż",
   "hide": "Ukryj",
-
   "rememberMe": "Zapamiętaj mnie",
-
   "signIn": "Zaloguj się",
   "signingIn": "Logowanie...",
-
   "dontHaveAccount": "Nie masz konta?",
   "createAccount": "Utwórz konto",
-
   "incorrectEmailPassword": "Nieprawidłowy adres e-mail lub hasło.",
   "noAccountExists": "Nie istnieje konto powiązane z tym adresem e-mail.",
   "incorrectPassword": "Nieprawidłowe hasło.",
@@ -134,5 +128,34 @@
   "unableToSignIn": "Nie można się zalogować.",
   "loginSuccessful": "Logowanie zakończone pomyślnie.",
   "userRecordNotFound": "Nie znaleziono danych użytkownika.",
-  "verifyEmailBeforeLogin": "Przed zalogowaniem zweryfikuj swój adres e-mail. Sprawdź skrzynkę odbiorczą lub folder ze spamem."
+  "verifyEmailBeforeLogin": "Przed zalogowaniem zweryfikuj swój adres e-mail. Sprawdź skrzynkę odbiorczą lub folder ze spamem.",
+  "personalInformation": "Personal Information",
+  "contactDetails": "Contact Details",
+  "passwordHint": "Użyj co najmniej 8 znaków zawierających wielkie i małe litery, cyfrę oraz symbol.",
+  "securityQuestion1": "Pytanie zabezpieczające 1",
+  "securityQuestion2": "Pytanie zabezpieczające 2",
+  "securityQuestionMother": "Jakie jest panieńskie nazwisko Twojej matki?",
+  "securityQuestionCity": "W jakim mieście się urodziłeś?",
+  "securityQuestionPet": "Jak miał na imię Twój pierwszy zwierzak?",
+  "securityQuestionFood": "Jakie jest Twoje ulubione jedzenie?",
+  "securityQuestionSchool": "Jaka była Twoja pierwsza szkoła?",
+  "securityQuestionNickname": "Jaki był Twój pseudonim z dzieciństwa?",
+  "answer": "Odpowiedź",
+  "professionPlaceholder": "Zawód (np. pielęgniarka, inwestor, CEO, student)",
+  "referralCodeOptional": "Kod polecający (opcjonalnie)",
+  "howDidYouHear": "Jak dowiedziałeś się o nas?",
+  "google": "Google",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "linkedin": "LinkedIn",
+  "youtube": "YouTube",
+  "friend": "Znajomy",
+  "other": "Inne",
+  "creatingAccount": "Tworzenie konta...",
+  "accountCreatedVerification": "Konto zostało pomyślnie utworzone! Sprawdź skrzynkę odbiorczą lub folder spam, aby zweryfikować adres e-mail przed zalogowaniem.",
+  "somethingWentWrong": "Coś poszło nie tak.",
+  "accountAlreadyExists": "Konto z tym adresem e-mail już istnieje.",
+  "weakPassword": "Hasło musi zawierać co najmniej 6 znaków.",
+  "invalidEmail": "Wprowadź prawidłowy adres e-mail.",
+  "createAccountTitle": "Utwórz konto"
 }

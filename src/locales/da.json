@@ -111,22 +111,16 @@
   "danish": "Dansk",
   "finnish": "Finsk",
   "polish": "Polsk",
-
   "welcomeBackLogin": "Velkommen tilbage",
   "loginSubtitle": "Log ind for at få adgang til din Orion Trade Hub-konto.",
   "emailAddress": "E-mailadresse",
-
   "show": "Vis",
   "hide": "Skjul",
-
   "rememberMe": "Husk mig",
-
   "signIn": "Log ind",
   "signingIn": "Logger ind...",
-
   "dontHaveAccount": "Har du ikke en konto?",
   "createAccount": "Opret konto",
-
   "incorrectEmailPassword": "Forkert e-mailadresse eller adgangskode.",
   "noAccountExists": "Der findes ingen konto med denne e-mailadresse.",
   "incorrectPassword": "Forkert adgangskode.",
@@ -134,5 +128,34 @@
   "unableToSignIn": "Kunne ikke logge ind.",
   "loginSuccessful": "Login gennemført.",
   "userRecordNotFound": "Brugeroplysninger blev ikke fundet.",
-  "verifyEmailBeforeLogin": "Bekræft venligst din e-mailadresse, før du logger ind. Tjek din indbakke eller spammappe."
+  "verifyEmailBeforeLogin": "Bekræft venligst din e-mailadresse, før du logger ind. Tjek din indbakke eller spammappe.",
+  "personalInformation": "Personal Information",
+  "contactDetails": "Contact Details",
+  "passwordHint": "Brug mindst 8 tegn med store og små bogstaver, tal og specialtegn.",
+  "securityQuestion1": "Sikkerhedsspørgsmål 1",
+  "securityQuestion2": "Sikkerhedsspørgsmål 2",
+  "securityQuestionMother": "Hvad er din mors pigenavn?",
+  "securityQuestionCity": "Hvilken by blev du født i?",
+  "securityQuestionPet": "Hvad hed dit første kæledyr?",
+  "securityQuestionFood": "Hvad er din yndlingsmad?",
+  "securityQuestionSchool": "Hvad hed din første skole?",
+  "securityQuestionNickname": "Hvad var dit kælenavn som barn?",
+  "answer": "Svar",
+  "professionPlaceholder": "Profession (f.eks. sygeplejerske, investor, direktør, studerende)",
+  "referralCodeOptional": "Henvisningskode (valgfri)",
+  "howDidYouHear": "Hvordan hørte du om os?",
+  "google": "Google",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "linkedin": "LinkedIn",
+  "youtube": "YouTube",
+  "friend": "Ven",
+  "other": "Andet",
+  "creatingAccount": "Opretter konto...",
+  "accountCreatedVerification": "Kontoen er oprettet! Tjek venligst din indbakke eller spammappe for at bekræfte din e-mail, før du logger ind.",
+  "somethingWentWrong": "Noget gik galt.",
+  "accountAlreadyExists": "Der findes allerede en konto med denne e-mailadresse.",
+  "weakPassword": "Adgangskoden skal være mindst 6 tegn.",
+  "invalidEmail": "Indtast venligst en gyldig e-mailadresse.",
+  "createAccountTitle": "Opret konto"
 }

@@ -111,22 +111,16 @@
   "danish": "الدنماركية",
   "finnish": "الفنلندية",
   "polish": "البولندية",
-
   "welcomeBackLogin": "مرحبًا بعودتك",
   "loginSubtitle": "سجّل الدخول للوصول إلى حساب Orion Trade Hub الخاص بك.",
   "emailAddress": "عنوان البريد الإلكتروني",
-
   "show": "إظهار",
   "hide": "إخفاء",
-
   "rememberMe": "تذكرني",
-
   "signIn": "تسجيل الدخول",
   "signingIn": "جارٍ تسجيل الدخول...",
-
   "dontHaveAccount": "ليس لديك حساب؟",
   "createAccount": "إنشاء حساب",
-
   "incorrectEmailPassword": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
   "noAccountExists": "لا يوجد حساب مرتبط بهذا البريد الإلكتروني.",
   "incorrectPassword": "كلمة المرور غير صحيحة.",
@@ -134,5 +128,34 @@
   "unableToSignIn": "تعذر تسجيل الدخول.",
   "loginSuccessful": "تم تسجيل الدخول بنجاح.",
   "userRecordNotFound": "تعذر العثور على بيانات المستخدم.",
-  "verifyEmailBeforeLogin": "يرجى التحقق من بريدك الإلكتروني قبل تسجيل الدخول. تحقق من صندوق الوارد أو مجلد الرسائل غير المرغوب فيها."
+  "verifyEmailBeforeLogin": "يرجى التحقق من بريدك الإلكتروني قبل تسجيل الدخول. تحقق من صندوق الوارد أو مجلد الرسائل غير المرغوب فيها.",
+  "personalInformation": "Personal Information",
+  "contactDetails": "Contact Details",
+  "passwordHint": "استخدم 8 أحرف على الأقل تتضمن أحرفًا كبيرة وصغيرة ورقمًا ورمزًا خاصًا.",
+  "securityQuestion1": "سؤال الأمان 1",
+  "securityQuestion2": "سؤال الأمان 2",
+  "securityQuestionMother": "ما اسم عائلة والدتك قبل الزواج؟",
+  "securityQuestionCity": "في أي مدينة وُلدت؟",
+  "securityQuestionPet": "ما اسم أول حيوان أليف لديك؟",
+  "securityQuestionFood": "ما هو طعامك المفضل؟",
+  "securityQuestionSchool": "ما اسم أول مدرسة التحقت بها؟",
+  "securityQuestionNickname": "ما هو لقبك في الطفولة؟",
+  "answer": "الإجابة",
+  "professionPlaceholder": "المهنة (مثال: ممرض، مستثمر، مدير تنفيذي، طالب)",
+  "referralCodeOptional": "رمز الإحالة (اختياري)",
+  "howDidYouHear": "كيف سمعت عنا؟",
+  "google": "جوجل",
+  "facebook": "فيسبوك",
+  "instagram": "إنستغرام",
+  "linkedin": "لينكدإن",
+  "youtube": "يوتيوب",
+  "friend": "صديق",
+  "other": "أخرى",
+  "creatingAccount": "جارٍ إنشاء الحساب...",
+  "accountCreatedVerification": "تم إنشاء الحساب بنجاح! يرجى التحقق من صندوق الوارد أو مجلد الرسائل غير المرغوب فيها لتأكيد بريدك الإلكتروني قبل تسجيل الدخول.",
+  "somethingWentWrong": "حدث خطأ ما.",
+  "accountAlreadyExists": "يوجد حساب بالفعل باستخدام هذا البريد الإلكتروني.",
+  "weakPassword": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.",
+  "invalidEmail": "يرجى إدخال بريد إلكتروني صالح.",
+  "createAccountTitle": "إنشاء حساب"
 }

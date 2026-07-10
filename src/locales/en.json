@@ -82,17 +82,17 @@
   "theme": "Theme",
   "timezone": "Timezone",
 
- "english": "English",
-"french": "French",
-"spanish": "Spanish",
-"german": "German",
-"italian": "Italian",
-"portuguese": "Portuguese",
-"dutch": "Dutch",
-"swedish": "Swedish",
-"danish": "Danish",
-"finnish": "Finnish",
-"polish": "Polish",
+  "english": "English",
+  "french": "French",
+  "spanish": "Spanish",
+  "german": "German",
+  "italian": "Italian",
+  "portuguese": "Portuguese",
+  "dutch": "Dutch",
+  "swedish": "Swedish",
+  "danish": "Danish",
+  "finnish": "Finnish",
+  "polish": "Polish",
 
   "saveChanges": "Save Changes",
   "saveProfile": "Save Profile",
@@ -125,7 +125,7 @@
   "success": "Success",
   "error": "Error",
 
-    "email": "Email",
+  "email": "Email",
   "password": "Password",
   "login": "Login",
   "signup": "Sign Up",
@@ -158,5 +158,52 @@
   "unableToSignIn": "Unable to sign in.",
   "loginSuccessful": "Login successful.",
   "userRecordNotFound": "User record not found.",
-  "verifyEmailBeforeLogin": "Please verify your email before signing in. Check your inbox or spam folder."
+  "verifyEmailBeforeLogin": "Please verify your email before signing in. Check your inbox or spam folder.",
+
+
+  "personalInformation": "Personal Information",
+  "contactDetails": "Contact Details",
+
+  "createAccountTitle": "Create Account",
+
+  "passwordHint": "Use 8+ characters with uppercase, lowercase, number & symbol.",
+
+  "securityQuestion1": "Security Question 1",
+  "securityQuestion2": "Security Question 2",
+
+  "securityQuestionMother": "What is your mother’s maiden name?",
+  "securityQuestionCity": "What city were you born in?",
+  "securityQuestionPet": "What was your first pet’s name?",
+
+  "securityQuestionFood": "What is your favorite food?",
+  "securityQuestionSchool": "What was your first school?",
+  "securityQuestionNickname": "What is your childhood nickname?",
+
+  "answer": "Answer",
+
+  "professionPlaceholder": "Profession (e.g. Nurse, Investor, CEO, Student)",
+
+  "referralCodeOptional": "Referral Code (optional)",
+
+  "howDidYouHear": "How did you hear about us?",
+
+  "google": "Google",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "linkedin": "LinkedIn",
+  "youtube": "YouTube",
+  "friend": "Friend",
+  "other": "Other",
+
+  "creatingAccount": "Creating Account...",
+
+  "accountCreatedVerification": "Account created successfully! Please check your inbox or spam folder to verify your email before signing in.",
+
+  "somethingWentWrong": "Something went wrong.",
+
+  "accountAlreadyExists": "An account already exists with this email.",
+
+  "weakPassword": "Password must be at least 6 characters.",
+
+  "invalidEmail": "Please enter a valid email address."
 }
