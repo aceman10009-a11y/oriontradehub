@@ -194,7 +194,7 @@ const Dashboard = () => {
 >
   <input
     type="text"
-    placeholder="Search markets..."
+    placeholder={t("searchMarkets")}
     value={marketSearch}
     onChange={(e) => setMarketSearch(e.target.value)}
     style={{
@@ -247,7 +247,7 @@ const Dashboard = () => {
 >
   <div>
     <div style={{ color: "#888", fontSize: "12px" }}>
-      Selected Market
+      {t("selectedMarket")}
     </div>
 
     <div
@@ -262,7 +262,7 @@ const Dashboard = () => {
 
   <div>
     <div style={{ color: "#888", fontSize: "12px" }}>
-      Current Price
+      {t("currentPrice")}
     </div>
 
     <div
@@ -278,7 +278,7 @@ const Dashboard = () => {
 
   <div>
     <div style={{ color: "#888", fontSize: "12px" }}>
-      Total Profit
+      {t("totalProfit")}
     </div>
 
     <div
@@ -294,7 +294,7 @@ const Dashboard = () => {
 
   <div>
     <div style={{ color: "#888", fontSize: "12px" }}>
-      Connection
+      {t("connection")}
     </div>
 
     <div
@@ -303,7 +303,7 @@ const Dashboard = () => {
         fontWeight: 700,
       }}
     >
-      {marketConnected ? "LIVE" : "OFFLINE"}
+      {marketConnected ? t("live") : t("offline")}
     </div>
   </div>
 </div>
@@ -325,11 +325,15 @@ const Dashboard = () => {
         <div style={styles.panel}>
 
          <h3 style={{ marginBottom: 20 }}>
-  Account Overview
+  {t("accountOverview")}
 </h3>
 
 <div style={styles.statCard}>
-  <span>{isLiveMode ? "Live Balance" : "Demo Balance"}</span>
+  <span>
+  {isLiveMode
+    ? t("liveBalance")
+    : t("demoBalance")}
+</span>
   <strong>
     ${Number(
       isLiveMode ? liveBalance : demoBalance
@@ -338,7 +342,7 @@ const Dashboard = () => {
 </div>
 
 <div style={styles.statCard}>
-  <span>Equity</span>
+  <span>{t("equity")}</span>
   <strong>
     ${(
       Number(isLiveMode ? liveBalance : demoBalance) + pnl
@@ -347,14 +351,14 @@ const Dashboard = () => {
 </div>
 
 <div style={styles.statCard}>
-  <span>Free Margin</span>
+  <span>{t("freeMargin")}</span>
   <strong>
     ${Number(isLiveMode ? liveBalance : demoBalance).toFixed(2)}
   </strong>
 </div>
 
 <div style={styles.statCard}>
-  <span>Total Profit</span>
+  <span>{t("totalProfit")}</span>
   <strong
     style={{
       color: pnl >= 0 ? "#16a34a" : "#ef4444",
@@ -365,7 +369,7 @@ const Dashboard = () => {
 </div>
 
 <div style={styles.statCard}>
-  <span>Open Positions</span>
+  <span>{t("openPositions")}</span>
   <strong>{trades.length}</strong>
 </div>
 
@@ -373,7 +377,7 @@ const Dashboard = () => {
 
 <hr style={{ margin: "25px 0" }} />
 
-<h3>Trading History</h3>
+<h3>{t("tradingHistory")}</h3>
 
 <div
   style={{
@@ -398,7 +402,7 @@ const Dashboard = () => {
         color: "#fff",
       }}
     >
-      {filter}
+      {t(filter.toLowerCase())}
     </button>
   ))}
 </div>
@@ -418,10 +422,10 @@ const Dashboard = () => {
   >
     <thead>
       <tr style={{ borderBottom: "1px solid #333" }}>
-        <th style={styles.th}>Symbol</th>
-        <th style={styles.th}>Amount</th>
-        <th style={styles.th}>P/L</th>
-        <th style={styles.th}>Status</th>
+        <th style={styles.th}>{t("symbol")}</th>
+        <th style={styles.th}>{t("amount")}</th>
+        <th style={styles.th}>{t("profit")}</th>
+        <th style={styles.th}>{t("status")}</th>
       </tr>
     </thead>
 
@@ -447,7 +451,9 @@ const Dashboard = () => {
           </td>
 
           <td style={styles.td}>
-            {trade.status || "OPEN"}
+            {trade.status
+  ? t(trade.status.toLowerCase())
+  : t("open")}
           </td>
         </tr>
       ))}
@@ -462,7 +468,7 @@ const Dashboard = () => {
         color: "#9ca3af",
       }}
     >
-      📈 No trading history available.
+      📈 {t("noTradingHistory")}
     </div>
   ) : (
     <table>
@@ -473,21 +479,21 @@ const Dashboard = () => {
 </div>
 
 <div style={styles.statCard}>
-  <span>Winning Trades</span>
+  <span>{t("winningTrades")}</span>
   <strong>
     {trades.filter(t => (t.profit || 0) > 0).length}
   </strong>
 </div>
 
 <div style={styles.statCard}>
-  <span>Losing Trades</span>
+  <span>{t("losingTrades")}</span>
   <strong>
     {trades.filter(t => (t.profit || 0) < 0).length}
   </strong>
 </div>
 
 <div style={styles.statCard}>
-  <span>Win Rate</span>
+  <span>{t("winRate")}</span>
   <strong>
     {trades.length
       ? (
@@ -501,13 +507,13 @@ const Dashboard = () => {
 </div>
 
 <div style={styles.statCard}>
-  <span>Account Status</span>
+  <span>{t("accountStatus")}</span>
   <strong
     style={{
       color: user?.emailVerified ? "#16a34a" : "#f59e0b",
     }}
   >
-    {user?.emailVerified ? "Verified ✓" : "Pending"}
+    {user?.emailVerified ? t("verified") : t("pending")}
   </strong>
 </div>
 
@@ -524,20 +530,20 @@ const Dashboard = () => {
   onClick={() => executeTrade("deposit")}
   style={buyBtn}
 >
-  Deposit
+  {t("deposit")}
 </button>
 
 <button
   onClick={() => setShowWithdraw(true)}
   style={sellBtn}
 >
-  Withdraw
+  {t("withdraw")}
 </button>
           </div>
 
           <hr />
 
-        <h3 style={{ marginTop: 25 }}>Open Positions</h3>
+        <h3 style={{ marginTop: 25 }}>{t("openPositions")}</h3>
 
 <div
   style={{
@@ -560,10 +566,10 @@ const Dashboard = () => {
           background: "#161b22",
         }}
       >
-        <th style={styles.th}>Asset</th>
-        <th style={styles.th}>Type</th>
-        <th style={styles.th}>P/L</th>
-        <th style={styles.th}>Status</th>
+        <th style={styles.th}>{t("asset")}</th>
+        <th style={styles.th}>{t("type")}</th>
+        <th style={styles.th}>{t("profit")}</th>
+        <th style={styles.th}>{t("status")}</th>
       </tr>
     </thead>
 
@@ -581,7 +587,9 @@ const Dashboard = () => {
             </td>
 
             <td style={styles.td}>
-              {trade.side || "BUY"}
+              {trade.side
+  ? t(trade.side.toLowerCase())
+  : t("buy")}
             </td>
 
             <td
@@ -597,7 +605,7 @@ const Dashboard = () => {
             </td>
 
             <td style={styles.td}>
-              Open
+              {t("open")}
             </td>
           </tr>
         ))
@@ -611,7 +619,7 @@ const Dashboard = () => {
               color: "#888",
             }}
           >
-            No active positions.
+            {t("noActivePositions")}
           </td>
         </tr>
       )}

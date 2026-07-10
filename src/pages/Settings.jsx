@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import ProfileSettings from "../components/settings/ProfileSettings";
 import SecuritySettings from "../components/settings/SecuritySettings";
@@ -11,8 +12,9 @@ import PrivacySettings from "../components/settings/PrivacySettings";
 
 export default function Settings() {
 
-  const [activeTab, setActiveTab] = useState("Profile");
+  const { t } = useTranslation();
 
+  const [activeTab, setActiveTab] = useState("Profile");
 
   const sections = [
     "Profile",
@@ -73,125 +75,103 @@ export default function Settings() {
     >
 
 
-      <div
+  <div
   style={{
-    maxWidth:1200,
-    width:"100%",
-    margin:"auto",
+    maxWidth: 1200,
+    width: "100%",
+    margin: "auto",
   }}
 >
+  <h1>{t("accountSettings")}</h1>
 
-        <h1>
-          Account Settings
-        </h1>
+  <p
+    style={{
+      color: "#9ca3af",
+      marginBottom: 30,
+    }}
+  >
+    {t("manageSettings")}
+  </p>
 
-
-        <p
-          style={{
-            color:"#9ca3af",
-            marginBottom:30,
-          }}
-        >
-          Manage your profile, security, trading preferences and platform experience.
-        </p>
-
-
-
-
-        <div
-  style={{
-    display:"grid",
-    gridTemplateColumns:
-      window.innerWidth < 768
-        ? "1fr"
-        : "260px 1fr",
-    gap:25,
-    width:"100%",
-  }}
->
-<div
-  style={{
-    display:"flex",
-    flexDirection:
-      window.innerWidth < 768
-      ? "row"
-      : "column",
-
-    gap:10,
-
-    overflowX:
-      window.innerWidth < 768
-      ? "auto"
-      : "visible",
-
-    paddingBottom:
-      window.innerWidth < 768
-      ? 10
-      : 0,
-  }}
->
-
-{
-  sections.map(section => (
-
-    <button
-      key={section}
-      onClick={() => setActiveTab(section)}
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns:
+        window.innerWidth < 768
+          ? "1fr"
+          : "260px 1fr",
+      gap: 25,
+      width: "100%",
+    }}
+  >
+    <div
       style={{
-        minWidth:
-          window.innerWidth < 708
-          ? "140px"
-          : "100%",
+        display: "flex",
+        flexDirection:
+          window.innerWidth < 768
+            ? "row"
+            : "column",
 
-        padding:"14px 16px",
+        gap: 10,
 
-        borderRadius:10,
+        overflowX:
+          window.innerWidth < 768
+            ? "auto"
+            : "visible",
 
-        border:"1px solid #1f2937",
-
-        cursor:"pointer",
-
-        background:
-          activeTab === section
-          ? "#1199fa"
-          : "#111827",
-
-        color:"#fff",
-
-        fontWeight:600,
-
-        fontSize:"15px",
-
-        whiteSpace:"nowrap",
+        paddingBottom:
+          window.innerWidth < 768
+            ? 10
+            : 0,
       }}
     >
+      {sections.map((section) => (
+        <button
+          key={section}
+          onClick={() => setActiveTab(section)}
+          style={{
+            minWidth:
+              window.innerWidth < 708
+                ? "140px"
+                : "100%",
 
-      {section}
+            padding: "14px 16px",
 
-    </button>
+            borderRadius: 10,
 
-  ))
-}
+            border: "1px solid #1f2937",
+
+            cursor: "pointer",
+
+            background:
+              activeTab === section
+                ? "#1199fa"
+                : "#111827",
+
+            color: "#fff",
+
+            fontWeight: 600,
+
+            fontSize: "15px",
+
+            whiteSpace: "nowrap",
+          }}
+        >
+          {section === "Trading Preferences"
+            ? t("tradingPreferences")
+            : t(section.toLowerCase())}
+        </button>
+      ))}
+    </div>
+
+    <div>
+      {renderContent()}
+    </div>
+  </div>
+</div>
 
 </div>
 
-
-          <div>
-
-            {renderContent()}
-
-          </div>
-
-
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  );
+);
 
 }

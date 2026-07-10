@@ -1,16 +1,25 @@
 {
   "dashboard": "Dashboard",
+  "home": "Home",
+
   "welcomeBack": "Welcome back",
   "connected": "CONNECTED",
+  "connectedStatus": "CONNECTED",
   "live": "LIVE",
+  "liveUpper": "LIVE",
   "offline": "OFFLINE",
+  "disconnected": "Disconnected",
 
+  "market": "Market",
+  "markets": "Markets",
+  "searchMarkets": "Search markets...",
   "selectedMarket": "Selected Market",
   "currentPrice": "Current Price",
   "totalProfit": "Total Profit",
   "connection": "Connection",
 
   "accountOverview": "Account Overview",
+  "account": "Account",
   "demoBalance": "Demo Balance",
   "liveBalance": "Live Balance",
   "equity": "Equity",
@@ -18,19 +27,27 @@
   "openPositions": "Open Positions",
 
   "tradingHistory": "Trading History",
+  "tradingPreferences": "Trading Preferences",
+
   "all": "ALL",
   "open": "OPEN",
   "closed": "CLOSED",
   "profit": "PROFIT",
   "loss": "LOSS",
 
+  "buy": "BUY",
+  "sell": "SELL",
+
   "symbol": "Symbol",
+  "asset": "Asset",
+  "type": "Type",
   "amount": "Amount",
   "status": "Status",
 
   "winningTrades": "Winning Trades",
   "losingTrades": "Losing Trades",
   "winRate": "Win Rate",
+
   "accountStatus": "Account Status",
   "verified": "Verified",
   "pending": "Pending",
@@ -38,16 +55,108 @@
   "deposit": "Deposit",
   "withdraw": "Withdraw",
 
-  "asset": "Asset",
-  "type": "Type",
-
   "noTradingHistory": "No trading history available.",
   "noPositions": "No active positions.",
+  "noActivePositions": "No active positions.",
 
   "demo": "DEMO",
-  "liveUpper": "LIVE",
-  "signOut": "Sign Out",
 
   "notifications": "Notifications",
-  "settings": "Settings"
+  "settings": "Settings",
+  "accountSettings": "Account Settings",
+
+  "manageSettings": "Manage your profile, security, trading preferences and platform experience.",
+  "managePersonalInformation": "Manage your personal information.",
+
+  "profile": "Profile",
+  "security": "Security",
+  "appearance": "Appearance",
+  "accessibility": "Accessibility",
+  "privacy": "Privacy",
+
+  "fullName": "Full Name",
+  "phoneNumber": "Phone Number",
+  "profession": "Profession",
+  "country": "Country",
+  "language": "Language",
+  "theme": "Theme",
+  "timezone": "Timezone",
+
+ "english": "English",
+"french": "French",
+"spanish": "Spanish",
+"german": "German",
+"italian": "Italian",
+"portuguese": "Portuguese",
+"dutch": "Dutch",
+"swedish": "Swedish",
+"danish": "Danish",
+"finnish": "Finnish",
+"polish": "Polish",
+
+  "saveChanges": "Save Changes",
+  "saveProfile": "Save Profile",
+  "saving": "Saving...",
+  "loading": "Loading...",
+
+  "investor": "Investor",
+  "user": "User",
+
+  "withdrawalRequest": "Withdrawal Request",
+  "withdrawalDescription": "Withdrawal requests are processed manually by your assigned account manager after identity verification and compliance review. Processing times vary depending on the selected payment method.",
+  "assignedAccountManager": "Assigned Account Manager",
+  "orionTradingDesk": "Orion Trading Desk",
+  "withdrawalStatusAvailable": "WITHDRAWAL STATUS: AVAILABLE",
+  "withdrawalContactInfo": "To initiate a withdrawal, please contact your assigned account manager. Funds will be released after successful verification and approval.",
+  "contactAccountManager": "Contact Account Manager",
+
+  "accountUpdate": "Account Update",
+  "accountUpdateMessage": "Your trading account is active and ready.",
+  "securityNotice": "Security Notice",
+  "securityNoticeMessage": "Keep your account credentials secure.",
+
+  "openSettings": "Open Settings",
+  "close": "Close",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "yes": "Yes",
+  "no": "No",
+
+  "success": "Success",
+  "error": "Error",
+
+    "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "signup": "Sign Up",
+  "logout": "Sign Out",
+  "signOut": "Sign Out",
+  "forgotPassword": "Forgot Password",
+  "resetPassword": "Reset Password",
+  "verifyEmail": "Verify Email",
+  "resendVerification": "Resend Verification",
+
+  "welcomeBackLogin": "Welcome Back",
+  "loginSubtitle": "Sign in to access your Orion Trade Hub account.",
+  "emailAddress": "Email Address",
+
+  "show": "Show",
+  "hide": "Hide",
+
+  "rememberMe": "Remember Me",
+
+  "signIn": "Sign In",
+  "signingIn": "Signing In...",
+
+  "dontHaveAccount": "Don't have an account?",
+  "createAccount": "Create Account",
+
+  "incorrectEmailPassword": "Incorrect email or password.",
+  "noAccountExists": "No account exists with this email.",
+  "incorrectPassword": "Incorrect password.",
+  "checkInternet": "Please check your internet connection.",
+  "unableToSignIn": "Unable to sign in.",
+  "loginSuccessful": "Login successful.",
+  "userRecordNotFound": "User record not found.",
+  "verifyEmailBeforeLogin": "Please verify your email before signing in. Check your inbox or spam folder."
 }

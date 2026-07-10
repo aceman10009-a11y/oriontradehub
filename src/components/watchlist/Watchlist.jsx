@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useState } from "react";
 import { markets } from "../../data/markets";
 import marketDataAggregator from "../../services/aggregator/marketDataAggregator";
-
+import { useTranslation } from "react-i18next";
 const icons = {
   "BTC/USD": "₿",
   "ETH/USD": "Ξ",
@@ -22,6 +22,7 @@ export default function Watchlist({
   setSelectedSymbol,
   search = "",
 }) {
+  const { t } = useTranslation();
   const [prices, setPrices] = useState({});
 
   useEffect(() => {
@@ -49,7 +50,9 @@ export default function Watchlist({
 
   return (
     <div>
-      <h3 style={{ marginBottom: 16 }}>Markets</h3>
+      <h3 style={{ marginBottom: 16 }}>
+  {t("markets")}
+</h3>
 
       <div
         style={{

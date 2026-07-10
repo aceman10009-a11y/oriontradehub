@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { timeframes } from "../../core/marketEngine";
 import SettingsModal from "./SettingsModal";
 import NotificationModal from "./NotificationModal";
+import { useTranslation } from "react-i18next";
 
 export default function TopBar({
   user,
@@ -16,21 +17,23 @@ export default function TopBar({
   demoBalance,
   liveBalance,
 }) {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
-const [showSettings, setShowSettings] = useState(false);
-const [showNotifications, setShowNotifications] = useState(false);
-const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showSettings, setShowSettings] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const balance = isLiveMode ? liveBalance : demoBalance;
 
@@ -39,9 +42,9 @@ useEffect(() => {
     navigate("/login");
   };
 
-const handleSettings = () => {
-  setShowSettings(true);
-};
+  const handleSettings = () => {
+    setShowSettings(true);
+  };
 
   return (
     <header
@@ -52,16 +55,16 @@ const handleSettings = () => {
         background: "#0d1117",
         borderBottom: "1px solid #202938",
       }}
-      >
+    >
       <div
-       style={{
-  display: "flex",
-  flexDirection: isMobile ? "column" : "row",
-  justifyContent: "space-between",
-  alignItems: isMobile ? "stretch" : "center",
-  padding: isMobile ? "16px" : "16px 24px",
-  gap: "16px",
-}}
+        style={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          justifyContent: "space-between",
+          alignItems: isMobile ? "stretch" : "center",
+          padding: isMobile ? "16px" : "16px 24px",
+          gap: "16px",
+        }}
       >
         {/* LEFT */}
 
@@ -111,51 +114,51 @@ const handleSettings = () => {
               fontWeight: 700,
             }}
           >
-            CONNECTED
+            {t("connected")}
           </div>
         </div>
 
-       <div
-  style={{
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  }}
->
-  <span
-    style={{
-      color: "#9ca3af",
-      fontSize: 13,
-    }}
-  >
-    Welcome back,
-  </span>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <span
+            style={{
+              color: "#9ca3af",
+              fontSize: 13,
+            }}
+          >
+            {t("welcomeBack")},
+          </span>
 
-  <span
-    style={{
-      color: "#fff",
-      fontSize: isMobile ? 18 : 20,
-      fontWeight: 700,
-    }}
-  >
-    {user?.displayName ||
-      user?.email?.split("@")[0] ||
-      "Investor"}
-  </span>
-</div>
+          <span
+            style={{
+              color: "#fff",
+              fontSize: isMobile ? 18 : 20,
+              fontWeight: 700,
+            }}
+          >
+            {user?.displayName ||
+              user?.email?.split("@")[0] ||
+              t("investor")}
+          </span>
+        </div>
 
         {/* RIGHT */}
 
         <div
-         style={{
-  display: "flex",
-  justifyContent: isMobile ? "center" : "flex-end",
-  alignItems: "center",
-  gap: "12px",
-  flexWrap: "wrap",
-  width: isMobile ? "100%" : "auto",
-}}
+          style={{
+            display: "flex",
+            justifyContent: isMobile ? "center" : "flex-end",
+            alignItems: "center",
+            gap: "12px",
+            flexWrap: "wrap",
+            width: isMobile ? "100%" : "auto",
+          }}
         >
           <button
             onClick={() => setIsLiveMode(false)}
@@ -169,7 +172,7 @@ const handleSettings = () => {
               fontWeight: 700,
             }}
           >
-            DEMO
+                      {t("demo")}
           </button>
 
           <button
@@ -184,7 +187,7 @@ const handleSettings = () => {
               fontWeight: 700,
             }}
           >
-            LIVE
+            {t("liveUpper")}
           </button>
 
           <div
@@ -201,8 +204,8 @@ const handleSettings = () => {
                 color: "#7d8590",
               }}
             >
-              ACCOUNT
-                       </div>
+              {t("account")}
+            </div>
 
             <div
               style={{
@@ -233,7 +236,7 @@ const handleSettings = () => {
         }}
       >
         <button
-          title="Notifications"
+          title={t("notifications")}
           onClick={() => setShowNotifications(true)}
           style={{
             width: "42px",
@@ -249,7 +252,7 @@ const handleSettings = () => {
         </button>
 
         <button
-          title="Settings"
+          title={t("settings")}
           onClick={handleSettings}
           style={{
             width: "42px",
@@ -308,7 +311,7 @@ const handleSettings = () => {
                 fontSize: "13px",
               }}
             >
-              {user?.email?.split("@")[0] || "User"}
+              {user?.email?.split("@")[0] || t("user")}
             </div>
 
             <div
@@ -335,7 +338,7 @@ const handleSettings = () => {
               width: isMobile ? "100%" : "auto",
             }}
           >
-            Sign Out
+            {t("signOut")}
           </button>
         </div>
       </div>

@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function MarketHeader({
   symbol,
   price,
   connected,
 }) {
+  const { t } = useTranslation();
  const getDecimals = () => {
   if (symbol.includes("BTC")) return 2;
   if (symbol.includes("ETH")) return 2;
@@ -51,7 +53,7 @@ const formattedPrice =
               color: "#9ca3af",
             }}
           >
-            Market
+            {t("market")}
           </div>
 
           <div
@@ -71,7 +73,7 @@ const formattedPrice =
               color: "#9ca3af",
             }}
           >
-            Current Price
+            {t("currentPrice")}
           </div>
 
           <div
@@ -92,7 +94,9 @@ const formattedPrice =
               fontWeight: 600,
             }}
           >
-            {connected ? "● LIVE" : "● DISCONNECTED"}
+            {connected
+  ? `● ${t("live")}`
+  : `● ${t("disconnected")}`}
           </div>
         </div>
       </div>

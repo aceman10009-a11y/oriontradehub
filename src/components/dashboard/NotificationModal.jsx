@@ -1,9 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function NotificationModal({
   show,
   setShowNotifications,
 }) {
+  const { t } = useTranslation();
   if (!show) return null;
 
   return (
@@ -31,7 +33,7 @@ export default function NotificationModal({
         }}
       >
         <h2 style={{ marginTop: 0 }}>
-          Notifications
+          {t("notifications")}
         </h2>
 
         <div
@@ -43,7 +45,7 @@ export default function NotificationModal({
           }}
         >
           <div style={{ fontWeight: 700 }}>
-            Account Update
+            {t("accountUpdate")}
           </div>
 
           <div
@@ -53,7 +55,7 @@ export default function NotificationModal({
               marginTop: 6,
             }}
           >
-            Your trading account is active and ready.
+            {t("accountUpdateMessage")}
           </div>
         </div>
 
@@ -65,7 +67,7 @@ export default function NotificationModal({
           }}
         >
           <div style={{ fontWeight: 700 }}>
-            Security Notice
+            {t("securityNotice")}
           </div>
 
           <div
@@ -75,7 +77,7 @@ export default function NotificationModal({
               marginTop: 6,
             }}
           >
-            Keep your account credentials secure.
+            {t("securityNoticeMessage")}
           </div>
         </div>
 
@@ -93,7 +95,7 @@ export default function NotificationModal({
             cursor: "pointer",
           }}
         >
-          Close
+          {t("close")}
         </button>
 
       </div>

@@ -19,6 +19,60 @@ const languages = [
   "Korean",
   "Arabic",
   "Hindi",
+
+  // Europe
+  "Polish",
+  "Romanian",
+  "Greek",
+  "Turkish",
+  "Russian",
+  "Ukrainian",
+  "Czech",
+  "Hungarian",
+  "Swedish",
+  "Norwegian",
+  "Danish",
+  "Finnish",
+  "Icelandic",
+  "Albanian",
+  "Serbian",
+  "Croatian",
+  "Slovak",
+  "Slovenian",
+  "Lithuanian",
+  "Latvian",
+  "Estonian",
+
+  // Asia
+  "Thai",
+  "Vietnamese",
+  "Malay",
+  "Indonesian",
+  "Bengali",
+  "Punjabi",
+  "Tamil",
+  "Telugu",
+  "Urdu",
+  "Persian",
+  "Hebrew",
+
+  // Africa
+  "Afrikaans",
+  "Swahili",
+  "Zulu",
+  "Xhosa",
+  "Yoruba",
+  "Igbo",
+  "Hausa",
+  "Amharic",
+
+  // Americas
+  "Haitian Creole",
+  "Quechua",
+  "Navajo",
+
+  // Classical
+  "Latin",
 ];
 
 export default function AppearanceSettings() {
@@ -54,14 +108,38 @@ export default function AppearanceSettings() {
         German: "de",
         French: "fr",
         Spanish: "es",
-        Italian: "en",
-        Portuguese: "en",
-        Dutch: "en",
-        Chinese: "en",
-        Japanese: "en",
-        Korean: "en",
-        Arabic: "en",
-        Hindi: "en",
+
+        Swedish: "sv",
+        Danish: "da",
+        Finnish: "fi",
+        Polish: "pl",
+
+        Italian: "it",
+        Portuguese: "pt",
+        Dutch: "nl",
+        Chinese: "zh",
+        Japanese: "ja",
+        Korean: "ko",
+        Arabic: "ar",
+        Hindi: "hi",
+
+        Romanian: "ro",
+        Greek: "el",
+        Turkish: "tr",
+        Russian: "ru",
+        Ukrainian: "uk",
+        Czech: "cs",
+        Hungarian: "hu",
+        Norwegian: "no",
+        Icelandic: "is",
+        Albanian: "sq",
+        Serbian: "sr",
+        Croatian: "hr",
+        Slovak: "sk",
+        Slovenian: "sl",
+        Lithuanian: "lt",
+        Latvian: "lv",
+        Estonian: "et",
       };
 
       const selectedLanguage =

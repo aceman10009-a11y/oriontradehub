@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function SettingsModal({
   show,
   setShowSettings,
 }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   if (!show) return null;
 
@@ -38,56 +40,51 @@ export default function SettingsModal({
           textAlign: "center",
         }}
       >
-
         <h2>
-          Account Settings
+          {t("accountSettings")}
         </h2>
 
         <p
           style={{
-            color:"#9ca3af",
-            lineHeight:1.5,
+            color: "#9ca3af",
+            lineHeight: 1.5,
           }}
         >
-          Manage your profile, security, appearance,
-          notifications, and trading preferences.
+          {t("manageSettings")}
         </p>
-
 
         <button
           onClick={openSettings}
           style={{
-            width:"100%",
-            padding:12,
-            border:"none",
-            borderRadius:10,
-            background:"#1199fa",
-            color:"#fff",
-            fontWeight:700,
-            cursor:"pointer",
-            marginBottom:10,
+            width: "100%",
+            padding: 12,
+            border: "none",
+            borderRadius: 10,
+            background: "#1199fa",
+            color: "#fff",
+            fontWeight: 700,
+            cursor: "pointer",
+            marginBottom: 10,
           }}
         >
-          Open Settings
+          {t("openSettings")}
         </button>
-
 
         <button
           onClick={() => setShowSettings(false)}
           style={{
-            width:"100%",
-            padding:12,
-            border:"1px solid #374151",
-            borderRadius:10,
-            background:"transparent",
-            color:"#fff",
-            fontWeight:600,
-            cursor:"pointer",
+            width: "100%",
+            padding: 12,
+            border: "1px solid #374151",
+            borderRadius: 10,
+            background: "transparent",
+            color: "#fff",
+            fontWeight: 600,
+            cursor: "pointer",
           }}
         >
-          Close
+          {t("close")}
         </button>
-
       </div>
     </div>
   );

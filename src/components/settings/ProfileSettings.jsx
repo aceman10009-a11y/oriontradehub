@@ -3,8 +3,10 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 export default function ProfileSettings() {
+  const { t } = useTranslation();
   const { user, profile, setProfile } = useAuth();
 
   const [name, setName] = useState(profile?.name || "");
@@ -67,77 +69,73 @@ export default function ProfileSettings() {
       }}
     >
 
-      <h2>Profile</h2>
+      <h2>{t("profile")}</h2>
 
-      <p style={{ color:"#9ca3af" }}>
-        Manage your personal information.
-      </p>
+     <p style={{ color:"#9ca3af" }}>
+  {t("managePersonalInformation")}
+</p>
 
+<div style={styles.grid}>
 
-      <div style={styles.grid}>
+  <input
+    style={styles.input}
+    value={name}
+    placeholder={t("fullName")}
+    onChange={(e)=>setName(e.target.value)}
+  />
 
-        <input
-          style={styles.input}
-          value={name}
-          placeholder="Full Name"
-          onChange={(e)=>setName(e.target.value)}
-        />
+  <input
+    style={styles.input}
+    value={phone}
+    placeholder={t("phoneNumber")}
+    onChange={(e)=>setPhone(e.target.value)}
+  />
 
-        <input
-          style={styles.input}
-          value={phone}
-          placeholder="Phone Number"
-          onChange={(e)=>setPhone(e.target.value)}
-        />
+  <input
+    style={styles.input}
+    value={profession}
+    placeholder={t("profession")}
+    onChange={(e)=>setProfession(e.target.value)}
+  />
 
-        <input
-          style={styles.input}
-          value={profession}
-          placeholder="Profession"
-          onChange={(e)=>setProfession(e.target.value)}
-        />
+  <input
+    style={styles.input}
+    value={country}
+    placeholder={t("country")}
+    onChange={(e)=>setCountry(e.target.value)}
+  />
 
-        <input
-          style={styles.input}
-          value={country}
-          placeholder="Country"
-          onChange={(e)=>setCountry(e.target.value)}
-        />
+  <select
+    style={styles.input}
+    value={language}
+    onChange={(e)=>setLanguage(e.target.value)}
+  >
+    <option>{t("english")}</option>
+    <option>{t("french")}</option>
+    <option>{t("spanish")}</option>
+    <option>{t("german")}</option>
+  </select>
 
-        <select
-          style={styles.input}
-          value={language}
-          onChange={(e)=>setLanguage(e.target.value)}
-        >
-          <option>English</option>
-          <option>French</option>
-          <option>Spanish</option>
-          <option>German</option>
-        </select>
+  <input
+    style={styles.input}
+    value={timezone}
+    placeholder={t("timezone")}
+    onChange={(e)=>setTimezone(e.target.value)}
+  />
 
+</div>
 
-        <input
-          style={styles.input}
-          value={timezone}
-          placeholder="Timezone"
-          onChange={(e)=>setTimezone(e.target.value)}
-        />
+<button
+  onClick={saveProfile}
+  disabled={loading}
+  style={styles.button}
+>
+  {loading ? t("saving") : t("saveProfile")}
+</button>
 
-      </div>
-
-
-      <button
-        onClick={saveProfile}
-        disabled={loading}
-        style={styles.button}
-      >
-        {loading ? "Saving..." : "Save Profile"}
-      </button>
-
-    </div>
-  );
+</div>
+);
 }
-
 
 const styles = {
 
@@ -148,7 +146,6 @@ const styles = {
     marginTop:20,
   },
 
-
   input:{
     padding:12,
     borderRadius:8,
@@ -157,7 +154,6 @@ const styles = {
     color:"#fff",
     outline:"none",
   },
-
 
   button:{
     marginTop:20,

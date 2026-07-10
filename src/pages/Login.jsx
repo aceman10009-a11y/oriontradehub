@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 import {
   signInWithEmailAndPassword,
@@ -15,6 +16,7 @@ import loginBackground from "../assets/auth/login-background.webp";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,16 +39,14 @@ const Login = () => {
       const user = userCredential.user;
 
       // Block login if email is not verified
-     if (!user.emailVerified) {
-  toast.warning(
-    "Please verify your email before signing in. Check your inbox or spam folder."
-  );
+      if (!user.emailVerified) {
+        toast.warning(t("verifyEmailBeforeLogin"));
 
-  await signOut(auth);
+        await signOut(auth);
 
-  navigate("/verify-email");
-  return;
-}
+        navigate("/verify-email");
+        return;
+      }
 
       localStorage.setItem("userId", user.uid);
 
@@ -55,7 +55,7 @@ const Login = () => {
       const userSnap = await getDoc(userRef);
 
       if (!userSnap.exists()) {
-        toast.error("User record not found.");
+        toast.error(t("userRecordNotFound"));
         return;
       }
 
@@ -65,7 +65,7 @@ const Login = () => {
 
       const role = userData.role || "";
 
-      toast.success("Login successful.");
+      toast.success(t("loginSuccessful"));
 
       if (roles.includes("admin") || role === "admin") {
         navigate("/admin");
@@ -73,23 +73,23 @@ const Login = () => {
         navigate("/dashboard");
       }
     } catch (err) {
-      let message = "Unable to sign in.";
+      let message = t("unableToSignIn");
 
       switch (err.code) {
         case "auth/invalid-credential":
-          message = "Incorrect email or password.";
+          message = t("incorrectEmailPassword");
           break;
 
         case "auth/user-not-found":
-          message = "No account exists with this email.";
+          message = t("noAccountExists");
           break;
 
         case "auth/wrong-password":
-          message = "Incorrect password.";
+          message = t("incorrectPassword");
           break;
 
         case "auth/network-request-failed":
-          message = "Please check your internet connection.";
+          message = t("checkInternet");
           break;
 
         default:
@@ -137,7 +137,9 @@ const Login = () => {
           boxShadow: "0 20px 60px rgba(0,0,0,.35)",
         }}
       >
-        <h2 style={{ marginBottom: "8px" }}>Welcome Back</h2>
+        <h2 style={{ marginBottom: "8px" }}>
+          {t("welcomeBackLogin")}
+        </h2>
 
         <p
           style={{
@@ -146,16 +148,16 @@ const Login = () => {
             fontSize: "14px",
           }}
         >
-          Sign in to access your Orion Trade Hub account.
+          {t("loginSubtitle")}
         </p>
 
         <form className="auth-form" onSubmit={handleLogin}>
           <div className="form-section">
-            <h4>Account Login</h4>
+            <h4>{t("login")}</h4>
 
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder={t("emailAddress")}
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -165,7 +167,7 @@ const Login = () => {
             <div className="password-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Password"
+                placeholder={t("password")}
                 autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -177,7 +179,7 @@ const Login = () => {
                 className="password-toggle"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? "Hide" : "Show"}
+                {showPassword ? t("hide") : t("show")}
               </button>
             </div>
           </div>
@@ -200,7 +202,7 @@ const Login = () => {
               }}
             >
               <input type="checkbox" />
-              Remember me
+              {t("rememberMe")}
             </label>
 
             <Link
@@ -211,7 +213,7 @@ const Login = () => {
                 fontWeight: 600,
               }}
             >
-              Forgot Password?
+              {t("forgotPassword")}
             </Link>
           </div>
 
@@ -220,7 +222,7 @@ const Login = () => {
             className="submit-btn"
             disabled={loading}
           >
-            {loading ? "Signing In..." : "Sign In"}
+            {loading ? t("signingIn") : t("signIn")}
           </button>
 
           <p
@@ -231,7 +233,7 @@ const Login = () => {
               fontSize: "14px",
             }}
           >
-            Don't have an account?{" "}
+            {t("dontHaveAccount")}{" "}
             <Link
               to="/signup"
               style={{
@@ -239,7 +241,7 @@ const Login = () => {
                 fontWeight: 600,
               }}
             >
-              Create Account
+              {t("createAccount")}
             </Link>
           </p>
         </form>

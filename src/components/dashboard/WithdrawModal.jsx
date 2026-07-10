@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function WithdrawModal({
   show,
   setShowWithdraw,
   trader,
 }) {
+  const { t } = useTranslation();
   if (!show) return null;
 
   return (
@@ -38,7 +40,7 @@ export default function WithdrawModal({
             marginBottom: 10,
           }}
         >
-          Withdrawal Request
+          {t("withdrawalRequest")}
         </h2>
 
         <p
@@ -48,10 +50,7 @@ export default function WithdrawModal({
             fontSize: 13,
           }}
         >
-          Withdrawal requests are processed manually by your assigned
-          account manager after identity verification and compliance
-          review. Processing times vary depending on the selected
-          payment method.
+         {t("withdrawalDescription")}
         </p>
 
         <div
@@ -69,7 +68,7 @@ export default function WithdrawModal({
               fontSize: 12,
             }}
           >
-            Assigned Account Manager
+            {t("assignedAccountManager")}
           </div>
 
           <div
@@ -78,7 +77,7 @@ export default function WithdrawModal({
               marginTop: 6,
             }}
           >
-            {trader?.name || "Orion Trading Desk"}
+            {trader?.name || t("orionTradingDesk")}
           </div>
 
           <div
@@ -89,7 +88,7 @@ export default function WithdrawModal({
               letterSpacing: ".05em",
             }}
           >
-            WITHDRAWAL STATUS: AVAILABLE
+            {t("withdrawalStatusAvailable")}
           </div>
         </div>
 
@@ -101,9 +100,7 @@ export default function WithdrawModal({
             lineHeight: 1.6,
           }}
         >
-          To initiate a withdrawal, please contact your assigned account
-          manager. Funds will be released after successful verification
-          and approval.
+        {t("withdrawalContactInfo")}
         </div>
 
         <button
@@ -120,7 +117,7 @@ export default function WithdrawModal({
             fontWeight: 700,
           }}
         >
-          Contact Account Manager
+          {t("contactAccountManager")}
         </button>
       </div>
     </div>
