@@ -129,8 +129,8 @@
   "loginSuccessful": "Accesso effettuato con successo.",
   "userRecordNotFound": "Record utente non trovato.",
   "verifyEmailBeforeLogin": "Verifica il tuo indirizzo e-mail prima di accedere. Controlla la posta in arrivo o la cartella spam.",
-  "personalInformation": "Personal Information",
-  "contactDetails": "Contact Details",
+    "personalInformation": "Informazioni personali",
+"contactDetails": "Dettagli di contatto",
   "passwordHint": "Usa almeno 8 caratteri con lettere maiuscole, minuscole, un numero e un simbolo.",
   "securityQuestion1": "Domanda di sicurezza 1",
   "securityQuestion2": "Domanda di sicurezza 2",
@@ -158,140 +158,151 @@
   "weakPassword": "La password deve contenere almeno 6 caratteri.",
   "invalidEmail": "Inserisci un indirizzo email valido.",
   "createAccountTitle": "Crea account",
-  "marketsSection": {
-    "badge": "LIVE GLOBAL MARKETS",
-    "title": "Trade The World's",
-    "titleHighlight": "Top Markets",
-    "description": "Access cryptocurrencies, forex, commodities and major indices through Orion Trade Hub's institutional-grade trading platform. Monitor price movements in real time and execute trades with confidence."
-  },
+   "marketsSection": {
+  "badge": "MERCATI GLOBALI LIVE",
+  "title": "Opera Nei",
+  "titleHighlight": "Migliori Mercati",
+  "description": "Accedi a criptovalute, forex, materie prime e principali indici attraverso la piattaforma di trading istituzionale di Orion Trade Hub. Monitora i movimenti dei prezzi in tempo reale ed esegui operazioni con sicurezza."
+   },
+
+  
+
   "features": {
-    "header": {
-      "badge": "PLATFORM FEATURES",
-      "title": "Everything You Need",
-      "titleHighlight": "To Trade Smarter.",
-      "description": "Orion Trade Hub combines institutional execution, AI-powered insights, advanced portfolio management, multi-asset trading and enterprise-grade security into one premium trading experience."
+  "header": {
+    "badge": "CARATTERISTICHE DELLA PIATTAFORMA",
+    "title": "Tutto Ciò Che Ti Serve",
+    "titleHighlight": "Per Operare Meglio.",
+    "description": "Orion Trade Hub combina esecuzione istituzionale, analisi basate sull'intelligenza artificiale, gestione avanzata del portafoglio, trading multi-asset e sicurezza di livello aziendale in un'unica esperienza premium."
+  },
+  "cards": {
+    "vip": {
+      "title": "Conti VIP",
+      "description": "Esecuzione premium, prezzi istituzionali e consulenti dedicati."
     },
-    "cards": {
-      "vip": {
-        "title": "VIP Accounts",
-        "description": "Premium execution, institutional pricing and dedicated relationship managers."
-      },
-      "ai": {
-        "title": "AI Insights",
-        "description": "Real-time market intelligence powered by advanced trading algorithms."
-      },
-      "execution": {
-        "title": "Fast Execution",
-        "description": "Ultra-low latency infrastructure for rapid order execution worldwide."
-      },
-      "security": {
-        "title": "Secure Platform",
-        "description": "Enterprise-grade encryption and multi-layer account protection."
-      },
-      "assets": {
-        "title": "Multi-Asset Trading",
-        "description": "Trade crypto, forex, commodities, indices and equities from one account."
-      },
-      "portfolio": {
-        "title": "Managed Portfolios",
-        "description": "Professional portfolio management with institutional risk controls."
-      }
-    }
-  },
-  "securityMobile": {
-    "title": "Security & Mobile Platform",
-    "description": "Orion Trade Hub is built with institutional-grade security, encrypted infrastructure, and real-time risk monitoring systems. Your funds and data are protected with multi-layer safeguards.",
-    "features": {
-      "security": "Bank-Level Security",
-      "markets": "24/7 Global Markets",
-      "ai": "AI Assisted Trading"
+    "ai": {
+      "title": "Analisi IA",
+      "description": "Intelligence di mercato in tempo reale alimentata da algoritmi avanzati di trading."
     },
-    "buttons": {
-      "appStore": "App Store",
-      "googlePlay": "Google Play"
+    "execution": {
+      "title": "Esecuzione Rapida",
+      "description": "Infrastruttura a latenza ultra-bassa per eseguire ordini rapidamente in tutto il mondo."
     },
-    "liveSnapshot": "LIVE MARKET SNAPSHOT"
-  },
-  "hero": {
-    "badge": "ORION TRADE HUB",
-    "title": "Institutional Trading",
-    "titleHighlight": "Built For Everyone.",
-    "subtitle": "Experience institutional-grade execution across Crypto, Forex, Commodities and Global Equities through one beautifully engineered trading platform.",
-    "buttons": {
-      "openAccount": "Open Live Account",
-      "explorePlatform": "Explore Platform"
+    "security": {
+      "title": "Piattaforma Sicura",
+      "description": "Crittografia di livello aziendale e protezione multi-livello degli account."
     },
-    "trust": {
-      "security": "Bank-Level Security",
-      "markets": "24/7 Global Markets",
-      "ai": "AI Assisted Trading"
-    }
-  },
-  "mobile": {
-    "label": "MOBILE PLATFORM",
-    "title": "Trade Anywhere.",
-    "titleHighlight": "Stay Ahead.",
-    "description": "Orion Trade Hub delivers institutional-grade execution, portfolio monitoring, AI-assisted insights, and live market access from a beautifully engineered mobile experience."
-  },
-  "coin": {
-    "badge": "ORION ECOSYSTEM",
-    "title": "Orion",
-    "titleHighlight": "Coin",
-    "description": "Join the Orion Coin early-access list and receive updates on launch announcements, ecosystem utilities and platform rewards.",
-    "placeholder": "Enter your email",
-    "button": "Notify Me",
-    "success": "You're on the early-access list."
-  },
-  "reviews": {
-    "title": "What Traders Are Saying",
-    "items": [
-      "Very smooth platform. Real-time pricing feels professional.",
-      "Clean UI and fast execution. Love the trading experience.",
-      "Charts are responsive and accurate. Great work.",
-      "Feels like a real exchange. Very impressive design.",
-      "Simple, fast, and reliable trading interface.",
-      "One of the best demo trading platforms I've used.",
-      "Execution speed and UI are top tier.",
-      "Very realistic trading environment.",
-      "Finally a clean crypto trading UI that feels real.",
-      "Love the live market feel. Very polished."
-    ]
-  },
-  "contact": {
-    "badge": "CONTACT ORION",
-    "title": "Speak With Our Team",
-    "description": "Our specialists are available to assist with account opening, platform guidance, institutional services and general enquiries.",
-    "email": "Email:",
-    "institutional": "Institutional:"
-  },
-  "navbar": {
-    "features": "Features",
-    "markets": "Markets",
-    "orionCoin": "Orion Coin",
-    "support": "Support",
-    "about": "About",
-    "signIn": "Sign In",
-    "openAccount": "Open Account"
-  },
-  "footer": {
-    "platform": "Platform",
-    "markets": "Markets",
-    "trading": "Trading",
-    "mobileApp": "Mobile App",
-    "security": "Security",
-    "company": "Company",
-    "about": "About",
-    "support": "Support",
-    "contact": "Contact",
-    "careers": "Careers",
-    "close": "Close",
-    "mobileMaintenance": "Mobile apps are currently under maintenance. They will be available soon.",
-    "careersMessage": "Careers are coming soon. We are currently building our hiring program."
-  },
-  "homeInfo": {
-    "about": {
-      "title": "About Orion Trade Hub",
-      "description": "Orion Trade Hub is a next-generation trading platform designed for real-time market execution, AI-assisted insights, and institutional-grade performance across crypto, forex, and global markets."
+    "assets": {
+      "title": "Trading Multi-Asset",
+      "description": "Opera con criptovalute, forex, materie prime, indici e azioni da un unico account."
+    },
+    "portfolio": {
+      "title": "Portafogli Gestiti",
+      "description": "Gestione professionale del portafoglio con controlli del rischio istituzionali."
     }
   }
-}
+},
+
+"securityMobile": {
+  "title": "Sicurezza e Piattaforma Mobile",
+  "description": "Orion Trade Hub è costruito con sicurezza di livello istituzionale, infrastruttura crittografata e sistemi di monitoraggio del rischio in tempo reale. I tuoi fondi e dati sono protetti da sistemi di sicurezza multi-livello.",
+  "features": {
+    "security": "Sicurezza di Livello Bancario",
+    "markets": "Mercati Globali 24/7",
+    "ai": "Trading Assistito dall'IA"
+  },
+  "buttons": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "liveSnapshot": "PANORAMICA MERCATO LIVE"
+},
+
+"hero": {
+  "badge": "ORION TRADE HUB",
+  "title": "Trading Istituzionale",
+  "titleHighlight": "Creato Per Tutti.",
+  "subtitle": "Sperimenta un'esecuzione di livello istituzionale su Cripto, Forex, Materie Prime e Azioni Globali attraverso una piattaforma di trading progettata con precisione.",
+  "buttons": {
+    "openAccount": "Apri Conto Reale",
+    "explorePlatform": "Esplora Piattaforma"
+  },
+  "trust": {
+    "security": "Sicurezza di Livello Bancario",
+    "markets": "Mercati Globali 24/7",
+    "ai": "Trading Assistito dall'IA"
+  }
+},
+
+"mobile": {
+  "label": "PIATTAFORMA MOBILE",
+  "title": "Opera Ovunque.",
+  "titleHighlight": "Resta Avanti.",
+  "description": "Orion Trade Hub offre esecuzione istituzionale, monitoraggio del portafoglio, analisi assistite dall'IA e accesso ai mercati live da un'esperienza mobile avanzata."
+},
+
+"coin": {
+  "badge": "ECOSISTEMA ORION",
+  "title": "Orion",
+  "titleHighlight": "Coin",
+  "description": "Unisciti alla lista di accesso anticipato di Orion Coin e ricevi aggiornamenti sui lanci, sulle utilità dell'ecosistema e sui premi della piattaforma.",
+  "placeholder": "Inserisci la tua email",
+  "button": "Avvisami",
+  "success": "Sei nella lista di accesso anticipato."
+},
+
+"reviews": {
+  "title": "Cosa Dicono i Trader",
+  "items": [
+    "Piattaforma molto fluida. I prezzi in tempo reale sembrano professionali.",
+    "Interfaccia pulita ed esecuzione veloce. Adoro l'esperienza di trading.",
+    "I grafici sono reattivi e precisi. Ottimo lavoro.",
+    "Sembra un vero exchange. Design davvero impressionante.",
+    "Interfaccia di trading semplice, veloce e affidabile.",
+    "Una delle migliori piattaforme demo che abbia mai utilizzato.",
+    "Velocità di esecuzione e interfaccia di altissimo livello.",
+    "Ambiente di trading molto realistico.",
+    "Finalmente un'interfaccia crypto pulita che sembra reale.",
+    "Adoro la sensazione del mercato live. Molto professionale."
+  ]
+},
+
+"contact": {
+  "badge": "CONTATTA ORION",
+  "title": "Parla Con Il Nostro Team",
+  "description": "I nostri specialisti sono disponibili per assisterti nell'apertura del conto, nella guida alla piattaforma, nei servizi istituzionali e nelle richieste generali.",
+  "email": "Email:",
+  "institutional": "Istituzionale:"
+},
+
+"navbar": {
+  "features": "Funzionalità",
+  "markets": "Mercati",
+  "orionCoin": "Orion Coin",
+  "support": "Supporto",
+  "about": "Chi Siamo",
+  "signIn": "Accedi",
+  "openAccount": "Apri Conto"
+},
+
+"footer": {
+  "platform": "Piattaforma",
+  "markets": "Mercati",
+  "trading": "Trading",
+  "mobileApp": "App Mobile",
+  "security": "Sicurezza",
+  "company": "Azienda",
+  "about": "Chi Siamo",
+  "support": "Supporto",
+  "contact": "Contatti",
+  "careers": "Carriere",
+  "close": "Chiudi",
+  "mobileMaintenance": "Le applicazioni mobili sono attualmente in manutenzione. Saranno disponibili presto.",
+  "careersMessage": "Le opportunità lavorative arriveranno presto. Stiamo creando il nostro programma di selezione."
+},
+
+"homeInfo": {
+  "about": {
+    "title": "Informazioni su Orion Trade Hub",
+    "description": "Orion Trade Hub è una piattaforma di trading di nuova generazione progettata per esecuzione di mercato in tempo reale, analisi assistite dall'IA e prestazioni istituzionali su criptovalute, forex e mercati globali."
+  }}
+  }

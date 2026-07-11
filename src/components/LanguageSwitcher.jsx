@@ -17,6 +17,7 @@ const languages = [
   { code: "zh", label: "🇨🇳 中文" },
   { code: "ja", label: "🇯🇵 日本語" },
   { code: "ko", label: "🇰🇷 한국어" },
+  {code: "fi",  label: "fi finish"},
 ];
 
 const LanguageSwitcher = () => {

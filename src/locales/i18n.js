@@ -16,6 +16,7 @@ import zh from "./zh.json";
 import ja from "./ja.json";
 import ko from "./ko.json";
 import ar from "./ar.json";
+import no from "./no.json";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -78,6 +79,9 @@ i18n.use(initReactI18next).init({
     ar: {
       translation: ar,
     },
+    no: {
+  translation: no,
+},
   },
 
   lng: localStorage.getItem("language") || "en",
@@ -100,6 +104,7 @@ i18n.use(initReactI18next).init({
     "ja",
     "ko",
     "ar",
+    "no"
   ],
 
   interpolation: {

@@ -1,0 +1,352 @@
+{
+  "dashboard": "Dashbord",
+  "home": "Hjem",
+
+  "welcomeBack": "Velkommen tilbake",
+  "connected": "TILKOBLET",
+  "connectedStatus": "TILKOBLET",
+  "live": "LIVE",
+  "liveUpper": "LIVE",
+  "offline": "FRAKOBLET",
+  "disconnected": "Frakoblet",
+
+  "market": "Marked",
+  "markets": "Markeder",
+  "searchMarkets": "Søk i markeder...",
+  "selectedMarket": "Valgt marked",
+  "currentPrice": "Gjeldende pris",
+  "totalProfit": "Total fortjeneste",
+  "connection": "Tilkobling",
+
+  "accountOverview": "Kontoversikt",
+  "account": "Konto",
+  "demoBalance": "Demobalanse",
+  "liveBalance": "Live-saldo",
+  "equity": "Egenkapital",
+  "freeMargin": "Fri margin",
+  "openPositions": "Åpne posisjoner",
+
+  "tradingHistory": "Handelshistorikk",
+  "tradingPreferences": "Handelsinnstillinger",
+
+  "all": "ALLE",
+  "open": "ÅPEN",
+  "closed": "LUKKET",
+  "profit": "FORTJENESTE",
+  "loss": "TAP",
+
+  "buy": "KJØP",
+  "sell": "SELG",
+
+  "symbol": "Symbol",
+  "asset": "Eiendel",
+  "type": "Type",
+  "amount": "Beløp",
+  "status": "Status",
+
+  "winningTrades": "Vinnende handler",
+  "losingTrades": "Tapende handler",
+  "winRate": "Treffsikkerhet",
+
+  "accountStatus": "Kontostatus",
+  "verified": "Verifisert",
+  "pending": "Venter",
+
+  "deposit": "Innskudd",
+  "withdraw": "Uttak",
+
+  "noTradingHistory": "Ingen handelshistorikk tilgjengelig.",
+  "noPositions": "Ingen aktive posisjoner.",
+  "noActivePositions": "Ingen aktive posisjoner.",
+
+  "demo": "DEMO",
+
+  "notifications": "Varsler",
+  "settings": "Innstillinger",
+  "accountSettings": "Kontoinnstillinger",
+
+  "manageSettings": "Administrer profilen din, sikkerhet, handelsinnstillinger og plattformopplevelse.",
+  "managePersonalInformation": "Administrer dine personlige opplysninger.",
+
+  "profile": "Profil",
+  "security": "Sikkerhet",
+  "appearance": "Utseende",
+  "accessibility": "Tilgjengelighet",
+  "privacy": "Personvern",
+
+  "fullName": "Fullt navn",
+  "phoneNumber": "Telefonnummer",
+  "profession": "Yrke",
+  "country": "Land",
+  "language": "Språk",
+  "theme": "Tema",
+  "timezone": "Tidssone",
+
+  "english": "Engelsk",
+  "french": "Fransk",
+  "spanish": "Spansk",
+  "german": "Tysk",
+  "italian": "Italiensk",
+  "portuguese": "Portugisisk",
+  "dutch": "Nederlandsk",
+  "swedish": "Svensk",
+  "danish": "Dansk",
+  "finnish": "Finsk",
+  "polish": "Polsk",
+
+  "saveChanges": "Lagre endringer",
+  "saveProfile": "Lagre profil",
+  "saving": "Lagrer...",
+  "loading": "Laster...",
+
+  "investor": "Investor",
+  "user": "Bruker",
+
+  "withdrawalRequest": "Uttaksforespørsel",
+  "withdrawalDescription": "Uttaksforespørsler behandles manuelt av din tildelte kontoadministrator etter identitetsbekreftelse og samsvarskontroll. Behandlingstiden varierer avhengig av valgt betalingsmetode.",
+  "assignedAccountManager": "Tildelt kontoadministrator",
+  "orionTradingDesk": "Orion Trading Desk",
+  "withdrawalStatusAvailable": "UTTAKSSTATUS: TILGJENGELIG",
+  "withdrawalContactInfo": "For å starte et uttak, vennligst kontakt din tildelte kontoadministrator. Midlene utbetales etter vellykket verifisering og godkjenning.",
+  "contactAccountManager": "Kontakt kontoadministrator",
+
+  "accountUpdate": "Kontoppdatering",
+  "accountUpdateMessage": "Handelskontoen din er aktiv og klar.",
+  "securityNotice": "Sikkerhetsvarsel",
+  "securityNoticeMessage": "Hold kontoinformasjonen din sikker.",
+
+  "openSettings": "Åpne innstillinger",
+  "close": "Lukk",
+  "cancel": "Avbryt",
+  "confirm": "Bekreft",
+  "yes": "Ja",
+  "no": "Nei",
+
+  "success": "Vellykket",
+  "error": "Feil",
+
+  "email": "E-post",
+  "password": "Passord",
+  "login": "Logg inn",
+  "signup": "Opprett konto",
+  "logout": "Logg ut",
+  "signOut": "Logg ut",
+  "forgotPassword": "Glemt passord",
+  "resetPassword": "Tilbakestill passord",
+  "verifyEmail": "Bekreft e-post",
+  "resendVerification": "Send bekreftelse på nytt",
+
+  "welcomeBackLogin": "Velkommen tilbake",
+  "loginSubtitle": "Logg inn for å få tilgang til Orion Trade Hub-kontoen din.",
+  "emailAddress": "E-postadresse",
+
+  "show": "Vis",
+  "hide": "Skjul",
+
+  "rememberMe": "Husk meg",
+
+  "signIn": "Logg inn",
+  "signingIn": "Logger inn...",
+
+  "dontHaveAccount": "Har du ikke en konto?",
+  "createAccount": "Opprett konto",
+
+  "incorrectEmailPassword": "Feil e-postadresse eller passord.",
+  "noAccountExists": "Ingen konto finnes med denne e-postadressen.",
+  "incorrectPassword": "Feil passord.",
+  "checkInternet": "Kontroller internettforbindelsen din.",
+  "unableToSignIn": "Kunne ikke logge inn.",
+  "loginSuccessful": "Innlogging vellykket.",
+  "userRecordNotFound": "Bruker ble ikke funnet.",
+  "verifyEmailBeforeLogin": "Bekreft e-postadressen din før du logger inn. Sjekk innboksen eller søppelpostmappen.",
+
+  "personalInformation": "Personlig informasjon",
+  "contactDetails": "Kontaktinformasjon",
+
+  "createAccountTitle": "Opprett konto",
+
+  "passwordHint": "Bruk minst 8 tegn med store og små bokstaver, tall og symbol.",
+
+  "securityQuestion1": "Sikkerhetsspørsmål 1",
+  "securityQuestion2": "Sikkerhetsspørsmål 2",
+
+  "securityQuestionMother": "Hva er morens pikenavn?",
+  "securityQuestionCity": "Hvilken by ble du født i?",
+  "securityQuestionPet": "Hva het ditt første kjæledyr?",
+
+  "securityQuestionFood": "Hva er favorittmaten din?",
+  "securityQuestionSchool": "Hva var den første skolen din?",
+  "answer": "Svar",
+
+  "professionPlaceholder": "Yrke (f.eks. sykepleier, investor, administrerende direktør, student)",
+
+  "referralCodeOptional": "Henvisningskode (valgfritt)",
+
+  "howDidYouHear": "Hvordan hørte du om oss?",
+
+  "google": "Google",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "linkedin": "LinkedIn",
+  "youtube": "YouTube",
+  "friend": "Venn",
+  "other": "Annet",
+
+  "creatingAccount": "Oppretter konto...",
+
+  "accountCreatedVerification": "Kontoen ble opprettet! Sjekk innboksen eller søppelpostmappen for å bekrefte e-postadressen din før du logger inn.",
+
+  "somethingWentWrong": "Noe gikk galt.",
+
+  "accountAlreadyExists": "Det finnes allerede en konto med denne e-postadressen.",
+
+  "weakPassword": "Passordet må være minst 6 tegn.",
+
+  "invalidEmail": "Oppgi en gyldig e-postadresse.",
+
+  "marketsSection" : {
+  "badge": "LIVE GLOBALE MARKEDER",
+  "title": "Handle Verdens",
+  "titleHighlight": "Beste Markeder",
+  "description": "Få tilgang til kryptovaluta, valuta (Forex), råvarer og ledende indekser gjennom Orion Trade Hubs handelsplattform på institusjonelt nivå. Følg prisbevegelser i sanntid og utfør handler med trygghet."
+},
+
+"features": {
+  "header": {
+    "badge": "PLATTFORMFUNKSJONER",
+    "title": "Alt Du Trenger",
+    "titleHighlight": "For Å Handle Smartere.",
+    "description": "Orion Trade Hub kombinerer institusjonell ordreutførelse, AI-drevet markedsinnsikt, avansert porteføljeforvaltning, handel med flere aktivaklasser og sikkerhet på bedriftsnivå i én førsteklasses handelsopplevelse."
+  },
+  "cards": {
+    "vip": {
+      "title": "VIP-kontoer",
+      "description": "Førsteklasses ordreutførelse, institusjonelle priser og dedikerte kunderådgivere."
+    },
+    "ai": {
+      "title": "AI-innsikt",
+      "description": "Markedsanalyse i sanntid drevet av avanserte handelsalgoritmer."
+    },
+    "execution": {
+      "title": "Rask Ordreutførelse",
+      "description": "Infrastruktur med ultralav forsinkelse for lynrask ordreutførelse over hele verden."
+    },
+    "security": {
+      "title": "Sikker Plattform",
+      "description": "Kryptering på bedriftsnivå og flerlags kontobeskyttelse."
+    },
+    "assets": {
+      "title": "Handel med Flere Aktivaklasser",
+      "description": "Handle kryptovaluta, forex, råvarer, indekser og aksjer fra én enkelt konto."
+    },
+    "portfolio": {
+      "title": "Forvaltede Porteføljer",
+      "description": "Profesjonell porteføljeforvaltning med institusjonell risikokontroll."
+    }
+  }
+},
+
+"securityMobile": {
+  "title": "Sikkerhet og Mobilplattform",
+  "description": "Orion Trade Hub er bygget med sikkerhet på institusjonelt nivå, kryptert infrastruktur og risikokontroll i sanntid. Midlene og dataene dine er beskyttet med flerlags sikkerhet.",
+  "features": {
+    "security": "Sikkerhet på Banknivå",
+    "markets": "Globale Markeder 24/7",
+    "ai": "AI-assistert Handel"
+  },
+  "buttons": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "liveSnapshot": "LIVE MARKEDSOVERSIKT"
+},
+
+"hero": {
+  "badge": "ORION TRADE HUB",
+  "title": "Institusjonell Handel",
+  "titleHighlight": "Bygget For Alle.",
+  "subtitle": "Opplev ordreutførelse på institusjonelt nivå innen krypto, forex, råvarer og globale aksjer gjennom én elegant utviklet handelsplattform.",
+  "buttons": {
+    "openAccount": "Åpne Live-konto",
+    "explorePlatform": "Utforsk Plattformen"
+  },
+  "trust": {
+    "security": "Sikkerhet på Banknivå",
+    "markets": "Globale Markeder 24/7",
+    "ai": "AI-assistert Handel"
+  }
+},
+"mobile": {
+  "label": "MOBILPLATTFORM",
+  "title": "Handle Hvor Som Helst.",
+  "titleHighlight": "Hold Deg Foran.",
+  "description": "Orion Trade Hub tilbyr handelsutførelse på institusjonelt nivå, porteføljeovervåking, AI-assistert innsikt og direkte markedstilgang gjennom en elegant utviklet mobilopplevelse."
+},
+
+"coin": {
+  "badge": "ORION-ØKOSYSTEMET",
+  "title": "Orion",
+  "titleHighlight": "Coin",
+  "description": "Bli med på tidlig tilgang til Orion Coin og motta oppdateringer om lanseringer, økosystemfunksjoner og plattformbelønninger.",
+  "placeholder": "Skriv inn e-postadressen din",
+  "button": "Varsle Meg",
+  "success": "Du er nå på listen for tidlig tilgang."
+},
+
+"reviews": {
+  "title": "Hva Tradere Sier",
+  "items": [
+    "Svært smidig plattform. Sanntidsprisene føles profesjonelle.",
+    "Rent grensesnitt og rask ordreutførelse. Elsker handelsopplevelsen.",
+    "Diagrammene er raske og nøyaktige. Flott arbeid.",
+    "Føles som en ekte børs. Veldig imponerende design.",
+    "Enkelt, raskt og pålitelig handelsgrensesnitt.",
+    "En av de beste demohandelsplattformene jeg har brukt.",
+    "Utførelseshastigheten og brukergrensesnittet er i toppklasse.",
+    "Svært realistisk handelsmiljø.",
+    "Endelig et rent kryptogrensesnitt som føles ekte.",
+    "Elsker følelsen av et levende marked. Svært gjennomført."
+  ]
+},
+
+"contact": {
+  "badge": "KONTAKT ORION",
+  "title": "Snakk Med Teamet Vårt",
+  "description": "Våre spesialister står klare til å hjelpe med kontoåpning, plattformveiledning, institusjonelle tjenester og generelle henvendelser.",
+  "email": "E-post:",
+  "institutional": "Institusjonelt:"
+},
+
+"navbar": {
+  "features": "Funksjoner",
+  "markets": "Markeder",
+  "orionCoin": "Orion Coin",
+  "support": "Support",
+  "about": "Om Oss",
+  "signIn": "Logg Inn",
+  "openAccount": "Åpne Konto"
+},
+
+"footer": {
+  "platform": "Plattform",
+  "markets": "Markeder",
+  "trading": "Handel",
+  "mobileApp": "Mobilapp",
+  "security": "Sikkerhet",
+  "company": "Selskap",
+  "about": "Om Oss",
+  "support": "Support",
+  "contact": "Kontakt",
+  "careers": "Karriere",
+  "close": "Lukk",
+  "mobileMaintenance": "Mobilappene er for øyeblikket under vedlikehold. De vil være tilgjengelige snart.",
+  "careersMessage": "Karrieremuligheter kommer snart. Vi bygger for tiden vårt rekrutteringsprogram."
+},
+
+"homeInfo": {
+  "about": {
+    "title": "Om Orion Trade Hub",
+    "description": "Orion Trade Hub er en neste generasjons handelsplattform utviklet for sanntids markedshandel, AI-assistert innsikt og ytelse på institusjonelt nivå innen kryptovaluta, forex og globale markeder."
+  }
+}
+}
