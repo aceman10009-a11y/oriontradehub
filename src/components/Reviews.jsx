@@ -1,19 +1,62 @@
 import React from "react";
-
-const reviews = [
-  { name: "Michael R.", country: "Canada", text: "Very smooth platform. Real-time pricing feels professional." },
-  { name: "Sarah L.", country: "UK", text: "Clean UI and fast execution. Love the trading experience." },
-  { name: "Daniel K.", country: "Germany", text: "Charts are responsive and accurate. Great work." },
-  { name: "Sofia M.", country: "Spain", text: "Feels like a real exchange. Very impressive design." },
-  { name: "James T.", country: "Australia", text: "Simple, fast, and reliable trading interface." },
-  { name: "Emma H.", country: "Sweden", text: "One of the best demo trading platforms I've used." },
-  { name: "Ahmed A.", country: "UAE", text: "Execution speed and UI are top tier." },
-  { name: "David C.", country: "Singapore", text: "Very realistic trading environment." },
-  { name: "Grace O.", country: "Portugal", text: "Finally a clean crypto trading UI that feels real." },
-  { name: "Olivia W.", country: "USA", text: "Love the live market feel. Very polished." },
-];
+import { useTranslation } from "react-i18next";
 
 const Reviews = () => {
+  const { t } = useTranslation();
+
+  const reviews = [
+    {
+      name: "Michael R.",
+      country: "Canada",
+      text: t("reviews.items.0"),
+    },
+    {
+      name: "Sarah L.",
+      country: "UK",
+      text: t("reviews.items.1"),
+    },
+    {
+      name: "Daniel K.",
+      country: "Germany",
+      text: t("reviews.items.2"),
+    },
+    {
+      name: "Sofia M.",
+      country: "Spain",
+      text: t("reviews.items.3"),
+    },
+    {
+      name: "James T.",
+      country: "Australia",
+      text: t("reviews.items.4"),
+    },
+    {
+      name: "Emma H.",
+      country: "Sweden",
+      text: t("reviews.items.5"),
+    },
+    {
+      name: "Ahmed A.",
+      country: "UAE",
+      text: t("reviews.items.6"),
+    },
+    {
+      name: "David C.",
+      country: "Singapore",
+      text: t("reviews.items.7"),
+    },
+    {
+      name: "Grace O.",
+      country: "Portugal",
+      text: t("reviews.items.8"),
+    },
+    {
+      name: "Olivia W.",
+      country: "USA",
+      text: t("reviews.items.9"),
+    },
+  ];
+
   return (
     <section
       id="reviews"
@@ -23,8 +66,13 @@ const Reviews = () => {
         color: "#fff",
       }}
     >
-      <h2 style={{ textAlign: "center", marginBottom: "50px" }}>
-        What Traders Are Saying
+      <h2
+        style={{
+          textAlign: "center",
+          marginBottom: "50px",
+        }}
+      >
+        {t("reviews.title")}
       </h2>
 
       <div
@@ -46,22 +94,29 @@ const Reviews = () => {
               border: "1px solid rgba(255,255,255,0.08)",
             }}
           >
-           <div
-  style={{
-    color: "#fff",
-    fontWeight: "700",
-    fontSize: "16px",
-    marginBottom: "4px",
-  }}
->
-  {r.name}
-</div>
+            <div
+              style={{
+                color: "#fff",
+                fontWeight: "700",
+                fontSize: "16px",
+                marginBottom: "4px",
+              }}
+            >
+              {r.name}
+            </div>
 
-<small style={{ color: "#aaa" }}>{r.country}</small>
+            <small style={{ color: "#aaa" }}>
+              {r.country}
+            </small>
 
-<p style={{ marginTop: "10px", color: "#cbd5e1" }}>
-  "{r.text}"
-</p>
+            <p
+              style={{
+                marginTop: "10px",
+                color: "#cbd5e1",
+              }}
+            >
+              "{r.text}"
+            </p>
           </div>
         ))}
       </div>

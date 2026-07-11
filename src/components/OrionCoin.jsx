@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const OrionCoin = () => {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("");
   const [joined, setJoined] = useState(false);
 
@@ -228,22 +231,21 @@ const OrionCoin = () => {
         <div className="coin-card">
 
           <div className="coin-badge">
-            ORION ECOSYSTEM
+            {t("coin.badge")}
           </div>
 
           <h2 className="coin-title">
-            Orion <span>Coin</span>
+            {t("coin.title")} <span>{t("coin.titleHighlight")}</span>
           </h2>
 
           <p className="coin-text">
-            Join the Orion Coin early-access list and receive updates on
-            launch announcements, ecosystem utilities and platform rewards.
+            {t("coin.description")}
           </p>
 
           {joined ? (
 
             <div className="coin-success">
-              ✓ You're on the early-access list.
+              ✓ {t("coin.success")}
             </div>
 
           ) : (
@@ -256,9 +258,9 @@ const OrionCoin = () => {
               <input
                 className="coin-input"
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("coin.placeholder")}
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
 
@@ -266,7 +268,7 @@ const OrionCoin = () => {
                 className="coin-button"
                 type="submit"
               >
-                Notify Me
+                {t("coin.button")}
               </button>
 
             </form>

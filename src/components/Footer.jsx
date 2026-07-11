@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState("");
 
@@ -13,7 +16,6 @@ const Footer = () => {
     if (securitySections.includes(id)) {
       navigate("/security");
 
-      // wait for route + DOM render
       setTimeout(() => {
         const el = document.getElementById(id);
 
@@ -23,7 +25,6 @@ const Footer = () => {
             block: "start",
           });
         } else {
-          // second retry (fixes slow render devices)
           setTimeout(() => {
             document.getElementById(id)?.scrollIntoView({
               behavior: "smooth",
@@ -73,61 +74,76 @@ const Footer = () => {
         >
           {/* Platform */}
           <div>
-            <h4>Platform</h4>
+            <h4>{t("footer.platform")}</h4>
 
-            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("markets")}>
-              Markets
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => scrollTo("markets")}
+            >
+              {t("footer.markets")}
             </p>
 
-            <p style={{ cursor: "pointer" }} onClick={() => navigate("/signup")}>
-              Trading
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/signup")}
+            >
+              {t("footer.trading")}
             </p>
 
             <p
               style={{ cursor: "pointer" }}
               onClick={() =>
-                openModal(
-                  "Mobile apps are currently under maintenance. They will be available soon."
-                )
+                openModal(t("footer.mobileMaintenance"))
               }
             >
-              Mobile App
+              {t("footer.mobileApp")}
             </p>
 
-            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("security")}>
-              Security
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => scrollTo("security")}
+            >
+              {t("footer.security")}
             </p>
           </div>
 
           {/* Company */}
           <div>
-            <h4>Company</h4>
+            <h4>{t("footer.company")}</h4>
 
-            <p>About</p>
-
-            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("support")}>
-              Support
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => scrollTo("about")}
+            >
+              {t("footer.about")}
             </p>
 
-            <p style={{ cursor: "pointer" }} onClick={() => scrollTo("contact")}>
-              Contact
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => scrollTo("support")}
+            >
+              {t("footer.support")}
+            </p>
+
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => scrollTo("contact")}
+            >
+              {t("footer.contact")}
             </p>
 
             <p
               style={{ cursor: "pointer" }}
               onClick={() =>
-                openModal(
-                  "Careers are coming soon. We are currently building our hiring program."
-                )
+                openModal(t("footer.careersMessage"))
               }
             >
-              Careers
+              {t("footer.careers")}
             </p>
           </div>
         </div>
       </footer>
 
-      {/* MODAL */}
       {showModal && (
         <div
           onClick={() => setShowModal(false)}
@@ -151,6 +167,7 @@ const Footer = () => {
             }}
           >
             <p>{modalText}</p>
+
             <button
               onClick={() => setShowModal(false)}
               style={{
@@ -161,7 +178,7 @@ const Footer = () => {
                 cursor: "pointer",
               }}
             >
-              Close
+              {t("footer.close")}
             </button>
           </div>
         </div>

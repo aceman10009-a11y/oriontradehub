@@ -1,52 +1,49 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import FeatureCard from "./FeatureCard";
 
-const features = [
-  {
-    icon: "💎",
-    title: "VIP Accounts",
-    description:
-      "Premium execution, institutional pricing and dedicated relationship managers.",
-    accent: "#20a4ff",
-  },
-  {
-    icon: "📈",
-    title: "AI Insights",
-    description:
-      "Real-time market intelligence powered by advanced trading algorithms.",
-    accent: "#00c57d",
-  },
-  {
-    icon: "⚡",
-    title: "Fast Execution",
-    description:
-      "Ultra-low latency infrastructure for rapid order execution worldwide.",
-    accent: "#20a4ff",
-  },
-  {
-    icon: "🔐",
-    title: "Secure Platform",
-    description:
-      "Enterprise-grade encryption and multi-layer account protection.",
-    accent: "#00c57d",
-  },
-  {
-    icon: "🌍",
-    title: "Multi-Asset Trading",
-    description:
-      "Trade crypto, forex, commodities, indices and equities from one account.",
-    accent: "#20a4ff",
-  },
-  {
-    icon: "💼",
-    title: "Managed Portfolios",
-    description:
-      "Professional portfolio management with institutional risk controls.",
-    accent: "#00c57d",
-  },
-];
-
 const FeatureGrid = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: "💎",
+      title: t("features.cards.vip.title"),
+      description: t("features.cards.vip.description"),
+      accent: "#20a4ff",
+    },
+    {
+      icon: "📈",
+      title: t("features.cards.ai.title"),
+      description: t("features.cards.ai.description"),
+      accent: "#00c57d",
+    },
+    {
+      icon: "⚡",
+      title: t("features.cards.execution.title"),
+      description: t("features.cards.execution.description"),
+      accent: "#20a4ff",
+    },
+    {
+      icon: "🔐",
+      title: t("features.cards.security.title"),
+      description: t("features.cards.security.description"),
+      accent: "#00c57d",
+    },
+    {
+      icon: "🌍",
+      title: t("features.cards.assets.title"),
+      description: t("features.cards.assets.description"),
+      accent: "#20a4ff",
+    },
+    {
+      icon: "💼",
+      title: t("features.cards.portfolio.title"),
+      description: t("features.cards.portfolio.description"),
+      accent: "#00c57d",
+    },
+  ];
+
   return (
     <>
       <style>{`

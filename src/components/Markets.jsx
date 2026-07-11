@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { subscribePrices } from "../services/binanceService";
 import MarketTicker from "./MarketTicker";
 import MarketChart from "./MarketChart";
@@ -49,6 +50,8 @@ const marketAssets = [
 ];
 
 const Markets = () => {
+  const { t } = useTranslation();
+
   const [assets, setAssets] = useState(marketAssets);
   const [selectedAsset, setSelectedAsset] = useState(marketAssets[0]);
 
@@ -168,122 +171,122 @@ const Markets = () => {
             padding:90px 18px;
           }
         }
-      `}</style><section id="markets" className="markets-section">
+      `}</style>
 
-              <div className="markets-container">
+      <section id="markets" className="markets-section">
 
-                  <div className="markets-header">
+        <div className="markets-container">
 
-                      <div className="markets-badge">
-                          LIVE GLOBAL MARKETS
-                      </div>
+          <div className="markets-header">
 
-                      <h2 className="markets-title">
-                          Trade The World's <span>Top Markets</span>
-                      </h2>
+            <div className="markets-badge">
+              {t("markets.badge")}
+            </div>
 
-                      <p className="markets-text">
-                          Access cryptocurrencies, forex, commodities and major indices
-                          through Orion Trade Hub's institutional-grade trading platform.
-                          Monitor price movements in real time and execute trades with
-                          confidence.
-                      </p>
+            <h2 className="markets-title">
+              {t("markets.title")} <span>{t("markets.titleHighlight")}</span>
+            </h2>
 
-                  </div>
-      <MarketTicker />
-
-      <div className="markets-grid">
-
-        <div className="market-content">
-
-          <div>
-
-            <MarketChart
-              symbol={selectedAsset.symbol}
-              currentPrice={Number(
-                String(selectedAsset.price).replace(/[$,]/g, "")
-              )}
-            />
+            <p className="markets-text">
+              {t("markets.description")}
+            </p>
 
           </div>
 
-          <div
-            className="market-assets"
-            style={{
-              display: "grid",
-              gap: "16px",
-            }}
-          >
+          <MarketTicker />
 
-            {assets.map((asset) => (
+          <div className="markets-grid">
 
-              <button
-                key={asset.symbol}
-                onClick={() => setSelectedAsset(asset)}
+            <div className="market-content">
+
+              <div>
+
+                <MarketChart
+                  symbol={selectedAsset.symbol}
+                  currentPrice={Number(
+                    String(selectedAsset.price).replace(/[$,]/g, "")
+                  )}
+                />
+
+              </div>
+
+              <div
+                className="market-assets"
                 style={{
-                  background:
-                    selectedAsset.symbol === asset.symbol
-                      ? "rgba(32,164,255,.15)"
-                      : "rgba(255,255,255,.04)",
-
-                  border:
-                    selectedAsset.symbol === asset.symbol
-                      ? "1px solid rgba(32,164,255,.4)"
-                      : "1px solid rgba(255,255,255,.08)",
-
-                  borderRadius: "18px",
-                  padding: "18px",
-                  cursor: "pointer",
-                  textAlign: "left",
-                  color: "#fff",
-                  transition: ".3s",
+                  display: "grid",
+                  gap: "16px",
                 }}
               >
 
-                <div
-                  style={{
-                    fontWeight: 700,
-                    fontSize: "16px",
-                  }}
-                >
-                  {asset.symbol}
-                </div>
+                {assets.map((asset) => (
 
-                <div
-                  style={{
-                    color: "#a7b4c5",
-                    marginTop: "6px",
-                  }}
-                >
-                  {asset.price}
-                </div>
+                  <button
+                    key={asset.symbol}
+                    onClick={() => setSelectedAsset(asset)}
+                    style={{
+                      background:
+                        selectedAsset.symbol === asset.symbol
+                          ? "rgba(32,164,255,.15)"
+                          : "rgba(255,255,255,.04)",
 
-                <div
-                  style={{
-                    marginTop: "8px",
-                    color: asset.positive ? "#22d07b" : "#ff5d5d",
-                    fontWeight: 700,
-                  }}
-                >
-                  {asset.change}
-                </div>
+                      border:
+                        selectedAsset.symbol === asset.symbol
+                          ? "1px solid rgba(32,164,255,.4)"
+                          : "1px solid rgba(255,255,255,.08)",
 
-              </button>
+                      borderRadius: "18px",
+                      padding: "18px",
+                      cursor: "pointer",
+                      textAlign: "left",
+                      color: "#fff",
+                      transition: ".3s",
+                    }}
+                  >
 
-            ))}
+                    <div
+                      style={{
+                        fontWeight: 700,
+                        fontSize: "16px",
+                      }}
+                    >
+                      {asset.symbol}
+                    </div>
+
+                    <div
+                      style={{
+                        color: "#a7b4c5",
+                        marginTop: "6px",
+                      }}
+                    >
+                      {asset.price}
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: "8px",
+                        color: asset.positive ? "#22d07b" : "#ff5d5d",
+                        fontWeight: 700,
+                      }}
+                    >
+                      {asset.change}
+                    </div>
+
+                  </button>
+
+                ))}
+
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
-      </div>
+      </section>
 
-    </div>
-
-  </section>
-
-  </>
-);
+    </>
+  );
 };
 
 export default Markets;

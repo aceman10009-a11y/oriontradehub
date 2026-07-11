@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const SecurityMobile = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="security"
@@ -23,22 +26,20 @@ const SecurityMobile = () => {
         {/* LEFT CONTENT */}
         <div>
           <h2 style={{ fontSize: "42px", marginBottom: "20px" }}>
-            Security & Mobile Platform
+            {t("securityMobile.title")}
           </h2>
 
           <p style={{ color: "#9ca8b8", lineHeight: "1.8" }}>
-            Orion Trade Hub is built with institutional-grade security,
-            encrypted infrastructure, and real-time risk monitoring systems.
-            Your funds and data are protected with multi-layer safeguards.
+            {t("securityMobile.description")}
           </p>
 
           <div style={{ marginTop: "25px" }}>
-            <p>✓ Bank-Level Security</p>
-            <p>✓ 24/7 Global Markets</p>
-            <p>✓ AI Assisted Trading</p>
+            <p>✓ {t("securityMobile.features.security")}</p>
+            <p>✓ {t("securityMobile.features.markets")}</p>
+            <p>✓ {t("securityMobile.features.ai")}</p>
           </div>
 
-          {/* APP BUTTONS (2 + 2 STYLE) */}
+          {/* APP BUTTONS */}
           <div
             style={{
               marginTop: "30px",
@@ -47,17 +48,23 @@ const SecurityMobile = () => {
               flexWrap: "wrap",
             }}
           >
-            <button onClick={() => window.dispatchEvent(new Event("open-app-modal"))} style={appBtnStyle}>
-              🍎 App Store
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-app-modal"))}
+              style={appBtnStyle}
+            >
+              🍎 {t("securityMobile.buttons.appStore")}
             </button>
 
-            <button onClick={() => window.dispatchEvent(new Event("open-app-modal"))} style={appBtnStyle}>
-              ▶️ Google Play
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-app-modal"))}
+              style={appBtnStyle}
+            >
+              ▶️ {t("securityMobile.buttons.googlePlay")}
             </button>
           </div>
         </div>
 
-        {/* RIGHT CONTENT (LIVE STATS MOCK) */}
+        {/* RIGHT CONTENT */}
         <div
           style={{
             background: "rgba(255,255,255,0.03)",
@@ -66,7 +73,9 @@ const SecurityMobile = () => {
             padding: "20px",
           }}
         >
-          <h3 style={{ marginBottom: "15px" }}>LIVE MARKET SNAPSHOT</h3>
+          <h3 style={{ marginBottom: "15px" }}>
+            {t("securityMobile.liveSnapshot")}
+          </h3>
         </div>
       </div>
     </section>

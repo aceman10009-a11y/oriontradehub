@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const FeatureHeader = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <style>{`
@@ -128,26 +131,23 @@ const FeatureHeader = () => {
 
           <div className="feature-dot"></div>
 
-          PLATFORM FEATURES
+          {t("features.header.badge")}
 
         </div>
 
         <h2 className="feature-title">
 
-          Everything You Need
+          {t("features.header.title")}
 
           <br />
 
-          <span>To Trade Smarter.</span>
+          <span>{t("features.header.titleHighlight")}</span>
 
         </h2>
 
         <p className="feature-description">
 
-          Orion Trade Hub combines institutional execution,
-          AI-powered insights, advanced portfolio management,
-          multi-asset trading and enterprise-grade security into
-          one premium trading experience.
+          {t("features.header.description")}
 
         </p>
 

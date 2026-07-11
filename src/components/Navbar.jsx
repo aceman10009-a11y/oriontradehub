@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
 const scrollToSection = (id) => {
   // Security page sections
@@ -253,44 +256,47 @@ const scrollToSection = (id) => {
           <nav className="orion-links">
 
   <button onClick={() => scrollToSection("features")}>
-    Features
+    {t("navbar.features")}
   </button>
 
   <button onClick={() => scrollToSection("markets")}>
-    Markets
+    {t("navbar.markets")}
   </button>
 
   <button onClick={() => scrollToSection("orion-coin")}>
-    Orion Coin
+    {t("navbar.orionCoin")}
   </button>
 
   <button onClick={() => scrollToSection("contact")}>
-    Support
+    {t("navbar.support")}
   </button>
 
- <button onClick={() => scrollToSection("about")}>
-    About
- </button>
+  <button onClick={() => scrollToSection("about")}>
+    {t("navbar.about")}
+  </button>
+
 </nav>
 
-          <div className="orion-actions">
+<div className="orion-actions">
 
-            <button
-              className="login-btn"
-              onClick={() => navigate("/login")}
-            >
-              Sign In
-            </button>
+  <LanguageSwitcher />
 
-            <button
-  id="open-account-btn"
-  className="open-btn"
-  onClick={() => navigate("/signup")}
->
-  Open Account
-</button>
+  <button
+    className="login-btn"
+    onClick={() => navigate("/login")}
+  >
+    {t("navbar.signIn")}
+  </button>
 
-          </div>
+  <button
+    id="open-account-btn"
+    className="open-btn"
+    onClick={() => navigate("/signup")}
+  >
+    {t("navbar.openAccount")}
+  </button>
+
+</div>
 
         </div>
 

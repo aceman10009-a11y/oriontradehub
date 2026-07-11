@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -12,6 +13,8 @@ import Reviews from "../components/Reviews";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const existing = document.getElementById("hs-script-loader");
 
@@ -62,7 +65,6 @@ const Home = () => {
         <SecurityMobile />
       </section>
 
-      {/* FIXED: unified naming */}
       <section id="orioncoin">
         <OrionCoin />
       </section>
@@ -77,11 +79,16 @@ const Home = () => {
 
       <section id="about">
         <div style={{ padding: "100px 20px", textAlign: "center" }}>
-          <h2>About Orion Trade Hub</h2>
-          <p style={{ color: "#aaa", maxWidth: "700px", margin: "20px auto" }}>
-            Orion Trade Hub is a next-generation trading platform designed for
-            real-time market execution, AI-assisted insights, and institutional-grade
-            performance across crypto, forex, and global markets.
+          <h2>{t("homeInfo.about.title")}</h2>
+
+          <p
+            style={{
+              color: "#aaa",
+              maxWidth: "700px",
+              margin: "20px auto",
+            }}
+          >
+         {t("homeInfo.about.description")}
           </p>
         </div>
       </section>

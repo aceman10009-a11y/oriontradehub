@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <style>{`
@@ -195,17 +198,15 @@ const Contact = () => {
         <div className="contact-card">
 
           <div className="contact-badge">
-            CONTACT ORION
+            {t("contact.badge")}
           </div>
 
           <h2 className="contact-title">
-            Speak With Our Team
+            {t("contact.title")}
           </h2>
 
           <p className="contact-text">
-            Our specialists are available to assist with account
-            opening, platform guidance, institutional services and
-            general enquiries.
+            {t("contact.description")}
           </p>
 
           <div className="contact-links">
@@ -214,14 +215,14 @@ const Contact = () => {
               className="contact-btn"
               href="mailto:brokerage@oriontradehub.com"
             >
-              📧 brokerage@oriontradehub.com
+              📧 {t("contact.email")} brokerage@oriontradehub.com
             </a>
 
             <a
               className="contact-btn"
               href="mailto:brokerage@oriontradehub.com"
             >
-              💼 brokerage@oriontradehub.com
+              💼 {t("contact.institutional")} brokerage@oriontradehub.com
             </a>
 
           </div>

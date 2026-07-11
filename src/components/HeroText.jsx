@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const HeroText = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <style>{`
@@ -244,99 +247,97 @@ const HeroText = () => {
 
           <div className="hero-dot"></div>
 
-          ORION TRADE HUB
+          {t("hero.badge")}
 
         </div>
 
         <h1 className="hero-title">
 
-          Institutional Trading
+          {t("hero.title")}
 
-          <br/>
+          <br />
 
-          <span>Built For Everyone.</span>
+          <span>{t("hero.titleHighlight")}</span>
 
         </h1>
 
         <p className="hero-subtitle">
 
-          Experience institutional-grade execution across
-          Crypto, Forex, Commodities and Global Equities
-          through one beautifully engineered trading platform.
+          {t("hero.subtitle")}
 
         </p>
 
         <div className="hero-buttons">
 
-  <button
-    className="primary-btn"
-    onClick={() => {
+          <button
+            className="primary-btn"
+            onClick={() => {
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
 
-      setTimeout(() => {
+              setTimeout(() => {
 
-        const button = document.getElementById("open-account-btn");
+                const button = document.getElementById("open-account-btn");
 
-        if (!button) return;
+                if (!button) return;
 
-        button.classList.add("highlight-open-account");
+                button.classList.add("highlight-open-account");
 
-        button.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
+                button.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
 
-        setTimeout(() => {
-          button.classList.remove("highlight-open-account");
-        }, 5000);
+                setTimeout(() => {
+                  button.classList.remove("highlight-open-account");
+                }, 5000);
 
-      }, 700);
+              }, 700);
 
-    }}
-  >
+            }}
+          >
 
-    Open Live Account
+            {t("hero.buttons.openAccount")}
 
-  </button>
+          </button>
 
-  <button
-    className="secondary-btn"
-    onClick={() => {
+          <button
+            className="secondary-btn"
+            onClick={() => {
 
-      const section = document.getElementById("markets");
+              const section = document.getElementById("markets");
 
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+              if (section) {
+                section.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
 
-    }}
-  >
+            }}
+          >
 
-    Explore Platform
+            {t("hero.buttons.explorePlatform")}
 
-  </button>
+          </button>
 
-</div>
+        </div>
 
         <div className="hero-trust">
 
           <div className="trust-item">
-            ✓ Bank-Level Security
+            ✓ {t("hero.trust.security")}
           </div>
 
           <div className="trust-item">
-            ✓ 24/7 Global Markets
+            ✓ {t("hero.trust.markets")}
           </div>
 
           <div className="trust-item">
-            ✓ AI Assisted Trading
+            ✓ {t("hero.trust.ai")}
           </div>
 
         </div>

@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import DownloadButtons from "./DownloadButtons";
 
 const ShowcaseText = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <style>{`
@@ -66,19 +69,17 @@ const ShowcaseText = () => {
       <div className="showcase-content">
 
         <div className="showcase-label">
-          MOBILE PLATFORM
+          {t("mobile.label")}
         </div>
 
         <h2 className="showcase-title">
-          Trade Anywhere.
+          {t("mobile.title")}
           <br />
-          <span>Stay Ahead.</span>
+          <span>{t("mobile.titleHighlight")}</span>
         </h2>
 
         <p className="showcase-description">
-          Orion Trade Hub delivers institutional-grade execution,
-          portfolio monitoring, AI-assisted insights, and live market
-          access from a beautifully engineered mobile experience.
+          {t("mobile.description")}
         </p>
 
         <DownloadButtons />
