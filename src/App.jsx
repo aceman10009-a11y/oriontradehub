@@ -11,6 +11,7 @@ import Security from "./pages/Security";
 import VerifyEmail from "./pages/VerifyEmail";
 import ForgotPassword from "./pages/ForgotPassword";
 import Settings from "./pages/Settings";
+import CardServices from "./pages/CardServices";
 
 export default function App() {
   return (
@@ -33,13 +34,22 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route
-  path="/settings"
-  element={
-    <ProtectedRoute>
-      <Settings />
-    </ProtectedRoute>
-  }
-/>
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/cards"
+          element={
+            <ProtectedRoute>
+              <CardServices />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Protected Admin Dashboards */}
         <Route

@@ -7,6 +7,7 @@ import Watchlist from "../components/watchlist/Watchlist";
 import { toast } from "react-toastify";
 import WithdrawModal from "../components/dashboard/WithdrawModal";
 import { useTranslation } from "react-i18next";
+import orionCard from "../assets/cards/orion-card.jpg";
 
 import {
   doc,
@@ -370,6 +371,67 @@ const Dashboard = () => {
 <div style={styles.statCard}>
   <span>{t("openPositions")}</span>
   <strong>{trades.length}</strong>
+</div>
+
+{/* Orion Debit Card */}
+
+<div
+  style={{
+    marginTop: 25,
+    padding: 18,
+    borderRadius: 18,
+    background: "var(--card-bg)",
+    border: "1px solid var(--border-color)",
+  }}
+>
+  <h3
+    style={{
+      marginBottom: 15,
+    }}
+  >
+    Orion Debit Card
+  </h3>
+
+  <img
+    src={orionCard}
+    alt="Orion Debit Card"
+    style={{
+      width: "100%",
+      borderRadius: 14,
+      display: "block",
+      marginBottom: 18,
+    }}
+  />
+
+  <div
+    style={{
+      padding: 12,
+      borderRadius: 10,
+      background: "#222",
+      color: "#ffb74d",
+      fontWeight: 600,
+      textAlign: "center",
+    }}
+  >
+    Status: Not Applied
+  </div>
+
+  <button
+    onClick={() => navigate("/cards")}
+    style={{
+      width: "100%",
+      marginTop: 18,
+      padding: "14px",
+      border: "none",
+      borderRadius: 10,
+      background: "#1199fa",
+      color: "#fff",
+      fontWeight: 700,
+      cursor: "pointer",
+    }}
+  >
+    Apply for Orion Debit Card
+  </button>
 </div>
 
 

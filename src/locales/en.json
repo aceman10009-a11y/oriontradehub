@@ -338,6 +338,31 @@
   "mobileMaintenance": "Mobile apps are currently under maintenance. They will be available soon.",
   "careersMessage": "Careers are coming soon. We are currently building our hiring program."
 },
+ "cardServices": {
+  "title": "Orion Debit Card",
+  "description": "Manage your Orion Debit Card application, track your application status, and access premium card services.",
+  "preview": "Card Preview",
+  "status": "Card Status",
+  "applicationStatus": "Application Status",
+  "notApplied": "Not Applied",
+  "pending": "Pending Review",
+  "approved": "Approved",
+  "issued": "Card Issued",
+  "shipped": "Shipped",
+  "delivered": "Delivered",
+  "applyButton": "Apply for Orion Debit Card",
+  "benefits": "Benefits",
+  "benefitWorldwide": "Worldwide purchases",
+  "benefitAtm": "ATM withdrawals",
+  "benefitContactless": "Contactless payments",
+  "benefitChip": "Secure chip technology",
+  "benefitFraud": "Fraud monitoring",
+  "benefitSupport": "Premium customer support",
+  "houseAddress": "House Address",
+  "email": "Email Address",
+  "cancel": "Cancel",
+  "submit": "Submit"
+ },
   "homeInfo": {
   "about": {
     "title": "About Orion Trade Hub",
