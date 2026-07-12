@@ -213,30 +213,42 @@ const scrollToSection = (id) => {
           }
         }
 
-        @media(max-width:640px){
-          .orion-navbar{
-            height:66px;
-          }
+       @media(max-width:640px){
 
-          .logo-text{
-            font-size:18px;
-          }
+      .orion-navbar{
+      height:66px;
+    }
 
-          .logo-small{
-            display:none;
-          }
+    .orion-nav-inner{
+    width:96%;
+    gap:8px;
+    }
 
-          .login-btn{
-            display:none;
-          }
+   .logo-text{
+    font-size:18px;
+    }
 
-          .open-btn{
-            padding:11px 18px;
-            font-size:13px;
-          }
-        }
-      `}</style>
+    .logo-small{
+    display:none;
+    }
 
+    .orion-actions{
+    gap:8px;
+    }
+
+    .login-btn{
+    display:inline-flex;
+    padding:9px 12px;
+    font-size:12px;
+  }
+
+   .open-btn{
+    padding:10px 14px;
+    font-size:12px;
+   }
+
+   }
+        `}</style>
       <header className="orion-navbar">
 
         <div className="orion-nav-inner">

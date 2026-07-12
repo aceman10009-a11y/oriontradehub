@@ -17,3 +17,14 @@ export function subscribeToPrice(symbol, onPrice, onStatus) {
 
   return unsubscribe;
 }
+
+export function subscribeToMarkets(callback) {
+  const prices = {};
+
+  const unsubscribe = marketDataAggregator.subscribeAll((symbol, data) => {
+    prices[symbol] = data;
+    callback({ ...prices });
+  });
+
+  return unsubscribe;
+}

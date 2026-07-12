@@ -11,18 +11,22 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { startBinanceService } from "./services/binanceService";
+import { startTwelveDataService } from "./services/twelveDataService";
 
+
+// Start live market services
 startBinanceService();
+startTwelveDataService();
 
-const savedTheme = localStorage.getItem("theme");
 
-if (savedTheme === "Light") {
-  document.body.style.background = "#f5f7fb";
-  document.body.style.color = "#111";
-} else if (savedTheme === "Dark") {
-  document.body.style.background = "#0b0f14";
-  document.body.style.color = "#fff";
-}
+// Apply saved theme before rendering
+const savedTheme = localStorage.getItem("theme") || "Dark";
+
+document.documentElement.setAttribute(
+  "data-theme",
+  savedTheme
+);
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -37,6 +41,7 @@ createRoot(document.getElementById("root")).render(
           pauseOnHover
           theme="dark"
         />
+
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>

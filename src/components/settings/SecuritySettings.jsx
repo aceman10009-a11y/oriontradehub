@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+
 import {
   updatePassword,
   sendPasswordResetEmail,
 } from "firebase/auth";
 
-import { auth, db } from "../../firebase/config";
-import { doc, updateDoc } from "firebase/firestore";
+import { auth } from "../../firebase/config";
 
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-toastify";
@@ -93,26 +93,16 @@ export default function SecuritySettings() {
   };
 
 
+const enableTwoFactor = () => {
 
-  const enableTwoFactor = async () => {
+  toast.info(
+    "Two-factor authentication is not yet available for your account. Trade up to 30,000 USD to unlock this security feature.",
+    {
+      autoClose: 6000,
+    }
+  );
 
-    if(!user) return;
-
-
-    await updateDoc(
-      doc(db,"users",user.uid),
-      {
-        twoFactorEnabled:true
-      }
-    );
-
-
-    toast.success(
-      "Two-factor authentication setup started."
-    );
-
-  };
-
+};
 
 
   return (

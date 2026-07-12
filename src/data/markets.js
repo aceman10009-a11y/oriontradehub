@@ -25,55 +25,46 @@ export const markets = [
     provider: "binance",
     exchangeSymbol: "SOLUSDT",
   },
-
-  // =========================
-  // FOREX
-  // =========================
   {
-    id: "EUR/USD",
-    name: "Euro / US Dollar",
-    category: "Forex",
-    provider: "twelveData",
-    exchangeSymbol: "EUR/USD",
+    id: "BNB/USD",
+    name: "BNB",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "BNBUSDT",
   },
   {
-    id: "GBP/USD",
-    name: "British Pound / US Dollar",
-    category: "Forex",
-    provider: "twelveData",
-    exchangeSymbol: "GBP/USD",
+    id: "XRP/USD",
+    name: "Ripple",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "XRPUSDT",
   },
-
-  // =========================
-  // COMMODITIES
-  // =========================
   {
-    id: "XAU/USD",
-    name: "Gold",
-    category: "Commodities",
-    provider: "twelveData",
-    exchangeSymbol: "XAU/USD",
+    id: "ADA/USD",
+    name: "Cardano",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "ADAUSDT",
   },
-
-  // =========================
-  // INDICES
-  // =========================
   {
-    id: "NASDAQ",
-    name: "NASDAQ 100",
-    category: "Indices",
-    provider: "twelveData",
-    exchangeSymbol: "IXIC",
+    id: "DOGE/USD",
+    name: "Dogecoin",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "DOGEUSDT",
   },
-
-  // =========================
-  // STOCKS
-  // =========================
   {
-    id: "AAPL",
-    name: "Apple",
-    category: "US Stocks",
-    provider: "twelveData",
-    exchangeSymbol: "AAPL",
+    id: "AVAX/USD",
+    name: "Avalanche",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "AVAXUSDT",
+  },
+  {
+    id: "LINK/USD",
+    name: "Chainlink",
+    category: "Crypto",
+    provider: "binance",
+    exchangeSymbol: "LINKUSDT",
   },
 ];

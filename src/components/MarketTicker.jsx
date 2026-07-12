@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { subscribePrices } from "../services/binanceService";
+import { subscribeToMarkets } from "../services/marketDataService";
 
 const defaultMarkets = [
   { symbol: "BTC/USD", price: 118426, change: 0 },
@@ -15,7 +15,7 @@ export default function MarketTicker() {
   const [markets, setMarkets] = useState(defaultMarkets);
 
   useEffect(() => {
-    const unsubscribe = subscribePrices((livePrices) => {
+    const unsubscribe = subscribeToMarkets((livePrices) => {
       setMarkets((prev) =>
         prev.map((market) => {
           const live = livePrices[market.symbol];

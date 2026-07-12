@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { subscribePrices } from "../services/binanceService";
+import { subscribeToMarkets } from "../services/marketDataService";
 import MarketTicker from "./MarketTicker";
 import MarketChart from "./MarketChart";
 
@@ -8,43 +8,64 @@ const marketAssets = [
   {
     symbol: "BTC/USD",
     name: "Bitcoin",
-    price: "$118,426",
-    change: "+2.81%",
+    price: "--",
+    change: "0%",
     positive: true,
   },
   {
     symbol: "ETH/USD",
     name: "Ethereum",
-    price: "$4,281",
-    change: "+1.62%",
+    price: "--",
+    change: "0%",
     positive: true,
   },
   {
     symbol: "SOL/USD",
     name: "Solana",
-    price: "$168.42",
-    change: "+3.41%",
+    price: "--",
+    change: "0%",
     positive: true,
   },
   {
-    symbol: "XAU/USD",
-    name: "Gold",
-    price: "$3,382",
-    change: "+0.74%",
+    symbol: "BNB/USD",
+    name: "BNB",
+    price: "--",
+    change: "0%",
     positive: true,
   },
   {
-    symbol: "NASDAQ",
-    name: "NASDAQ",
-    price: "23,941",
-    change: "+0.83%",
+    symbol: "XRP/USD",
+    name: "Ripple",
+    price: "--",
+    change: "0%",
     positive: true,
   },
   {
-    symbol: "EUR/USD",
-    name: "Euro",
-    price: "1.1768",
-    change: "+0.18%",
+    symbol: "ADA/USD",
+    name: "Cardano",
+    price: "--",
+    change: "0%",
+    positive: true,
+  },
+  {
+    symbol: "DOGE/USD",
+    name: "Dogecoin",
+    price: "--",
+    change: "0%",
+    positive: true,
+  },
+  {
+    symbol: "AVAX/USD",
+    name: "Avalanche",
+    price: "--",
+    change: "0%",
+    positive: true,
+  },
+  {
+    symbol: "LINK/USD",
+    name: "Chainlink",
+    price: "--",
+    change: "0%",
     positive: true,
   },
 ];
@@ -56,7 +77,7 @@ const Markets = () => {
   const [selectedAsset, setSelectedAsset] = useState(marketAssets[0]);
 
   useEffect(() => {
-    const unsubscribe = subscribePrices((livePrices) => {
+    const unsubscribe = subscribeToMarkets((livePrices) => {
       setAssets((prev) =>
         prev.map((asset) => {
           const live = livePrices[asset.symbol];
@@ -68,7 +89,7 @@ const Markets = () => {
             price: live.price.toLocaleString(undefined, {
               maximumFractionDigits: 2,
             }),
-            change: `${live.change >= 0 ? "+" : ""}${live.change.toFixed(2)}%`,
+            change: `${Number(live.change || 0) >= 0 ? "+" : ""}${Number(live.change || 0).toFixed(2)}%`,
             positive: live.change >= 0,
           };
         })
@@ -84,7 +105,10 @@ const Markets = () => {
           price: live.price.toLocaleString(undefined, {
             maximumFractionDigits: 2,
           }),
-          change: `${live.change >= 0 ? "+" : ""}${live.change.toFixed(2)}%`,
+          change: `${Number.isFinite(live.change)
+  ? `${live.change >= 0 ? "+" : ""}${live.change.toFixed(2)}%`
+  : "0.00%"
+}`,
           positive: live.change >= 0,
         };
       });

@@ -191,23 +191,22 @@ const Dashboard = () => {
     flexDirection: "column",
     gap: 12,
   }}
->
-  <input
-    type="text"
-    placeholder={t("searchMarkets")}
-    value={marketSearch}
-    onChange={(e) => setMarketSearch(e.target.value)}
-    style={{
-      width: "100%",
-      padding: "12px",
-      background: "#0b0f14",
-      color: "#fff",
-      border: "1px solid #2b3442",
-      borderRadius: 10,
-      outline: "none",
-      boxSizing: "border-box",
-    }}
-  />
+><input
+  type="text"
+  placeholder={t("searchMarkets")}
+  value={marketSearch}
+  onChange={(e) => setMarketSearch(e.target.value)}
+  style={{
+    width: "100%",
+    padding: "12px",
+    background: "var(--bg-primary)",
+    border: "1px solid var(--border-color)",
+    borderRadius: 10,
+    outline: "none",
+    boxSizing: "border-box",
+    color: "var(--text-primary)",
+  }}
+/>
 
   <div
     style={{
@@ -659,7 +658,7 @@ const styles = {
   width: "100%",
 },
 panel: {
-  background: "#111827",
+  background: "var(--card-bg)",
   padding: 16,
   borderRadius: 12,
   border: "1px solid #1f2937",

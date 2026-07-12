@@ -1,80 +1,247 @@
+import marketDataAggregator from "./aggregator/marketDataAggregator";
+
 const API_KEY = import.meta.env.VITE_TWELVEDATA_API_KEY;
+
+console.log("🔑 TwelveData API Key:", API_KEY);
 
 const listeners = [];
 const prices = {};
-const sockets = {};
 
-/**
- * Symbols we want Twelve Data to stream
- */
-const symbols = [
+let socket = null;
+let reconnectTimer = null;
+
+
+/*
+|--------------------------------------------------------------------------
+| Allowed Twelve Data Streams
+|--------------------------------------------------------------------------
+*/
+
+const SYMBOLS = [
+  // Forex
   "EUR/USD",
   "GBP/USD",
+
+  // Commodity
   "XAU/USD",
+
+  // Stocks
   "AAPL",
-  "IXIC",
+  "NVDA",
 ];
 
-/**
- * Connect one WebSocket per symbol
- */
-symbols.forEach(connectSymbol);
 
-function connectSymbol(symbol) {
-  const ws = new WebSocket(
+/*
+|--------------------------------------------------------------------------
+| Provider → Application Symbol Mapping
+|--------------------------------------------------------------------------
+*/
+
+const SYMBOL_MAP = {};
+
+function notifyListeners() {
+  listeners.forEach((callback) => {
+    callback({ ...prices });
+  });
+}
+
+
+
+function connect() {
+
+  if (!API_KEY) {
+    console.error(
+      "❌ Twelve Data API key missing. Check .env file."
+    );
+    return;
+  }
+
+
+  if (
+    socket &&
+    (
+      socket.readyState === WebSocket.OPEN ||
+      socket.readyState === WebSocket.CONNECTING
+    )
+  ) {
+    return;
+  }
+
+
+  console.log("🚀 Connecting Twelve Data WebSocket...");
+
+
+  socket = new WebSocket(
     `wss://ws.twelvedata.com/v1/quotes/price?apikey=${API_KEY}`
   );
 
-  sockets[symbol] = ws;
 
-  ws.onopen = () => {
-    console.log("✅ Twelve Data Connected:", symbol);
 
-    ws.send(
+  socket.onopen = () => {
+
+    console.log(
+      "✅ Twelve Data Connected"
+    );
+
+
+    socket.send(
       JSON.stringify({
         action: "subscribe",
         params: {
-          symbols: symbol,
+          symbols: SYMBOLS.join(","),
         },
       })
     );
+
   };
 
-  ws.onmessage = (event) => {
-    const data = JSON.parse(event.data);
 
-    if (!data.price) return;
 
-    prices[symbol] = {
-      symbol,
-      price: Number(data.price),
-    };
+  socket.onmessage = (event) => {
 
-    listeners.forEach((cb) => cb({ ...prices }));
+    try {
+
+      const data = JSON.parse(event.data);
+
+
+      // Ignore messages without price
+      if (!data.price) {
+        return;
+      }
+
+
+      const providerSymbol = data.symbol;
+
+
+      const appSymbol =
+        SYMBOL_MAP[providerSymbol];
+
+
+      if (!appSymbol) {
+        return;
+      }
+
+
+
+      const priceData = {
+
+        symbol: appSymbol,
+
+        price: Number(
+          data.price
+        ),
+
+        change: Number(data.percent_change ?? 0),
+        timestamp: Date.now(),
+
+        source: "twelvedata",
+      };
+
+
+
+      prices[appSymbol] = priceData;
+
+
+
+      marketDataAggregator.updatePrice(
+        appSymbol,
+        priceData
+      );
+
+
+      notifyListeners();
+
+
+
+    } catch (error) {
+
+      console.error(
+        "❌ Twelve Data Parse Error:",
+        error
+      );
+
+    }
+
   };
 
-  ws.onerror = (err) => {
-    console.error("Twelve Data Error:", err);
+
+
+  socket.onerror = (error) => {
+
+    console.error(
+      "❌ Twelve Data WebSocket Error",
+      error
+    );
+
   };
 
-  ws.onclose = () => {
-    console.log("Twelve Data Closed:", symbol);
+
+
+  socket.onclose = () => {
+
+    console.warn(
+      "⚠️ Twelve Data Disconnected"
+    );
+
+
+    socket = null;
+
+
+    clearTimeout(
+      reconnectTimer
+    );
+
+
+    reconnectTimer = setTimeout(
+      connect,
+      5000
+    );
+
   };
+
 }
 
-/**
- * Subscribe
- */
+
+
+
+export function startTwelveDataService() {
+
+  console.log(
+    "🚀 Starting Twelve Data..."
+  );
+
+  connect();
+
+}
+
+
+
 export function subscribePrices(callback) {
+
   listeners.push(callback);
 
-  callback({ ...prices });
+
+  callback({
+    ...prices,
+  });
+
+
 
   return () => {
-    const index = listeners.indexOf(callback);
+
+    const index =
+      listeners.indexOf(callback);
+
 
     if (index > -1) {
-      listeners.splice(index, 1);
+
+      listeners.splice(
+        index,
+        1
+      );
+
     }
+
   };
+
 }

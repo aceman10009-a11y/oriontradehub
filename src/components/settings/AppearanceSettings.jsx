@@ -150,16 +150,15 @@ export default function AppearanceSettings() {
       localStorage.setItem("language", selectedLanguage);
       localStorage.setItem("theme", theme);
 
-      if (theme === "Light") {
-        document.body.style.background = "#f5f7fb";
-        document.body.style.color = "#111";
-      } else if (theme === "Dark") {
-        document.body.style.background = "#0b0f14";
-        document.body.style.color = "#fff";
-      } else {
-        document.body.style.background = "";
-        document.body.style.color = "";
-      }
+    document.documentElement.setAttribute(
+  "data-theme",
+  theme
+);
+
+localStorage.setItem(
+  "theme",
+  theme
+);
 
       const data = {
         language,

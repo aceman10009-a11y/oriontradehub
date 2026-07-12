@@ -8,6 +8,8 @@ const SYMBOL_MAP = {
   XRPUSDT: "XRP/USD",
   ADAUSDT: "ADA/USD",
   DOGEUSDT: "DOGE/USD",
+  AVAXUSDT: "AVAX/USD",
+  LINKUSDT: "LINK/USD",
 };
 
 const streams = Object.keys(SYMBOL_MAP)
@@ -26,7 +28,7 @@ function notifyListeners() {
 }
 
 function connect() {
-  // Prevent duplicate sockets
+  // Prevent duplicate connections
   if (
     socket &&
     (socket.readyState === WebSocket.OPEN ||
@@ -56,16 +58,20 @@ function connect() {
 
     if (!symbol) return;
 
-    prices[symbol] = {
+    const priceData = {
       symbol,
       price: Number(data.c),
-      change: Number(data.P),
+      change: Number(data.P || 0),
       timestamp: Date.now(),
       source: "binance",
     };
 
-    marketDataAggregator.updatePrice(symbol, prices[symbol]);
+    prices[symbol] = priceData;
 
+    // Update the global market aggregator
+    marketDataAggregator.updatePrice(symbol, priceData);
+
+    // Notify subscribers
     notifyListeners();
   };
 
@@ -80,9 +86,7 @@ function connect() {
 
     clearTimeout(reconnectTimer);
 
-    reconnectTimer = setTimeout(() => {
-      connect();
-    }, 2000);
+    reconnectTimer = setTimeout(connect, 2000);
   };
 }
 
@@ -107,7 +111,7 @@ export function subscribePrices(callback) {
   return () => {
     const index = listeners.indexOf(callback);
 
-    if (index > -1) {
+    if (index !== -1) {
       listeners.splice(index, 1);
     }
   };
