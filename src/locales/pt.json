@@ -103,7 +103,6 @@
   "forgotPassword": "Esqueci a senha",
   "resetPassword": "Redefinir senha",
   "verifyEmail": "Verificar email",
-  "resendVerification": "Reenviar verificação",
   "italian": "Italiano",
   "portuguese": "Português",
   "dutch": "Holandês",
@@ -302,6 +301,7 @@
     "description": "A Orion Trade Hub é uma plataforma de negociação de nova geração concebida para execução de mercado em tempo real, análises assistidas por IA e desempenho de nível institucional nos mercados de criptomoedas, forex e mercados globais."
   }
 },
+
 "cardServices": {
   "title": "Cartão de Débito Orion",
   "description": "Gerencie sua solicitação do Cartão de Débito Orion, acompanhe o status da solicitação e tenha acesso a serviços premium do cartão.",
@@ -329,5 +329,42 @@
   "completeAllFields": "Por favor, preencha todos os campos.",
   "applicationSubmitted": "Sua solicitação do Cartão de Débito Orion foi recebida com sucesso.",
   "applicationFailed": "Não foi possível enviar a solicitação. Tente novamente."
-}
+},
+
+"admin": {
+  "profitUpdated": "Lucro atualizado com sucesso.",
+  "profitUpdateFailed": "Falha ao atualizar o lucro.",
+  "tradeClosed": "Operação encerrada com sucesso.",
+  "tradeCloseFailed": "Falha ao encerrar a operação.",
+  "userNotFound": "Usuário não encontrado.",
+  "depositMessage": "Os depósitos são processados manualmente pelo seu gestor de conta atribuído. Entre em contato com o suporte para financiar sua conta de investimento.",
+  "withdrawMessage": "As solicitações de saque são analisadas e processadas pelo seu gestor de conta atribuído. Entre em contato com o suporte para iniciar um saque."
+},
+
+"sessionExpired": "Sua sessão expirou. Faça login novamente.",
+"verificationEmailSent": "Um novo e-mail de verificação foi enviado. Verifique sua caixa de entrada ou pasta de spam.",
+"pleaseLoginAgain": "Faça login novamente.",
+"emailVerified": "E-mail verificado com sucesso!",
+"emailNotVerified": "Seu e-mail ainda não foi verificado. Primeiro clique no link de verificação enviado para seu e-mail.",
+"accountCreatedTitle": "Conta criada com sucesso",
+"accountCreatedDescription": "Sua conta Orion Trade Hub foi criada com sucesso. Enviamos um e-mail de verificação para sua caixa de entrada. Verifique seu e-mail antes de entrar.",
+"nextSteps": "Próximas etapas",
+"checkInbox": "Verifique sua caixa de entrada.",
+"checkSpam": "Verifique sua pasta de spam ou lixo eletrônico.",
+"clickVerification": "Clique no link de verificação.",
+"returnLogin": "Volte aqui e faça login.",
+"checking": "Verificando...",
+"verifiedEmailButton": "Verifiquei meu e-mail",
+"sending": "Enviando...",
+"resendVerification": "Reenviar e-mail de verificação",
+"backToLogin": "Voltar para o login",
+
+"enterEmailAddress": "Digite seu endereço de e-mail.",
+"unableToSendResetEmail": "Não foi possível enviar o e-mail de redefinição de senha.",
+"passwordResetEmailSent": "O e-mail de redefinição de senha foi enviado. Verifique sua caixa de entrada ou pasta de spam.",
+"forgotPasswordDescription": "Digite o endereço de e-mail associado à sua conta. Enviaremos um link seguro para redefinir sua senha.",
+"passwordResetEmailSentTitle": "E-mail de redefinição de senha enviado",
+"passwordResetEmailSentDescription": "Verifique sua caixa de entrada e a pasta de spam. Clique no link de redefinição de senha e crie uma nova senha.",
+"enterYourEmail": "Digite seu e-mail",
+"sendPasswordResetLink": "Enviar link para redefinir a senha"
 }

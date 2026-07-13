@@ -103,7 +103,6 @@
   "forgotPassword": "Wachtwoord vergeten",
   "resetPassword": "Wachtwoord opnieuw instellen",
   "verifyEmail": "E-mail verifiëren",
-  "resendVerification": "Verificatie opnieuw verzenden",
   "italian": "Italiaans",
   "portuguese": "Portugees",
   "dutch": "Nederlands",
@@ -328,6 +327,41 @@
   "submit": "Verzenden",
   "completeAllFields": "Vul alle velden in.",
   "applicationSubmitted": "Uw aanvraag voor de Orion Betaalpas is succesvol ontvangen.",
-  "applicationFailed": "De aanvraag kon niet worden verzonden. Probeer het opnieuw."
-}
+  "applicationFailed": "De aanvraag kon niet worden verzonden. Probeer het opnieuw.",
+   "admin": {
+    "profitUpdated": "Winst succesvol bijgewerkt.",
+    "profitUpdateFailed": "Winst bijwerken mislukt.",
+    "tradeClosed": "Transactie succesvol gesloten.",
+    "tradeCloseFailed": "Transactie sluiten mislukt.",
+    "userNotFound": "Gebruiker niet gevonden.",
+    "depositMessage": "Stortingen worden handmatig verwerkt door uw toegewezen accountmanager. Neem contact op met de ondersteuning om uw beleggingsrekening te financieren.",
+    "withdrawMessage": "Opnameverzoeken worden gecontroleerd en verwerkt door uw toegewezen accountmanager. Neem contact op met de ondersteuning om een opname te starten."
+  }
+},
+"sessionExpired": "Je sessie is verlopen. Log opnieuw in.",
+"verificationEmailSent": "Er is een nieuwe verificatie-e-mail verzonden. Controleer je inbox of spammap.",
+"pleaseLoginAgain": "Log opnieuw in.",
+"emailVerified": "Je e-mailadres is succesvol geverifieerd!",
+"emailNotVerified": "Je e-mailadres is nog niet geverifieerd. Klik eerst op de verificatielink in je e-mail.",
+"accountCreatedTitle": "Account succesvol aangemaakt",
+"accountCreatedDescription": "Je Orion Trade Hub-account is succesvol aangemaakt. We hebben een verificatie-e-mail naar je inbox gestuurd. Verifieer je e-mailadres voordat je inlogt.",
+"nextSteps": "Volgende stappen",
+"checkInbox": "Controleer je inbox.",
+"checkSpam": "Controleer je spam- of ongewenste e-mailmap.",
+"clickVerification": "Klik op de verificatielink.",
+"returnLogin": "Keer hier terug en log in.",
+"checking": "Controleren...",
+"verifiedEmailButton": "Ik heb mijn e-mailadres geverifieerd",
+"sending": "Verzenden...",
+"resendVerification": "Verificatie-e-mail opnieuw verzenden",
+"backToLogin": "Terug naar inloggen",
+
+"enterEmailAddress": "Voer uw e-mailadres in.",
+"unableToSendResetEmail": "Kan de e-mail voor het opnieuw instellen van het wachtwoord niet verzenden.",
+"passwordResetEmailSent": "De e-mail voor het opnieuw instellen van het wachtwoord is verzonden. Controleer uw inbox of spammap.",
+"forgotPasswordDescription": "Voer het e-mailadres in dat aan uw account is gekoppeld. We sturen u een veilige link om uw wachtwoord opnieuw in te stellen.",
+"passwordResetEmailSentTitle": "E-mail voor het opnieuw instellen van het wachtwoord verzonden",
+"passwordResetEmailSentDescription": "Controleer uw inbox en spammap. Klik op de link om uw wachtwoord opnieuw in te stellen en maak een nieuw wachtwoord aan.",
+"enterYourEmail": "Voer uw e-mailadres in",
+"sendPasswordResetLink": "Link voor wachtwoordherstel verzenden"
 }

@@ -6,14 +6,16 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
 export default function ProfileSettings() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user, profile, setProfile } = useAuth();
 
   const [name, setName] = useState(profile?.name || "");
   const [phone, setPhone] = useState(profile?.phone || "");
   const [profession, setProfession] = useState(profile?.profession || "");
   const [country, setCountry] = useState(profile?.country || "");
-  const [language, setLanguage] = useState(profile?.language || "English");
+  const [language, setLanguage] = useState(
+  localStorage.getItem("language") || "en"
+);
   const [timezone, setTimezone] = useState(
     profile?.timezone ||
       Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -105,16 +107,34 @@ export default function ProfileSettings() {
     onChange={(e)=>setCountry(e.target.value)}
   />
 
-  <select
-    style={styles.input}
-    value={language}
-    onChange={(e)=>setLanguage(e.target.value)}
-  >
-    <option>{t("english")}</option>
-    <option>{t("french")}</option>
-    <option>{t("spanish")}</option>
-    <option>{t("german")}</option>
-  </select>
+<select
+  style={styles.input}
+  value={language}
+  onChange={(e) => {
+    const lang = e.target.value;
+
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+    i18n.changeLanguage(lang);
+  }}
+>
+  <option value="en">{t("english")}</option>
+  <option value="de">{t("german")}</option>
+  <option value="fr">{t("french")}</option>
+  <option value="es">{t("spanish")}</option>
+  <option value="sv">{t("swedish")}</option>
+  <option value="da">{t("danish")}</option>
+  <option value="fi">{t("finnish")}</option>
+  <option value="pl">{t("polish")}</option>
+  <option value="it">{t("italian")}</option>
+  <option value="pt">{t("portuguese")}</option>
+  <option value="nl">{t("dutch")}</option>
+  <option value="zh">中文</option>
+  <option value="ja">日本語</option>
+  <option value="ko">한국어</option>
+  <option value="ar">العربية</option>
+  <option value="no">Norsk</option>
+</select>
 
   <input
     style={styles.input}

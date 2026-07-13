@@ -134,7 +134,6 @@
   "forgotPassword": "Glemt passord",
   "resetPassword": "Tilbakestill passord",
   "verifyEmail": "Bekreft e-post",
-  "resendVerification": "Send bekreftelse på nytt",
 
   "welcomeBackLogin": "Velkommen tilbake",
   "loginSubtitle": "Logg inn for å få tilgang til Orion Trade Hub-kontoen din.",
@@ -349,6 +348,7 @@
     "description": "Orion Trade Hub er en neste generasjons handelsplattform utviklet for sanntids markedshandel, AI-assistert innsikt og ytelse på institusjonelt nivå innen kryptovaluta, forex og globale markeder."
   }
 },
+
 "cardServices": {
   "title": "Orion Debetkort",
   "description": "Administrer søknaden din om Orion Debetkort, følg søknadsstatusen og få tilgang til eksklusive korttjenester.",
@@ -376,4 +376,42 @@
   "completeAllFields": "Vennligst fyll ut alle feltene.",
   "applicationSubmitted": "Søknaden din om Orion Debetkort er mottatt.",
   "applicationFailed": "Kunne ikke sende inn søknaden. Vennligst prøv igjen."
-}}
+},
+
+"admin": {
+  "profitUpdated": "Fortjeneste oppdatert.",
+  "profitUpdateFailed": "Kunne ikke oppdatere fortjeneste.",
+  "tradeClosed": "Handel lukket.",
+  "tradeCloseFailed": "Kunne ikke lukke handel.",
+  "userNotFound": "Bruker ikke funnet.",
+  "depositMessage": "Innskudd behandles manuelt av din tildelte kontoadministrator. Kontakt kundestøtte for å finansiere investeringskontoen din.",
+  "withdrawMessage": "Uttaksforespørsler gjennomgås og behandles av din tildelte kontoadministrator. Kontakt kundestøtte for å starte et uttak."
+},
+
+"sessionExpired": "Økten din har utløpt. Vennligst logg inn igjen.",
+"verificationEmailSent": "En ny bekreftelses-e-post er sendt. Sjekk innboksen eller søppelpostmappen.",
+"pleaseLoginAgain": "Vennligst logg inn igjen.",
+"emailVerified": "E-postadressen er bekreftet!",
+"emailNotVerified": "E-postadressen din er ikke bekreftet ennå. Klikk først på bekreftelseslenken i e-posten din.",
+"accountCreatedTitle": "Konto opprettet",
+"accountCreatedDescription": "Orion Trade Hub-kontoen din er opprettet. Vi har sendt en bekreftelses-e-post til innboksen din. Bekreft e-postadressen din før du logger inn.",
+"nextSteps": "Neste steg",
+"checkInbox": "Sjekk innboksen din.",
+"checkSpam": "Sjekk søppelpost- eller spam-mappen.",
+"clickVerification": "Klikk på bekreftelseslenken.",
+"returnLogin": "Gå tilbake hit og logg inn.",
+"checking": "Sjekker...",
+"verifiedEmailButton": "Jeg har bekreftet e-posten min",
+"sending": "Sender...",
+"resendVerification": "Send bekreftelses-e-post på nytt",
+"backToLogin": "Tilbake til innlogging",
+
+"enterEmailAddress": "Vennligst skriv inn e-postadressen din.",
+"unableToSendResetEmail": "Kunne ikke sende e-post for tilbakestilling av passord.",
+"passwordResetEmailSent": "E-post for tilbakestilling av passord er sendt. Sjekk innboksen eller søppelpostmappen.",
+"forgotPasswordDescription": "Skriv inn e-postadressen som er knyttet til kontoen din. Vi sender deg en sikker lenke for å tilbakestille passordet.",
+"passwordResetEmailSentTitle": "E-post for tilbakestilling av passord sendt",
+"passwordResetEmailSentDescription": "Sjekk innboksen og søppelpostmappen. Klikk på lenken for tilbakestilling av passord og opprett et nytt passord.",
+"enterYourEmail": "Skriv inn e-postadressen din",
+"sendPasswordResetLink": "Send lenke for tilbakestilling av passord"
+}

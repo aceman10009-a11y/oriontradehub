@@ -17,11 +17,11 @@ import CardApplications from "./pages/admin/CardApplications";
 export default function App() {
   return (
     <>
-      {/* GLOBAL MODAL (IMPORTANT: must be outside Routes) */}
+      {/* Global modal */}
       <AppModal />
 
       <Routes>
-        {/* Landing Page */}
+        {/* Public Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/security" element={<Security />} />
 
@@ -31,8 +31,15 @@ export default function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        {/* Dashboard */}
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* Protected User Pages */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/settings"
@@ -52,7 +59,7 @@ export default function App() {
           }
         />
 
-        {/* Protected Admin Dashboards */}
+        {/* Protected Admin Pages */}
         <Route
           path="/admin"
           element={

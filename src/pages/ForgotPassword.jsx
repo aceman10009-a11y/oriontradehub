@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+
 import { auth } from "../firebase/config";
 import loginBackground from "../assets/auth/login-background.webp";
 
 const ForgotPassword = () => {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -13,7 +18,7 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     if (!email) {
-      alert("Please enter your email address.");
+      toast.error(t("enterEmailAddress"));
       return;
     }
 
@@ -23,27 +28,28 @@ const ForgotPassword = () => {
       await sendPasswordResetEmail(auth, email);
 
       setSent(true);
+      toast.success(t("passwordResetEmailSent"));
     } catch (err) {
-      let message = "Unable to send reset email.";
+      let message = t("unableToSendResetEmail");
 
       switch (err.code) {
         case "auth/user-not-found":
-          message = "No account exists with this email.";
+          message = t("userRecordNotFound");
           break;
 
         case "auth/invalid-email":
-          message = "Please enter a valid email address.";
+          message = t("invalidEmail");
           break;
 
         case "auth/network-request-failed":
-          message = "Please check your internet connection.";
+          message = t("checkInternet");
           break;
 
         default:
           message = err.message;
       }
 
-      alert(message);
+      toast.error(message);
     } finally {
       setLoading(false);
     }
@@ -82,7 +88,7 @@ const ForgotPassword = () => {
         }}
       >
         <h2 style={{ marginBottom: 10 }}>
-          Forgot Password
+          {t("forgotPassword")}
         </h2>
 
         <p
@@ -92,8 +98,7 @@ const ForgotPassword = () => {
             lineHeight: 1.6,
           }}
         >
-          Enter the email address associated with your account.
-          We'll send you a secure password reset link.
+          {t("forgotPasswordDescription")}
         </p>
 
         {sent ? (
@@ -112,7 +117,7 @@ const ForgotPassword = () => {
                   color: "#00d4ff",
                 }}
               >
-                Password Reset Email Sent
+                {t("passwordResetEmailSentTitle")}
               </strong>
 
               <p
@@ -122,8 +127,7 @@ const ForgotPassword = () => {
                   lineHeight: 1.7,
                 }}
               >
-                Check your inbox and spam folder.
-                Click the password reset link and create your new password.
+                {t("passwordResetEmailSentDescription")}
               </p>
             </div>
 
@@ -136,7 +140,7 @@ const ForgotPassword = () => {
                 textDecoration: "none",
               }}
             >
-              Back to Login
+              {t("backToLogin")}
             </Link>
           </>
         ) : (
@@ -145,15 +149,13 @@ const ForgotPassword = () => {
             onSubmit={handleReset}
           >
             <div className="form-section">
-              <h4>Email Address</h4>
+              <h4>{t("emailAddress")}</h4>
 
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("enterYourEmail")}
                 value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -164,8 +166,8 @@ const ForgotPassword = () => {
               disabled={loading}
             >
               {loading
-                ? "Sending..."
-                : "Send Password Reset Link"}
+                ? t("sending")
+                : t("sendPasswordResetLink")}
             </button>
 
             <p
@@ -182,7 +184,7 @@ const ForgotPassword = () => {
                   fontWeight: 600,
                 }}
               >
-                ← Back to Login
+                ← {t("backToLogin")}
               </Link>
             </p>
           </form>

@@ -93,7 +93,7 @@ const Login = () => {
           break;
 
         default:
-          message = err.message;
+          message = t("unableToSignIn");
       }
 
       toast.error(message);

@@ -40,7 +40,9 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+console.log("VerifyEmail language:", i18n.language);
   const navigate = useNavigate();
 
 
@@ -208,9 +210,9 @@ const Signup = () => {
           break;
 
 
-        default:
+         default:
 
-          message = err.message;
+          message = t("somethingWentWrong");
 
       }
 

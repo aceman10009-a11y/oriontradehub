@@ -103,7 +103,6 @@
   "forgotPassword": "忘记密码",
   "resetPassword": "重置密码",
   "verifyEmail": "验证邮箱",
-  "resendVerification": "重新发送验证",
   "italian": "意大利语",
   "portuguese": "葡萄牙语",
   "dutch": "荷兰语",
@@ -288,12 +287,14 @@
   "mobileMaintenance": "移动应用目前正在维护中，即将上线。",
   "careersMessage": "招聘职位即将开放，我们正在建立招聘计划。"
 },
+
 "homeInfo": {
   "about": {
     "title": "关于 Orion Trade Hub",
     "description": "Orion Trade Hub 是新一代交易平台，为加密货币、外汇及全球金融市场提供实时交易执行、AI 辅助市场分析以及机构级交易性能。"
   }
 },
+
 "cardServices": {
   "title": "Orion 借记卡",
   "description": "管理您的 Orion 借记卡申请，跟踪申请状态，并享受高级卡片服务。",
@@ -321,5 +322,41 @@
   "completeAllFields": "请填写所有字段。",
   "applicationSubmitted": "您的 Orion 借记卡申请已成功提交。",
   "applicationFailed": "申请提交失败，请稍后重试。"
-}
+},
+
+"admin": {
+  "profitUpdated": "利润更新成功。",
+  "profitUpdateFailed": "利润更新失败。",
+  "tradeClosed": "交易已成功关闭。",
+  "tradeCloseFailed": "交易关闭失败。",
+  "userNotFound": "未找到用户。",
+  "depositMessage": "存款由您指定的账户经理手动处理。如需为您的投资账户注资，请联系支持团队。",
+  "withdrawMessage": "提款请求将由您指定的账户经理审核并处理。如需发起提款，请联系支持团队。"
+},
+
+"sessionExpired": "您的会话已过期，请重新登录。",
+"verificationEmailSent": "新的验证邮件已发送。请检查您的收件箱或垃圾邮件文件夹。",
+"pleaseLoginAgain": "请重新登录。",
+"emailVerified": "电子邮箱验证成功！",
+"emailNotVerified": "您的电子邮箱尚未验证。请先点击邮件中的验证链接。",
+"accountCreatedTitle": "账户创建成功",
+"accountCreatedDescription": "您的 Orion Trade Hub 账户已成功创建。我们已向您的收件箱发送验证邮件。请在登录前完成邮箱验证。",
+"nextSteps": "下一步操作",
+"checkInbox": "检查您的收件箱。",
+"checkSpam": "检查您的垃圾邮件文件夹。",
+"clickVerification": "点击验证链接。",
+"returnLogin": "返回此页面并登录。",
+"checking": "正在检查...",
+"verifiedEmailButton": "我已验证邮箱",
+"sending": "正在发送...",
+"resendVerification": "重新发送验证邮件",
+"backToLogin": "返回登录",
+"enterEmailAddress": "请输入您的电子邮箱地址。",
+"unableToSendResetEmail": "无法发送密码重置邮件。",
+"passwordResetEmailSent": "密码重置邮件已发送。请检查您的收件箱或垃圾邮件文件夹。",
+"forgotPasswordDescription": "请输入与您的账户关联的电子邮箱地址。我们将向您发送一个安全的密码重置链接。",
+"passwordResetEmailSentTitle": "密码重置邮件已发送",
+"passwordResetEmailSentDescription": "请检查您的收件箱和垃圾邮件文件夹。点击密码重置链接并创建新的密码。",
+"enterYourEmail": "请输入您的电子邮箱",
+"sendPasswordResetLink": "发送密码重置链接"
 }

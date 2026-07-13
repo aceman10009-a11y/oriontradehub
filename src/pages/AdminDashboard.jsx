@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../firebase/config";
 import TradeModal from "../components/TradeModal";
 import CardApplications from "./admin/CardApplications";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+
 import {
   collection,
   onSnapshot,
@@ -19,6 +22,7 @@ export default function AdminDashboard() {
   const [profitInputs, setProfitInputs] = useState({});
   const [showAllTrades, setShowAllTrades] = useState(false);
   const [showCardApplications, setShowCardApplications] = useState(false);
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -64,10 +68,10 @@ export default function AdminDashboard() {
         profit: Number(profitInputs[tradeId] ?? 0),
         updatedAt: serverTimestamp(),
       });
-      alert("Profit updated successfully.");
+      toast.success(t("admin.profitUpdated"));
     } catch (error) {
       console.error(error);
-      alert("Failed to update profit.");
+      toast.error(t("admin.profitUpdateFailed"));
     }
   };
 

@@ -103,7 +103,6 @@
   "forgotPassword": "Password dimenticata",
   "resetPassword": "Reimposta password",
   "verifyEmail": "Verifica email",
-  "resendVerification": "Invia nuovamente verifica",
   "italian": "Italiano",
   "portuguese": "Portoghese",
   "dutch": "Olandese",
@@ -304,8 +303,10 @@
   "about": {
     "title": "Informazioni su Orion Trade Hub",
     "description": "Orion Trade Hub è una piattaforma di trading di nuova generazione progettata per esecuzione di mercato in tempo reale, analisi assistite dall'IA e prestazioni istituzionali su criptovalute, forex e mercati globali."
-  }},
-  "cardServices": {
+  }
+},
+
+"cardServices": {
   "title": "Carta di Debito Orion",
   "description": "Gestisci la tua richiesta della Carta di Debito Orion, monitora lo stato della domanda e accedi ai servizi premium dedicati alla carta.",
   "preview": "Anteprima della carta",
@@ -326,11 +327,46 @@
   "benefitFraud": "Monitoraggio antifrode",
   "benefitSupport": "Assistenza clienti premium",
   "houseAddress": "Indirizzo di residenza",
-  "email": "Indirizzo e-mail",
   "cancel": "Annulla",
   "submit": "Invia",
   "completeAllFields": "Compila tutti i campi.",
   "applicationSubmitted": "La tua richiesta per la Carta di Debito Orion è stata ricevuta con successo.",
   "applicationFailed": "Impossibile inviare la richiesta. Riprova."
-}
+},
+
+"admin": {
+  "profitUpdated": "Profit aggiornato con successo.",
+  "profitUpdateFailed": "Impossibile aggiornare il profitto.",
+  "tradeClosed": "Operazione chiusa con successo.",
+  "tradeCloseFailed": "Impossibile chiudere l'operazione.",
+  "userNotFound": "Utente non trovato.",
+  "depositMessage": "I depositi vengono elaborati manualmente dal tuo account manager assegnato. Contatta l'assistenza per finanziare il tuo conto di investimento.",
+  "withdrawMessage": "Le richieste di prelievo vengono esaminate ed elaborate dal tuo account manager assegnato. Contatta l'assistenza per avviare un prelievo."
+},
+
+"sessionExpired": "La tua sessione è scaduta. Effettua nuovamente l'accesso.",
+"verificationEmailSent": "È stata inviata una nuova email di verifica. Controlla la posta in arrivo o la cartella spam.",
+"pleaseLoginAgain": "Effettua nuovamente l'accesso.",
+"emailVerified": "Email verificata con successo!",
+"emailNotVerified": "La tua email non è stata ancora verificata. Clicca prima sul link di verifica ricevuto via email.",
+"accountCreatedTitle": "Account creato con successo",
+"accountCreatedDescription": "Il tuo account Orion Trade Hub è stato creato con successo. Abbiamo inviato un'email di verifica alla tua casella di posta. Verifica la tua email prima di accedere.",
+"nextSteps": "Prossimi passaggi",
+"checkInbox": "Controlla la tua posta in arrivo.",
+"checkSpam": "Controlla la cartella spam o posta indesiderata.",
+"clickVerification": "Clicca sul link di verifica.",
+"returnLogin": "Torna qui ed effettua l'accesso.",
+"checking": "Verifica in corso...",
+"verifiedEmailButton": "Ho verificato la mia email",
+"sending": "Invio in corso...",
+"resendVerification": "Invia nuovamente l'email di verifica",
+"backToLogin": "Torna al login",
+"enterEmailAddress": "Inserisci il tuo indirizzo e-mail.",
+"unableToSendResetEmail": "Impossibile inviare l'e-mail per il ripristino della password.",
+"passwordResetEmailSent": "L'e-mail per il ripristino della password è stata inviata. Controlla la posta in arrivo o la cartella spam.",
+"forgotPasswordDescription": "Inserisci l'indirizzo e-mail associato al tuo account. Ti invieremo un link sicuro per reimpostare la password.",
+"passwordResetEmailSentTitle": "E-mail per il ripristino della password inviata",
+"passwordResetEmailSentDescription": "Controlla la posta in arrivo e la cartella spam. Fai clic sul link per il ripristino della password e crea una nuova password.",
+"enterYourEmail": "Inserisci la tua e-mail",
+"sendPasswordResetLink": "Invia il link per il ripristino della password"
 }

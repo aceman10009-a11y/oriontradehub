@@ -103,7 +103,6 @@
   "forgotPassword": "Glömt lösenord",
   "resetPassword": "Återställ lösenord",
   "verifyEmail": "Verifiera e-post",
-  "resendVerification": "Skicka verifiering igen",
   "italian": "Italienska",
   "portuguese": "Portugisiska",
   "dutch": "Nederländska",
@@ -302,6 +301,7 @@
     "description": "Orion Trade Hub är en nästa generations handelsplattform utvecklad för marknadsutförande i realtid, AI-assisterade marknadsinsikter och prestanda på institutionell nivå inom kryptovalutor, forex och globala marknader."
   }
 },
+
 "cardServices": {
   "title": "Orion Betalkort",
   "description": "Hantera din ansökan om Orion Betalkort, följ ansökningsstatusen och få tillgång till exklusiva korttjänster.",
@@ -329,5 +329,42 @@
   "completeAllFields": "Vänligen fyll i alla fält.",
   "applicationSubmitted": "Din ansökan om Orion Betalkort har mottagits.",
   "applicationFailed": "Det gick inte att skicka ansökan. Försök igen."
-}
+},
+
+"admin": {
+  "profitUpdated": "Vinsten uppdaterades.",
+  "profitUpdateFailed": "Det gick inte att uppdatera vinsten.",
+  "tradeClosed": "Handeln stängdes.",
+  "tradeCloseFailed": "Det gick inte att stänga handeln.",
+  "userNotFound": "Användaren hittades inte.",
+  "depositMessage": "Insättningar behandlas manuellt av din tilldelade kontohanterare. Kontakta supporten för att finansiera ditt investeringskonto.",
+  "withdrawMessage": "Uttagsförfrågningar granskas och behandlas av din tilldelade kontohanterare. Kontakta supporten för att påbörja ett uttag."
+},
+
+"sessionExpired": "Din session har gått ut. Vänligen logga in igen.",
+"verificationEmailSent": "Ett nytt verifieringsmail har skickats. Kontrollera din inkorg eller skräppostmapp.",
+"pleaseLoginAgain": "Vänligen logga in igen.",
+"emailVerified": "E-postadressen har verifierats!",
+"emailNotVerified": "Din e-postadress har ännu inte verifierats. Klicka först på verifieringslänken i ditt e-postmeddelande.",
+"accountCreatedTitle": "Kontot har skapats",
+"accountCreatedDescription": "Ditt Orion Trade Hub-konto har skapats. Vi har skickat ett verifieringsmail till din inkorg. Verifiera din e-postadress innan du loggar in.",
+"nextSteps": "Nästa steg",
+"checkInbox": "Kontrollera din inkorg.",
+"checkSpam": "Kontrollera din skräppostmapp.",
+"clickVerification": "Klicka på verifieringslänken.",
+"returnLogin": "Gå tillbaka hit och logga in.",
+"checking": "Kontrollerar...",
+"verifiedEmailButton": "Jag har verifierat min e-post",
+"sending": "Skickar...",
+"resendVerification": "Skicka verifieringsmail igen",
+"backToLogin": "Tillbaka till inloggning",
+
+"enterEmailAddress": "Ange din e-postadress.",
+"unableToSendResetEmail": "Det gick inte att skicka e-postmeddelandet för återställning av lösenord.",
+"passwordResetEmailSent": "E-postmeddelandet för återställning av lösenord har skickats. Kontrollera inkorgen eller skräppostmappen.",
+"forgotPasswordDescription": "Ange den e-postadress som är kopplad till ditt konto. Vi skickar en säker länk för att återställa ditt lösenord.",
+"passwordResetEmailSentTitle": "E-postmeddelande för återställning av lösenord skickat",
+"passwordResetEmailSentDescription": "Kontrollera inkorgen och skräppostmappen. Klicka på länken för återställning av lösenord och skapa ett nytt lösenord.",
+"enterYourEmail": "Ange din e-postadress",
+"sendPasswordResetLink": "Skicka länk för återställning av lösenord"
 }

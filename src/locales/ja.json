@@ -100,10 +100,9 @@
   "signup": "アカウント作成",
   "logout": "ログアウト",
   "signOut": "ログアウト",
-  "forgotPassword": "パスワードを忘れた場合",
+  "forgotPasswordLabel": "パスワードを忘れた場合",
   "resetPassword": "パスワードをリセット",
   "verifyEmail": "メール認証",
-  "resendVerification": "認証メールを再送信",
   "italian": "イタリア語",
   "portuguese": "ポルトガル語",
   "dutch": "オランダ語",
@@ -288,12 +287,14 @@
   "mobileMaintenance": "モバイルアプリは現在メンテナンス中です。近日中にご利用いただけるようになります。",
   "careersMessage": "採用情報は近日公開予定です。現在、採用プログラムを準備しています。"
 },
+
 "homeInfo": {
   "about": {
     "title": "Orion Trade Hubについて",
     "description": "Orion Trade Hubは、暗号資産、外国為替、世界市場向けに、リアルタイム取引、AI支援による市場分析、機関投資家レベルのパフォーマンスを提供する次世代の取引プラットフォームです。"
   }
 },
+
 "cardServices": {
   "title": "Orionデビットカード",
   "description": "Orionデビットカードの申請を管理し、申請状況を確認し、プレミアムカードサービスをご利用いただけます。",
@@ -321,5 +322,42 @@
   "completeAllFields": "すべての項目を入力してください。",
   "applicationSubmitted": "Orionデビットカードのお申し込みを受け付けました。",
   "applicationFailed": "申請を送信できませんでした。もう一度お試しください。"
-}
+},
+
+"admin": {
+  "profitUpdated": "利益が正常に更新されました。",
+  "profitUpdateFailed": "利益の更新に失敗しました。",
+  "tradeClosed": "取引は正常に終了しました。",
+  "tradeCloseFailed": "取引を終了できませんでした。",
+  "userNotFound": "ユーザーが見つかりません。",
+  "depositMessage": "入金は担当アカウントマネージャーによって手動で処理されます。投資口座へ資金を追加するにはサポートへお問い合わせください。",
+  "withdrawMessage": "出金リクエストは担当アカウントマネージャーによって確認および処理されます。出金を開始するにはサポートへお問い合わせください。"
+},
+
+"sessionExpired": "セッションの有効期限が切れました。もう一度ログインしてください。",
+"verificationEmailSent": "新しい確認メールを送信しました。受信トレイまたは迷惑メールフォルダーをご確認ください。",
+"pleaseLoginAgain": "もう一度ログインしてください。",
+"emailVerified": "メールアドレスの確認に成功しました！",
+"emailNotVerified": "メールアドレスはまだ確認されていません。まずメール内の確認リンクをクリックしてください。",
+"accountCreatedTitle": "アカウントが正常に作成されました",
+"accountCreatedDescription": "Orion Trade Hub のアカウントが正常に作成されました。確認メールを受信トレイに送信しました。ログインする前にメールアドレスを確認してください。",
+"nextSteps": "次のステップ",
+"checkInbox": "受信トレイを確認してください。",
+"checkSpam": "迷惑メールフォルダーを確認してください。",
+"clickVerification": "確認リンクをクリックしてください。",
+"returnLogin": "ここに戻ってログインしてください。",
+"checking": "確認中...",
+"verifiedEmailButton": "メール確認済みです",
+"sending": "送信中...",
+"resendVerification": "確認メールを再送信",
+"backToLogin": "ログインに戻る",
+
+"enterEmailAddress": "メールアドレスを入力してください。",
+"unableToSendResetEmail": "パスワード再設定メールを送信できませんでした。",
+"passwordResetEmailSent": "パスワード再設定メールを送信しました。受信トレイまたは迷惑メールフォルダーをご確認ください。",
+"forgotPasswordDescription": "アカウントに登録されているメールアドレスを入力してください。安全なパスワード再設定用リンクをお送りします。",
+"passwordResetEmailSentTitle": "パスワード再設定メールを送信しました",
+"passwordResetEmailSentDescription": "受信トレイと迷惑メールフォルダーをご確認ください。パスワード再設定リンクをクリックして、新しいパスワードを作成してください。",
+"enterYourEmail": "メールアドレスを入力",
+"sendPasswordResetLink": "パスワード再設定リンクを送信"
 }

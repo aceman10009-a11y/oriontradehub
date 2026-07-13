@@ -103,7 +103,6 @@
   "forgotPassword": "Unohditko salasanan",
   "resetPassword": "Palauta salasana",
   "verifyEmail": "Vahvista sähköposti",
-  "resendVerification": "Lähetä vahvistus uudelleen",
   "italian": "Italia",
   "portuguese": "Portugali",
   "dutch": "Hollanti",
@@ -331,5 +330,41 @@
   "completeAllFields": "Täytä kaikki kentät.",
   "applicationSubmitted": "Orion Debit-korttihakemuksesi on vastaanotettu.",
   "applicationFailed": "Hakemuksen lähettäminen epäonnistui. Yritä uudelleen."
-}
+},
+"admin": {
+  "profitUpdated": "Voitto päivitetty onnistuneesti.",
+  "profitUpdateFailed": "Voiton päivittäminen epäonnistui.",
+  "tradeClosed": "Kauppa suljettu onnistuneesti.",
+  "tradeCloseFailed": "Kaupan sulkeminen epäonnistui.",
+  "userNotFound": "Käyttäjää ei löytynyt.",
+  "depositMessage": "Talletukset käsittelee manuaalisesti sinulle määrätty tilinhoitaja. Ota yhteyttä tukeen rahoittaaksesi sijoitustilisi.",
+  "withdrawMessage": "Nostopyynnöt tarkistetaan ja käsitellään sinulle määrätyn tilinhoitajan toimesta. Ota yhteyttä tukeen aloittaaksesi noston."
+},
+
+"sessionExpired": "Istuntosi on vanhentunut. Kirjaudu sisään uudelleen.",
+"verificationEmailSent": "Uusi vahvistussähköposti on lähetetty. Tarkista saapuneet viestit tai roskapostikansio.",
+"pleaseLoginAgain": "Kirjaudu sisään uudelleen.",
+"emailVerified": "Sähköposti vahvistettu onnistuneesti!",
+"emailNotVerified": "Sähköpostiasi ei ole vielä vahvistettu. Napsauta ensin sähköpostiisi lähetettyä vahvistuslinkkiä.",
+"accountCreatedTitle": "Tili luotu onnistuneesti",
+"accountCreatedDescription": "Orion Trade Hub -tilisi on luotu onnistuneesti. Lähetimme vahvistussähköpostin sähköpostiisi. Vahvista sähköpostiosoitteesi ennen kirjautumista.",
+"nextSteps": "Seuraavat vaiheet",
+"checkInbox": "Tarkista saapuneet viestit.",
+"checkSpam": "Tarkista roskaposti- tai roskapostikansio.",
+"clickVerification": "Napsauta vahvistuslinkkiä.",
+"returnLogin": "Palaa tänne ja kirjaudu sisään.",
+"checking": "Tarkistetaan...",
+"verifiedEmailButton": "Olen vahvistanut sähköpostini",
+"sending": "Lähetetään...",
+"resendVerification": "Lähetä vahvistussähköposti uudelleen",
+"backToLogin": "Takaisin kirjautumiseen",
+
+"enterEmailAddress": "Anna sähköpostiosoitteesi.",
+"unableToSendResetEmail": "Salasanan palautussähköpostia ei voitu lähettää.",
+"passwordResetEmailSent": "Salasanan palautussähköposti on lähetetty. Tarkista saapuneet viestit tai roskapostikansio.",
+"forgotPasswordDescription": "Anna tiliisi liitetty sähköpostiosoite. Lähetämme sinulle turvallisen linkin salasanan palauttamista varten.",
+"passwordResetEmailSentTitle": "Salasanan palautussähköposti lähetetty",
+"passwordResetEmailSentDescription": "Tarkista saapuneet viestit ja roskapostikansio. Avaa salasanan palautuslinkki ja luo uusi salasana.",
+"enterYourEmail": "Anna sähköpostiosoitteesi",
+"sendPasswordResetLink": "Lähetä salasanan palautuslinkki"
 }

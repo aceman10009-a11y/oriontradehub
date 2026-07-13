@@ -103,7 +103,6 @@
   "forgotPassword": "Nie pamiętasz hasła",
   "resetPassword": "Zresetuj hasło",
   "verifyEmail": "Zweryfikuj e-mail",
-  "resendVerification": "Wyślij ponownie weryfikację",
   "italian": "Włoski",
   "portuguese": "Portugalski",
   "dutch": "Holenderski",
@@ -328,5 +327,42 @@
   "submit": "Wyślij",
   "completeAllFields": "Proszę wypełnić wszystkie pola.",
   "applicationSubmitted": "Twój wniosek o Kartę Debetową Orion został pomyślnie otrzymany.",
-  "applicationFailed": "Nie udało się wysłać wniosku. Spróbuj ponownie."
-}}
+  "applicationFailed": "Nie udało się wysłać wniosku. Spróbuj ponownie.",
+    "admin": {
+    "profitUpdated": "Zysk został pomyślnie zaktualizowany.",
+    "profitUpdateFailed": "Nie udało się zaktualizować zysku.",
+    "tradeClosed": "Transakcja została pomyślnie zamknięta.",
+    "tradeCloseFailed": "Nie udało się zamknąć transakcji.",
+    "userNotFound": "Nie znaleziono użytkownika.",
+    "depositMessage": "Wpłaty są przetwarzane ręcznie przez przydzielonego opiekuna konta. Skontaktuj się z pomocą techniczną, aby zasilić swoje konto inwestycyjne.",
+    "withdrawMessage": "Wnioski o wypłatę są sprawdzane i przetwarzane przez przydzielonego opiekuna konta. Skontaktuj się z pomocą techniczną, aby rozpocząć wypłatę."
+  }
+},
+
+"sessionExpired": "Twoja sesja wygasła. Zaloguj się ponownie.",
+"verificationEmailSent": "Wysłano nowy e-mail weryfikacyjny. Sprawdź swoją skrzynkę odbiorczą lub folder spam.",
+"pleaseLoginAgain": "Zaloguj się ponownie.",
+"emailVerified": "Adres e-mail został pomyślnie zweryfikowany!",
+"emailNotVerified": "Twój adres e-mail nie został jeszcze zweryfikowany. Najpierw kliknij link weryfikacyjny wysłany na Twój e-mail.",
+"accountCreatedTitle": "Konto zostało pomyślnie utworzone",
+"accountCreatedDescription": "Twoje konto Orion Trade Hub zostało pomyślnie utworzone. Wysłaliśmy wiadomość weryfikacyjną na Twoją skrzynkę odbiorczą. Zweryfikuj swój adres e-mail przed zalogowaniem.",
+"nextSteps": "Kolejne kroki",
+"checkInbox": "Sprawdź swoją skrzynkę odbiorczą.",
+"checkSpam": "Sprawdź folder spam lub wiadomości-śmieci.",
+"clickVerification": "Kliknij link weryfikacyjny.",
+"returnLogin": "Wróć tutaj i zaloguj się.",
+"checking": "Sprawdzanie...",
+"verifiedEmailButton": "Zweryfikowałem mój e-mail",
+"sending": "Wysyłanie...",
+"resendVerification": "Wyślij ponownie wiadomość weryfikacyjną",
+"backToLogin": "Powrót do logowania",
+
+"enterEmailAddress": "Proszę wprowadzić swój adres e-mail.",
+"unableToSendResetEmail": "Nie udało się wysłać wiadomości do resetowania hasła.",
+"passwordResetEmailSent": "Wiadomość do resetowania hasła została wysłana. Sprawdź swoją skrzynkę odbiorczą lub folder spam.",
+"forgotPasswordDescription": "Wprowadź adres e-mail powiązany z Twoim kontem. Wyślemy Ci bezpieczny link do zresetowania hasła.",
+"passwordResetEmailSentTitle": "Wysłano wiadomość do resetowania hasła",
+"passwordResetEmailSentDescription": "Sprawdź swoją skrzynkę odbiorczą oraz folder spam. Kliknij link do resetowania hasła i utwórz nowe hasło.",
+"enterYourEmail": "Wprowadź swój adres e-mail",
+"sendPasswordResetLink": "Wyślij link do resetowania hasła"
+}

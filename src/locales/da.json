@@ -103,7 +103,6 @@
   "forgotPassword": "Glemt adgangskode",
   "resetPassword": "Nulstil adgangskode",
   "verifyEmail": "Bekræft e-mail",
-  "resendVerification": "Send bekræftelse igen",
   "italian": "Italiensk",
   "portuguese": "Portugisisk",
   "dutch": "Hollandsk",
@@ -330,5 +329,42 @@
   "completeAllFields": "Udfyld venligst alle felter.",
   "applicationSubmitted": "Din ansøgning om Orion Betalingskort er modtaget.",
   "applicationFailed": "Kunne ikke indsende ansøgningen. Prøv venligst igen."
-}
+},
+
+"admin": {
+  "profitUpdated": "Profit opdateret med succes.",
+  "profitUpdateFailed": "Kunne ikke opdatere profit.",
+  "tradeClosed": "Handel lukket med succes.",
+  "tradeCloseFailed": "Kunne ikke lukke handel.",
+  "userNotFound": "Bruger ikke fundet.",
+  "depositMessage": "Indbetalinger behandles manuelt af din tildelte kontoadministrator. Kontakt venligst support for at finansiere din investeringskonto.",
+  "withdrawMessage": "Udbetalingsanmodninger gennemgås og behandles af din tildelte kontoadministrator. Kontakt venligst support for at starte en udbetaling."
+},
+
+"sessionExpired": "Din session er udløbet. Log venligst ind igen.",
+"verificationEmailSent": "En ny bekræftelsesmail er blevet sendt. Tjek venligst din indbakke eller spammappe.",
+"pleaseLoginAgain": "Log venligst ind igen.",
+"emailVerified": "E-mailen er blevet bekræftet!",
+"emailNotVerified": "Din e-mail er endnu ikke blevet bekræftet. Klik venligst først på bekræftelseslinket i din e-mail.",
+"accountCreatedTitle": "Konto oprettet med succes",
+"accountCreatedDescription": "Din Orion Trade Hub-konto er blevet oprettet. Vi har sendt en bekræftelsesmail til din indbakke. Bekræft venligst din e-mail, før du logger ind.",
+"nextSteps": "Næste trin",
+"checkInbox": "Tjek din indbakke.",
+"checkSpam": "Tjek din spam- eller uønsket mappe.",
+"clickVerification": "Klik på bekræftelseslinket.",
+"returnLogin": "Vend tilbage hertil og log ind.",
+"checking": "Kontrollerer...",
+"verifiedEmailButton": "Jeg har bekræftet min e-mail",
+"sending": "Sender...",
+"resendVerification": "Send bekræftelsesmail igen",
+"backToLogin": "Tilbage til login",
+
+"enterEmailAddress": "Indtast venligst din e-mailadresse.",
+"unableToSendResetEmail": "Kunne ikke sende e-mail til nulstilling af adgangskode.",
+"passwordResetEmailSent": "E-mail til nulstilling af adgangskode er sendt. Tjek venligst din indbakke eller spammappe.",
+"forgotPasswordDescription": "Indtast den e-mailadresse, der er knyttet til din konto. Vi sender dig et sikkert link til nulstilling af din adgangskode.",
+"passwordResetEmailSentTitle": "E-mail til nulstilling af adgangskode sendt",
+"passwordResetEmailSentDescription": "Kontrollér din indbakke eller spammappe. Klik på linket til nulstilling af adgangskoden, og opret en ny adgangskode.",
+"enterYourEmail": "Indtast din e-mail",
+"sendPasswordResetLink": "Send link til nulstilling af adgangskode"
 }

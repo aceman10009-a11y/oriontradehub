@@ -103,7 +103,6 @@
   "forgotPassword": "Olvidé mi contraseña",
   "resetPassword": "Restablecer contraseña",
   "verifyEmail": "Verificar correo electrónico",
-  "resendVerification": "Reenviar verificación",
   "italian": "Italiano",
   "portuguese": "Portugués",
   "dutch": "Neerlandés",
@@ -288,12 +287,14 @@
   "mobileMaintenance": "Las aplicaciones móviles están actualmente en mantenimiento. Estarán disponibles pronto.",
   "careersMessage": "Las oportunidades profesionales llegarán pronto. Actualmente estamos creando nuestro programa de contratación."
 },
+
 "homeInfo": {
   "about": {
     "title": "Acerca de Orion Trade Hub",
     "description": "Orion Trade Hub es una plataforma de trading de nueva generación diseñada para ejecución de mercado en tiempo real, análisis asistido por IA y rendimiento institucional en criptomonedas, forex y mercados globales."
   }
 },
+
 "cardServices": {
   "title": "Tarjeta de Débito Orion",
   "description": "Administre su solicitud de la Tarjeta de Débito Orion, consulte el estado de la solicitud y acceda a servicios exclusivos para titulares de tarjetas.",
@@ -321,5 +322,45 @@
   "completeAllFields": "Por favor, complete todos los campos.",
   "applicationSubmitted": "Su solicitud para la Tarjeta de Débito Orion ha sido recibida correctamente.",
   "applicationFailed": "No se pudo enviar la solicitud. Inténtelo de nuevo."
-}
+},
+
+"admin": {
+  "profitUpdated": "Beneficio actualizado correctamente.",
+  "profitUpdateFailed": "No se pudo actualizar el beneficio.",
+  "tradeClosed": "Operación cerrada correctamente.",
+  "tradeCloseFailed": "No se pudo cerrar la operación.",
+  "userNotFound": "Usuario no encontrado.",
+  "depositMessage": "Los depósitos son procesados manualmente por su gestor de cuenta asignado. Por favor, contacte con soporte para financiar su cuenta de inversión.",
+  "withdrawMessage": "Las solicitudes de retiro son revisadas y procesadas por su gestor de cuenta asignado. Por favor, contacte con soporte para iniciar un retiro."
+},
+
+"sessionExpired": "Tu sesión ha caducado. Por favor, inicia sesión nuevamente.",
+"verificationEmailSent": "Se ha enviado un nuevo correo de verificación. Revisa tu bandeja de entrada o la carpeta de correo no deseado.",
+"pleaseLoginAgain": "Por favor, inicia sesión nuevamente.",
+"emailVerified": "¡Correo electrónico verificado correctamente!",
+"emailNotVerified": "Tu correo electrónico aún no ha sido verificado. Primero haz clic en el enlace de verificación enviado a tu correo.",
+
+"accountCreatedTitle": "Cuenta creada correctamente",
+"accountCreatedDescription": "Tu cuenta de Orion Trade Hub ha sido creada correctamente. Hemos enviado un correo de verificación a tu bandeja de entrada. Verifica tu correo antes de iniciar sesión.",
+
+"nextSteps": "Siguientes pasos",
+"checkInbox": "Revisa tu bandeja de entrada.",
+"checkSpam": "Revisa tu carpeta de spam o correo no deseado.",
+"clickVerification": "Haz clic en el enlace de verificación.",
+"returnLogin": "Regresa aquí e inicia sesión.",
+
+"checking": "Verificando...",
+"verifiedEmailButton": "He verificado mi correo electrónico",
+"sending": "Enviando...",
+"resendVerification": "Reenviar correo de verificación",
+"backToLogin": "Volver al inicio de sesión",
+
+"enterEmailAddress": "Por favor, introduzca su dirección de correo electrónico.",
+"unableToSendResetEmail": "No se pudo enviar el correo para restablecer la contraseña.",
+"passwordResetEmailSent": "El correo para restablecer la contraseña se envió correctamente. Revise su bandeja de entrada o la carpeta de correo no deseado.",
+"forgotPasswordDescription": "Introduzca la dirección de correo electrónico asociada a su cuenta. Le enviaremos un enlace seguro para restablecer su contraseña.",
+"passwordResetEmailSentTitle": "Correo de restablecimiento de contraseña enviado",
+"passwordResetEmailSentDescription": "Revise su bandeja de entrada y la carpeta de correo no deseado. Haga clic en el enlace para restablecer la contraseña y cree una nueva contraseña.",
+"enterYourEmail": "Introduzca su correo electrónico",
+"sendPasswordResetLink": "Enviar enlace para restablecer la contraseña"
 }

@@ -103,7 +103,6 @@
   "forgotPassword": "Mot de passe oublié",
   "resetPassword": "Réinitialiser le mot de passe",
   "verifyEmail": "Vérifier l'email",
-  "resendVerification": "Renvoyer la vérification",
   "italian": "Italien",
   "portuguese": "Portugais",
   "dutch": "Néerlandais",
@@ -326,6 +325,42 @@
   "submit": "Envoyer",
   "completeAllFields": "Veuillez remplir tous les champs.",
   "applicationSubmitted": "Votre demande de Carte de Débit Orion a bien été reçue.",
-  "applicationFailed": "Impossible d'envoyer la demande. Veuillez réessayer."
+  "applicationFailed": "Impossible d'envoyer la demande. Veuillez réessayer.",
+  "admin": {
+  "profitUpdated": "Bénéfice mis à jour avec succès.",
+  "profitUpdateFailed": "Échec de la mise à jour du bénéfice.",
+  "tradeClosed": "Transaction clôturée avec succès.",
+  "tradeCloseFailed": "Échec de la clôture de la transaction.",
+  "userNotFound": "Utilisateur introuvable.",
+  "depositMessage": "Les dépôts sont traités manuellement par votre gestionnaire de compte attitré. Veuillez contacter le support pour approvisionner votre compte d'investissement.",
+  "withdrawMessage": "Les demandes de retrait sont examinées et traitées par votre gestionnaire de compte attitré. Veuillez contacter le support pour effectuer un retrait."
 }
+},
+
+"sessionExpired": "Votre session a expiré. Veuillez vous reconnecter.",
+"verificationEmailSent": "Un nouvel e-mail de vérification a été envoyé. Consultez votre boîte de réception ou votre dossier de courrier indésirable.",
+"pleaseLoginAgain": "Veuillez vous reconnecter.",
+"emailVerified": "E-mail vérifié avec succès !",
+"emailNotVerified": "Votre e-mail n'a pas encore été vérifié. Veuillez d'abord cliquer sur le lien de vérification envoyé par e-mail.",
+"accountCreatedTitle": "Compte créé avec succès",
+"accountCreatedDescription": "Votre compte Orion Trade Hub a été créé avec succès. Nous avons envoyé un e-mail de vérification dans votre boîte de réception. Veuillez vérifier votre e-mail avant de vous connecter.",
+"nextSteps": "Prochaines étapes",
+"checkInbox": "Vérifiez votre boîte de réception.",
+"checkSpam": "Vérifiez votre dossier spam ou courrier indésirable.",
+"clickVerification": "Cliquez sur le lien de vérification.",
+"returnLogin": "Revenez ici et connectez-vous.",
+"checking": "Vérification...",
+"verifiedEmailButton": "J'ai vérifié mon e-mail",
+"sending": "Envoi en cours...",
+"resendVerification": "Renvoyer l'e-mail de vérification",
+"backToLogin": "Retour à la connexion",
+
+"enterEmailAddress": "Veuillez saisir votre adresse e-mail.",
+"unableToSendResetEmail": "Impossible d'envoyer l'e-mail de réinitialisation du mot de passe.",
+"passwordResetEmailSent": "L'e-mail de réinitialisation du mot de passe a été envoyé. Veuillez vérifier votre boîte de réception ou votre dossier de courrier indésirable.",
+"forgotPasswordDescription": "Saisissez l'adresse e-mail associée à votre compte. Nous vous enverrons un lien sécurisé pour réinitialiser votre mot de passe.",
+"passwordResetEmailSentTitle": "E-mail de réinitialisation du mot de passe envoyé",
+"passwordResetEmailSentDescription": "Vérifiez votre boîte de réception ainsi que votre dossier de courrier indésirable. Cliquez sur le lien de réinitialisation et créez un nouveau mot de passe.",
+"enterYourEmail": "Saisissez votre adresse e-mail",
+"sendPasswordResetLink": "Envoyer le lien de réinitialisation du mot de passe"
 }
