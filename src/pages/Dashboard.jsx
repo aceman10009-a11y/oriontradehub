@@ -482,59 +482,64 @@ const executeTrade = (action) => {
     width: "100%",
   }}
 >
-  <table
-    style={{
-      width: "100%",
-      borderCollapse: "collapse",
-      color: "#fff",
-    }}
-  >
-    <thead>
-      <tr style={{ borderBottom: "1px solid #333" }}>
-        <th style={styles.th}>{t("symbol")}</th>
-        <th style={styles.th}>{t("amount")}</th>
-        <th style={styles.th}>{t("profit")}</th>
-        <th style={styles.th}>{t("status")}</th>
+<table
+  style={{
+    width: "100%",
+    borderCollapse: "collapse",
+    color: "var(--text-primary)",
+  }}
+>
+  <thead>
+    <tr
+      style={{
+        borderBottom: "1px solid var(--border-color)",
+      }}
+    >
+      <th style={styles.th}>{t("symbol")}</th>
+      <th style={styles.th}>{t("amount")}</th>
+      <th style={styles.th}>{t("profit")}</th>
+      <th style={styles.th}>{t("status")}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {filteredHistory.map((trade) => (
+      <tr key={trade.id}>
+        <td style={styles.td}>{trade.symbol}</td>
+
+        <td style={styles.td}>
+          ${trade.amount}
+        </td>
+
+        <td
+          style={{
+            ...styles.td,
+            color:
+              trade.profit >= 0
+                ? "#16a34a"
+                : "#ef4444",
+          }}
+        >
+          ${trade.profit}
+        </td>
+
+        <td style={styles.td}>
+          {trade.status
+            ? t(trade.status.toLowerCase())
+            : t("open")}
+        </td>
       </tr>
-    </thead>
+    ))}
+  </tbody>
+</table>
 
-    <tbody>
-      {filteredHistory.map((trade) => (
-        <tr key={trade.id}>
-          <td style={styles.td}>{trade.symbol}</td>
-
-          <td style={styles.td}>
-            ${trade.amount}
-          </td>
-
-          <td
-            style={{
-              ...styles.td,
-              color:
-                trade.profit >= 0
-                  ? "#16a34a"
-                  : "#ef4444",
-            }}
-          >
-            ${trade.profit}
-          </td>
-
-          <td style={styles.td}>
-            {trade.status
-  ? t(trade.status.toLowerCase())
-  : t("open")}
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-  <div style={{ overflowX: "auto" }}>
+<div style={{ overflowX: "auto" }}>
   {filteredHistory.length === 0 ? (
     <div
       style={{
         padding: 30,
         textAlign: "center",
-        color: "#9ca3af",
+        color: "var(--text-secondary)",
       }}
     >
       📈 {t("noTradingHistory")}
@@ -586,7 +591,11 @@ const executeTrade = (action) => {
   </strong>
 </div>
 
-<hr />
+<hr
+  style={{
+    borderColor: "var(--border-color)",
+  }}
+/>
 
 <div
   style={{
@@ -595,24 +604,28 @@ const executeTrade = (action) => {
     gap: 10,
   }}
 >
-           <button
-  onClick={() => executeTrade("deposit")}
-  style={buyBtn}
->
-  {t("deposit")}
-</button>
+  <button
+    onClick={() => executeTrade("deposit")}
+    style={buyBtn}
+  >
+    {t("deposit")}
+  </button>
 
-<button
-  onClick={() => setShowWithdraw(true)}
-  style={sellBtn}
->
-  {t("withdraw")}
-</button>
-          </div>
+  <button
+    onClick={() => setShowWithdraw(true)}
+    style={sellBtn}
+  >
+    {t("withdraw")}
+  </button>
+</div>
 
-          <hr />
+<hr
+  style={{
+    borderColor: "var(--border-color)",
+  }}
+/>
 
-        <h3 style={{ marginTop: 25 }}>{t("openPositions")}</h3>
+<h3 style={{ marginTop: 25 }}>{t("openPositions")}</h3>
 
 <div
   style={{
@@ -625,7 +638,7 @@ const executeTrade = (action) => {
     style={{
       width: "100%",
       borderCollapse: "collapse",
-      color: "#fff",
+      color: "var(--text-primary)",
       fontSize: "13px",
     }}
   >
