@@ -348,5 +348,32 @@
     "title": "Om Orion Trade Hub",
     "description": "Orion Trade Hub er en neste generasjons handelsplattform utviklet for sanntids markedshandel, AI-assistert innsikt og ytelse på institusjonelt nivå innen kryptovaluta, forex og globale markeder."
   }
-}
-}
+},
+"cardServices": {
+  "title": "Orion Debetkort",
+  "description": "Administrer søknaden din om Orion Debetkort, følg søknadsstatusen og få tilgang til eksklusive korttjenester.",
+  "preview": "Forhåndsvisning av kort",
+  "status": "Kortstatus",
+  "applicationStatus": "Søknadsstatus",
+  "notApplied": "Ikke søkt",
+  "pending": "Under behandling",
+  "approved": "Godkjent",
+  "issued": "Kort utstedt",
+  "shipped": "Kort sendt",
+  "delivered": "Levert",
+  "applyButton": "Søk om Orion Debetkort",
+  "benefits": "Fordeler",
+  "benefitWorldwide": "Kjøp over hele verden",
+  "benefitAtm": "Uttak i minibanker",
+  "benefitContactless": "Kontaktløse betalinger",
+  "benefitChip": "Sikker chipteknologi",
+  "benefitFraud": "Overvåking av svindel",
+  "benefitSupport": "Premium kundestøtte",
+  "houseAddress": "Bostedsadresse",
+  "email": "E-postadresse",
+  "cancel": "Avbryt",
+  "submit": "Send inn",
+  "completeAllFields": "Vennligst fyll ut alle feltene.",
+  "applicationSubmitted": "Søknaden din om Orion Debetkort er mottatt.",
+  "applicationFailed": "Kunne ikke sende inn søknaden. Vennligst prøv igjen."
+}}

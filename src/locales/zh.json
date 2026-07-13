@@ -293,5 +293,33 @@
     "title": "关于 Orion Trade Hub",
     "description": "Orion Trade Hub 是新一代交易平台，为加密货币、外汇及全球金融市场提供实时交易执行、AI 辅助市场分析以及机构级交易性能。"
   }
+},
+"cardServices": {
+  "title": "Orion 借记卡",
+  "description": "管理您的 Orion 借记卡申请，跟踪申请状态，并享受高级卡片服务。",
+  "preview": "卡片预览",
+  "status": "卡片状态",
+  "applicationStatus": "申请状态",
+  "notApplied": "未申请",
+  "pending": "审核中",
+  "approved": "已批准",
+  "issued": "卡片已发行",
+  "shipped": "已发货",
+  "delivered": "已送达",
+  "applyButton": "申请 Orion 借记卡",
+  "benefits": "卡片权益",
+  "benefitWorldwide": "全球消费",
+  "benefitAtm": "ATM 取款",
+  "benefitContactless": "非接触式支付",
+  "benefitChip": "安全芯片技术",
+  "benefitFraud": "欺诈监控",
+  "benefitSupport": "尊享客户支持",
+  "houseAddress": "家庭住址",
+  "email": "电子邮箱地址",
+  "cancel": "取消",
+  "submit": "提交",
+  "completeAllFields": "请填写所有字段。",
+  "applicationSubmitted": "您的 Orion 借记卡申请已成功提交。",
+  "applicationFailed": "申请提交失败，请稍后重试。"
 }
 }

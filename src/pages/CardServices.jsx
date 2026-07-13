@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import orionCard from "../assets/cards/orion-card.jpg";
 import { useTranslation } from "react-i18next";
-import { doc, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
@@ -11,38 +18,75 @@ export default function CardServices() {
   const { user } = useAuth();
 
   const [showApplication, setShowApplication] = useState(false);
-  const [address, setAddress] = useState("");
+  const [address, setAddress] =useState("");
   const [email, setEmail] = useState("");
+
   const [cardStatus, setCardStatus] = useState("notApplied");
+  const [userData, setUserData] = useState(null);
+
+  React.useEffect(() => {
+  const loadUser = async () => {
+    if (!user) return;
+
+    try {
+      const snapshot = await getDoc(doc(db, "users", user.uid));
+
+      if (snapshot.exists()) {
+        const data = snapshot.data();
+
+        setUserData(data);
+
+        if (data.cardApplication?.status) {
+          setCardStatus(data.cardApplication.status);
+        }
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  loadUser();
+}, [user]);
 
 const submitApplication = async () => {
   if (!address.trim() || !email.trim()) {
-    toast.error("Please complete all fields.");
+    toast.error(t("cardServices.completeAllFields"));
     return;
   }
 
   try {
-    await updateDoc(doc(db, "users", user.uid), {
-      cardApplication: {
-        address,
-        email,
-        status: "Pending Review",
-        appliedAt: new Date(),
-      },
-    });
+    const applicationData = {
+      uid: user.uid,
+      name: userData?.name || "",
+      email,
+      address,
+      status: "pending",
+      appliedAt: serverTimestamp(),
+    };
+
+    await addDoc(
+      collection(db, "cardApplications"),
+      applicationData
+    );
+
+    await updateDoc(
+      doc(db, "users", user.uid),
+      {
+        cardApplication: applicationData,
+      }
+    );
 
     setCardStatus("pending");
     setShowApplication(false);
 
-    toast.success(
-      "Your Orion Debit Card application has been received. Please make payment of 10 percent of total profit externally through your assigned trader."
-    );
+    toast.success(t("cardServices.applicationSubmitted"));
 
     setAddress("");
     setEmail("");
+
   } catch (err) {
     console.error(err);
-    toast.error("Unable to submit application.");
+    toast.error(t("cardServices.applicationFailed"));
   }
 };
 
@@ -283,7 +327,7 @@ return (
               >
                 {t("cancel")}
               </button>
-              <button
+             <button
   onClick={submitApplication}
   style={{
     flex: 1,
@@ -305,5 +349,5 @@ return (
         </div>
       )}
     </div>
-  );
+  )
 }

@@ -303,5 +303,33 @@
     "title": "Tietoa Orion Trade Hubista",
     "description": "Orion Trade Hub on uuden sukupolven kaupankäyntialusta, joka on suunniteltu reaaliaikaiseen markkinatoteutukseen, tekoälyavusteisiin analyyseihin ja institutionaalisen tason suorituskykyyn kryptovaluutoissa, forexissa ja globaaleilla markkinoilla."
   }
+},
+"cardServices": {
+  "title": "Orion Debit-kortti",
+  "description": "Hallitse Orion Debit-korttihakemustasi, seuraa hakemuksen tilaa ja käytä ensiluokkaisia korttipalveluja.",
+  "preview": "Kortin esikatselu",
+  "status": "Kortin tila",
+  "applicationStatus": "Hakemuksen tila",
+  "notApplied": "Ei haettu",
+  "pending": "Odottaa käsittelyä",
+  "approved": "Hyväksytty",
+  "issued": "Kortti myönnetty",
+  "shipped": "Kortti lähetetty",
+  "delivered": "Toimitettu",
+  "applyButton": "Hae Orion Debit-korttia",
+  "benefits": "Edut",
+  "benefitWorldwide": "Ostokset maailmanlaajuisesti",
+  "benefitAtm": "Käteisnostot pankkiautomaateista",
+  "benefitContactless": "Lähimaksut",
+  "benefitChip": "Turvallinen sirutekniikka",
+  "benefitFraud": "Petosten valvonta",
+  "benefitSupport": "Ensiluokkainen asiakastuki",
+  "houseAddress": "Kotiosoite",
+  "email": "Sähköpostiosoite",
+  "cancel": "Peruuta",
+  "submit": "Lähetä",
+  "completeAllFields": "Täytä kaikki kentät.",
+  "applicationSubmitted": "Orion Debit-korttihakemuksesi on vastaanotettu.",
+  "applicationFailed": "Hakemuksen lähettäminen epäonnistui. Yritä uudelleen."
 }
 }

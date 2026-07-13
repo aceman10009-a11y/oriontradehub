@@ -293,5 +293,33 @@
     "title": "Orion Trade Hubについて",
     "description": "Orion Trade Hubは、暗号資産、外国為替、世界市場向けに、リアルタイム取引、AI支援による市場分析、機関投資家レベルのパフォーマンスを提供する次世代の取引プラットフォームです。"
   }
+},
+"cardServices": {
+  "title": "Orionデビットカード",
+  "description": "Orionデビットカードの申請を管理し、申請状況を確認し、プレミアムカードサービスをご利用いただけます。",
+  "preview": "カードプレビュー",
+  "status": "カードの状態",
+  "applicationStatus": "申請状況",
+  "notApplied": "未申請",
+  "pending": "審査中",
+  "approved": "承認済み",
+  "issued": "カード発行済み",
+  "shipped": "発送済み",
+  "delivered": "配達完了",
+  "applyButton": "Orionデビットカードを申し込む",
+  "benefits": "特典",
+  "benefitWorldwide": "世界中でのお買い物",
+  "benefitAtm": "ATMでの現金引き出し",
+  "benefitContactless": "タッチ決済",
+  "benefitChip": "安全なICチップ技術",
+  "benefitFraud": "不正利用監視",
+  "benefitSupport": "プレミアムカスタマーサポート",
+  "houseAddress": "住所",
+  "email": "メールアドレス",
+  "cancel": "キャンセル",
+  "submit": "送信",
+  "completeAllFields": "すべての項目を入力してください。",
+  "applicationSubmitted": "Orionデビットカードのお申し込みを受け付けました。",
+  "applicationFailed": "申請を送信できませんでした。もう一度お試しください。"
 }
 }

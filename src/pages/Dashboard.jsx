@@ -9,14 +9,15 @@ import WithdrawModal from "../components/dashboard/WithdrawModal";
 import { useTranslation } from "react-i18next";
 import orionCard from "../assets/cards/orion-card.jpg";
 
+
 import {
-  doc,
-  onSnapshot,
   collection,
   query,
   where,
+  onSnapshot,
+  doc,
+  getDoc,
 } from "firebase/firestore";
-
 import TradingViewChart from "../components/tradingview/TradingViewChart";
 
 // Dashboard Components
@@ -37,6 +38,7 @@ const Dashboard = () => {
   const [marketSearch, setMarketSearch] = useState("");
   const [historyFilter, setHistoryFilter] = useState("ALL");
   const [showWithdraw, setShowWithdraw] = useState(false);
+  const [cardStatus, setCardStatus] = useState("notApplied");
 
   const [demoBalance, setDemoBalance] = useState(10000);
   const [liveBalance, setLiveBalance] = useState(0);
@@ -84,9 +86,16 @@ const Dashboard = () => {
       if (!snapshot.exists()) return;
 
       const data = snapshot.data();
-
+      
       setDemoBalance(data.demoBalance || 10000);
       setLiveBalance(data.liveBalance || 0);
+
+      // Orion Debit Card status
+      if (data.cardApplication?.status) {
+        setCardStatus(data.cardApplication.status.toLowerCase());
+      } else {
+        setCardStatus("notApplied");
+      }
     });
 
     const tradesQuery = query(
@@ -109,27 +118,20 @@ const Dashboard = () => {
     };
   }, [user]);
 
-  const executeTrade = (action) => {
-    if (action === "deposit") {
-      toast.info(
-        "Deposits are processed manually by your assigned account manager. Please contact support to fund your investment account.",
-        {
-          autoClose: 6000,
-        }
-      );
-      return;
-    }
+const executeTrade = (action) => {
+  if (action === "deposit") {
+ toast.info(t("depositMessage"), {
+  autoClose: 6000,
+});
+    return;
+  }
 
-    if (action === "withdraw") {
-      toast.info(
-        "Withdrawal requests are reviewed and processed by your assigned account manager. Please contact support to initiate a withdrawal.",
-        {
-          autoClose: 6000,
-        }
-      );
-    }
-  };
-
+  if (action === "withdraw") {
+ toast.info(t("withdrawMessage"), {
+  autoClose: 6000,
+});
+  }
+};
   const pnl = trades.reduce(
     (total, trade) => total + (trade.profit || 0),
     0
@@ -389,12 +391,12 @@ const Dashboard = () => {
       marginBottom: 15,
     }}
   >
-    Orion Debit Card
+    {t("cardServices.title")}
   </h3>
 
   <img
     src={orionCard}
-    alt="Orion Debit Card"
+    alt={t("cardServices.title")}
     style={{
       width: "100%",
       borderRadius: 14,
@@ -413,7 +415,13 @@ const Dashboard = () => {
       textAlign: "center",
     }}
   >
-    Status: Not Applied
+    {t("cardServices.applicationStatus")}:{" "}
+
+{t(
+  `cardServices.${
+    cardStatus || "notApplied"
+  }`
+)}
   </div>
 
   <button
@@ -430,7 +438,7 @@ const Dashboard = () => {
       cursor: "pointer",
     }}
   >
-    Apply for Orion Debit Card
+    {t("cardServices.applyButton")}
   </button>
 </div>
 
@@ -691,20 +699,17 @@ const Dashboard = () => {
 
       </div>
 
-
-      <WithdrawModal
-        show={showWithdraw}
-        setShowWithdraw={setShowWithdraw}
-        trader={{
-          name: "Assigned Account Manager",
-        }}
-      />
+<WithdrawModal
+  show={showWithdraw}
+  setShowWithdraw={setShowWithdraw}
+  trader={{
+    name: t("assignedAccountManager"),
+  }}
+/>
 
     </div>
   );
 };
-
-/* ================= STYLES ================= */
 
 const styles = {
   page: {
@@ -713,12 +718,11 @@ const styles = {
     color: "#fff",
     fontFamily: "system-ui"
   },
-
- grid: {
-  display: "grid",
-  gap: 20,
-  width: "100%",
-},
+  grid: {
+    display: "grid",
+    gap: 20,
+    width: "100%",
+  },
 panel: {
   background: "var(--card-bg)",
   padding: 16,

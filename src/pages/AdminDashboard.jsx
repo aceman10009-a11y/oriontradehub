@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase/config";
 import TradeModal from "../components/TradeModal";
+import CardApplications from "./admin/CardApplications";
 import {
   collection,
   onSnapshot,
@@ -17,6 +18,7 @@ export default function AdminDashboard() {
   const [openTrades, setOpenTrades] = useState([]);
   const [profitInputs, setProfitInputs] = useState({});
   const [showAllTrades, setShowAllTrades] = useState(false);
+  const [showCardApplications, setShowCardApplications] = useState(false);
 
   const navigate = useNavigate();
 
@@ -120,6 +122,21 @@ export default function AdminDashboard() {
         </div>
       </div>
 
+      <button
+  onClick={() => setShowCardApplications(!showCardApplications)}
+  style={{
+    backgroundColor: "#1199fa",
+    color: "#fff",
+    border: "none",
+    padding: "10px 16px",
+    borderRadius: "8px",
+    fontWeight: "700",
+    cursor: "pointer",
+  }}
+>
+  💳 Card Applications
+</button>
+
       {/* Overview Analytics Matrix */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px", marginBottom: "32px" }}>
         <div style={{ backgroundColor: "#0e1114", border: "1px solid #1e2329", borderRadius: "12px", padding: "16px" }}>
@@ -135,6 +152,20 @@ export default function AdminDashboard() {
       {/* Main Structural Split Layout Grid */}
       <div style={{ display: "grid", gridTemplateColumns: "window.innerWidth <= 1024 ? '1fr' : 'repeat(12, 1fr)'", gap: "24px" }}>
         
+         {showCardApplications && (
+  <div
+    style={{
+      marginBottom: "30px",
+      backgroundColor: "#0e1114",
+      border: "1px solid #1e2329",
+      borderRadius: "12px",
+      padding: "20px",
+    }}
+  >
+    <CardApplications />
+  </div>
+)}
+
         {/* Left Column: Target Client Registry */}
         <div style={{ gridColumn: "span 7" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>

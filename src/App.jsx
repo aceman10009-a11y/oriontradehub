@@ -12,6 +12,7 @@ import VerifyEmail from "./pages/VerifyEmail";
 import ForgotPassword from "./pages/ForgotPassword";
 import Settings from "./pages/Settings";
 import CardServices from "./pages/CardServices";
+import CardApplications from "./pages/admin/CardApplications";
 
 export default function App() {
   return (
@@ -57,6 +58,15 @@ export default function App() {
           element={
             <ProtectedRoute>
               <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin/card-applications"
+          element={
+            <ProtectedRoute>
+              <CardApplications />
             </ProtectedRoute>
           }
         />

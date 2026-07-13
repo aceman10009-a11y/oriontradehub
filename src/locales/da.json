@@ -301,5 +301,34 @@
     "title": "Om Orion Trade Hub",
     "description": "Orion Trade Hub er en næste generations handelsplatform, der er udviklet til markedsudførelse i realtid, AI-assisterede markedsindsigter og ydeevne på institutionelt niveau inden for kryptovaluta, forex og globale markeder."
   }
+},
+
+"cardServices": {
+  "title": "Orion Betalingskort",
+  "description": "Administrer din ansøgning om Orion Betalingskort, følg ansøgningsstatus, og få adgang til eksklusive korttjenester.",
+  "preview": "Kortvisning",
+  "status": "Kortstatus",
+  "applicationStatus": "Ansøgningsstatus",
+  "notApplied": "Ikke ansøgt",
+  "pending": "Afventer gennemgang",
+  "approved": "Godkendt",
+  "issued": "Kort udstedt",
+  "shipped": "Kort afsendt",
+  "delivered": "Leveret",
+  "applyButton": "Ansøg om Orion Betalingskort",
+  "benefits": "Fordele",
+  "benefitWorldwide": "Køb over hele verden",
+  "benefitAtm": "Hævning i hæveautomater",
+  "benefitContactless": "Kontaktløse betalinger",
+  "benefitChip": "Sikker chipteknologi",
+  "benefitFraud": "Overvågning af svindel",
+  "benefitSupport": "Premium kundesupport",
+  "houseAddress": "Bopælsadresse",
+  "email": "E-mailadresse",
+  "cancel": "Annuller",
+  "submit": "Send",
+  "completeAllFields": "Udfyld venligst alle felter.",
+  "applicationSubmitted": "Din ansøgning om Orion Betalingskort er modtaget.",
+  "applicationFailed": "Kunne ikke indsende ansøgningen. Prøv venligst igen."
 }
 }

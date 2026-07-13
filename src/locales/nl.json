@@ -301,5 +301,33 @@
     "title": "Over Orion Trade Hub",
     "description": "Orion Trade Hub is een handelsplatform van de volgende generatie, ontworpen voor realtime marktuitvoering, AI-ondersteunde marktinzichten en institutionele prestaties op het gebied van cryptovaluta, forex en wereldwijde markten."
   }
+},
+"cardServices": {
+  "title": "Orion Betaalpas",
+  "description": "Beheer uw aanvraag voor de Orion Betaalpas, volg de status van uw aanvraag en maak gebruik van premium kaartdiensten.",
+  "preview": "Kaartvoorbeeld",
+  "status": "Kaartstatus",
+  "applicationStatus": "Status van de aanvraag",
+  "notApplied": "Niet aangevraagd",
+  "pending": "In behandeling",
+  "approved": "Goedgekeurd",
+  "issued": "Kaart uitgegeven",
+  "shipped": "Kaart verzonden",
+  "delivered": "Afgeleverd",
+  "applyButton": "Orion Betaalpas aanvragen",
+  "benefits": "Voordelen",
+  "benefitWorldwide": "Wereldwijd aankopen doen",
+  "benefitAtm": "Geld opnemen bij geldautomaten",
+  "benefitContactless": "Contactloos betalen",
+  "benefitChip": "Veilige chiptechnologie",
+  "benefitFraud": "Fraudebewaking",
+  "benefitSupport": "Premium klantenservice",
+  "houseAddress": "Woonadres",
+  "email": "E-mailadres",
+  "cancel": "Annuleren",
+  "submit": "Verzenden",
+  "completeAllFields": "Vul alle velden in.",
+  "applicationSubmitted": "Uw aanvraag voor de Orion Betaalpas is succesvol ontvangen.",
+  "applicationFailed": "De aanvraag kon niet worden verzonden. Probeer het opnieuw."
 }
 }

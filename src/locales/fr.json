@@ -299,5 +299,33 @@
       "title": "À propos d'Orion Trade Hub",
       "description": "Orion Trade Hub est une plateforme de trading nouvelle génération conçue pour l'exécution des marchés en temps réel, les analyses assistées par IA et des performances de niveau institutionnel sur les cryptomonnaies, le forex et les marchés mondiaux."
     }
-  }
+  },
+  "cardServices": {
+  "title": "Carte de Débit Orion",
+  "description": "Gérez votre demande de Carte de Débit Orion, suivez son statut et accédez à des services bancaires premium.",
+  "preview": "Aperçu de la carte",
+  "status": "Statut de la carte",
+  "applicationStatus": "Statut de la demande",
+  "notApplied": "Non demandée",
+  "pending": "En cours d'examen",
+  "approved": "Approuvée",
+  "issued": "Carte émise",
+  "shipped": "Carte expédiée",
+  "delivered": "Livrée",
+  "applyButton": "Demander une Carte de Débit Orion",
+  "benefits": "Avantages",
+  "benefitWorldwide": "Achats dans le monde entier",
+  "benefitAtm": "Retraits aux distributeurs automatiques",
+  "benefitContactless": "Paiements sans contact",
+  "benefitChip": "Technologie de puce sécurisée",
+  "benefitFraud": "Surveillance contre la fraude",
+  "benefitSupport": "Assistance client premium",
+  "houseAddress": "Adresse du domicile",
+  "email": "Adresse e-mail",
+  "cancel": "Annuler",
+  "submit": "Envoyer",
+  "completeAllFields": "Veuillez remplir tous les champs.",
+  "applicationSubmitted": "Votre demande de Carte de Débit Orion a bien été reçue.",
+  "applicationFailed": "Impossible d'envoyer la demande. Veuillez réessayer."
+}
 }

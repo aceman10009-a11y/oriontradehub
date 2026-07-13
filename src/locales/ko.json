@@ -293,5 +293,33 @@
     "title": "Orion Trade Hub 소개",
     "description": "Orion Trade Hub는 암호화폐, 외환 및 글로벌 시장에서 실시간 거래 실행, AI 기반 인사이트 및 기관급 성능을 제공하도록 설계된 차세대 거래 플랫폼입니다."
   }
+},
+"cardServices": {
+  "title": "오리온 직불카드",
+  "description": "오리온 직불카드 신청을 관리하고, 신청 상태를 확인하며, 프리미엄 카드 서비스를 이용하세요.",
+  "preview": "카드 미리보기",
+  "status": "카드 상태",
+  "applicationStatus": "신청 상태",
+  "notApplied": "신청하지 않음",
+  "pending": "심사 중",
+  "approved": "승인됨",
+  "issued": "카드 발급 완료",
+  "shipped": "배송 중",
+  "delivered": "배송 완료",
+  "applyButton": "오리온 직불카드 신청하기",
+  "benefits": "혜택",
+  "benefitWorldwide": "전 세계 구매 가능",
+  "benefitAtm": "ATM 현금 인출",
+  "benefitContactless": "비접촉 결제",
+  "benefitChip": "보안 칩 기술",
+  "benefitFraud": "사기 거래 모니터링",
+  "benefitSupport": "프리미엄 고객 지원",
+  "houseAddress": "거주지 주소",
+  "email": "이메일 주소",
+  "cancel": "취소",
+  "submit": "제출",
+  "completeAllFields": "모든 항목을 입력해 주세요.",
+  "applicationSubmitted": "오리온 직불카드 신청이 성공적으로 접수되었습니다.",
+  "applicationFailed": "신청서를 제출하지 못했습니다. 다시 시도해 주세요."
 }
 }

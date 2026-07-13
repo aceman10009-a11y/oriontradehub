@@ -338,7 +338,7 @@
   "mobileMaintenance": "Mobile apps are currently under maintenance. They will be available soon.",
   "careersMessage": "Careers are coming soon. We are currently building our hiring program."
 },
- "cardServices": {
+"cardServices": {
   "title": "Orion Debit Card",
   "description": "Manage your Orion Debit Card application, track your application status, and access premium card services.",
   "preview": "Card Preview",
@@ -361,12 +361,13 @@
   "houseAddress": "House Address",
   "email": "Email Address",
   "cancel": "Cancel",
-  "submit": "Submit"
- },
-  "homeInfo": {
-  "about": {
-    "title": "About Orion Trade Hub",
-    "description": "Orion Trade Hub is a next-generation trading platform designed for real-time market execution, AI-assisted insights, and institutional-grade performance across crypto, forex, and global markets."
-  }
+  "submit": "Submit",
+  "completeAllFields": "Please complete all fields.",
+  "applicationSubmitted": "Your Orion Debit Card application has been received. Please make payment of 10 percent of total profit externally through your assigned trader.",
+  "applicationFailed": "Unable to submit application.",
+  "assignedAccountManager": "Assigned Account Manager"
+,
+  "depositMessage": "Deposits are processed manually by your assigned account manager. Please contact support to fund your investment account.",
+ "withdrawMessage": "Withdrawal requests are reviewed and processed by your assigned account manager. Please contact support to initiate a withdrawal."
 }
 }
