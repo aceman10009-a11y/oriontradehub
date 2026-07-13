@@ -221,13 +221,13 @@ console.log("VerifyEmail language:", i18n.language);
 
 
     } finally {
-
       setLoading(false);
-
     }
-
   };
 
+  if (loading) {
+    return <PageSkeleton />;
+  }
 
   return (
     <div

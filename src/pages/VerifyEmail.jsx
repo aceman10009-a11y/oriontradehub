@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import PageSkeleton from "../components/loading/PageSkeleton";
 
 import { auth } from "../firebase/config";
 import { sendEmailVerification } from "firebase/auth";
@@ -14,6 +15,7 @@ const VerifyEmail = () => {
 
   const [loading, setLoading] = useState(false);
   const [checking, setChecking] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
 
   const resendEmail = async () => {
     if (!auth.currentUser) {
@@ -61,6 +63,18 @@ const VerifyEmail = () => {
       setChecking(false);
     }
   };
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (pageLoading) {
+    return <PageSkeleton />;
+  }
 
   return (
     <div

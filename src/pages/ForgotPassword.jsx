@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import PageSkeleton from "../components/loading/PageSkeleton";
 
 import { auth } from "../firebase/config";
 import loginBackground from "../assets/auth/login-background.webp";
@@ -13,6 +14,7 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
 
   const handleReset = async (e) => {
     e.preventDefault();
@@ -50,10 +52,22 @@ const ForgotPassword = () => {
       }
 
       toast.error(message);
-    } finally {
+        } finally {
       setLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (pageLoading) {
+    return <PageSkeleton />;
+  }
 
   return (
     <div

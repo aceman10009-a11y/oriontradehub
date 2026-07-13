@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { trackPageView } from "./services/analytics";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -13,12 +15,29 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Settings from "./pages/Settings";
 import CardServices from "./pages/CardServices";
 import CardApplications from "./pages/admin/CardApplications";
+import TawkChat from "./components/chat/TawkChat";
+
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location]);
+
+  return null;
+}
 
 export default function App() {
-  return (
-    <>
-      {/* Global modal */}
-      <AppModal />
+ return (
+  <>
+    {/* Google Analytics page tracking */}
+    <AnalyticsTracker />
+
+    {/* Tawk.to live chat */}
+    <TawkChat />
+
+    {/* Global modal */}
+    <AppModal />
 
       <Routes>
         {/* Public Pages */}

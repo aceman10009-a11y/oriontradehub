@@ -15,18 +15,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const existing = document.getElementById("hs-script-loader");
 
-    if (!existing) {
-      const script = document.createElement("script");
-      script.id = "hs-script-loader";
-      script.async = true;
-      script.defer = true;
-      script.src = "//js-eu1.hs-scripts.com/148809611.js";
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <main

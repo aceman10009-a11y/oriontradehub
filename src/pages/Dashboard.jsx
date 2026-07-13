@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import WithdrawModal from "../components/dashboard/WithdrawModal";
 import { useTranslation } from "react-i18next";
 import orionCard from "../assets/cards/orion-card.jpg";
-
+import PageSkeleton from "../components/loading/PageSkeleton";
 
 import {
   collection,
@@ -30,6 +30,7 @@ const Dashboard = () => {
   const { user, profile } = useAuth();
 
   const [trades, setTrades] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [selectedSymbol, setSelectedSymbol] = useState("BTC/USD");
   const [tradeAmount, setTradeAmount] = useState(100);
   const [isLiveMode, setIsLiveMode] = useState(false);
@@ -86,7 +87,7 @@ const Dashboard = () => {
       if (!snapshot.exists()) return;
 
       const data = snapshot.data();
-      
+
       setDemoBalance(data.demoBalance || 10000);
       setLiveBalance(data.liveBalance || 0);
 
@@ -110,6 +111,8 @@ const Dashboard = () => {
           ...doc.data(),
         }))
       );
+
+      setLoading(false);
     });
 
     return () => {
@@ -118,20 +121,21 @@ const Dashboard = () => {
     };
   }, [user]);
 
-const executeTrade = (action) => {
-  if (action === "deposit") {
- toast.info(t("depositMessage"), {
-  autoClose: 6000,
-});
-    return;
-  }
+  const executeTrade = (action) => {
+    if (action === "deposit") {
+      toast.info(t("depositMessage"), {
+        autoClose: 6000,
+      });
+      return;
+    }
 
-  if (action === "withdraw") {
- toast.info(t("withdrawMessage"), {
-  autoClose: 6000,
-});
-  }
-};
+    if (action === "withdraw") {
+      toast.info(t("withdrawMessage"), {
+        autoClose: 6000,
+      });
+    }
+  };
+
   const pnl = trades.reduce(
     (total, trade) => total + (trade.profit || 0),
     0
@@ -155,6 +159,10 @@ const executeTrade = (action) => {
         return true;
     }
   });
+
+  if (loading) {
+    return <PageSkeleton />;
+  }
 
   return (
     <div style={styles.page}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
@@ -13,15 +13,26 @@ import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
 
 import loginBackground from "../assets/auth/login-background.webp";
+import PageSkeleton from "../components/loading/PageSkeleton";
 
 const Login = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+  const [pageLoading, setPageLoading] = useState(true);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -62,7 +73,6 @@ const Login = () => {
       const userData = userSnap.data();
 
       const roles = userData.roles || [];
-
       const role = userData.role || "";
 
       toast.success(t("loginSuccessful"));
@@ -101,7 +111,12 @@ const Login = () => {
       setLoading(false);
     }
   };
-      return (
+
+  if (pageLoading) {
+    return <PageSkeleton />;
+  }
+
+  return (
     <div
       style={{
         minHeight: "100vh",
