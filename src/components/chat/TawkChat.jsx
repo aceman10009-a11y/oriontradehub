@@ -11,7 +11,7 @@ const TawkChat = () => {
     script.id = "tawk-script";
     script.async = true;
     script.src =
-      "https://embed.tawk.to/6a54ec54f8151e1d4a16991b/1jtdrmajn";
+  "https://embed.tawk.to/6a55847a550ea31d480b649a/1jtf0r0dj";
 
     script.charset = "UTF-8";
     script.setAttribute("crossorigin", "*");

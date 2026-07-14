@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDetails from "./pages/UserDetails";
 import AppModal from "./components/AppModal";
@@ -79,30 +80,30 @@ export default function App() {
         />
 
         {/* Protected Admin Pages */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
-        />
+     <Route
+  path="/admin"
+  element={
+    <AdminRoute>
+      <AdminDashboard />
+    </AdminRoute>
+  }
+/>
 
         <Route
           path="/admin/card-applications"
           element={
-            <ProtectedRoute>
+            <AdminRoute>
               <CardApplications />
-            </ProtectedRoute>
+            </AdminRoute>
           }
         />
 
         <Route
           path="/admin/user/:id"
           element={
-            <ProtectedRoute>
+            <AdminRoute>
               <UserDetails />
-            </ProtectedRoute>
+            </AdminRoute>
           }
         />
       </Routes>
