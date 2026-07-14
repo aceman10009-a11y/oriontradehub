@@ -6,6 +6,9 @@ import { useTranslation } from "react-i18next";
 import {
   signInWithEmailAndPassword,
   signOut,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence,
 } from "firebase/auth";
 
 import { doc, getDoc } from "firebase/firestore";
@@ -41,6 +44,12 @@ const Login = () => {
     setLoading(true);
 
     try {
+      await setPersistence(
+  auth,
+  rememberMe
+    ? browserLocalPersistence
+    : browserSessionPersistence
+);
       const userCredential =
         await signInWithEmailAndPassword(
           auth,
