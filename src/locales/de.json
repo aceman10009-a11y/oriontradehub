@@ -327,6 +327,29 @@
   "applicationSubmitted": "Ihr Antrag auf die Orion Debitkarte wurde erfolgreich eingereicht.",
   "applicationFailed": "Der Antrag konnte nicht eingereicht werden. Bitte versuchen Sie es erneut."
   },
+
+  "depositModal": {
+  "title": "Einzahlungsportal",
+  "description": "Einzahlungen werden manuell von Ihrem zugewiesenen Kontobetreuer bearbeitet, um eine sichere Finanzierung, Identitätsprüfung und die Einhaltung gesetzlicher Vorschriften zu gewährleisten. Sobald Ihre Zahlung bestätigt wurde, wird Ihr Handelsguthaben umgehend aktualisiert.",
+  "assistance": "Für Unterstützung bei Einzahlungen wenden Sie sich bitte per E-Mail oder über einen sicheren Kommunikationskanal an Ihren zugewiesenen Kontobetreuer. Dieser stellt Ihnen die erforderlichen Anweisungen und Unterstützung für eine sichere Einzahlung zur Verfügung.",
+  "assignedTradingDesk": "Zugewiesene Handelsabteilung",
+  "complianceStatus": "Compliance-Status",
+  "verified": "VERIFIZIERT",
+  "instructions": "Um eine Einzahlung zu beginnen, wenden Sie sich bitte an Ihren zugewiesenen Kontobetreuer. Zahlungsanweisungen werden nach der Überprüfung Ihres Handelskontos bereitgestellt.",
+  "contactButton": "Kontobetreuer kontaktieren"
+},
+
+"withdrawalModal": {
+  "title": "Auszahlungsanfrage",
+  "description": "Auszahlungsanträge werden nach Identitätsprüfung und Compliance-Kontrolle manuell von Ihrem zugewiesenen Kontobetreuer bearbeitet. Die Bearbeitungszeit kann je nach gewählter Zahlungsmethode variieren.",
+  "assistance": "Für Unterstützung bei einer Auszahlung wenden Sie sich bitte per E-Mail oder über einen sicheren Kommunikationskanal an Ihren zugewiesenen Kontobetreuer. Dieser wird Sie durch den Auszahlungsprozess begleiten.",
+  "assignedTradingDesk": "Zugewiesenes Trading Desk",
+  "complianceStatus": "Compliance-Status",
+  "verified": "VERIFIZIERT",
+  "instructions": "Um eine Auszahlung einzuleiten, wenden Sie sich bitte an Ihren zugewiesenen Kontobetreuer. Die Auszahlung erfolgt nach erfolgreicher Verifizierung und Genehmigung.",
+  "contactButton": "Kontobetreuer kontaktieren"
+},
+
   "admin": {
   "profitUpdated": "Gewinn erfolgreich aktualisiert.",
   "profitUpdateFailed": "Gewinnaktualisierung fehlgeschlagen.",

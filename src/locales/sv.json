@@ -331,6 +331,28 @@
   "applicationFailed": "Det gick inte att skicka ansökan. Försök igen."
 },
 
+"depositModal": {
+  "title": "Insättningsportal",
+  "description": "Insättningar hanteras manuellt av din tilldelade kontohanterare för att säkerställa säker finansiering, identitetsverifiering och efterlevnad av regelverk. När din betalning har bekräftats kommer ditt handelsaldo att uppdateras omgående.",
+  "assistance": "För hjälp med insättning, kontakta din tilldelade kontohanterare via e-post eller någon säker kommunikationskanal. De kommer att ge dig nödvändiga instruktioner och support för att slutföra din insättning på ett säkert sätt.",
+  "assignedTradingDesk": "Tilldelad handelsavdelning",
+  "complianceStatus": "Efterlevnadsstatus",
+  "verified": "VERIFIERAD",
+  "instructions": "För att påbörja en insättning, kontakta din tilldelade kontohanterare. Betalningsinstruktioner kommer att tillhandahållas efter verifiering av ditt handelskonto.",
+  "contactButton": "Kontakta kontohanterare"
+},
+
+"withdrawalModal": {
+  "title": "Begäran om uttag",
+  "description": "Uttagsförfrågningar behandlas manuellt av din tilldelade kontohanterare efter identitetsverifiering och granskning av efterlevnad. Handläggningstiden kan variera beroende på vald betalningsmetod.",
+  "assistance": "För hjälp med uttag, kontakta din tilldelade kontohanterare via e-post eller någon säker kommunikationskanal. De kommer att vägleda dig genom uttagsprocessen och tillhandahålla nödvändiga instruktioner.",
+  "assignedTradingDesk": "Tilldelad handelsavdelning",
+  "complianceStatus": "Efterlevnadsstatus",
+  "verified": "VERIFIERAD",
+  "instructions": "För att initiera ett uttag, kontakta din tilldelade kontohanterare. Medlen kommer att frigöras efter framgångsrik verifiering och godkännande.",
+  "contactButton": "Kontakta kontohanterare"
+},
+
 "admin": {
   "profitUpdated": "Vinsten uppdaterades.",
   "profitUpdateFailed": "Det gick inte att uppdatera vinsten.",

@@ -1,0 +1,432 @@
+{
+  "dashboard": "Bảng điều khiển",
+  "home": "Trang chủ",
+
+  "welcomeBack": "Chào mừng trở lại",
+  "connected": "ĐÃ KẾT NỐI",
+  "connectedStatus": "ĐÃ KẾT NỐI",
+  "live": "TRỰC TIẾP",
+  "liveUpper": "TRỰC TIẾP",
+  "offline": "NGOẠI TUYẾN",
+  "disconnected": "Đã ngắt kết nối",
+
+  "market": "Thị trường",
+  "markets": "Các thị trường",
+  "searchMarkets": "Tìm kiếm thị trường...",
+  "selectedMarket": "Thị trường đã chọn",
+  "currentPrice": "Giá hiện tại",
+  "totalProfit": "Tổng lợi nhuận",
+  "connection": "Kết nối",
+
+  "accountOverview": "Tổng quan tài khoản",
+  "account": "Tài khoản",
+  "demoBalance": "Số dư Demo",
+  "liveBalance": "Số dư thực",
+  "equity": "Vốn chủ sở hữu",
+  "freeMargin": "Ký quỹ khả dụng",
+  "openPositions": "Vị thế đang mở",
+
+  "tradingHistory": "Lịch sử giao dịch",
+  "tradingPreferences": "Tùy chọn giao dịch",
+
+  "all": "TẤT CẢ",
+  "open": "ĐANG MỞ",
+  "closed": "ĐÃ ĐÓNG",
+  "profit": "LỢI NHUẬN",
+  "loss": "THUA LỖ",
+
+  "buy": "MUA",
+  "sell": "BÁN",
+
+  "symbol": "Ký hiệu",
+  "asset": "Tài sản",
+  "type": "Loại",
+  "amount": "Số lượng",
+  "status": "Trạng thái",
+
+  "winningTrades": "Giao dịch thắng",
+  "losingTrades": "Giao dịch thua",
+  "winRate": "Tỷ lệ thắng",
+
+  "accountStatus": "Trạng thái tài khoản",
+  "verified": "Đã xác minh",
+  "pending": "Đang chờ",
+
+  "deposit": "Nạp tiền",
+  "withdraw": "Rút tiền",
+
+  "noTradingHistory": "Không có lịch sử giao dịch.",
+  "noPositions": "Không có vị thế đang hoạt động.",
+  "noActivePositions": "Không có vị thế đang hoạt động.",
+
+  "demo": "DEMO",
+
+  "notifications": "Thông báo",
+  "settings": "Cài đặt",
+  "accountSettings": "Cài đặt tài khoản",
+
+  "manageSettings": "Quản lý hồ sơ, bảo mật, tùy chọn giao dịch và trải nghiệm nền tảng của bạn.",
+  "managePersonalInformation": "Quản lý thông tin cá nhân của bạn.",
+
+  "profile": "Hồ sơ",
+  "security": "Bảo mật",
+  "appearance": "Giao diện",
+  "accessibility": "Khả năng truy cập",
+  "privacy": "Quyền riêng tư",
+
+  "fullName": "Họ và tên",
+  "phoneNumber": "Số điện thoại",
+  "profession": "Nghề nghiệp",
+  "country": "Quốc gia",
+  "language": "Ngôn ngữ",
+  "theme": "Chủ đề",
+  "timezone": "Múi giờ",
+
+  "english": "Tiếng Anh",
+  "french": "Tiếng Pháp",
+  "spanish": "Tiếng Tây Ban Nha",
+  "german": "Tiếng Đức",
+  "italian": "Tiếng Ý",
+  "portuguese": "Tiếng Bồ Đào Nha",
+  "dutch": "Tiếng Hà Lan",
+  "swedish": "Tiếng Thụy Điển",
+  "danish": "Tiếng Đan Mạch",
+  "finnish": "Tiếng Phần Lan",
+  "polish": "Tiếng Ba Lan",
+
+  "saveChanges": "Lưu thay đổi",
+  "saveProfile": "Lưu hồ sơ",
+  "saving": "Đang lưu...",
+  "loading": "Đang tải...",
+
+  "investor": "Nhà đầu tư",
+  "user": "Người dùng",
+
+  "withdrawalRequest": "Yêu cầu rút tiền",
+  "withdrawalDescription": "Các yêu cầu rút tiền được xử lý thủ công bởi quản lý tài khoản được chỉ định sau khi xác minh danh tính và kiểm tra tuân thủ. Thời gian xử lý thay đổi tùy theo phương thức thanh toán được chọn.",
+  "assignedAccountManager": "Quản lý tài khoản được chỉ định",
+  "orionTradingDesk": "Bàn giao dịch Orion",
+  "withdrawalStatusAvailable": "TRẠNG THÁI RÚT TIỀN: KHẢ DỤNG",
+  "withdrawalContactInfo": "Để bắt đầu rút tiền, vui lòng liên hệ quản lý tài khoản được chỉ định. Tiền sẽ được giải ngân sau khi xác minh và phê duyệt thành công.",
+  "contactAccountManager": "Liên hệ quản lý tài khoản",
+
+  "accountUpdate": "Cập nhật tài khoản",
+  "accountUpdateMessage": "Tài khoản giao dịch của bạn đang hoạt động và sẵn sàng.",
+  "securityNotice": "Thông báo bảo mật",
+  "securityNoticeMessage": "Hãy giữ thông tin đăng nhập tài khoản của bạn an toàn.",
+
+  "openSettings": "Mở cài đặt",
+  "close": "Đóng",
+  "cancel": "Hủy",
+  "confirm": "Xác nhận",
+  "yes": "Có",
+  "no": "Không",
+
+  "success": "Thành công",
+  "error": "Lỗi",
+
+  "email": "Email",
+  "password": "Mật khẩu",
+  "login": "Đăng nhập",
+  "signup": "Đăng ký",
+  "logout": "Đăng xuất",
+  "signOut": "Đăng xuất",
+  "resetPassword": "Đặt lại mật khẩu",
+  "verifyEmail": "Xác minh email",
+
+  "welcomeBackLogin": "Chào mừng trở lại",
+  "loginSubtitle": "Đăng nhập để truy cập tài khoản Orion Trade Hub của bạn.",
+
+  "show": "Hiện",
+  "hide": "Ẩn",
+
+  "rememberMe": "Ghi nhớ tôi",
+
+  "signIn": "Đăng nhập",
+  "signingIn": "Đang đăng nhập...",
+
+  "dontHaveAccount": "Chưa có tài khoản?",
+  "createAccount": "Tạo tài khoản",
+
+  "incorrectEmailPassword": "Email hoặc mật khẩu không chính xác.",
+  "noAccountExists": "Không tồn tại tài khoản với email này.",
+  "incorrectPassword": "Mật khẩu không chính xác.",
+  "checkInternet": "Vui lòng kiểm tra kết nối internet.",
+  "unableToSignIn": "Không thể đăng nhập.",
+  "loginSuccessful": "Đăng nhập thành công.",
+  "userRecordNotFound": "Không tìm thấy thông tin người dùng.",
+  "verifyEmailBeforeLogin": "Vui lòng xác minh email trước khi đăng nhập. Kiểm tra hộp thư đến hoặc thư rác.",
+
+
+  "personalInformation": "Thông tin cá nhân",
+"contactDetails": "Thông tin liên hệ",
+
+"createAccountTitle": "Tạo tài khoản",
+
+"passwordHint": "Sử dụng 8+ ký tự bao gồm chữ hoa, chữ thường, số và ký hiệu.",
+
+"securityQuestion1": "Câu hỏi bảo mật 1",
+"securityQuestion2": "Câu hỏi bảo mật 2",
+
+"securityQuestionMother": "Tên thời con gái của mẹ bạn là gì?",
+"securityQuestionCity": "Bạn sinh ra ở thành phố nào?",
+"securityQuestionPet": "Tên thú cưng đầu tiên của bạn là gì?",
+
+"securityQuestionFood": "Món ăn yêu thích của bạn là gì?",
+"securityQuestionSchool": "Trường học đầu tiên của bạn là gì?",
+"answer": "Câu trả lời",
+
+"professionPlaceholder": "Nghề nghiệp (ví dụ: Y tá, Nhà đầu tư, CEO, Sinh viên)",
+
+"referralCodeOptional": "Mã giới thiệu (không bắt buộc)",
+
+"howDidYouHear": "Bạn biết đến chúng tôi qua đâu?",
+
+"google": "Google",
+"facebook": "Facebook",
+"instagram": "Instagram",
+"linkedin": "LinkedIn",
+"youtube": "YouTube",
+"friend": "Bạn bè",
+"other": "Khác",
+
+"creatingAccount": "Đang tạo tài khoản...",
+
+"accountCreatedVerification": "Tạo tài khoản thành công! Vui lòng kiểm tra hộp thư đến hoặc thư rác để xác minh email trước khi đăng nhập.",
+
+"somethingWentWrong": "Đã xảy ra lỗi.",
+
+"accountAlreadyExists": "Một tài khoản đã tồn tại với email này.",
+
+"weakPassword": "Mật khẩu phải có ít nhất 6 ký tự.",
+
+"invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
+
+"marketsSection": {
+  "badge": "THỊ TRƯỜNG TOÀN CẦU TRỰC TIẾP",
+  "title": "Giao dịch các",
+  "titleHighlight": "Thị trường hàng đầu thế giới",
+  "description": "Truy cập tiền điện tử, ngoại hối, hàng hóa và các chỉ số chính thông qua nền tảng giao dịch đạt chuẩn tổ chức của Orion Trade Hub. Theo dõi biến động giá theo thời gian thực và thực hiện giao dịch với sự tự tin."
+},
+
+"features": {
+  "header": {
+    "badge": "TÍNH NĂNG NỀN TẢNG",
+    "title": "Mọi thứ bạn cần",
+    "titleHighlight": "Để giao dịch thông minh hơn.",
+    "description": "Orion Trade Hub kết hợp khả năng thực thi cấp tổ chức, phân tích bằng AI, quản lý danh mục nâng cao, giao dịch đa tài sản và bảo mật cấp doanh nghiệp trong một trải nghiệm giao dịch cao cấp."
+  },
+  "cards": {
+    "vip": {
+      "title": "Tài khoản VIP",
+      "description": "Thực thi cao cấp, định giá tổ chức và quản lý quan hệ chuyên biệt."
+    },
+    "ai": {
+      "title": "Phân tích AI",
+      "description": "Thông tin thị trường theo thời gian thực được hỗ trợ bởi các thuật toán giao dịch tiên tiến."
+    },
+    "execution": {
+      "title": "Thực thi nhanh",
+      "description": "Cơ sở hạ tầng độ trễ cực thấp cho việc thực hiện lệnh nhanh chóng trên toàn cầu."
+    },
+    "security": {
+      "title": "Nền tảng bảo mật",
+      "description": "Mã hóa cấp doanh nghiệp và bảo vệ tài khoản nhiều lớp."
+    },
+    "assets": {
+      "title": "Giao dịch đa tài sản",
+      "description": "Giao dịch crypto, forex, hàng hóa, chỉ số và cổ phiếu từ một tài khoản duy nhất."
+    },
+    "portfolio": {
+      "title": "Danh mục được quản lý",
+      "description": "Quản lý danh mục chuyên nghiệp với các biện pháp kiểm soát rủi ro cấp tổ chức."
+    }
+  }
+},
+
+"securityMobile": {
+  "title": "Bảo mật & Nền tảng di động",
+  "description": "Orion Trade Hub được xây dựng với bảo mật cấp tổ chức, cơ sở hạ tầng được mã hóa và hệ thống giám sát rủi ro theo thời gian thực. Tài sản và dữ liệu của bạn được bảo vệ bằng nhiều lớp bảo mật.",
+  "features": {
+    "security": "Bảo mật cấp ngân hàng",
+    "markets": "Thị trường toàn cầu 24/7",
+    "ai": "Giao dịch hỗ trợ bởi AI"
+  },
+  "buttons": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "liveSnapshot": "ẢNH CHỤP THỊ TRƯỜNG TRỰC TIẾP"
+},
+
+"hero": {
+  "badge": "ORION TRADE HUB",
+  "title": "Giao dịch tổ chức",
+  "titleHighlight": "Dành cho mọi người.",
+  "subtitle": "Trải nghiệm khả năng thực thi cấp tổ chức trên Crypto, Forex, Hàng hóa và Cổ phiếu toàn cầu thông qua một nền tảng giao dịch được thiết kế tinh tế.",
+  "buttons": {
+    "openAccount": "Mở tài khoản thực",
+    "explorePlatform": "Khám phá nền tảng"
+  },
+  "trust": {
+    "security": "Bảo mật cấp ngân hàng",
+    "markets": "Thị trường toàn cầu 24/7",
+    "ai": "Giao dịch hỗ trợ bởi AI"
+  }
+},
+
+"mobile": {
+  "label": "NỀN TẢNG DI ĐỘNG",
+  "title": "Giao dịch mọi nơi.",
+  "titleHighlight": "Luôn dẫn đầu.",
+  "description": "Orion Trade Hub mang đến khả năng thực thi cấp tổ chức, theo dõi danh mục, phân tích hỗ trợ bởi AI và truy cập thị trường trực tiếp thông qua trải nghiệm di động được thiết kế tinh tế."
+},
+
+"coin": {
+  "badge": "HỆ SINH THÁI ORION",
+  "title": "Orion",
+  "titleHighlight": "Coin",
+  "description": "Tham gia danh sách truy cập sớm Orion Coin và nhận thông tin cập nhật về thông báo ra mắt, tiện ích hệ sinh thái và phần thưởng từ nền tảng.",
+  "placeholder": "Nhập email của bạn",
+  "button": "Thông báo cho tôi",
+  "success": "Bạn đã có trong danh sách truy cập sớm."
+},
+  "reviews": {
+  "title": "Nhà giao dịch nói gì",
+  "items": [
+    "Nền tảng rất mượt mà. Giá theo thời gian thực mang lại cảm giác chuyên nghiệp.",
+    "Giao diện sạch đẹp và tốc độ thực thi nhanh. Tôi rất thích trải nghiệm giao dịch.",
+    "Biểu đồ phản hồi nhanh và chính xác. Công việc tuyệt vời.",
+    "Cảm giác như một sàn giao dịch thực sự. Thiết kế rất ấn tượng.",
+    "Giao diện giao dịch đơn giản, nhanh chóng và đáng tin cậy.",
+    "Một trong những nền tảng giao dịch demo tốt nhất tôi từng sử dụng.",
+    "Tốc độ thực thi và giao diện thuộc hàng cao cấp.",
+    "Môi trường giao dịch rất chân thực.",
+    "Cuối cùng cũng có một giao diện crypto sạch đẹp và cảm giác như thật.",
+    "Tôi thích cảm giác thị trường trực tiếp. Rất hoàn thiện."
+  ]
+},
+
+"contact": {
+  "badge": "LIÊN HỆ ORION",
+  "title": "Trao đổi với đội ngũ của chúng tôi",
+  "description": "Các chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ mở tài khoản, hướng dẫn nền tảng, dịch vụ tổ chức và các yêu cầu chung.",
+  "email": "Email:",
+  "institutional": "Tổ chức:"
+},
+
+"navbar": {
+  "features": "Tính năng",
+  "markets": "Thị trường",
+  "orionCoin": "Orion Coin",
+  "support": "Hỗ trợ",
+  "about": "Giới thiệu",
+  "signIn": "Đăng nhập",
+  "openAccount": "Mở tài khoản"
+},
+
+"homeInfo": {
+  "about": {
+    "title": "Về Orion Trade Hub",
+    "description": "Orion Trade Hub là nền tảng giao dịch thế hệ mới được xây dựng cho khả năng thực thi thị trường theo thời gian thực, phân tích dựa trên AI và hiệu suất cấp tổ chức trên tiền điện tử, ngoại hối và các thị trường toàn cầu."
+  }
+},
+
+"footer": {
+  "platform": "Nền tảng",
+  "markets": "Thị trường",
+  "trading": "Giao dịch",
+  "mobileApp": "Ứng dụng di động",
+  "security": "Bảo mật",
+  "company": "Công ty",
+  "about": "Giới thiệu",
+  "support": "Hỗ trợ",
+  "contact": "Liên hệ",
+  "careers": "Tuyển dụng",
+  "close": "Đóng",
+  "mobileMaintenance": "Ứng dụng di động hiện đang được bảo trì. Chúng sẽ sớm được ra mắt.",
+  "careersMessage": "Chương trình tuyển dụng sẽ sớm được triển khai. Hiện tại chúng tôi đang xây dựng kế hoạch tuyển dụng."
+},
+
+"cardServices": {
+  "title": "Thẻ ghi nợ Orion",
+  "description": "Quản lý đơn đăng ký Thẻ ghi nợ Orion, theo dõi trạng thái đăng ký và truy cập các dịch vụ thẻ cao cấp.",
+  "preview": "Xem trước thẻ",
+  "status": "Trạng thái thẻ",
+  "applicationStatus": "Trạng thái đăng ký",
+  "notApplied": "Chưa đăng ký",
+  "pending": "Đang xem xét",
+  "approved": "Đã phê duyệt",
+  "issued": "Thẻ đã được phát hành",
+  "shipped": "Đã gửi đi",
+  "delivered": "Đã giao hàng",
+  "applyButton": "Đăng ký Thẻ ghi nợ Orion",
+  "benefits": "Lợi ích",
+  "benefitWorldwide": "Thanh toán trên toàn thế giới",
+  "benefitAtm": "Rút tiền tại ATM",
+  "benefitContactless": "Thanh toán không tiếp xúc",
+  "benefitChip": "Công nghệ chip bảo mật",
+  "benefitFraud": "Giám sát gian lận",
+  "benefitSupport": "Hỗ trợ khách hàng cao cấp",
+  "houseAddress": "Địa chỉ nhà",
+  "email": "Địa chỉ email",
+  "cancel": "Hủy",
+  "submit": "Gửi",
+  "completeAllFields": "Vui lòng điền đầy đủ tất cả các trường.",
+  "applicationSubmitted": "Đơn đăng ký Thẻ ghi nợ Orion của bạn đã được tiếp nhận. Vui lòng thanh toán 10% tổng lợi nhuận bên ngoài thông qua nhà giao dịch được chỉ định.",
+  "applicationFailed": "Không thể gửi đơn đăng ký.",
+  "assignedAccountManager": "Quản lý tài khoản được chỉ định",
+  "depositMessage": "Các khoản nạp tiền được xử lý thủ công bởi quản lý tài khoản được chỉ định. Vui lòng liên hệ bộ phận hỗ trợ để nạp tiền vào tài khoản đầu tư.",
+  "withdrawMessage": "Yêu cầu rút tiền được xem xét và xử lý bởi quản lý tài khoản được chỉ định. Vui lòng liên hệ bộ phận hỗ trợ để bắt đầu yêu cầu rút tiền."
+},
+
+"depositModal": {
+  "title": "Cổng nạp tiền",
+  "description": "Các khoản nạp tiền được xử lý thủ công bởi quản lý tài khoản được chỉ định nhằm đảm bảo nguồn vốn an toàn, xác minh danh tính và tuân thủ quy định. Sau khi thanh toán được xác nhận, số dư giao dịch của bạn sẽ được cập nhật nhanh chóng.",
+  "assistance": "Để được hỗ trợ nạp tiền, vui lòng liên hệ quản lý tài khoản được chỉ định qua email hoặc bất kỳ kênh liên lạc bảo mật nào. Họ sẽ cung cấp hướng dẫn cần thiết và hỗ trợ bạn hoàn tất quá trình nạp tiền an toàn.",
+  "assignedTradingDesk": "Bàn giao dịch được chỉ định",
+  "complianceStatus": "Trạng thái tuân thủ",
+  "verified": "ĐÃ XÁC MINH",
+  "instructions": "Để bắt đầu nạp tiền, vui lòng liên hệ quản lý tài khoản được chỉ định. Hướng dẫn thanh toán sẽ được cung cấp sau khi xác minh tài khoản giao dịch của bạn.",
+  "contactButton": "Liên hệ quản lý tài khoản"
+},
+
+"withdrawalModal": {
+  "title": "Yêu cầu rút tiền",
+  "description": "Các yêu cầu rút tiền được xử lý thủ công bởi quản lý tài khoản được chỉ định sau khi xác minh danh tính và xem xét tuân thủ. Thời gian xử lý có thể thay đổi tùy thuộc vào phương thức thanh toán bạn đã chọn.",
+  "assistance": "Để được hỗ trợ rút tiền, vui lòng liên hệ quản lý tài khoản được chỉ định qua email hoặc bất kỳ kênh liên lạc bảo mật nào. Họ sẽ hướng dẫn bạn trong quá trình rút tiền và cung cấp mọi hướng dẫn cần thiết.",
+  "assignedTradingDesk": "Bàn giao dịch được chỉ định",
+  "complianceStatus": "Trạng thái tuân thủ",
+  "verified": "ĐÃ XÁC MINH",
+  "instructions": "Để bắt đầu yêu cầu rút tiền, vui lòng liên hệ quản lý tài khoản được chỉ định. Tiền sẽ được giải ngân sau khi xác minh và phê duyệt thành công.",
+  "contactButton": "Liên hệ quản lý tài khoản"
+},
+
+"sessionExpired": "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại.",
+"verificationEmailSent": "Một email xác minh mới đã được gửi. Vui lòng kiểm tra hộp thư đến hoặc thư rác.",
+"pleaseLoginAgain": "Vui lòng đăng nhập lại.",
+"emailVerified": "Xác minh email thành công!",
+"emailNotVerified": "Email của bạn chưa được xác minh. Vui lòng nhấp vào liên kết xác minh trong email trước.",
+"accountCreatedTitle": "Tạo tài khoản thành công",
+"accountCreatedDescription": "Tài khoản Orion Trade Hub của bạn đã được tạo thành công. Chúng tôi đã gửi email xác minh đến hộp thư của bạn. Vui lòng xác minh email trước khi đăng nhập.",
+"nextSteps": "Các bước tiếp theo",
+"checkInbox": "Kiểm tra hộp thư đến.",
+"checkSpam": "Kiểm tra thư rác hoặc thư mục Junk.",
+"clickVerification": "Nhấp vào liên kết xác minh.",
+"returnLogin": "Quay lại đây và đăng nhập.",
+"checking": "Đang kiểm tra...",
+"verifiedEmailButton": "Tôi đã xác minh email",
+"sending": "Đang gửi...",
+"resendVerification": "Gửi lại email xác minh",
+"backToLogin": "Quay lại đăng nhập",
+"enterEmailAddress": "Vui lòng nhập địa chỉ email của bạn.",
+"unableToSendResetEmail": "Không thể gửi email đặt lại mật khẩu.",
+"passwordResetEmailSent": "Email đặt lại mật khẩu đã được gửi thành công. Vui lòng kiểm tra hộp thư đến hoặc thư rác.",
+"forgotPassword": "Quên mật khẩu",
+"forgotPasswordDescription": "Nhập địa chỉ email liên kết với tài khoản của bạn. Chúng tôi sẽ gửi liên kết đặt lại mật khẩu bảo mật.",
+"passwordResetEmailSentTitle": "Email đặt lại mật khẩu đã được gửi",
+"passwordResetEmailSentDescription": "Kiểm tra hộp thư đến và thư rác. Nhấp vào liên kết đặt lại mật khẩu và tạo mật khẩu mới.",
+"emailAddress": "Địa chỉ email",
+"enterYourEmail": "Nhập email của bạn",
+"sendPasswordResetLink": "Gửi liên kết đặt lại mật khẩu"
+}

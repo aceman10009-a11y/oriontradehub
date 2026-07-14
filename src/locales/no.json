@@ -378,6 +378,28 @@
   "applicationFailed": "Kunne ikke sende inn søknaden. Vennligst prøv igjen."
 },
 
+"depositModal": {
+  "title": "Innskuddsportal",
+  "description": "Innskudd behandles manuelt av din tildelte kontoadministrator for å sikre trygg finansiering, identitetsbekreftelse og overholdelse av regelverk. Når betalingen er bekreftet, blir handelssaldoen din oppdatert umiddelbart.",
+  "assistance": "For hjelp med innskudd, vennligst kontakt din tildelte kontoadministrator via e-post eller en annen sikker kommunikasjonskanal. Du vil motta nødvendige instruksjoner og støtte for å fullføre innskuddet på en sikker måte.",
+  "assignedTradingDesk": "Tildelt Trading Desk",
+  "complianceStatus": "Compliance-status",
+  "verified": "VERIFISERT",
+  "instructions": "For å starte et innskudd, kontakt din tildelte kontoadministrator. Betalingsinstruksjoner vil bli gitt etter at handelskontoen din er verifisert.",
+  "contactButton": "Kontakt kontoadministrator"
+},
+
+"withdrawalModal": {
+  "title": "Uttaksforespørsel",
+  "description": "Uttaksforespørsler behandles manuelt av din tildelte kontoadministrator etter identitetsbekreftelse og compliance-kontroll. Behandlingstiden kan variere avhengig av valgt betalingsmetode.",
+  "assistance": "For hjelp med et uttak, vennligst kontakt din tildelte kontoadministrator via e-post eller en annen sikker kommunikasjonskanal. Du vil få veiledning gjennom hele uttaksprosessen.",
+  "assignedTradingDesk": "Tildelt Trading Desk",
+  "complianceStatus": "Compliance-status",
+  "verified": "VERIFISERT",
+  "instructions": "For å starte et uttak, kontakt din tildelte kontoadministrator. Midlene vil bli utbetalt etter vellykket verifisering og godkjenning.",
+  "contactButton": "Kontakt kontoadministrator"
+},
+
 "admin": {
   "profitUpdated": "Fortjeneste oppdatert.",
   "profitUpdateFailed": "Kunne ikke oppdatere fortjeneste.",

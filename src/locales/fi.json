@@ -331,6 +331,29 @@
   "applicationSubmitted": "Orion Debit-korttihakemuksesi on vastaanotettu.",
   "applicationFailed": "Hakemuksen lähettäminen epäonnistui. Yritä uudelleen."
 },
+
+"depositModal": {
+  "title": "Talletusportaali",
+  "description": "Talletukset käsitellään manuaalisesti nimetyn tilivastaavasi toimesta turvallisen varojen siirron, henkilöllisyyden vahvistamisen ja viranomaisvaatimusten noudattamisen varmistamiseksi. Kun maksusi on vahvistettu, kaupankäyntitilisi saldo päivitetään viipymättä.",
+  "assistance": "Jos tarvitset apua talletuksen tekemisessä, ota yhteyttä nimettyyn tilivastaavaasi sähköpostitse tai muun turvallisen viestintäkanavan kautta. Hän toimittaa tarvittavat ohjeet ja tuen talletuksen turvallista suorittamista varten.",
+  "assignedTradingDesk": "Nimetty Kaupankäyntitiimi",
+  "complianceStatus": "Vaatimustenmukaisuuden Tila",
+  "verified": "VAHVISTETTU",
+  "instructions": "Aloittaaksesi talletuksen ota yhteyttä nimettyyn tilivastaavaasi. Maksuohjeet toimitetaan kaupankäyntitilisi vahvistamisen jälkeen.",
+  "contactButton": "Ota Yhteyttä Tilivastaavaan"
+},
+
+"withdrawalModal": {
+  "title": "Nostopyyntö",
+  "description": "Nostopyynnöt käsitellään manuaalisesti nimetyn asiakaspäällikkösi toimesta henkilöllisyyden vahvistamisen ja vaatimustenmukaisuuden tarkistuksen jälkeen. Käsittelyaika voi vaihdella valitun maksutavan mukaan.",
+  "assistance": "Jos tarvitset apua noston kanssa, ota yhteyttä nimettyyn asiakaspäällikköösi sähköpostitse tai muun turvallisen viestintäkanavan kautta. Hän opastaa sinua turvallisesti koko nostoprosessin ajan.",
+  "assignedTradingDesk": "Nimetty Kaupankäyntitiimi",
+  "complianceStatus": "Vaatimustenmukaisuuden Tila",
+  "verified": "VAHVISTETTU",
+  "instructions": "Aloittaaksesi noston ota yhteyttä nimettyyn asiakaspäällikköösi. Varat vapautetaan onnistuneen vahvistuksen ja hyväksynnän jälkeen.",
+  "contactButton": "Ota Yhteyttä Asiakaspäällikköön"
+},
+
 "admin": {
   "profitUpdated": "Voitto päivitetty onnistuneesti.",
   "profitUpdateFailed": "Voiton päivittäminen epäonnistui.",

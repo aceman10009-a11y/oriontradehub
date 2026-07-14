@@ -334,6 +334,28 @@
   "applicationFailed": "Impossibile inviare la richiesta. Riprova."
 },
 
+"depositModal": {
+  "title": "Portale Depositi",
+  "description": "I depositi vengono gestiti manualmente dal tuo account manager dedicato per garantire un finanziamento sicuro, la verifica dell'identità e la conformità alle normative. Una volta confermato il pagamento, il saldo del tuo conto di trading verrà aggiornato tempestivamente.",
+  "assistance": "Per assistenza sui depositi, contatta il tuo account manager dedicato tramite e-mail o qualsiasi altro canale di comunicazione sicuro. Ti fornirà le istruzioni necessarie e il supporto richiesto per completare il deposito in totale sicurezza.",
+  "assignedTradingDesk": "Desk di Trading Assegnato",
+  "complianceStatus": "Stato di Conformità",
+  "verified": "VERIFICATO",
+  "instructions": "Per effettuare un deposito, contatta il tuo account manager dedicato. Le istruzioni di pagamento verranno fornite dopo la verifica del tuo conto di trading.",
+  "contactButton": "Contatta l'Account Manager"
+},
+
+"withdrawalModal": {
+  "title": "Richiesta di Prelievo",
+  "description": "Le richieste di prelievo vengono elaborate manualmente dal gestore del conto assegnato dopo la verifica dell'identità e il controllo di conformità. I tempi di elaborazione possono variare in base al metodo di pagamento selezionato.",
+  "assistance": "Per assistenza con un prelievo, contatta il tuo gestore del conto assegnato tramite e-mail o qualsiasi canale di comunicazione sicuro. Ti guiderà durante l'intero processo di prelievo e ti fornirà tutte le istruzioni necessarie.",
+  "assignedTradingDesk": "Desk di Trading Assegnato",
+  "complianceStatus": "Stato di Conformità",
+  "verified": "VERIFICATO",
+  "instructions": "Per avviare un prelievo, contatta il tuo gestore del conto assegnato. I fondi saranno rilasciati dopo il completamento della verifica e dell'approvazione.",
+  "contactButton": "Contatta il Gestore del Conto"
+},
+
 "admin": {
   "profitUpdated": "Profit aggiornato con successo.",
   "profitUpdateFailed": "Impossibile aggiornare il profitto.",

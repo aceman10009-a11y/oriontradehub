@@ -324,6 +324,28 @@
   "applicationFailed": "No se pudo enviar la solicitud. Inténtelo de nuevo."
 },
 
+"depositModal": {
+  "title": "Portal de Depósitos",
+  "description": "Los depósitos son gestionados manualmente por su gestor de cuenta asignado para garantizar un financiamiento seguro, la verificación de identidad y el cumplimiento de la normativa. Una vez confirmada su transferencia, el saldo de su cuenta de trading se actualizará de inmediato.",
+  "assistance": "Para recibir asistencia con un depósito, póngase en contacto con su gestor de cuenta asignado por correo electrónico o mediante cualquier canal de comunicación seguro. Le proporcionará las instrucciones necesarias y el apoyo requerido para completar su depósito de forma segura.",
+  "assignedTradingDesk": "Mesa de Operaciones Asignada",
+  "complianceStatus": "Estado de Cumplimiento",
+  "verified": "VERIFICADO",
+  "instructions": "Para iniciar un depósito, póngase en contacto con su gestor de cuenta asignado. Las instrucciones de pago se facilitarán una vez verificada su cuenta de trading.",
+  "contactButton": "Contactar al Gestor de Cuenta"
+},
+
+"withdrawalModal": {
+  "title": "Solicitud de Retiro",
+  "description": "Las solicitudes de retiro son procesadas manualmente por su gestor de cuenta asignado después de la verificación de identidad y la revisión de cumplimiento. El tiempo de procesamiento puede variar según el método de pago seleccionado.",
+  "assistance": "Para obtener ayuda con un retiro, comuníquese con su gestor de cuenta asignado por correo electrónico o mediante cualquier canal de comunicación seguro. Le proporcionará toda la orientación necesaria para completar el retiro de forma segura.",
+  "assignedTradingDesk": "Mesa de Operaciones Asignada",
+  "complianceStatus": "Estado de Cumplimiento",
+  "verified": "VERIFICADO",
+  "instructions": "Para iniciar un retiro, comuníquese con su gestor de cuenta asignado. Los fondos serán liberados después de una verificación y aprobación exitosas.",
+  "contactButton": "Contactar al Gestor de Cuenta"
+},
+
 "admin": {
   "profitUpdated": "Beneficio actualizado correctamente.",
   "profitUpdateFailed": "No se pudo actualizar el beneficio.",

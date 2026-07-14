@@ -337,6 +337,28 @@
 }
 },
 
+"depositModal": {
+  "title": "Portail de Dépôt",
+  "description": "Les dépôts sont traités manuellement par votre gestionnaire de compte dédié afin de garantir un financement sécurisé, la vérification de votre identité et le respect des exigences réglementaires. Une fois votre paiement confirmé, le solde de votre compte de trading sera mis à jour rapidement.",
+  "assistance": "Pour toute assistance concernant un dépôt, veuillez contacter votre gestionnaire de compte dédié par e-mail ou via tout autre canal de communication sécurisé. Il vous fournira les instructions nécessaires ainsi que l'assistance requise pour effectuer votre dépôt en toute sécurité.",
+  "assignedTradingDesk": "Service de Trading Dédié",
+  "complianceStatus": "Statut de Conformité",
+  "verified": "VÉRIFIÉ",
+  "instructions": "Pour effectuer un dépôt, veuillez contacter votre gestionnaire de compte dédié. Les instructions de paiement vous seront communiquées après la vérification de votre compte de trading.",
+  "contactButton": "Contacter le Gestionnaire de Compte"
+},
+
+"withdrawalModal": {
+  "title": "Demande de Retrait",
+  "description": "Les demandes de retrait sont traitées manuellement par votre gestionnaire de compte attitré après vérification de votre identité et contrôle de conformité. Les délais de traitement peuvent varier selon le mode de paiement sélectionné.",
+  "assistance": "Pour toute assistance concernant un retrait, veuillez contacter votre gestionnaire de compte attitré par e-mail ou via tout autre canal de communication sécurisé. Il vous guidera tout au long de la procédure de retrait.",
+  "assignedTradingDesk": "Bureau de Trading Assigné",
+  "complianceStatus": "Statut de Conformité",
+  "verified": "VÉRIFIÉ",
+  "instructions": "Pour effectuer un retrait, veuillez contacter votre gestionnaire de compte attitré. Les fonds seront libérés après une vérification et une approbation réussies.",
+  "contactButton": "Contacter le Gestionnaire de Compte"
+},
+
 "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter.",
 "verificationEmailSent": "Un nouvel e-mail de vérification a été envoyé. Consultez votre boîte de réception ou votre dossier de courrier indésirable.",
 "pleaseLoginAgain": "Veuillez vous reconnecter.",

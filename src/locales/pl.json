@@ -339,6 +339,28 @@
   }
 },
 
+"depositModal": {
+  "title": "Bramka Depozytowa",
+  "description": "Depozyty są przetwarzane ręcznie przez przypisanego opiekuna konta w celu zapewnienia bezpiecznego finansowania, weryfikacji tożsamości i zgodności z przepisami. Po potwierdzeniu płatności saldo handlowe zostanie niezwłocznie zaktualizowane.",
+  "assistance": "Aby uzyskać pomoc dotyczącą depozytu, skontaktuj się z przypisanym opiekunem konta za pośrednictwem poczty elektronicznej lub innego bezpiecznego kanału komunikacji. Otrzymasz wszystkie niezbędne instrukcje i wsparcie.",
+  "assignedTradingDesk": "Przypisane Biuro Handlowe",
+  "complianceStatus": "Status Zgodności",
+  "verified": "ZWERYFIKOWANO",
+  "instructions": "Aby rozpocząć wpłatę, skontaktuj się z przypisanym opiekunem konta. Instrukcje dotyczące płatności zostaną przekazane po weryfikacji konta handlowego.",
+  "contactButton": "Skontaktuj się z opiekunem konta"
+},
+
+"withdrawalModal": {
+  "title": "Wniosek o Wypłatę",
+  "description": "Wnioski o wypłatę są przetwarzane ręcznie przez przypisanego opiekuna konta po weryfikacji tożsamości i kontroli zgodności. Czas realizacji może się różnić w zależności od wybranej metody płatności.",
+  "assistance": "Aby uzyskać pomoc dotyczącą wypłaty, skontaktuj się z przypisanym opiekunem konta za pośrednictwem poczty elektronicznej lub innego bezpiecznego kanału komunikacji.",
+  "assignedTradingDesk": "Przypisane Biuro Handlowe",
+  "complianceStatus": "Status Zgodności",
+  "verified": "ZWERYFIKOWANO",
+  "instructions": "Aby rozpocząć wypłatę, skontaktuj się z przypisanym opiekunem konta. Środki zostaną zwolnione po pomyślnej weryfikacji i zatwierdzeniu.",
+  "contactButton": "Skontaktuj się z opiekunem konta"
+},
+
 "sessionExpired": "Twoja sesja wygasła. Zaloguj się ponownie.",
 "verificationEmailSent": "Wysłano nowy e-mail weryfikacyjny. Sprawdź swoją skrzynkę odbiorczą lub folder spam.",
 "pleaseLoginAgain": "Zaloguj się ponownie.",

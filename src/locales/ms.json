@@ -1,0 +1,428 @@
+{
+  "dashboard": "Papan Pemuka",
+  "home": "Laman Utama",
+
+  "welcomeBack": "Selamat kembali",
+  "connected": "BERSAMBUNG",
+  "connectedStatus": "BERSAMBUNG",
+  "live": "LANGSUNG",
+  "liveUpper": "LANGSUNG",
+  "offline": "LUAR TALIAN",
+  "disconnected": "Terputus",
+
+  "market": "Pasaran",
+  "markets": "Pasaran",
+  "searchMarkets": "Cari pasaran...",
+  "selectedMarket": "Pasaran Dipilih",
+  "currentPrice": "Harga Semasa",
+  "totalProfit": "Jumlah Keuntungan",
+  "connection": "Sambungan",
+
+  "accountOverview": "Gambaran Keseluruhan Akaun",
+  "account": "Akaun",
+  "demoBalance": "Baki Demo",
+  "liveBalance": "Baki Langsung",
+  "equity": "Ekuiti",
+  "freeMargin": "Margin Bebas",
+  "openPositions": "Posisi Terbuka",
+
+  "tradingHistory": "Sejarah Dagangan",
+  "tradingPreferences": "Keutamaan Dagangan",
+
+  "all": "SEMUA",
+  "open": "TERBUKA",
+  "closed": "DITUTUP",
+  "profit": "KEUNTUNGAN",
+  "loss": "KERUGIAN",
+
+  "buy": "BELI",
+  "sell": "JUAL",
+
+  "symbol": "Simbol",
+  "asset": "Aset",
+  "type": "Jenis",
+  "amount": "Amaun",
+  "status": "Status",
+
+  "winningTrades": "Dagangan Menguntungkan",
+  "losingTrades": "Dagangan Rugi",
+  "winRate": "Kadar Kemenangan",
+
+  "accountStatus": "Status Akaun",
+  "verified": "Disahkan",
+  "pending": "Menunggu",
+
+  "deposit": "Deposit",
+  "withdraw": "Pengeluaran",
+
+  "noTradingHistory": "Tiada sejarah dagangan tersedia.",
+  "noPositions": "Tiada posisi aktif.",
+  "noActivePositions": "Tiada posisi aktif.",
+
+  "demo": "DEMO",
+
+  "notifications": "Pemberitahuan",
+  "settings": "Tetapan",
+  "accountSettings": "Tetapan Akaun",
+
+  "manageSettings": "Urus profil, keselamatan, keutamaan dagangan dan pengalaman platform anda.",
+  "managePersonalInformation": "Urus maklumat peribadi anda.",
+
+  "profile": "Profil",
+  "security": "Keselamatan",
+  "appearance": "Penampilan",
+  "accessibility": "Kebolehcapaian",
+  "privacy": "Privasi",
+
+  "fullName": "Nama Penuh",
+  "phoneNumber": "Nombor Telefon",
+  "profession": "Pekerjaan",
+  "country": "Negara",
+  "language": "Bahasa",
+  "theme": "Tema",
+  "timezone": "Zon Waktu",
+
+  "english": "Bahasa Inggeris",
+  "french": "Bahasa Perancis",
+  "spanish": "Bahasa Sepanyol",
+  "german": "Bahasa Jerman",
+  "italian": "Bahasa Itali",
+  "portuguese": "Bahasa Portugis",
+  "dutch": "Bahasa Belanda",
+  "swedish": "Bahasa Sweden",
+  "danish": "Bahasa Denmark",
+  "finnish": "Bahasa Finland",
+  "polish": "Bahasa Poland",
+
+  "saveChanges": "Simpan Perubahan",
+  "saveProfile": "Simpan Profil",
+  "saving": "Menyimpan...",
+  "loading": "Memuatkan...",
+
+  "investor": "Pelabur",
+  "user": "Pengguna",
+
+  "withdrawalRequest": "Permohonan Pengeluaran",
+  "withdrawalDescription": "Permohonan pengeluaran diproses secara manual oleh pengurus akaun yang ditugaskan kepada anda selepas pengesahan identiti dan semakan pematuhan. Tempoh pemprosesan bergantung pada kaedah pembayaran yang dipilih.",
+  "assignedAccountManager": "Pengurus Akaun Ditugaskan",
+  "orionTradingDesk": "Meja Dagangan Orion",
+  "withdrawalStatusAvailable": "STATUS PENGELUARAN: TERSEDIA",
+  "withdrawalContactInfo": "Untuk memulakan pengeluaran, sila hubungi pengurus akaun yang ditugaskan kepada anda. Dana akan dilepaskan selepas pengesahan dan kelulusan berjaya.",
+  "contactAccountManager": "Hubungi Pengurus Akaun",
+
+  "accountUpdate": "Kemas Kini Akaun",
+  "accountUpdateMessage": "Akaun dagangan anda aktif dan sedia digunakan.",
+  "securityNotice": "Notis Keselamatan",
+  "securityNoticeMessage": "Pastikan kelayakan akaun anda sentiasa selamat.",
+
+  "openSettings": "Buka Tetapan",
+  "close": "Tutup",
+  "cancel": "Batal",
+  "confirm": "Sahkan",
+  "yes": "Ya",
+  "no": "Tidak",
+
+  "success": "Berjaya",
+  "error": "Ralat",
+
+  "email": "E-mel",
+  "password": "Kata Laluan",
+  "login": "Log Masuk",
+  "signup": "Daftar",
+  "logout": "Log Keluar",
+  "signOut": "Log Keluar",
+  "resetPassword": "Tetapkan Semula Kata Laluan",
+  "verifyEmail": "Sahkan E-mel",
+
+    "welcomeBackLogin": "Selamat Kembali",
+  "loginSubtitle": "Log masuk untuk mengakses akaun Orion Trade Hub anda.",
+
+  "show": "Tunjukkan",
+  "hide": "Sembunyikan",
+
+  "rememberMe": "Ingat Saya",
+
+  "signIn": "Log Masuk",
+  "signingIn": "Sedang Log Masuk...",
+
+  "dontHaveAccount": "Belum mempunyai akaun?",
+  "createAccount": "Cipta Akaun",
+
+  "incorrectEmailPassword": "E-mel atau kata laluan tidak betul.",
+  "noAccountExists": "Tiada akaun wujud dengan alamat e-mel ini.",
+  "incorrectPassword": "Kata laluan tidak betul.",
+  "checkInternet": "Sila semak sambungan internet anda.",
+  "unableToSignIn": "Tidak dapat log masuk.",
+  "loginSuccessful": "Log masuk berjaya.",
+  "userRecordNotFound": "Rekod pengguna tidak ditemui.",
+  "verifyEmailBeforeLogin": "Sila sahkan e-mel anda sebelum log masuk. Semak peti masuk atau folder spam anda.",
+
+  "personalInformation": "Maklumat Peribadi",
+  "contactDetails": "Maklumat Perhubungan",
+
+  "createAccountTitle": "Cipta Akaun",
+
+  "passwordHint": "Gunakan sekurang-kurangnya 8 aksara dengan huruf besar, huruf kecil, nombor dan simbol.",
+
+  "securityQuestion1": "Soalan Keselamatan 1",
+  "securityQuestion2": "Soalan Keselamatan 2",
+
+  "securityQuestionMother": "Apakah nama keluarga ibu anda sebelum berkahwin?",
+  "securityQuestionCity": "Di bandar manakah anda dilahirkan?",
+  "securityQuestionPet": "Apakah nama haiwan peliharaan pertama anda?",
+
+  "securityQuestionFood": "Apakah makanan kegemaran anda?",
+  "securityQuestionSchool": "Apakah nama sekolah pertama anda?",
+  "answer": "Jawapan",
+
+  "professionPlaceholder": "Pekerjaan (cth. Jururawat, Pelabur, CEO, Pelajar)",
+
+  "referralCodeOptional": "Kod Rujukan (Pilihan)",
+
+  "howDidYouHear": "Bagaimana anda mengetahui tentang kami?",
+
+  "google": "Google",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "linkedin": "LinkedIn",
+  "youtube": "YouTube",
+  "friend": "Rakan",
+  "other": "Lain-lain",
+
+  "creatingAccount": "Sedang Mencipta Akaun...",
+
+  "accountCreatedVerification": "Akaun berjaya dicipta! Sila semak peti masuk atau folder spam anda untuk mengesahkan e-mel sebelum log masuk.",
+
+  "somethingWentWrong": "Sesuatu telah berlaku.",
+  "accountAlreadyExists": "Akaun dengan alamat e-mel ini sudah wujud.",
+  "weakPassword": "Kata laluan mestilah sekurang-kurangnya 6 aksara.",
+  "invalidEmail": "Sila masukkan alamat e-mel yang sah.",
+
+  "marketsSection": {
+    "badge": "PASARAN GLOBAL LANGSUNG",
+    "title": "Dagangkan",
+    "titleHighlight": "Pasaran Terbaik Dunia",
+    "description": "Akses mata wang kripto, forex, komoditi dan indeks utama melalui platform dagangan bertaraf institusi Orion Trade Hub. Pantau pergerakan harga secara masa nyata dan laksanakan dagangan dengan penuh keyakinan."
+  },
+
+  "features": {
+    "header": {
+      "badge": "CIRI-CIRI PLATFORM",
+      "title": "Segala Yang Anda Perlukan",
+      "titleHighlight": "Untuk Berdagang Dengan Lebih Bijak.",
+      "description": "Orion Trade Hub menggabungkan pelaksanaan dagangan bertaraf institusi, analisis berkuasa AI, pengurusan portfolio lanjutan, dagangan pelbagai aset dan keselamatan bertaraf perusahaan dalam satu pengalaman dagangan premium."
+    },
+    "cards": {
+      "vip": {
+        "title": "Akaun VIP",
+        "description": "Pelaksanaan premium, harga bertaraf institusi dan pengurus hubungan yang berdedikasi."
+      },
+      "ai": {
+        "title": "Analisis AI",
+        "description": "Risikan pasaran masa nyata yang dikuasakan oleh algoritma dagangan canggih."
+      },
+      "execution": {
+        "title": "Pelaksanaan Pantas",
+        "description": "Infrastruktur kependaman ultra rendah untuk pelaksanaan pesanan yang pantas di seluruh dunia."
+      },
+      "security": {
+        "title": "Platform Selamat",
+        "description": "Penyulitan bertaraf perusahaan dan perlindungan akaun berbilang lapisan."
+      },
+      "assets": {
+        "title": "Dagangan Pelbagai Aset",
+        "description": "Dagangkan kripto, forex, komoditi, indeks dan ekuiti daripada satu akaun."
+      },
+      "portfolio": {
+        "title": "Portfolio Diurus",
+        "description": "Pengurusan portfolio profesional dengan kawalan risiko bertaraf institusi."
+      }
+    }
+  },
+   
+    "securityMobile": {
+    "title": "Keselamatan & Platform Mudah Alih",
+    "description": "Orion Trade Hub dibina dengan keselamatan bertaraf institusi, infrastruktur yang disulitkan dan sistem pemantauan risiko masa nyata. Dana dan data anda dilindungi dengan perlindungan berbilang lapisan.",
+    "features": {
+      "security": "Keselamatan Bertaraf Bank",
+      "markets": "Pasaran Global 24/7",
+      "ai": "Dagangan Dibantu AI"
+    },
+    "buttons": {
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "liveSnapshot": "GAMBARAN PASARAN LANGSUNG"
+  },
+
+  "hero": {
+    "badge": "ORION TRADE HUB",
+    "title": "Dagangan Bertaraf Institusi",
+    "titleHighlight": "Dibina Untuk Semua.",
+    "subtitle": "Nikmati pelaksanaan dagangan bertaraf institusi merentasi Kripto, Forex, Komoditi dan Ekuiti Global melalui satu platform dagangan yang direka dengan elegan.",
+    "buttons": {
+      "openAccount": "Buka Akaun Langsung",
+      "explorePlatform": "Terokai Platform"
+    },
+    "trust": {
+      "security": "Keselamatan Bertaraf Bank",
+      "markets": "Pasaran Global 24/7",
+      "ai": "Dagangan Dibantu AI"
+    }
+  },
+
+  "mobile": {
+    "label": "PLATFORM MUDAH ALIH",
+    "title": "Berdagang Di Mana Sahaja.",
+    "titleHighlight": "Kekal Mendahului.",
+    "description": "Orion Trade Hub menyediakan pelaksanaan dagangan bertaraf institusi, pemantauan portfolio, analisis dibantu AI dan akses pasaran secara langsung melalui pengalaman mudah alih yang direka dengan sempurna."
+  },
+
+  "coin": {
+    "badge": "EKOSISTEM ORION",
+    "title": "Orion",
+    "titleHighlight": "Coin",
+    "description": "Sertai senarai akses awal Orion Coin dan terima kemas kini mengenai pelancaran, utiliti ekosistem serta ganjaran platform.",
+    "placeholder": "Masukkan alamat e-mel anda",
+    "button": "Maklumkan Saya",
+    "success": "Anda telah ditambahkan ke senarai akses awal."
+  },
+
+  "reviews": {
+    "title": "Apa Kata Para Pedagang",
+    "items": [
+      "Platform yang sangat lancar. Harga masa nyata terasa profesional.",
+      "Antara muka yang bersih dan pelaksanaan pantas. Sangat suka pengalaman dagangan ini.",
+      "Carta responsif dan tepat. Kerja yang hebat.",
+      "Terasa seperti bursa sebenar. Reka bentuk yang sangat mengagumkan.",
+      "Antara muka dagangan yang ringkas, pantas dan boleh dipercayai.",
+      "Salah satu platform dagangan demo terbaik yang pernah saya gunakan.",
+      "Kelajuan pelaksanaan dan antara muka berada pada tahap terbaik.",
+      "Persekitaran dagangan yang sangat realistik.",
+      "Akhirnya platform dagangan kripto yang bersih dan terasa seperti sebenar.",
+      "Sangat suka suasana pasaran langsung. Direka dengan begitu kemas."
+    ]
+  },
+
+  "contact": {
+    "badge": "HUBUNGI ORION",
+    "title": "Berhubung Dengan Pasukan Kami",
+    "description": "Pakar kami sedia membantu anda dengan pembukaan akaun, panduan platform, perkhidmatan institusi dan pertanyaan umum.",
+    "email": "E-mel:",
+    "institutional": "Institusi:"
+  },
+
+  "navbar": {
+    "features": "Ciri-ciri",
+    "markets": "Pasaran",
+    "orionCoin": "Orion Coin",
+    "support": "Sokongan",
+    "about": "Tentang",
+    "signIn": "Log Masuk",
+    "openAccount": "Buka Akaun"
+  },
+
+  "homeInfo": {
+    "about": {
+      "title": "Mengenai Orion Trade Hub",
+      "description": "Orion Trade Hub ialah platform dagangan generasi baharu yang dibina untuk pelaksanaan pasaran masa nyata, analitik berkuasa AI dan prestasi bertaraf institusi merentasi mata wang kripto, forex dan pasaran global."
+    }
+  },
+
+  "footer": {
+    "platform": "Platform",
+    "markets": "Pasaran",
+    "trading": "Dagangan",
+    "mobileApp": "Aplikasi Mudah Alih",
+    "security": "Keselamatan",
+    "company": "Syarikat",
+    "about": "Tentang",
+    "support": "Sokongan",
+    "contact": "Hubungi",
+    "careers": "Kerjaya",
+    "close": "Tutup",
+    "mobileMaintenance": "Aplikasi mudah alih sedang dalam penyelenggaraan. Ia akan tersedia tidak lama lagi.",
+    "careersMessage": "Peluang kerjaya akan datang tidak lama lagi. Kami sedang membangunkan program pengambilan pekerja kami."
+  },
+
+  "cardServices": {
+    "title": "Kad Debit Orion",
+    "description": "Urus permohonan Kad Debit Orion anda, semak status permohonan dan nikmati perkhidmatan kad premium.",
+    "preview": "Pratonton Kad",
+    "status": "Status Kad",
+    "applicationStatus": "Status Permohonan",
+    "notApplied": "Belum Memohon",
+    "pending": "Sedang Disemak",
+    "approved": "Diluluskan",
+    "issued": "Kad Dikeluarkan",
+    "shipped": "Dalam Penghantaran",
+    "delivered": "Telah Dihantar",
+    "applyButton": "Mohon Kad Debit Orion",
+    "benefits": "Manfaat",
+    "benefitWorldwide": "Pembelian di seluruh dunia",
+    "benefitAtm": "Pengeluaran ATM",
+    "benefitContactless": "Pembayaran tanpa sentuh",
+    "benefitChip": "Teknologi cip yang selamat",
+    "benefitFraud": "Pemantauan penipuan",
+    "benefitSupport": "Sokongan pelanggan premium",
+    "houseAddress": "Alamat Rumah",
+    "email": "Alamat E-mel",
+    "cancel": "Batal",
+    "submit": "Hantar",
+    "completeAllFields": "Sila lengkapkan semua medan.",
+    "applicationSubmitted": "Permohonan Kad Debit Orion anda telah diterima. Sila buat pembayaran sebanyak 10 peratus daripada jumlah keuntungan secara luaran melalui pedagang yang ditugaskan kepada anda.",
+    "applicationFailed": "Tidak dapat menghantar permohonan.",
+    "assignedAccountManager": "Pengurus Akaun Ditugaskan",
+    "depositMessage": "Deposit diproses secara manual oleh pengurus akaun yang ditugaskan kepada anda. Sila hubungi sokongan untuk membiayai akaun pelaburan anda.",
+    "withdrawMessage": "Permohonan pengeluaran akan disemak dan diproses oleh pengurus akaun yang ditugaskan kepada anda. Sila hubungi sokongan untuk memulakan pengeluaran."
+  },
+  "depositModal": {
+    "title": "Gerbang Deposit",
+    "description": "Deposit dikendalikan secara manual oleh pengurus akaun yang ditugaskan kepada anda bagi memastikan pembiayaan yang selamat, pengesahan identiti dan pematuhan kepada peraturan. Setelah pembayaran anda disahkan, baki dagangan anda akan dikemas kini dengan segera.",
+    "assistance": "Untuk bantuan deposit, sila hubungi pengurus akaun yang ditugaskan kepada anda melalui e-mel atau mana-mana saluran komunikasi yang selamat. Mereka akan memberikan arahan dan sokongan yang diperlukan untuk melengkapkan deposit anda dengan selamat.",
+    "assignedTradingDesk": "Meja Dagangan Ditugaskan",
+    "complianceStatus": "Status Pematuhan",
+    "verified": "DISAHKAN",
+    "instructions": "Untuk memulakan deposit, sila hubungi pengurus akaun yang ditugaskan kepada anda. Arahan pembayaran akan diberikan selepas akaun dagangan anda disahkan.",
+    "contactButton": "Hubungi Pengurus Akaun"
+  },
+
+  "withdrawalModal": {
+    "title": "Permohonan Pengeluaran",
+    "description": "Permohonan pengeluaran diproses secara manual oleh pengurus akaun yang ditugaskan kepada anda selepas pengesahan identiti dan semakan pematuhan. Tempoh pemprosesan mungkin berbeza bergantung pada kaedah pembayaran yang dipilih.",
+    "assistance": "Untuk bantuan pengeluaran, sila hubungi pengurus akaun yang ditugaskan kepada anda melalui e-mel atau mana-mana saluran komunikasi yang selamat. Mereka akan membimbing anda sepanjang proses pengeluaran dan memberikan arahan yang diperlukan.",
+    "assignedTradingDesk": "Meja Dagangan Ditugaskan",
+    "complianceStatus": "Status Pematuhan",
+    "verified": "DISAHKAN",
+    "instructions": "Untuk memulakan pengeluaran, sila hubungi pengurus akaun yang ditugaskan kepada anda. Dana akan dilepaskan selepas pengesahan dan kelulusan berjaya.",
+    "contactButton": "Hubungi Pengurus Akaun"
+  },
+
+  "sessionExpired": "Sesi anda telah tamat. Sila log masuk semula.",
+  "verificationEmailSent": "E-mel pengesahan baharu telah dihantar. Sila semak peti masuk atau folder spam anda.",
+  "pleaseLoginAgain": "Sila log masuk semula.",
+  "emailVerified": "E-mel berjaya disahkan!",
+  "emailNotVerified": "E-mel anda masih belum disahkan. Sila klik pautan pengesahan dalam e-mel anda terlebih dahulu.",
+  "accountCreatedTitle": "Akaun Berjaya Dicipta",
+  "accountCreatedDescription": "Akaun Orion Trade Hub anda telah berjaya dicipta. Kami telah menghantar e-mel pengesahan ke peti masuk anda. Sila sahkan e-mel anda sebelum log masuk.",
+  "nextSteps": "Langkah Seterusnya",
+  "checkInbox": "Semak Peti Masuk.",
+  "checkSpam": "Semak folder Spam atau Sampah.",
+  "clickVerification": "Klik pautan pengesahan.",
+  "returnLogin": "Kembali ke sini dan log masuk.",
+  "checking": "Sedang menyemak...",
+  "verifiedEmailButton": "Saya Telah Mengesahkan E-mel Saya",
+  "sending": "Sedang menghantar...",
+  "resendVerification": "Hantar Semula E-mel Pengesahan",
+  "backToLogin": "Kembali ke Log Masuk",
+  "enterEmailAddress": "Sila masukkan alamat e-mel anda.",
+  "unableToSendResetEmail": "Tidak dapat menghantar e-mel tetapan semula kata laluan.",
+  "passwordResetEmailSent": "E-mel tetapan semula kata laluan berjaya dihantar. Sila semak peti masuk atau folder spam anda.",
+  "forgotPassword": "Lupa Kata Laluan",
+  "forgotPasswordDescription": "Masukkan alamat e-mel yang dikaitkan dengan akaun anda. Kami akan menghantar pautan selamat untuk menetapkan semula kata laluan anda.",
+  "passwordResetEmailSentTitle": "E-mel Tetapan Semula Kata Laluan Dihantar",
+  "passwordResetEmailSentDescription": "Semak peti masuk dan folder spam anda. Klik pautan tetapan semula kata laluan dan cipta kata laluan baharu anda.",
+  "emailAddress": "Alamat E-mel",
+  "enterYourEmail": "Masukkan e-mel anda",
+  "sendPasswordResetLink": "Hantar Pautan Tetapan Semula Kata Laluan"
+}

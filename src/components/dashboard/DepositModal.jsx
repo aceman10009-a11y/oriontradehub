@@ -1,6 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-export default function DepositModal({ show, setShowDepositInfo, trader }) {
+export default function DepositModal({
+  show,
+  setShowDepositInfo,
+  trader,
+}) {
+  const { t } = useTranslation();
+
   if (!show) return null;
 
   return (
@@ -37,14 +44,18 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
             letterSpacing: "-0.02em",
           }}
         >
-          Deposit Gateway
+          {t("depositModal.title")}
         </h2>
 
-       <p style={{ fontSize: "12px", color: "#9ca3af", lineHeight: 1.7 }}>
-  Deposits are handled manually by your assigned account manager to ensure
-  secure funding, identity verification, and regulatory compliance. Once your
-  payment has been confirmed, your trading balance will be updated promptly.
-</p>
+        <p
+          style={{
+            fontSize: "12px",
+            color: "#9ca3af",
+            lineHeight: 1.7,
+          }}
+        >
+          {t("depositModal.description")}
+        </p>
 
         {/* INFO BOX */}
         <div
@@ -56,10 +67,13 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
             marginTop: "12px",
           }}
         >
-          <div style={{ fontSize: "12px", color: "#d1d5db" }}>
-            For deposit assistance, please contact your assigned account manager
-            via email or any secure communication channel. They will provide you with the necessary
-            instructions and support to complete your deposit securely.
+          <div
+            style={{
+              fontSize: "12px",
+              color: "#d1d5db",
+            }}
+          >
+            {t("depositModal.assistance")}
           </div>
 
           <div
@@ -70,7 +84,7 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
               color: "#fff",
             }}
           >
-            {trader?.name || "Assigned Trading Desk"}
+            {trader?.name || t("depositModal.assignedTradingDesk")}
           </div>
 
           <div
@@ -83,7 +97,8 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
               letterSpacing: "0.05em",
             }}
           >
-            Compliance Status: VERIFIED
+            {t("depositModal.complianceStatus")}:{" "}
+            {t("depositModal.verified")}
           </div>
         </div>
 
@@ -96,7 +111,7 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
             lineHeight: 1.4,
           }}
         >
-          To begin a deposit, please contact your assigned account manager. Payment instructions will be provided after verification of your trading account.
+          {t("depositModal.instructions")}
         </div>
 
         {/* CLOSE BUTTON */}
@@ -117,7 +132,7 @@ export default function DepositModal({ show, setShowDepositInfo, trader }) {
             letterSpacing: "0.05em",
           }}
         >
-          Contact Account Manager
+          {t("depositModal.contactButton")}
         </button>
       </div>
     </div>

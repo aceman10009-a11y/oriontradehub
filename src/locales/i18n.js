@@ -17,6 +17,12 @@ import ja from "./ja.json";
 import ko from "./ko.json";
 import ar from "./ar.json";
 import no from "./no.json";
+import th from "./th.json";
+import vi from "./vi.json";
+import uk from "./uk.json";
+import ru from "./ru.json";
+import ms from "./ms.json";
+import ro from "./ro.json";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -79,9 +85,34 @@ i18n.use(initReactI18next).init({
     ar: {
       translation: ar,
     },
+
     no: {
-  translation: no,
-},
+      translation: no,
+    },
+
+    th: {
+      translation: th,
+    },
+
+    uk: {
+      translation: uk,
+    },
+
+    vi: {
+      translation: vi,
+    },
+
+    ms: {
+      translation: ms,
+    },
+
+    ro: {
+      translation: ro,
+    },
+
+    ru: {
+      translation: ru,
+    },
   },
 
   lng: localStorage.getItem("language") || "en",
@@ -89,23 +120,29 @@ i18n.use(initReactI18next).init({
   fallbackLng: "en",
 
   supportedLngs: [
-    "en",
-    "de",
-    "fr",
-    "es",
-    "sv",
-    "da",
-    "fi",
-    "pl",
-    "it",
-    "pt",
-    "nl",
-    "zh",
-    "ja",
-    "ko",
-    "ar",
-    "no"
-  ],
+  "en",
+  "de",
+  "fr",
+  "es",
+  "sv",
+  "da",
+  "fi",
+  "pl",
+  "it",
+  "pt",
+  "nl",
+  "zh",
+  "ja",
+  "ko",
+  "ar",
+  "no",
+  "th",
+  "uk",
+  "vi",
+  "ms",
+  "ro",
+  "ru"
+],
 
   interpolation: {
     escapeValue: false,

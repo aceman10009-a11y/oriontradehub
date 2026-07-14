@@ -1,0 +1,432 @@
+{
+  "dashboard": "Panou de control",
+  "home": "Acasă",
+
+  "welcomeBack": "Bine ai revenit",
+  "connected": "CONECTAT",
+  "connectedStatus": "CONECTAT",
+  "live": "LIVE",
+  "liveUpper": "LIVE",
+  "offline": "DECONECTAT",
+  "disconnected": "Deconectat",
+
+  "market": "Piață",
+  "markets": "Piețe",
+  "searchMarkets": "Caută piețe...",
+  "selectedMarket": "Piață selectată",
+  "currentPrice": "Preț curent",
+  "totalProfit": "Profit total",
+  "connection": "Conexiune",
+
+  "accountOverview": "Prezentare generală cont",
+  "account": "Cont",
+  "demoBalance": "Sold Demo",
+  "liveBalance": "Sold Real",
+  "equity": "Capital propriu",
+  "freeMargin": "Marjă liberă",
+  "openPositions": "Poziții deschise",
+
+  "tradingHistory": "Istoric tranzacționare",
+  "tradingPreferences": "Preferințe de tranzacționare",
+
+  "all": "TOATE",
+  "open": "DESCHISE",
+  "closed": "ÎNCHISE",
+  "profit": "PROFIT",
+  "loss": "PIERDERE",
+
+  "buy": "CUMPĂRARE",
+  "sell": "VÂNZARE",
+
+  "symbol": "Simbol",
+  "asset": "Activ",
+  "type": "Tip",
+  "amount": "Sumă",
+  "status": "Status",
+
+  "winningTrades": "Tranzacții profitabile",
+  "losingTrades": "Tranzacții pierzătoare",
+  "winRate": "Rată de succes",
+
+  "accountStatus": "Status cont",
+  "verified": "Verificat",
+  "pending": "În așteptare",
+
+  "deposit": "Depunere",
+  "withdraw": "Retragere",
+
+  "noTradingHistory": "Nu există istoric de tranzacționare disponibil.",
+  "noPositions": "Nu există poziții active.",
+  "noActivePositions": "Nu există poziții active.",
+
+  "demo": "DEMO",
+
+  "notifications": "Notificări",
+  "settings": "Setări",
+  "accountSettings": "Setări cont",
+
+  "manageSettings": "Gestionați profilul, securitatea, preferințele de tranzacționare și experiența platformei.",
+  "managePersonalInformation": "Gestionați informațiile personale.",
+
+  "profile": "Profil",
+  "security": "Securitate",
+  "appearance": "Aspect",
+  "accessibility": "Accesibilitate",
+  "privacy": "Confidențialitate",
+
+  "fullName": "Nume complet",
+  "phoneNumber": "Număr de telefon",
+  "profession": "Profesie",
+  "country": "Țară",
+  "language": "Limbă",
+  "theme": "Temă",
+  "timezone": "Fus orar",
+
+  "english": "Engleză",
+  "french": "Franceză",
+  "spanish": "Spaniolă",
+  "german": "Germană",
+  "italian": "Italiană",
+  "portuguese": "Portugheză",
+  "dutch": "Olandeză",
+  "swedish": "Suedeză",
+  "danish": "Daneză",
+  "finnish": "Finlandeză",
+  "polish": "Poloneză",
+
+  "saveChanges": "Salvează modificările",
+  "saveProfile": "Salvează profilul",
+  "saving": "Se salvează...",
+  "loading": "Se încarcă...",
+
+  "investor": "Investitor",
+  "user": "Utilizator",
+
+  "withdrawalRequest": "Cerere de retragere",
+  "withdrawalDescription": "Cererile de retragere sunt procesate manual de către managerul de cont desemnat după verificarea identității și revizuirea conformității. Timpul de procesare variază în funcție de metoda de plată selectată.",
+  "assignedAccountManager": "Manager de cont desemnat",
+  "orionTradingDesk": "Biroul de Tranzacționare Orion",
+  "withdrawalStatusAvailable": "STATUS RETRAGERE: DISPONIBIL",
+  "withdrawalContactInfo": "Pentru a iniția o retragere, contactați managerul de cont desemnat. Fondurile vor fi eliberate după verificarea și aprobarea cu succes.",
+  "contactAccountManager": "Contactați managerul de cont",
+
+  "accountUpdate": "Actualizare cont",
+  "accountUpdateMessage": "Contul dumneavoastră de tranzacționare este activ și pregătit.",
+  "securityNotice": "Notificare de securitate",
+  "securityNoticeMessage": "Păstrați datele de acces ale contului în siguranță.",
+
+  "openSettings": "Deschide setările",
+  "close": "Închide",
+  "cancel": "Anulează",
+  "confirm": "Confirmă",
+  "yes": "Da",
+  "no": "Nu",
+
+  "success": "Succes",
+  "error": "Eroare",
+
+  "email": "Email",
+  "password": "Parolă",
+  "login": "Autentificare",
+  "signup": "Înregistrare",
+  "logout": "Deconectare",
+  "signOut": "Deconectare",
+  "resetPassword": "Resetare parolă",
+  "verifyEmail": "Verificare email",
+
+  "welcomeBackLogin": "Bine ai revenit",
+  "loginSubtitle": "Autentifică-te pentru a accesa contul tău Orion Trade Hub.",
+
+  "show": "Afișează",
+  "hide": "Ascunde",
+
+  "rememberMe": "Ține-mă minte",
+
+  "signIn": "Autentificare",
+  "signingIn": "Se autentifică...",
+
+  "dontHaveAccount": "Nu ai un cont?",
+  "createAccount": "Creează cont",
+
+  "incorrectEmailPassword": "Email sau parolă incorectă.",
+  "noAccountExists": "Nu există niciun cont cu această adresă de email.",
+  "incorrectPassword": "Parolă incorectă.",
+  "checkInternet": "Verificați conexiunea la internet.",
+  "unableToSignIn": "Autentificarea nu a fost posibilă.",
+  "loginSuccessful": "Autentificare reușită.",
+  "userRecordNotFound": "Înregistrarea utilizatorului nu a fost găsită.",
+  "verifyEmailBeforeLogin": "Vă rugăm să verificați emailul înainte de autentificare. Verificați și folderul spam.",
+
+  "personalInformation": "Informații personale",
+  "contactDetails": "Detalii de contact",
+
+  "createAccountTitle": "Creează cont",
+
+  "passwordHint": "Folosiți minimum 8 caractere cu litere mari, litere mici, cifre și simboluri.",
+
+  "securityQuestion1": "Întrebare de securitate 1",
+  "securityQuestion2": "Întrebare de securitate 2",
+
+  "securityQuestionMother": "Care este numele de fată al mamei dumneavoastră?",
+  "securityQuestionCity": "În ce oraș v-ați născut?",
+  "securityQuestionPet": "Care a fost numele primului dumneavoastră animal de companie?",
+
+  "securityQuestionFood": "Care este mâncarea dumneavoastră preferată?",
+  "securityQuestionSchool": "Care a fost prima dumneavoastră școală?",
+  "answer": "Răspuns",
+
+  "professionPlaceholder": "Profesie (ex. Asistent medical, Investitor, CEO, Student)",
+
+  "referralCodeOptional": "Cod de recomandare (opțional)",
+
+  "howDidYouHear": "Cum ați aflat despre noi?",
+
+  "google": "Google",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "linkedin": "LinkedIn",
+  "youtube": "YouTube",
+  "friend": "Prieten",
+  "other": "Altă sursă",
+
+  "creatingAccount": "Se creează contul...",
+
+  "accountCreatedVerification": "Cont creat cu succes! Verificați inbox-ul sau folderul spam pentru a confirma adresa de email înainte de autentificare.",
+
+  "somethingWentWrong": "Ceva nu a funcționat corect.",
+
+  "accountAlreadyExists": "Există deja un cont asociat cu această adresă de email.",
+
+  "weakPassword": "Parola trebuie să conțină cel puțin 6 caractere.",
+
+  "invalidEmail": "Introduceți o adresă de email validă.",
+
+  "marketsSection": {
+    "badge": "PIEȚE GLOBALE LIVE",
+    "title": "Tranzacționați pe Cele Mai",
+    "titleHighlight": "Importante Piețe",
+    "description": "Accesați criptomonede, forex, mărfuri și indici majori prin platforma de tranzacționare Orion Trade Hub de nivel instituțional. Monitorizați mișcările prețurilor în timp real și executați tranzacții cu încredere."
+  },
+
+  "features": {
+    "header": {
+      "badge": "FUNCȚIILE PLATFORMEI",
+      "title": "Tot Ce Aveți Nevoie",
+      "titleHighlight": "Pentru Tranzacționare Inteligentă.",
+      "description": "Orion Trade Hub combină execuția instituțională, informații bazate pe inteligență artificială, gestionarea avansată a portofoliului, tranzacționarea multi-activ și securitatea de nivel enterprise într-o singură experiență premium."
+    },
+    "cards": {
+      "vip": {
+        "title": "Conturi VIP",
+        "description": "Execuție premium, prețuri instituționale și manageri de relații dedicați."
+      },
+      "ai": {
+        "title": "Informații AI",
+        "description": "Inteligență de piață în timp real bazată pe algoritmi avansați de tranzacționare."
+      },
+      "execution": {
+        "title": "Execuție Rapidă",
+        "description": "Infrastructură cu latență ultra-redusă pentru executarea rapidă a ordinelor la nivel global."
+      },
+      "security": {
+        "title": "Platformă Securizată",
+        "description": "Criptare de nivel enterprise și protecție multi-strat pentru conturi."
+      },
+      "assets": {
+        "title": "Tranzacționare Multi-Activ",
+        "description": "Tranzacționați crypto, forex, mărfuri, indici și acțiuni dintr-un singur cont."
+      },
+      "portfolio": {
+        "title": "Portofolii Gestionate",
+        "description": "Gestionare profesională a portofoliilor cu controale instituționale de risc."
+      }
+    }
+  },
+
+  "securityMobile": {
+    "title": "Securitate și Platformă Mobilă",
+    "description": "Orion Trade Hub este construit cu securitate de nivel instituțional, infrastructură criptată și sisteme de monitorizare a riscului în timp real. Fondurile și datele dumneavoastră sunt protejate prin măsuri de securitate multi-strat.",
+    "features": {
+      "security": "Securitate la Nivel Bancar",
+      "markets": "Piețe Globale 24/7",
+      "ai": "Tranzacționare Asistată de AI"
+    },
+    "buttons": {
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "liveSnapshot": "IMAGINE LIVE A PIEȚEI"
+  },
+
+  "hero": {
+    "badge": "ORION TRADE HUB",
+    "title": "Tranzacționare Instituțională",
+    "titleHighlight": "Creată Pentru Toți.",
+    "subtitle": "Experimentați execuție de nivel instituțional pentru Crypto, Forex, Mărfuri și Acțiuni Globale printr-o platformă de tranzacționare proiectată elegant.",
+    "buttons": {
+      "openAccount": "Deschide Cont Live",
+      "explorePlatform": "Explorează Platforma"
+    },
+    "trust": {
+      "security": "Securitate la Nivel Bancar",
+      "markets": "Piețe Globale 24/7",
+      "ai": "Tranzacționare Asistată de AI"
+    }
+  },
+
+  "mobile": {
+    "label": "PLATFORMĂ MOBILĂ",
+    "title": "Tranzacționați Oriunde.",
+    "titleHighlight": "Rămâneți În Avantaj.",
+    "description": "Orion Trade Hub oferă execuție de nivel instituțional, monitorizarea portofoliului, informații asistate de AI și acces la piețe live printr-o experiență mobilă proiectată profesional."
+  },
+  
+   "coin": {
+    "badge": "ECOSISTEMUL ORION",
+    "title": "Orion",
+    "titleHighlight": "Coin",
+    "description": "Alăturați-vă listei de acces timpuriu Orion Coin și primiți actualizări despre lansare, utilitățile ecosistemului și recompensele platformei.",
+    "placeholder": "Introduceți emailul",
+    "button": "Anunță-mă",
+    "success": "Sunteți pe lista de acces timpuriu."
+  },
+
+  "reviews": {
+    "title": "Ce Spun Tranzacționarii",
+    "items": [
+      "Platformă foarte fluidă. Prețurile în timp real oferă o experiență profesională.",
+      "Interfață curată și execuție rapidă. Îmi place experiența de tranzacționare.",
+      "Graficele sunt responsive și precise. O treabă excelentă.",
+      "Se simte ca o bursă reală. Design impresionant.",
+      "Interfață de tranzacționare simplă, rapidă și de încredere.",
+      "Una dintre cele mai bune platforme demo pe care le-am folosit.",
+      "Viteza de execuție și interfața sunt de top.",
+      "Mediu de tranzacționare foarte realist.",
+      "În sfârșit o interfață crypto curată care pare reală.",
+      "Îmi place atmosfera pieței live. Foarte bine finisată."
+    ]
+  },
+
+  "contact": {
+    "badge": "CONTACT ORION",
+    "title": "Vorbește cu Echipa Noastră",
+    "description": "Specialiștii noștri sunt disponibili pentru asistență privind deschiderea contului, ghidarea pe platformă, servicii instituționale și întrebări generale.",
+    "email": "Email:",
+    "institutional": "Instituțional:"
+  },
+
+  "navbar": {
+    "features": "Funcții",
+    "markets": "Piețe",
+    "orionCoin": "Orion Coin",
+    "support": "Suport",
+    "about": "Despre",
+    "signIn": "Autentificare",
+    "openAccount": "Deschide Cont"
+  },
+
+  "homeInfo": {
+    "about": {
+      "title": "Despre Orion Trade Hub",
+      "description": "Orion Trade Hub este o platformă de tranzacționare de nouă generație creată pentru execuție în timp real, analize bazate pe AI și performanță de nivel instituțional pe piețele crypto, forex și globale."
+    }
+  },
+
+  "footer": {
+    "platform": "Platformă",
+    "markets": "Piețe",
+    "trading": "Tranzacționare",
+    "mobileApp": "Aplicație Mobilă",
+    "security": "Securitate",
+    "company": "Companie",
+    "about": "Despre",
+    "support": "Suport",
+    "contact": "Contact",
+    "careers": "Cariere",
+    "close": "Închide",
+    "mobileMaintenance": "Aplicațiile mobile sunt momentan în mentenanță. Vor fi disponibile în curând.",
+    "careersMessage": "Carierele vor fi disponibile în curând. În prezent construim programul nostru de recrutare."
+  },
+
+  "cardServices": {
+    "title": "Card Orion Debit",
+    "description": "Gestionați cererea pentru Cardul Orion Debit, urmăriți statusul aplicației și accesați servicii premium pentru card.",
+    "preview": "Previzualizare Card",
+    "status": "Status Card",
+    "applicationStatus": "Status Aplicație",
+    "notApplied": "Neaplicat",
+    "pending": "În Așteptarea Verificării",
+    "approved": "Aprobat",
+    "issued": "Card Emis",
+    "shipped": "Expediat",
+    "delivered": "Livrat",
+    "applyButton": "Aplică pentru Card Orion Debit",
+    "benefits": "Beneficii",
+    "benefitWorldwide": "Achiziții internaționale",
+    "benefitAtm": "Retrageri ATM",
+    "benefitContactless": "Plăți contactless",
+    "benefitChip": "Tehnologie cip securizată",
+    "benefitFraud": "Monitorizare antifraudă",
+    "benefitSupport": "Suport premium pentru clienți",
+    "houseAddress": "Adresă domiciliu",
+    "email": "Adresă Email",
+    "cancel": "Anulează",
+    "submit": "Trimite",
+    "completeAllFields": "Vă rugăm să completați toate câmpurile.",
+    "applicationSubmitted": "Cererea dumneavoastră pentru Cardul Orion Debit a fost primită. Vă rugăm să efectuați plata externă de 10% din profitul total prin traderul desemnat.",
+    "applicationFailed": "Nu s-a putut trimite cererea.",
+    "assignedAccountManager": "Manager de Cont Desemnat",
+    "depositMessage": "Depunerile sunt procesate manual de managerul de cont desemnat. Contactați suportul pentru finanțarea contului de investiții.",
+    "withdrawMessage": "Cererile de retragere sunt verificate și procesate de managerul de cont desemnat. Contactați suportul pentru inițierea unei retrageri."
+  },
+
+  "depositModal": {
+    "title": "Portal Depunere",
+    "description": "Depunerile sunt gestionate manual de managerul de cont desemnat pentru a asigura finanțare sigură, verificarea identității și respectarea reglementărilor. După confirmarea plății, soldul de tranzacționare va fi actualizat rapid.",
+    "assistance": "Pentru asistență privind depunerile, contactați managerul de cont desemnat prin email sau orice canal sigur de comunicare. Acesta vă va oferi instrucțiunile și suportul necesar pentru finalizarea sigură a depunerii.",
+    "assignedTradingDesk": "Birou de Tranzacționare Desemnat",
+    "complianceStatus": "Status Conformitate",
+    "verified": "VERIFICAT",
+    "instructions": "Pentru a începe o depunere, contactați managerul de cont desemnat. Instrucțiunile de plată vor fi oferite după verificarea contului de tranzacționare.",
+    "contactButton": "Contact Manager Cont"
+  },
+
+  "withdrawalModal": {
+    "title": "Cerere de Retragere",
+    "description": "Cererile de retragere sunt procesate manual de managerul de cont desemnat după verificarea identității și analiza conformității. Timpul de procesare poate varia în funcție de metoda de plată selectată.",
+    "assistance": "Pentru asistență privind retragerile, contactați managerul de cont desemnat prin email sau orice canal sigur de comunicare. Acesta vă va ghida prin procesul de retragere și vă va oferi instrucțiunile necesare.",
+    "assignedTradingDesk": "Birou de Tranzacționare Desemnat",
+    "complianceStatus": "Status Conformitate",
+    "verified": "VERIFICAT",
+    "instructions": "Pentru a iniția o retragere, contactați managerul de cont desemnat. Fondurile vor fi eliberate după verificarea și aprobarea cu succes.",
+    "contactButton": "Contact Manager Cont"
+  },
+
+    "sessionExpired": "Sesiunea dvs. a expirat. Vă rugăm să vă autentificați din nou.",
+  "verificationEmailSent": "Un nou e-mail de verificare a fost trimis. Vă rugăm să verificați căsuța de e-mail sau folderul spam.",
+  "pleaseLoginAgain": "Vă rugăm să vă autentificați din nou.",
+  "emailVerified": "E-mail verificat cu succes!",
+  "emailNotVerified": "E-mailul dvs. nu a fost încă verificat. Vă rugăm să accesați mai întâi linkul de verificare primit prin e-mail.",
+  "accountCreatedTitle": "Cont creat cu succes",
+  "accountCreatedDescription": "Contul dvs. Orion Trade Hub a fost creat cu succes. Am trimis un e-mail de verificare în căsuța dvs. de e-mail. Vă rugăm să vă verificați adresa înainte de autentificare.",
+  "nextSteps": "Pașii următori",
+  "checkInbox": "Verificați căsuța de e-mail.",
+  "checkSpam": "Verificați folderul Spam sau Mesaje nedorite.",
+  "clickVerification": "Faceți clic pe linkul de verificare.",
+  "returnLogin": "Reveniți aici și autentificați-vă.",
+  "checking": "Se verifică...",
+  "verifiedEmailButton": "Am verificat e-mailul meu",
+  "sending": "Se trimite...",
+  "resendVerification": "Retrimite e-mailul de verificare",
+  "backToLogin": "Înapoi la autentificare",
+  "enterEmailAddress": "Vă rugăm să introduceți adresa de e-mail.",
+  "unableToSendResetEmail": "Nu s-a putut trimite e-mailul pentru resetarea parolei.",
+  "passwordResetEmailSent": "E-mailul pentru resetarea parolei a fost trimis cu succes. Vă rugăm să verificați căsuța de e-mail sau folderul spam.",
+  "forgotPassword": "Ați uitat parola?",
+  "forgotPasswordDescription": "Introduceți adresa de e-mail asociată contului dvs. Vă vom trimite un link securizat pentru resetarea parolei.",
+  "passwordResetEmailSentTitle": "E-mail pentru resetarea parolei trimis",
+  "passwordResetEmailSentDescription": "Verificați căsuța de e-mail și folderul spam. Faceți clic pe linkul de resetare a parolei și creați o parolă nouă.",
+  "emailAddress": "Adresă de e-mail",
+  "enterYourEmail": "Introduceți e-mailul dvs.",
+  "sendPasswordResetLink": "Trimite linkul pentru resetarea parolei"
+}

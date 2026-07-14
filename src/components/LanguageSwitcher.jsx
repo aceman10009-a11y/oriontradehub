@@ -18,6 +18,12 @@ const languages = [
   { code: "ja", label: "🇯🇵 日本語" },
   { code: "ko", label: "🇰🇷 한국어" },
   {code: "fi",  label: "fi finish"},
+  { code: "th", name: "ไทย" },
+  { code: "vi", name: "Tiếng Việt" },
+  { code: "uk", name: "Українська" },
+  { code: "ru", name: "Русский" },
+  { code: "ms", name: "Bahasa Melayu" },
+   { code: "ro", name: "Română" },
 ];
 
 const LanguageSwitcher = () => {

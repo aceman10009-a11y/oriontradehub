@@ -324,6 +324,28 @@
   "applicationFailed": "申请提交失败，请稍后重试。"
 },
 
+"depositModal": {
+  "title": "存款入口",
+  "description": "存款由您指定的账户经理手动处理，以确保资金安全、身份验证和法规合规。付款确认后，您的交易余额将及时更新。",
+  "assistance": "如需存款帮助，请通过电子邮件或任何安全通信渠道联系您指定的账户经理。他们将为您提供必要的操作指引和支持，以安全完成存款。",
+  "assignedTradingDesk": "指定交易部门",
+  "complianceStatus": "合规状态",
+  "verified": "已验证",
+  "instructions": "开始存款前，请联系您指定的账户经理。您的交易账户完成验证后，将提供付款指引。",
+  "contactButton": "联系账户经理"
+},
+
+"withdrawalModal": {
+  "title": "提款申请",
+  "description": "提款申请将在完成身份验证和合规审核后，由您指定的账户经理手动处理。处理时间可能因您选择的付款方式而有所不同。",
+  "assistance": "如需提款帮助，请通过电子邮件或任何安全通信渠道联系您指定的账户经理。他们将指导您完成提款流程，并提供所需的相关指引。",
+  "assignedTradingDesk": "指定交易部门",
+  "complianceStatus": "合规状态",
+  "verified": "已验证",
+  "instructions": "如需发起提款，请联系您指定的账户经理。资金将在成功完成验证和批准后释放。",
+  "contactButton": "联系账户经理"
+},
+
 "admin": {
   "profitUpdated": "利润更新成功。",
   "profitUpdateFailed": "利润更新失败。",

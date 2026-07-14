@@ -331,6 +331,28 @@
   "applicationFailed": "Kunne ikke indsende ansøgningen. Prøv venligst igen."
 },
 
+"depositModal": {
+  "title": "Indbetalingsportal",
+  "description": "Indbetalinger håndteres manuelt af din tildelte kontoadministrator for at sikre sikker finansiering, identitetsbekræftelse og overholdelse af gældende regler. Når din betaling er bekræftet, opdateres din handelskonto hurtigst muligt.",
+  "assistance": "For hjælp med indbetaling bedes du kontakte din tildelte kontoadministrator via e-mail eller en anden sikker kommunikationskanal. Du vil modtage de nødvendige instruktioner og support til at gennemføre din indbetaling sikkert.",
+  "assignedTradingDesk": "Tildelt Handelsafdeling",
+  "complianceStatus": "Compliance-status",
+  "verified": "VERIFICERET",
+  "instructions": "For at påbegynde en indbetaling skal du kontakte din tildelte kontoadministrator. Betalingsinstruktioner vil blive sendt efter bekræftelse af din handelskonto.",
+  "contactButton": "Kontakt Kontoadministrator"
+},
+
+"withdrawalModal": {
+  "title": "Anmodning om Udbetaling",
+  "description": "Udbetalingsanmodninger behandles manuelt af din tildelte kontoadministrator efter identitetsbekræftelse og overholdelseskontrol. Behandlingstiden kan variere afhængigt af den valgte betalingsmetode.",
+  "assistance": "For hjælp med en udbetaling bedes du kontakte din tildelte kontoadministrator via e-mail eller en anden sikker kommunikationskanal. Du vil modtage den nødvendige vejledning for at gennemføre udbetalingen sikkert.",
+  "assignedTradingDesk": "Tildelt Trading Desk",
+  "complianceStatus": "Compliance-status",
+  "verified": "VERIFICERET",
+  "instructions": "For at starte en udbetaling skal du kontakte din tildelte kontoadministrator. Midlerne frigives efter vellykket bekræftelse og godkendelse.",
+  "contactButton": "Kontakt Kontoadministrator"
+},
+
 "admin": {
   "profitUpdated": "Profit opdateret med succes.",
   "profitUpdateFailed": "Kunne ikke opdatere profit.",

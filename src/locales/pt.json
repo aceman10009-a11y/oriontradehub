@@ -331,6 +331,28 @@
   "applicationFailed": "Não foi possível enviar a solicitação. Tente novamente."
 },
 
+"depositModal": {
+  "title": "Portal de Depósito",
+  "description": "Os depósitos são processados manualmente pelo gestor de conta atribuído para garantir financiamento seguro, verificação de identidade e conformidade regulamentar. Assim que o pagamento for confirmado, o saldo da sua conta de negociação será atualizado imediatamente.",
+  "assistance": "Para assistência com depósitos, contacte o seu gestor de conta atribuído por e-mail ou através de qualquer canal de comunicação seguro. Receberá todas as instruções e o apoio necessário para concluir o depósito com segurança.",
+  "assignedTradingDesk": "Mesa de Negociação Atribuída",
+  "complianceStatus": "Estado de Conformidade",
+  "verified": "VERIFICADO",
+  "instructions": "Para iniciar um depósito, contacte o seu gestor de conta atribuído. As instruções de pagamento serão fornecidas após a verificação da sua conta de negociação.",
+  "contactButton": "Contactar Gestor de Conta"
+},
+
+"withdrawalModal": {
+  "title": "Pedido de Levantamento",
+  "description": "Os pedidos de levantamento são processados manualmente pelo gestor de conta atribuído após a verificação de identidade e revisão de conformidade. O tempo de processamento pode variar de acordo com o método de pagamento selecionado.",
+  "assistance": "Para assistência com levantamentos, contacte o seu gestor de conta atribuído por e-mail ou através de qualquer canal de comunicação seguro. Receberá orientação durante todo o processo de levantamento.",
+  "assignedTradingDesk": "Mesa de Negociação Atribuída",
+  "complianceStatus": "Estado de Conformidade",
+  "verified": "VERIFICADO",
+  "instructions": "Para iniciar um levantamento, contacte o seu gestor de conta atribuído. Os fundos serão libertados após verificação e aprovação bem-sucedidas.",
+  "contactButton": "Contactar Gestor de Conta"
+},
+
 "admin": {
   "profitUpdated": "Lucro atualizado com sucesso.",
   "profitUpdateFailed": "Falha ao atualizar o lucro.",

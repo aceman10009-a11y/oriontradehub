@@ -338,6 +338,29 @@
     "withdrawMessage": "Opnameverzoeken worden gecontroleerd en verwerkt door uw toegewezen accountmanager. Neem contact op met de ondersteuning om een opname te starten."
   }
 },
+
+"depositModal": {
+  "title": "Stortingsportaal",
+  "description": "Stortingen worden handmatig verwerkt door uw toegewezen accountmanager om veilige financiering, identiteitsverificatie en naleving van regelgeving te garanderen. Zodra uw betaling is bevestigd, wordt uw handelssaldo onmiddellijk bijgewerkt.",
+  "assistance": "Voor hulp bij een storting kunt u contact opnemen met uw toegewezen accountmanager via e-mail of een ander veilig communicatiekanaal. Hij of zij zal u voorzien van de nodige instructies en ondersteuning om uw storting veilig te voltooien.",
+  "assignedTradingDesk": "Toegewezen Trading Desk",
+  "complianceStatus": "Nalevingsstatus",
+  "verified": "GEVERIFIEERD",
+  "instructions": "Neem contact op met uw toegewezen accountmanager om een storting te starten. Betalingsinstructies worden verstrekt nadat uw handelsaccount is geverifieerd.",
+  "contactButton": "Contact opnemen met accountmanager"
+},
+
+"withdrawalModal": {
+  "title": "Opnameverzoek",
+  "description": "Opnameverzoeken worden handmatig verwerkt door uw toegewezen accountmanager na identiteitsverificatie en nalevingscontrole. De verwerkingstijd kan variëren afhankelijk van de gekozen betaalmethode.",
+  "assistance": "Voor hulp bij een opname kunt u contact opnemen met uw toegewezen accountmanager via e-mail of een ander veilig communicatiekanaal. Hij of zij begeleidt u tijdens het opnameproces en verstrekt alle benodigde instructies.",
+  "assignedTradingDesk": "Toegewezen Trading Desk",
+  "complianceStatus": "Nalevingsstatus",
+  "verified": "GEVERIFIEERD",
+  "instructions": "Neem contact op met uw toegewezen accountmanager om een opname te starten. De fondsen worden vrijgegeven na succesvolle verificatie en goedkeuring.",
+  "contactButton": "Contact opnemen met accountmanager"
+},
+
 "sessionExpired": "Je sessie is verlopen. Log opnieuw in.",
 "verificationEmailSent": "Er is een nieuwe verificatie-e-mail verzonden. Controleer je inbox of spammap.",
 "pleaseLoginAgain": "Log opnieuw in.",
