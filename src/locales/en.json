@@ -320,6 +320,12 @@
   "signIn": "Sign In",
   "openAccount": "Open Account"
 },
+"homeInfo": {
+  "about": {
+    "title": "About Orion Trade Hub",
+    "description": "Orion Trade Hub is a next-generation trading platform built for real-time market execution, AI-powered analytics, and institutional-level performance across cryptocurrencies, forex, and global markets."
+  }
+},
   "footer": {
   "platform": "Platform",
   "markets": "Markets",
