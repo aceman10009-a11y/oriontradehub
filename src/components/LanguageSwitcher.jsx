@@ -1,31 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-const languages = [
-  { code: "en", label: "🇺🇸 English" },
-  { code: "fr", label: "🇫🇷 Français" },
-  { code: "de", label: "🇩🇪 Deutsch" },
-  { code: "es", label: "🇪🇸 Español" },
-  { code: "it", label: "🇮🇹 Italiano" },
-  { code: "pt", label: "🇵🇹 Português" },
-  { code: "nl", label: "🇳🇱 Nederlands" },
-  { code: "sv", label: "🇸🇪 Svenska" },
-  { code: "da", label: "🇩🇰 Dansk" },
-  { code: "no", label: "🇳🇴 Norsk" },
-  { code: "fi", label: "🇫🇮 Suomi" },
-  { code: "pl", label: "🇵🇱 Polski" },
+import { supportedLanguages } from "../config/languages";
 
-  { code: "ar", label: "🇸🇦 العربية" },
-  { code: "zh", label: "🇨🇳 中文" },
-  { code: "ja", label: "🇯🇵 日本語" },
-  { code: "ko", label: "🇰🇷 한국어" },
-
-  { code: "th", label: "🇹🇭 ไทย" },
-  { code: "uk", label: "🇺🇦 Українська" },
-  { code: "vi", label: "🇻🇳 Tiếng Việt" },
-  { code: "ms", label: "🇲🇾 Bahasa Melayu" },
-  { code: "ro", label: "🇷🇴 Română" },
-  { code: "ru", label: "🇷🇺 Русский" },
-];
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
@@ -66,14 +42,14 @@ const LanguageSwitcher = () => {
         className="language-switcher"
         value={i18n.language}
         onChange={(e) => {
-  const language = e.target.value;
+          const language = e.target.value;
 
-  i18n.changeLanguage(language);
+          i18n.changeLanguage(language);
 
-  localStorage.setItem("language", language);
-}}
+          localStorage.setItem("language", language);
+        }}
       >
-        {languages.map((lang) => (
+        {supportedLanguages.map((lang) => (
           <option key={lang.code} value={lang.code}>
             {lang.label}
           </option>

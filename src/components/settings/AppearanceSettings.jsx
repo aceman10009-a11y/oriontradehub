@@ -5,78 +5,39 @@ import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-toastify";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
+import { supportedLanguages } from "../../config/languages";
 
 const languages = [
   "English",
-  "Spanish",
-  "French",
   "German",
+  "French",
+  "Spanish",
+
   "Italian",
   "Portuguese",
   "Dutch",
+
+  "Swedish",
+  "Danish",
+  "Norwegian",
+  "Finnish",
+  "Polish",
+
   "Chinese",
   "Japanese",
   "Korean",
   "Arabic",
-  "Hindi",
 
-  // Europe
-  "Polish",
-  "Romanian",
-  "Greek",
-  "Turkish",
-  "Russian",
-  "Ukrainian",
-  "Czech",
-  "Hungarian",
-  "Swedish",
-  "Norwegian",
-  "Danish",
-  "Finnish",
-  "Icelandic",
-  "Albanian",
-  "Serbian",
-  "Croatian",
-  "Slovak",
-  "Slovenian",
-  "Lithuanian",
-  "Latvian",
-  "Estonian",
-
-  // Asia
   "Thai",
   "Vietnamese",
   "Malay",
-  "Indonesian",
-  "Bengali",
-  "Punjabi",
-  "Tamil",
-  "Telugu",
-  "Urdu",
-  "Persian",
-  "Hebrew",
-
-  // Africa
-  "Afrikaans",
-  "Swahili",
-  "Zulu",
-  "Xhosa",
-  "Yoruba",
-  "Igbo",
-  "Hausa",
-  "Amharic",
-
-  // Americas
-  "Haitian Creole",
-  "Quechua",
-  "Navajo",
-
-  // Classical
-  "Latin",
+  "Romanian",
+  "Russian",
+  "Ukrainian",
 ];
 
 export default function AppearanceSettings() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const { user, profile, setProfile } = useAuth();
 
@@ -109,37 +70,27 @@ export default function AppearanceSettings() {
         French: "fr",
         Spanish: "es",
 
-        Swedish: "sv",
-        Danish: "da",
-        Finnish: "fi",
-        Polish: "pl",
-
         Italian: "it",
         Portuguese: "pt",
         Dutch: "nl",
+
+        Swedish: "sv",
+        Danish: "da",
+        Norwegian: "no",
+        Finnish: "fi",
+        Polish: "pl",
+
         Chinese: "zh",
         Japanese: "ja",
         Korean: "ko",
         Arabic: "ar",
-        Hindi: "hi",
 
+        Thai: "th",
+        Vietnamese: "vi",
+        Malay: "ms",
         Romanian: "ro",
-        Greek: "el",
-        Turkish: "tr",
         Russian: "ru",
         Ukrainian: "uk",
-        Czech: "cs",
-        Hungarian: "hu",
-        Norwegian: "no",
-        Icelandic: "is",
-        Albanian: "sq",
-        Serbian: "sr",
-        Croatian: "hr",
-        Slovak: "sk",
-        Slovenian: "sl",
-        Lithuanian: "lt",
-        Latvian: "lv",
-        Estonian: "et",
       };
 
       const selectedLanguage =
@@ -150,15 +101,12 @@ export default function AppearanceSettings() {
       localStorage.setItem("language", selectedLanguage);
       localStorage.setItem("theme", theme);
 
-    document.documentElement.setAttribute(
-  "data-theme",
-  theme
-);
+      document.documentElement.setAttribute(
+        "data-theme",
+        theme
+      );
 
-localStorage.setItem(
-  "theme",
-  theme
-);
+      localStorage.setItem("theme", theme);
 
       const data = {
         language,
