@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
 const languages = [
   { code: "en", label: "🇺🇸 English" },
   { code: "fr", label: "🇫🇷 Français" },
@@ -12,20 +11,21 @@ const languages = [
   { code: "sv", label: "🇸🇪 Svenska" },
   { code: "da", label: "🇩🇰 Dansk" },
   { code: "no", label: "🇳🇴 Norsk" },
+  { code: "fi", label: "🇫🇮 Suomi" },
   { code: "pl", label: "🇵🇱 Polski" },
+
   { code: "ar", label: "🇸🇦 العربية" },
   { code: "zh", label: "🇨🇳 中文" },
   { code: "ja", label: "🇯🇵 日本語" },
   { code: "ko", label: "🇰🇷 한국어" },
-  {code: "fi",  label: "fi finish"},
-  { code: "th", name: "ไทย" },
-  { code: "vi", name: "Tiếng Việt" },
-  { code: "uk", name: "Українська" },
-  { code: "ru", name: "Русский" },
-  { code: "ms", name: "Bahasa Melayu" },
-   { code: "ro", name: "Română" },
-];
 
+  { code: "th", label: "🇹🇭 ไทย" },
+  { code: "uk", label: "🇺🇦 Українська" },
+  { code: "vi", label: "🇻🇳 Tiếng Việt" },
+  { code: "ms", label: "🇲🇾 Bahasa Melayu" },
+  { code: "ro", label: "🇷🇴 Română" },
+  { code: "ru", label: "🇷🇺 Русский" },
+];
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
