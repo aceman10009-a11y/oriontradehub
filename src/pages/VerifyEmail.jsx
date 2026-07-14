@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
-import PageSkeleton from "../components/loading/PageSkeleton";
 
 import { auth } from "../firebase/config";
 import { sendEmailVerification } from "firebase/auth";
@@ -11,11 +10,10 @@ import signupBackground from "../assets/auth/signup-background.png";
 
 const VerifyEmail = () => {
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [loading, setLoading] = useState(false);
   const [checking, setChecking] = useState(false);
-  const [pageLoading, setPageLoading] = useState(true);
 
   const resendEmail = async () => {
     if (!auth.currentUser) {
@@ -64,18 +62,6 @@ const VerifyEmail = () => {
     }
   };
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setPageLoading(false);
-    }, 600);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (pageLoading) {
-    return <PageSkeleton />;
-  }
-
   return (
     <div
       style={{
@@ -118,7 +104,7 @@ const VerifyEmail = () => {
           ✅
         </div>
 
-    <h1>{t("resendVerification")}</h1>
+        <h1>{t("resendVerification")}</h1>
 
         <p
           style={{

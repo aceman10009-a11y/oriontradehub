@@ -3,6 +3,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import PageSkeleton from "../components/loading/PageSkeleton";
 
 import {
   createUserWithEmailAndPassword,
@@ -42,7 +43,7 @@ const Signup = () => {
 
   const { t, i18n } = useTranslation();
 
-console.log("VerifyEmail language:", i18n.language);
+
   const navigate = useNavigate();
 
 
