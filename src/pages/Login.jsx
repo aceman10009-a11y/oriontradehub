@@ -25,6 +25,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -208,17 +209,21 @@ const Login = () => {
               fontSize: "14px",
             }}
           >
-            <label
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                cursor: "pointer",
-              }}
-            >
-              <input type="checkbox" />
-              {t("rememberMe")}
-            </label>
+         <label
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    cursor: "pointer",
+  }}
+>
+  <input
+    type="checkbox"
+    checked={rememberMe}
+    onChange={(e) => setRememberMe(e.target.checked)}
+  />
+  {t("rememberMe")}
+</label>
 
             <Link
               to="/forgot-password"

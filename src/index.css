@@ -223,7 +223,7 @@ section {
   letter-spacing: .5px;
 }
 
-.auth-form input,
+.auth-form input:not([type="checkbox"]),
 .auth-form select {
   width: 100%;
   padding: 14px;
@@ -236,6 +236,17 @@ section {
   transition: .25s;
   font-size: 15px;
   appearance: none;
+}
+
+.auth-form input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--cyan);
+  cursor: pointer;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 /* Dropdown options */
