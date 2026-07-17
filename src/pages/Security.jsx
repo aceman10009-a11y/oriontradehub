@@ -32,11 +32,7 @@ const Security = () => {
       <Timeline />
       <Compliance />
       <FAQ />
-
-      {/* ABOUT SECTION */}
       <AboutSecurity />
-
-      {/* SUPPORT SECTION */}
       <CTA />
 
       <Footer />

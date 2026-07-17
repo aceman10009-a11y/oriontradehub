@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
 const CTA = () => {
+  const { t } = useTranslation("security");
+
   const formRef = useRef();
   const navigate = useNavigate();
   const [sending, setSending] = useState(false);
@@ -10,7 +13,7 @@ const CTA = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (sending) return; // prevent double submit
+    if (sending) return;
 
     setSending(true);
 
@@ -22,12 +25,12 @@ const CTA = () => {
         "6sEG7U1PtrHRYzUwD"
       )
       .then(() => {
-        alert("Message sent successfully!");
+        alert(t("cta.alerts.success"));
         formRef.current.reset();
       })
       .catch((err) => {
         console.error("EmailJS Error:", err);
-        alert("Failed to send message.");
+        alert(t("cta.alerts.error"));
       })
       .finally(() => {
         setSending(false);
@@ -41,18 +44,18 @@ const CTA = () => {
           className="cta-primary"
           onClick={() => navigate("/signup")}
         >
-          Start Trading
+          {t("cta.startTrading")}
         </button>
       </div>
 
       <div className="support-form">
-        <h3>Contact Support</h3>
+        <h3>{t("cta.contactSupport")}</h3>
 
         <form ref={formRef} onSubmit={handleSubmit}>
           <input
             type="text"
             name="user_name"
-            placeholder="Full Name"
+            placeholder={t("cta.fullName")}
             required
             disabled={sending}
           />
@@ -60,21 +63,23 @@ const CTA = () => {
           <input
             type="email"
             name="user_email"
-            placeholder="Email Address"
+            placeholder={t("cta.emailAddress")}
             required
             disabled={sending}
           />
 
           <textarea
             name="message"
-            placeholder="How can we help?"
+            placeholder={t("cta.messagePlaceholder")}
             rows="5"
             required
             disabled={sending}
           />
 
           <button type="submit" disabled={sending}>
-            {sending ? "Sending..." : "Send Message"}
+            {sending
+              ? t("cta.sending")
+              : t("cta.sendMessage")}
           </button>
         </form>
       </div>

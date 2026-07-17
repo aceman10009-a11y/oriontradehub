@@ -1,36 +1,38 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./Timeline.css";
 
-const steps = [
-  {
-    number: "01",
-    title: "Account Verification",
-    text: "Every new account is verified before full platform access is granted.",
-  },
-  {
-    number: "02",
-    title: "Multi-Layer Protection",
-    text: "Passwords, two-factor authentication, and encrypted sessions secure every login.",
-  },
-  {
-    number: "03",
-    title: "Continuous Monitoring",
-    text: "Advanced systems monitor suspicious activity 24 hours a day.",
-  },
-  {
-    number: "04",
-    title: "Cold Asset Storage",
-    text: "Most customer assets remain securely stored offline for maximum protection.",
-  },
-];
-
 export default function Timeline() {
+  const { t } = useTranslation("security");
+
+  const steps = [
+    {
+      number: "01",
+      title: t("timeline.steps.0.title"),
+      text: t("timeline.steps.0.text"),
+    },
+    {
+      number: "02",
+      title: t("timeline.steps.1.title"),
+      text: t("timeline.steps.1.text"),
+    },
+    {
+      number: "03",
+      title: t("timeline.steps.2.title"),
+      text: t("timeline.steps.2.text"),
+    },
+    {
+      number: "04",
+      title: t("timeline.steps.3.title"),
+      text: t("timeline.steps.3.text"),
+    },
+  ];
+
   return (
     <section className="timeline-section">
-
       <div className="timeline-header">
-        <span>SECURITY PROCESS</span>
-        <h2>How Orion Protects Your Assets</h2>
+        <span>{t("timeline.badge")}</span>
+        <h2>{t("timeline.title")}</h2>
       </div>
 
       <div className="timeline-grid">
@@ -44,7 +46,6 @@ export default function Timeline() {
           </div>
         ))}
       </div>
-
     </section>
   );
 }

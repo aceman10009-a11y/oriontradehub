@@ -1,38 +1,38 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./FAQ.css";
 
-const faqData = [
-  {
-    q: "Is my account secure?",
-    a: "Yes. Every account is protected by multi-layer security including encryption, 2FA, and continuous monitoring.",
-  },
-  {
-    q: "Where are funds stored?",
-    a: "98% of digital assets are stored in cold wallets, completely offline and protected from online threats.",
-  },
-  {
-    q: "How does risk monitoring work?",
-    a: "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat.",
-  },
-  {
-    q: "Do you support institutional clients?",
-    a: "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading.",
-  },
-];
-
 export default function FAQ() {
+  const { t } = useTranslation("security");
   const [open, setOpen] = useState(null);
+
+  const faqData = [
+    {
+      q: t("faq.questions.account.question"),
+      a: t("faq.questions.account.answer"),
+    },
+    {
+      q: t("faq.questions.funds.question"),
+      a: t("faq.questions.funds.answer"),
+    },
+    {
+      q: t("faq.questions.monitoring.question"),
+      a: t("faq.questions.monitoring.answer"),
+    },
+    {
+      q: t("faq.questions.institutional.question"),
+      a: t("faq.questions.institutional.answer"),
+    },
+  ];
 
   return (
     <section className="faq-section">
-
       <div className="faq-header">
-        <span>HELP CENTER</span>
-        <h2>Frequently Asked Questions</h2>
+        <span>{t("faq.badge")}</span>
+        <h2>{t("faq.title")}</h2>
       </div>
 
       <div className="faq-container">
-
         {faqData.map((item, index) => (
           <div
             key={index}
@@ -51,9 +51,7 @@ export default function FAQ() {
             </div>
           </div>
         ))}
-
       </div>
-
     </section>
   );
 }

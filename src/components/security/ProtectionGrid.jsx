@@ -1,51 +1,51 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./ProtectionGrid.css";
 
-const protections = [
-  {
-    title: "Cold Storage",
-    text: "98% of digital assets remain securely stored offline to reduce exposure to online threats.",
-    icon: "❄️",
-  },
-  {
-    title: "256-bit Encryption",
-    text: "Enterprise-grade encryption protects every transaction and communication.",
-    icon: "🔐",
-  },
-  {
-    title: "Two-Factor Authentication",
-    text: "Additional verification ensures only authorized users can access accounts.",
-    icon: "🛡️",
-  },
-  {
-    title: "Risk Monitoring",
-    text: "Continuous monitoring detects suspicious activity in real time.",
-    icon: "📡",
-  },
-  {
-    title: "Secure Infrastructure",
-    text: "Hosted on resilient enterprise cloud infrastructure with multiple security layers.",
-    icon: "🏛️",
-  },
-  {
-    title: "Fraud Detection",
-    text: "Automated systems help identify abnormal account behaviour before threats escalate.",
-    icon: "⚡",
-  },
-];
-
 export default function ProtectionGrid() {
+  const { t } = useTranslation("security");
+
+  const protections = [
+    {
+      title: t("protectionGrid.cards.coldStorage.title"),
+      text: t("protectionGrid.cards.coldStorage.description"),
+      icon: "❄️",
+    },
+    {
+      title: t("protectionGrid.cards.encryption.title"),
+      text: t("protectionGrid.cards.encryption.description"),
+      icon: "🔐",
+    },
+    {
+      title: t("protectionGrid.cards.twoFactor.title"),
+      text: t("protectionGrid.cards.twoFactor.description"),
+      icon: "🛡️",
+    },
+    {
+      title: t("protectionGrid.cards.monitoring.title"),
+      text: t("protectionGrid.cards.monitoring.description"),
+      icon: "📡",
+    },
+    {
+      title: t("protectionGrid.cards.infrastructure.title"),
+      text: t("protectionGrid.cards.infrastructure.description"),
+      icon: "🏛️",
+    },
+    {
+      title: t("protectionGrid.cards.fraud.title"),
+      text: t("protectionGrid.cards.fraud.description"),
+      icon: "⚡",
+    },
+  ];
+
   return (
     <section className="protection-section">
       <div className="protection-header">
-        <span>SECURITY FEATURES</span>
+        <span>{t("protectionGrid.badge")}</span>
 
-        <h2>Multiple Layers of Protection</h2>
+        <h2>{t("protectionGrid.title")}</h2>
 
-        <p>
-          Every Orion Trade Hub account is protected by multiple independent
-          security systems working together.
-        </p>
+        <p>{t("protectionGrid.description")}</p>
       </div>
 
       <div className="protection-grid">

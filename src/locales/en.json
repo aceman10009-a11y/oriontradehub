@@ -243,21 +243,7 @@
       }
     }
   },
-   
-  "securityMobile": {
-    "title": "Security & Mobile Platform",
-    "description": "Orion Trade Hub is built with institutional-grade security, encrypted infrastructure, and real-time risk monitoring systems. Your funds and data are protected with multi-layer safeguards.",
-    "features": {
-      "security": "Bank-Level Security",
-      "markets": "24/7 Global Markets",
-      "ai": "AI Assisted Trading"
-    },
-    "buttons": {
-      "appStore": "App Store",
-      "googlePlay": "Google Play"
-    },
-    "liveSnapshot": "LIVE MARKET SNAPSHOT"
-  },
+
   "hero": {
     "badge": "ORION TRADE HUB",
     "title": "Institutional Trading",
@@ -395,31 +381,46 @@
   "contactButton": "Contact Account Manager"
 },
 
-  "sessionExpired": "Your session has expired. Please sign in again.",
-  "verificationEmailSent": "A new verification email has been sent. Please check your inbox or spam folder.",
-  "pleaseLoginAgain": "Please login again.",
-  "emailVerified": "Email verified successfully!",
-  "emailNotVerified": "Your email has not been verified yet. Please click the verification link in your email first.",
-  "accountCreatedTitle": "Account Created Successfully",
-  "accountCreatedDescription": "Your Orion Trade Hub account has been created successfully. We've sent a verification email to your inbox. Please verify your email before signing in.",
-  "nextSteps": "Next Steps",
-  "checkInbox": "Check your Inbox.",
-  "checkSpam": "Check your Spam or Junk folder.",
-  "clickVerification": "Click the verification link.",
-  "returnLogin": "Return here and sign in.",
-  "checking": "Checking...",
-  "verifiedEmailButton": "I've Verified My Email",
-  "sending": "Sending...",
-  "resendVerification": "Resend Verification Email",
-  "backToLogin": "Back to Login",
-  "enterEmailAddress": "Please enter your email address.",
-  "unableToSendResetEmail": "Unable to send password reset email.",
-  "passwordResetEmailSent": "Password reset email sent successfully. Please check your inbox or spam folder.",
-  "forgotPassword": "Forgot Password",
-  "forgotPasswordDescription": "Enter the email address associated with your account. We'll send you a secure password reset link.",
-  "passwordResetEmailSentTitle": "Password Reset Email Sent",
-  "passwordResetEmailSentDescription": "Check your inbox and spam folder. Click the password reset link and create your new password.",
-  "emailAddress": "Email Address",
-  "enterYourEmail": "Enter your email",
-  "sendPasswordResetLink": "Send Password Reset Link"
+"securityMobile": {
+  "title": "Institutional-Grade Security",
+  "description": "Your assets are protected by enterprise-grade encryption, multi-layer authentication, continuous monitoring, and resilient cloud infrastructure built for modern financial markets.",
+  "features": {
+    "security": "Enterprise Security",
+    "markets": "Real-Time Market Protection",
+    "ai": "AI Threat Monitoring"
+  },
+  "buttons": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "liveSnapshot": "Live Security Snapshot"
+},
+
+"sessionExpired": "Your session has expired. Please sign in again.",
+"verificationEmailSent": "A new verification email has been sent. Please check your inbox or spam folder.",
+"pleaseLoginAgain": "Please login again.",
+"emailVerified": "Email verified successfully!",
+"emailNotVerified": "Your email has not been verified yet. Please click the verification link in your email first.",
+"accountCreatedTitle": "Account Created Successfully",
+"accountCreatedDescription": "Your Orion Trade Hub account has been created successfully. We've sent a verification email to your inbox. Please verify your email before signing in.",
+"nextSteps": "Next Steps",
+"checkInbox": "Check your Inbox.",
+"checkSpam": "Check your Spam or Junk folder.",
+"clickVerification": "Click the verification link.",
+"returnLogin": "Return here and sign in.",
+"checking": "Checking...",
+"verifiedEmailButton": "I've Verified My Email",
+"sending": "Sending...",
+"resendVerification": "Resend Verification Email",
+"backToLogin": "Back to Login",
+"enterEmailAddress": "Please enter your email address.",
+"unableToSendResetEmail": "Unable to send password reset email.",
+"passwordResetEmailSent": "Password reset email sent successfully. Please check your inbox or spam folder.",
+"forgotPassword": "Forgot Password",
+"forgotPasswordDescription": "Enter the email address associated with your account. We'll send you a secure password reset link.",
+"passwordResetEmailSentTitle": "Password Reset Email Sent",
+"passwordResetEmailSentDescription": "Check your inbox and spam folder. Click the password reset link and create your new password.",
+"emailAddress": "Email Address",
+"enterYourEmail": "Enter your email",
+"sendPasswordResetLink": "Send Password Reset Link"
 }

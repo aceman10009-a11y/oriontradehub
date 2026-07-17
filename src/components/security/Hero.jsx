@@ -1,7 +1,9 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./Hero.css";
 
 const Hero = () => {
+  const { t } = useTranslation("security");
   const reduceMotion = useReducedMotion();
 
   const fadeUp = {
@@ -27,40 +29,37 @@ const Hero = () => {
 
       <div className="security-hero-container">
         {/* Left Content */}
-<motion.div
-  className="security-hero-content"
-  initial="hidden"
-  animate="visible"
->
-  <motion.span
-    className="security-badge"
-    variants={fadeUp}
-    custom={0}
-  >
-    INSTITUTIONAL • MULTI-LAYER PROTECTION
-  </motion.span>
+        <motion.div
+          className="security-hero-content"
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.span
+            className="security-badge"
+            variants={fadeUp}
+            custom={0}
+          >
+            {t("hero.badge")}
+          </motion.span>
 
-  <motion.h1
-    className="security-title"
-    variants={fadeUp}
-    custom={0.15}
-  >
-    Institutional-Grade
-    <br />
-    Security
-  </motion.h1>
+          <motion.h1
+            className="security-title"
+            variants={fadeUp}
+            custom={0.15}
+          >
+            {t("hero.title")}
+            <br />
+            {t("hero.titleHighlight")}
+          </motion.h1>
 
-  <motion.p
-    className="security-description"
-    variants={fadeUp}
-    custom={0.3}
-  >
-    Orion Trade Hub protects digital assets using enterprise-grade
-    encryption, continuous threat monitoring, multi-layer account
-    protection, and resilient infrastructure designed for modern
-    financial markets.
-  </motion.p>
-</motion.div>
+          <motion.p
+            className="security-description"
+            variants={fadeUp}
+            custom={0.3}
+          >
+            {t("hero.description")}
+          </motion.p>
+        </motion.div>
 
         {/* Right Graphic */}
         <motion.div
@@ -78,22 +77,15 @@ const Hero = () => {
             delay: 0.25,
           }}
         >
-        <div className="shield-wrapper"></div>
+          <div className="shield-wrapper"></div>
 
-  <div className="shield-system">
+          <div className="shield-system">
+            <div className="ring ring-one" />
+            <div className="ring ring-two" />
+            <div className="ring ring-three" />
 
-    <div className="ring ring-one" />
-
-    <div className="ring ring-two" />
-
-    <div className="ring ring-three" />
-
-    <div className="shield-core">
-
-              <svg
-                viewBox="0 0 64 64"
-                className="shield-icon"
-              >
+            <div className="shield-core">
+              <svg viewBox="0 0 64 64" className="shield-icon">
                 <path
                   d="M32 6
                      L52 14
@@ -122,9 +114,7 @@ const Hero = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-
             </div>
-
           </div>
         </motion.div>
       </div>
