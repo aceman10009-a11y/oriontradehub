@@ -216,90 +216,90 @@
       "Une expérience de marché très bien conçue."
     ]
   },
-  "contact": {
-    "badge": "CONTACTER ORION",
-    "title": "Parlez avec notre équipe",
-    "description": "Nos spécialistes sont disponibles pour vous aider avec l'ouverture de compte, l'utilisation de la plateforme et les services institutionnels.",
-    "email": "Email:",
-    "institutional": "Institutionnel:"
+ "contact": {
+  "badge": "CONTACTER ORION",
+  "title": "Parlez avec notre équipe",
+  "description": "Nos spécialistes sont disponibles pour vous aider avec l'ouverture de compte, l'utilisation de la plateforme et les services institutionnels.",
+  "email": "E-mail :",
+  "institutional": "Institutionnel :"
+},
+"marketsSection": {
+  "badge": "MARCHÉS MONDIAUX EN DIRECT",
+  "title": "Tradez les",
+  "titleHighlight": "Meilleurs Marchés Mondiaux",
+  "description": "Accédez aux cryptomonnaies, au forex, aux matières premières et aux principaux indices grâce à la plateforme de trading de niveau institutionnel d'Orion Trade Hub. Surveillez les mouvements des prix en temps réel et exécutez vos transactions en toute confiance."
+},
+"features": {
+  "header": {
+    "badge": "FONCTIONNALITÉS DE LA PLATEFORME",
+    "title": "Tout ce dont vous avez besoin",
+    "titleHighlight": "Pour trader plus intelligemment.",
+    "description": "Orion Trade Hub combine une exécution de niveau institutionnel, des analyses alimentées par l'IA, une gestion avancée de portefeuille, le trading multi-actifs et une sécurité de niveau entreprise dans une expérience de trading premium."
   },
-  "marketsSection": {
-    "badge": "MARCHÉS MONDIAUX EN DIRECT",
-    "title": "Trade The World's",
-    "titleHighlight": "Top Markets",
-    "description": "Access cryptocurrencies, forex, commodities and major indices through Orion Trade Hub's institutional-grade trading platform. Monitor price movements in real time and execute trades with confidence."
-  },
-  "features": {
-    "header": {
-      "badge": "FONCTIONNALITÉS DE LA PLATEFORME",
-      "title": "Everything You Need",
-      "titleHighlight": "To Trade Smarter.",
-      "description": "Orion Trade Hub combines institutional execution, AI-powered insights, advanced portfolio management, multi-asset trading and enterprise-grade security into one premium trading experience."
+  "cards": {
+    "vip": {
+      "title": "Comptes VIP",
+      "description": "Exécution premium, tarification institutionnelle et gestionnaires de compte dédiés."
     },
-    "cards": {
-      "vip": {
-        "title": "VIP Accounts",
-        "description": "Premium execution, institutional pricing and dedicated relationship managers."
-      },
-      "ai": {
-        "title": "AI Insights",
-        "description": "Real-time market intelligence powered by advanced trading algorithms."
-      },
-      "execution": {
-        "title": "Fast Execution",
-        "description": "Ultra-low latency infrastructure for rapid order execution worldwide."
-      },
-      "security": {
-        "title": "Secure Platform",
-        "description": "Enterprise-grade encryption and multi-layer account protection."
-      },
-      "assets": {
-        "title": "Multi-Asset Trading",
-        "description": "Trade crypto, forex, commodities, indices and equities from one account."
-      },
-      "portfolio": {
-        "title": "Managed Portfolios",
-        "description": "Professional portfolio management with institutional risk controls."
-      }
-    }
-  },
-  "hero": {
-    "badge": "ORION TRADE HUB",
-    "title": "Trading institutionnel",
-    "titleHighlight": "Créé pour tous.",
-    "subtitle": "Experience institutional-grade execution across Crypto, Forex, Commodities and Global Equities through one beautifully engineered trading platform.",
-    "buttons": {
-      "openAccount": "Ouvrir un compte réel",
-      "explorePlatform": "Explorer la plateforme"
+    "ai": {
+      "title": "Analyses IA",
+      "description": "Intelligence de marché en temps réel alimentée par des algorithmes de trading avancés."
     },
-    "trust": {
-      "security": "Bank-Level Security",
-      "markets": "24/7 Global Markets",
-      "ai": "AI Assisted Trading"
+    "execution": {
+      "title": "Exécution Rapide",
+      "description": "Infrastructure à très faible latence pour une exécution rapide des ordres dans le monde entier."
+    },
+    "security": {
+      "title": "Plateforme Sécurisée",
+      "description": "Chiffrement de niveau entreprise et protection multicouche des comptes."
+    },
+    "assets": {
+      "title": "Trading Multi-Actifs",
+      "description": "Tradez les cryptomonnaies, le forex, les matières premières, les indices et les actions depuis un seul compte."
+    },
+    "portfolio": {
+      "title": "Portefeuilles Gérés",
+      "description": "Gestion professionnelle de portefeuille avec des contrôles des risques de niveau institutionnel."
     }
+  }
+},
+"hero": {
+  "badge": "ORION TRADE HUB",
+  "title": "Trading institutionnel",
+  "titleHighlight": "Créé pour tous.",
+  "subtitle": "Profitez d'une exécution de niveau institutionnel sur les cryptomonnaies, le Forex, les matières premières et les actions mondiales grâce à une plateforme de trading élégamment conçue.",
+  "buttons": {
+    "openAccount": "Ouvrir un compte réel",
+    "explorePlatform": "Explorer la plateforme"
   },
-  "footer": {
-    "platform": "Platform",
-    "markets": "Markets",
-    "trading": "Trading",
-    "mobileApp": "Mobile App",
-    "security": "Security",
-    "company": "Company",
-    "about": "About",
-    "support": "Support",
-    "contact": "Contact",
-    "careers": "Careers",
-    "close": "Close",
-    "mobileMaintenance": "Mobile apps are currently under maintenance. They will be available soon.",
-    "careersMessage": "Careers are coming soon. We are currently building our hiring program."
-  },
-  "homeInfo": {
-    "about": {
-      "title": "À propos d'Orion Trade Hub",
-      "description": "Orion Trade Hub est une plateforme de trading nouvelle génération conçue pour l'exécution des marchés en temps réel, les analyses assistées par IA et des performances de niveau institutionnel sur les cryptomonnaies, le forex et les marchés mondiaux."
-    }
-  },
-  "cardServices": {
+  "trust": {
+    "security": "Sécurité de niveau bancaire",
+    "markets": "Marchés mondiaux 24h/24 et 7j/7",
+    "ai": "Trading assisté par IA"
+  }
+},
+"footer": {
+  "platform": "Plateforme",
+  "markets": "Marchés",
+  "trading": "Trading",
+  "mobileApp": "Application mobile",
+  "security": "Sécurité",
+  "company": "Entreprise",
+  "about": "À propos",
+  "support": "Support",
+  "contact": "Contact",
+  "careers": "Carrières",
+  "close": "Fermer",
+  "mobileMaintenance": "Les applications mobiles sont actuellement en maintenance. Elles seront bientôt disponibles.",
+  "careersMessage": "Les carrières seront bientôt disponibles. Nous construisons actuellement notre programme de recrutement."
+},
+"homeInfo": {
+  "about": {
+    "title": "À propos d'Orion Trade Hub",
+    "description": "Orion Trade Hub est une plateforme de trading nouvelle génération conçue pour l'exécution des marchés en temps réel, les analyses assistées par IA et des performances de niveau institutionnel sur les cryptomonnaies, le forex et les marchés mondiaux."
+  }
+},
+"cardServices": {
   "title": "Carte de Débit Orion",
   "description": "Gérez votre demande de Carte de Débit Orion, suivez son statut et accédez à des services bancaires premium.",
   "preview": "Aperçu de la carte",
@@ -327,14 +327,14 @@
   "applicationSubmitted": "Votre demande de Carte de Débit Orion a bien été reçue.",
   "applicationFailed": "Impossible d'envoyer la demande. Veuillez réessayer.",
   "admin": {
-  "profitUpdated": "Bénéfice mis à jour avec succès.",
-  "profitUpdateFailed": "Échec de la mise à jour du bénéfice.",
-  "tradeClosed": "Transaction clôturée avec succès.",
-  "tradeCloseFailed": "Échec de la clôture de la transaction.",
-  "userNotFound": "Utilisateur introuvable.",
-  "depositMessage": "Les dépôts sont traités manuellement par votre gestionnaire de compte attitré. Veuillez contacter le support pour approvisionner votre compte d'investissement.",
-  "withdrawMessage": "Les demandes de retrait sont examinées et traitées par votre gestionnaire de compte attitré. Veuillez contacter le support pour effectuer un retrait."
-}
+    "profitUpdated": "Bénéfice mis à jour avec succès.",
+    "profitUpdateFailed": "Échec de la mise à jour du bénéfice.",
+    "tradeClosed": "Transaction clôturée avec succès.",
+    "tradeCloseFailed": "Échec de la clôture de la transaction.",
+    "userNotFound": "Utilisateur introuvable.",
+    "depositMessage": "Les dépôts sont traités manuellement par votre gestionnaire de compte attitré. Veuillez contacter le support pour approvisionner votre compte d'investissement.",
+    "withdrawMessage": "Les demandes de retrait sont examinées et traitées par votre gestionnaire de compte attitré. Veuillez contacter le support pour effectuer un retrait."
+  }
 },
 
 "depositModal": {
