@@ -166,12 +166,6 @@
     "signIn": "Connexion",
     "openAccount": "Ouvrir un compte"
   },
-  "markets": {
-    "badge": "MARCHÉS MONDIAUX",
-    "title": "Accédez aux",
-    "titleHighlight": "marchés mondiaux",
-    "description": "Négociez les crypto-monnaies, le forex et les actifs mondiaux avec une technologie de marché avancée."
-  },
   "mobile": {
     "label": "PLATEFORME MOBILE",
     "title": "Tradez partout.",
@@ -223,7 +217,7 @@
   "email": "E-mail :",
   "institutional": "Institutionnel :"
 },
-"marketsSection": {
+"markets": {
   "badge": "MARCHÉS MONDIAUX EN DIRECT",
   "title": "Tradez les",
   "titleHighlight": "Meilleurs Marchés Mondiaux",

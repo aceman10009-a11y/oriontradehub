@@ -9,7 +9,7 @@
   "offline": "OFFLINE",
   "disconnected": "Verbinding verbroken",
   "market": "Markt",
-  "markets": "Markten",
+  "marketsLabel": "Markten",
   "searchMarkets": "Zoek markten...",
   "selectedMarket": "Geselecteerde markt",
   "currentPrice": "Huidige prijs",
@@ -157,7 +157,7 @@
   "weakPassword": "Het wachtwoord moet minimaal 6 tekens bevatten.",
   "invalidEmail": "Voer een geldig e-mailadres in.",
   "createAccountTitle": "Account aanmaken",
- "marketsSection": {
+ "markets": {
   "badge": "LIVE WERELDMARKTEN",
   "title": "Handel Op De",
   "titleHighlight": "Topmarkten Van De Wereld",

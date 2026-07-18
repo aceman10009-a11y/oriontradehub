@@ -11,7 +11,7 @@
   "disconnected": "Terputus",
 
   "market": "Pasaran",
-  "markets": "Pasaran",
+ "marketsLabel": "Pasaran",
   "searchMarkets": "Cari pasaran...",
   "selectedMarket": "Pasaran Dipilih",
   "currentPrice": "Harga Semasa",
@@ -198,7 +198,7 @@
   "weakPassword": "Kata laluan mestilah sekurang-kurangnya 6 aksara.",
   "invalidEmail": "Sila masukkan alamat e-mel yang sah.",
 
-  "marketsSection": {
+  "markets": {
     "badge": "PASARAN GLOBAL LANGSUNG",
     "title": "Dagangkan",
     "titleHighlight": "Pasaran Terbaik Dunia",

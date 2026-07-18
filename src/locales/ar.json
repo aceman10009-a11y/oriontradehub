@@ -9,7 +9,7 @@
   "offline": "غير متصل",
   "disconnected": "تم قطع الاتصال",
   "market": "السوق",
-  "markets": "الأسواق",
+  "marketsLabel": "الأسواق",
   "searchMarkets": "البحث عن الأسواق...",
   "selectedMarket": "السوق المحدد",
   "currentPrice": "السعر الحالي",
@@ -157,7 +157,7 @@
   "weakPassword": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.",
   "invalidEmail": "يرجى إدخال بريد إلكتروني صالح.",
   "createAccountTitle": "إنشاء حساب",
-  "marketsSection": {
+  "markets": {
   "badge": "الأسواق العالمية المباشرة",
   "title": "تداول في",
   "titleHighlight": "أفضل الأسواق العالمية",

@@ -1,205 +1,203 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "INSTITUȚIONAL • PROTECȚIE MULTISTRAT",
+    "title": "Securitate de",
+    "titleHighlight": "Nivel Instituțional",
+    "description": "Orion Trade Hub protejează activele digitale utilizând criptare de nivel enterprise, monitorizare continuă a amenințărilor, protecție a conturilor pe mai multe niveluri și o infrastructură rezilientă concepută pentru piețele financiare moderne."
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
+      "label": "Criptare",
       "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "description": "Infrastructură criptată end-to-end"
     },
     "uptime": {
-      "label": "Uptime",
-      "value": "99.99%",
-      "description": "Continuous platform availability"
+      "label": "Disponibilitate",
+      "value": "99,99%",
+      "description": "Disponibilitate continuă a platformei"
     },
     "monitoring": {
-      "label": "Monitoring",
+      "label": "Monitorizare",
       "value": "24/7",
-      "description": "Real-time security surveillance"
+      "description": "Supraveghere de securitate în timp real"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "Protecție",
+      "value": "Multistrat",
+      "description": "Sistem avansat de apărare împotriva riscurilor"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "PROCES DE SECURITATE",
+    "title": "Cum Îți Protejează Orion Activele",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "Verificarea Contului",
+        "text": "Fiecare cont nou este verificat înainte ca accesul complet la platformă să fie acordat."
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "Protecție Multistrat",
+        "text": "Parolele, autentificarea în doi pași și sesiunile criptate securizează fiecare autentificare."
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "Monitorizare Continuă",
+        "text": "Sistemele avansate monitorizează activitățile suspecte 24 de ore pe zi."
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "Stocare Offline",
+        "text": "Majoritatea activelor clienților sunt păstrate în siguranță offline pentru protecție maximă."
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "FUNCȚII DE SECURITATE",
+    "title": "Mai Multe Niveluri de Protecție",
+    "description": "Fiecare cont Orion Trade Hub este protejat de mai multe sisteme independente de securitate care lucrează împreună.",
     "cards": {
       "coldStorage": {
         "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "description": "98% dintre activele digitale sunt păstrate în siguranță offline pentru a reduce expunerea la amenințările online."
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "Criptare 256-bit",
+        "description": "Criptarea de nivel enterprise protejează fiecare tranzacție și comunicare."
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "Autentificare în Doi Pași",
+        "description": "Verificarea suplimentară asigură că doar utilizatorii autorizați pot accesa conturile."
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "Monitorizare a Riscurilor",
+        "description": "Monitorizarea continuă detectează activitățile suspecte în timp real."
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "Infrastructură Securizată",
+        "description": "Găzduită pe o infrastructură cloud enterprise rezilientă cu multiple niveluri de securitate."
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "Detectarea Fraudelor",
+        "description": "Sistemele automate ajută la identificarea comportamentelor neobișnuite ale conturilor înainte ca amenințările să escaladeze."
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "ÎNCREDERE ȘI CONFORMITATE",
+    "title": "Construită pe Baza Standardelor de Securitate",
+    "description": "Orion Trade Hub urmează practici moderne de securitate concepute pentru protejarea conturilor clienților, a informațiilor personale și a activelor digitale.",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "Monitorizare AML",
+        "description": "Monitorizarea continuă împotriva spălării banilor ajută la identificarea activităților suspecte."
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "Verificare KYC",
+        "description": "Verificarea identității protejează atât utilizatorii, cât și integritatea platformei."
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "Protecția Datelor",
+        "description": "Informațiile sensibile ale clienților sunt criptate și gestionate în siguranță."
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "Controale de Risc",
+        "description": "Sistemele automate de securitate evaluează continuu comportamentul conturilor și potențialele amenințări."
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "CENTRU DE AJUTOR",
+    "title": "Întrebări Frecvente",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "Este contul meu securizat?",
+        "answer": "Da. Fiecare cont este protejat prin securitate multistrat, inclusiv criptare, autentificare în doi pași și monitorizare continuă."
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "Unde sunt stocate fondurile?",
+        "answer": "98% dintre activele digitale sunt stocate în portofele reci (cold wallets), complet offline și protejate împotriva amenințărilor online."
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "Cum funcționează monitorizarea riscurilor?",
+        "answer": "Sistemele noastre analizează comportamentul în timp real pentru a detecta și preveni activitățile suspecte înainte ca acestea să devină o amenințare."
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "Oferiți servicii pentru clienți instituționali?",
+        "answer": "Da. Orion Trade Hub este construită pe o infrastructură de nivel instituțional pentru tranzacționare profesională și operațiuni de volum ridicat."
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "Începe Tranzacționarea",
+    "contactSupport": "Contactează Suportul",
+    "fullName": "Nume Complet",
+    "emailAddress": "Adresă de E-mail",
+    "messagePlaceholder": "Cum vă putem ajuta?",
+    "sendMessage": "Trimite Mesajul",
+    "sending": "Se trimite...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "Mesaj trimis cu succes!",
+      "error": "Trimiterea mesajului a eșuat."
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "Despre Securitatea Orion",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "Securitatea nu este o funcție adăugată după dezvoltare — este fundația pe care este construit Orion Trade Hub. Fiecare nivel al infrastructurii noastre, fiecare proces de autentificare și fiecare procedură operațională sunt create pentru protejarea activelor clienților, păstrarea confidențialității și menținerea celui mai înalt nivel de integritate al platformei.",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. Securitatea Începe cu Arhitectura",
+        "text": "Orion Trade Hub este proiectat cu securitatea în centrul fiecărei decizii, nu ca un element adăugat ulterior. Din momentul în care un utilizator creează un cont și până la fiecare autentificare, solicitare de depunere, aprobare de retragere și activitate de tranzacționare, mai multe niveluri de protecție lucrează împreună pentru reducerea riscurilor și protejarea informațiilor sensibile."
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+      {
+        "title": "2. Criptare de Nivel Enterprise",
+        "text": "Informațiile sensibile merită protecție de nivel enterprise. Orion Trade Hub utilizează canale de comunicare criptate concepute pentru a păstra informațiile protejate atunci când acestea sunt transferate între dispozitivul utilizatorului și serverele noastre."
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "3. Monitorizare Continuă",
+        "text": "Securitatea cibernetică este o responsabilitate permanentă, nu o implementare unică. Orion Trade Hub monitorizează continuu activitatea platformei pentru modele care pot indica încercări de acces neautorizat, comportamente suspecte de autentificare, activitate neobișnuită a conturilor sau solicitări anormale de tranzacții."
+      },
+            {
+        "title": "4. Protecția Contului",
+        "text": "Fiecare cont Orion Trade Hub este protejat prin mai multe mecanisme de verificare a identității, concepute pentru a reduce posibilitatea accesului neautorizat."
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "5. Infrastructură Fiabilă",
+        "text": "O infrastructură fiabilă joacă un rol esențial în protejarea platformelor financiare. Orion Trade Hub este construită având ca obiective principale stabilitatea, redundanța și reziliența operațională."
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "6. Conformitate și Operațiuni Responsabile",
+        "text": "Orion Trade Hub consideră că serviciile financiare responsabile necesită transparență, responsabilitate și standarde operaționale clar definite."
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "7. Protecție Împotriva Fraudelor",
+        "text": "Prevenirea fraudelor necesită vigilență constantă. Orion Trade Hub utilizează multiple proceduri de verificare concepute pentru identificarea solicitărilor suspecte înainte ca acțiunile sensibile asupra conturilor să fie finalizate."
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "8. Confidențialitatea Clienților",
+        "text": "Protejarea confidențialității clienților reprezintă o responsabilitate fundamentală. Informațiile personale sunt colectate doar atunci când sunt necesare pentru furnizarea serviciilor, menținerea securității conturilor și susținerea operațiunilor platformei."
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
+      {
+        "title": "9. Îmbunătățire Continuă",
+        "text": "Peisajul securității cibernetice evoluează constant, iar strategia noastră de securitate trebuie să evolueze odată cu acesta. Orion Trade Hub se angajează să revizuiască, îmbunătățească și consolideze continuu securitatea platformei."
+      },
 
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. Angajamentul Nostru",
+        "text": "Dincolo de orice tehnologie, proces sau instrument de securitate există un angajament simplu: protejarea persoanelor care au încredere în Orion Trade Hub pe parcursul călătoriei lor investiționale."
+      }
+    ]
+  }
 }

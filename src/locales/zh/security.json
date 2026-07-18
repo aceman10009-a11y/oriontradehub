@@ -1,205 +1,203 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "机构级 • 多层防护",
+    "title": "机构级",
+    "titleHighlight": "安全保障",
+    "description": "Orion Trade Hub 通过企业级加密、持续威胁监控、多层账户保护以及为现代金融市场打造的高弹性基础设施，全面保护数字资产。"
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
+      "label": "加密技术",
       "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "description": "端到端加密基础设施"
     },
     "uptime": {
-      "label": "Uptime",
+      "label": "运行时间",
       "value": "99.99%",
-      "description": "Continuous platform availability"
+      "description": "平台持续稳定运行"
     },
     "monitoring": {
-      "label": "Monitoring",
+      "label": "安全监控",
       "value": "24/7",
-      "description": "Real-time security surveillance"
+      "description": "全天候实时安全监测"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "保护级别",
+      "value": "多层防护",
+      "description": "先进风险防御系统"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "安全流程",
+    "title": "Orion 如何保护您的资产",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "账户验证",
+        "text": "每个新账户都会经过验证，然后才能获得完整的平台访问权限。"
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "多层保护",
+        "text": "密码、双因素身份验证以及加密会话共同保护每一次登录。"
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "持续监控",
+        "text": "先进系统全天候监控可疑活动。"
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "冷存储",
+        "text": "大部分客户资产都会安全存储在线下环境中，以实现最高级别的保护。"
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "安全功能",
+    "title": "多重安全防护层",
+    "description": "每个 Orion Trade Hub 账户都受到多个独立安全系统的共同保护。",
     "cards": {
       "coldStorage": {
-        "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "title": "冷存储",
+        "description": "98%的数字资产安全存储于离线环境中，以降低在线威胁风险。"
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "256位加密",
+        "description": "企业级加密技术保护每一笔交易和通信。"
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "双因素身份验证",
+        "description": "额外验证确保只有授权用户才能访问账户。"
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "风险监控",
+        "description": "持续监控系统能够实时检测可疑活动。"
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "安全基础设施",
+        "description": "运行于具有多层安全保护的高可靠企业级云基础设施之上。"
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "欺诈检测",
+        "description": "自动化系统帮助识别异常账户行为，防止威胁升级。"
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "信任与合规",
+    "title": "以安全标准为核心构建",
+    "description": "Orion Trade Hub 遵循现代安全实践，旨在保护客户账户、个人信息以及数字资产。",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "AML 监控",
+        "description": "持续的反洗钱监控帮助识别可疑活动。"
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "KYC 身份验证",
+        "description": "身份验证保护用户安全并维护平台完整性。"
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "数据保护",
+        "description": "客户敏感信息经过加密并得到安全管理。"
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "风险控制",
+        "description": "自动化安全系统持续评估账户行为以及潜在威胁。"
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "帮助中心",
+    "title": "常见问题",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "我的账户安全吗？",
+        "answer": "是的。每个账户都受到多层安全保护，包括加密技术、双因素身份验证以及持续监控。"
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "资金存储在哪里？",
+        "answer": "98%的数字资产存储在冷钱包中，完全离线运行，并受到在线威胁保护。"
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "风险监控如何运作？",
+        "answer": "我们的系统实时分析行为，在可疑活动发展成为威胁之前进行检测和预防。"
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "你们支持机构客户吗？",
+        "answer": "是的。Orion Trade Hub 采用机构级基础设施，为专业交易和高交易量客户提供支持。"
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "开始交易",
+    "contactSupport": "联系支持",
+    "fullName": "全名",
+    "emailAddress": "电子邮箱地址",
+    "messagePlaceholder": "我们可以如何帮助您？",
+    "sendMessage": "发送消息",
+    "sending": "发送中...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "消息发送成功！",
+      "error": "消息发送失败。"
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "关于 Orion 安全",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "安全并不是开发完成后添加的功能，而是 Orion Trade Hub 建立的基础。我们的每一层基础设施、每一个身份验证流程以及每一项运营程序，都围绕保护客户资产、维护隐私以及确保平台最高完整性而设计。",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. 安全始于架构设计",
+        "text": "Orion Trade Hub 从设计之初就将安全作为每项决策的核心，而不是事后的补充。从用户创建账户开始，到后续每次登录、充值请求、提款审批以及交易活动，多层保护机制协同工作，以降低风险并保护敏感信息。"
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+      {
+        "title": "2. 企业级加密",
+        "text": "敏感信息需要企业级保护。Orion Trade Hub 使用加密通信渠道，确保信息在用户设备与我们的服务器之间传输时始终受到保护。"
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "3. 持续安全监控",
+        "text": "网络安全是一项持续责任，而不是一次性的部署。Orion Trade Hub 持续监控平台活动，以识别可能代表未经授权访问尝试、可疑登录行为、异常账户活动或异常交易请求的模式。"
+      },
+            {
+        "title": "4. 账户保护",
+        "text": "每个 Orion Trade Hub 账户都通过多种身份验证机制进行保护，以降低未经授权访问的可能性。"
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "5. 可靠基础设施",
+        "text": "可靠的基础设施对于保护金融平台发挥着重要作用。Orion Trade Hub 以稳定性、冗余能力和运营韧性作为核心目标进行建设。"
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "6. 合规与负责任运营",
+        "text": "Orion Trade Hub 认为，负责任的金融服务需要透明度、责任意识以及明确制定的运营标准。"
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "7. 防范欺诈保护",
+        "text": "防止欺诈需要持续警惕。Orion Trade Hub 采用多种验证流程，在完成敏感账户操作之前识别可疑请求。"
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "8. 客户隐私",
+        "text": "保护客户隐私是我们的核心责任。个人信息仅在提供服务、维护账户安全以及支持平台运营所必需时收集。"
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
+      {
+        "title": "9. 持续改进",
+        "text": "网络安全环境不断变化，因此我们的安全策略也必须不断发展。Orion Trade Hub 致力于持续审查、改进并强化平台安全体系。"
+      },
 
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. 我们的承诺",
+        "text": "在所有技术、流程和安全工具之上，我们始终坚持一个简单承诺：保护那些信任 Orion Trade Hub 并将投资旅程交托给我们的用户。"
+      }
+    ]
+  }
 }

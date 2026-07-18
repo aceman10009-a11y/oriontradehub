@@ -11,7 +11,7 @@
   "disconnected": "Frakoblet",
 
   "market": "Marked",
-  "markets": "Markeder",
+  "marketsLabel": "Markeder",
   "searchMarkets": "Søk i markeder...",
   "selectedMarket": "Valgt marked",
   "currentPrice": "Gjeldende pris",
@@ -203,7 +203,7 @@
 
   "invalidEmail": "Oppgi en gyldig e-postadresse.",
 
-  "marketsSection" : {
+  "markets" : {
   "badge": "LIVE GLOBALE MARKEDER",
   "title": "Handle Verdens",
   "titleHighlight": "Beste Markeder",

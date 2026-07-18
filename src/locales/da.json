@@ -9,7 +9,7 @@
   "offline": "OFFLINE",
   "disconnected": "Afbrudt",
   "market": "Marked",
-  "markets": "Markeder",
+  "marketsLabel": "Markeder",
   "searchMarkets": "Søg efter markeder...",
   "selectedMarket": "Valgt marked",
   "currentPrice": "Aktuel pris",
@@ -157,7 +157,7 @@
   "weakPassword": "Adgangskoden skal være mindst 6 tegn.",
   "invalidEmail": "Indtast venligst en gyldig e-mailadresse.",
   "createAccountTitle": "Opret konto",
-  "marketsSection": {
+  "markets": {
   "badge": "LIVE GLOBALE MARKEDER",
   "title": "Handl Verdens",
   "titleHighlight": "Bedste Markeder",

@@ -9,7 +9,7 @@
   "offline": "OFFLINE",
   "disconnected": "Getrennt",
   "market": "Markt",
-  "markets": "Märkte",
+  "marketsLabel": "Märkte",
   "searchMarkets": "Märkte suchen...",
   "selectedMarket": "Ausgewählter Markt",
   "currentPrice": "Aktueller Preis",
@@ -193,7 +193,7 @@
     "Ich liebe das Gefühl eines Live-Marktes. Sehr hochwertig umgesetzt."
   ]
 },
-"marketsSection": {
+"markets": {
   "badge": "LIVE GLOBALE MÄRKTE",
   "title": "Handeln Sie auf den weltweit besten",
   "titleHighlight": "Märkten",

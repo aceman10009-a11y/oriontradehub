@@ -1,205 +1,202 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "حماية مؤسسية • حماية متعددة الطبقات",
+    "title": "أمان بمستوى",
+    "titleHighlight": "المؤسسات",
+    "description": "تحمي Orion Trade Hub الأصول الرقمية باستخدام تشفير على مستوى المؤسسات، ومراقبة مستمرة للتهديدات، وحماية متعددة الطبقات للحسابات، وبنية تحتية مرنة مصممة خصيصًا للأسواق المالية الحديثة."
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
-      "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "label": "التشفير",
+      "value": "256 بت",
+      "description": "بنية تحتية مشفرة بالكامل من البداية إلى النهاية"
     },
     "uptime": {
-      "label": "Uptime",
+      "label": "وقت التشغيل",
       "value": "99.99%",
-      "description": "Continuous platform availability"
+      "description": "توفر مستمر للمنصة"
     },
     "monitoring": {
-      "label": "Monitoring",
+      "label": "المراقبة",
       "value": "24/7",
-      "description": "Real-time security surveillance"
+      "description": "مراقبة أمنية في الوقت الفعلي"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "الحماية",
+      "value": "متعددة الطبقات",
+      "description": "نظام متقدم للدفاع ضد المخاطر"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "عملية الحماية",
+    "title": "كيف تحمي Orion أصولك",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "التحقق من الحساب",
+        "text": "يتم التحقق من كل حساب جديد قبل منح الوصول الكامل إلى المنصة."
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "حماية متعددة الطبقات",
+        "text": "تحمي كلمات المرور والمصادقة الثنائية والجلسات المشفرة كل عملية تسجيل دخول."
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "المراقبة المستمرة",
+        "text": "تقوم الأنظمة المتقدمة بمراقبة أي نشاط مشبوه على مدار 24 ساعة يوميًا."
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "التخزين البارد للأصول",
+        "text": "يتم الاحتفاظ بمعظم أصول العملاء في محافظ تخزين بارد غير متصلة بالإنترنت لضمان أعلى مستويات الحماية."
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "ميزات الأمان",
+    "title": "طبقات متعددة من الحماية",
+    "description": "يتم حماية كل حساب في Orion Trade Hub بواسطة عدة أنظمة أمنية مستقلة تعمل معًا لتوفير أعلى درجات الأمان.",
     "cards": {
       "coldStorage": {
-        "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "title": "التخزين البارد",
+        "description": "يتم الاحتفاظ بنسبة 98٪ من الأصول الرقمية في مخازن غير متصلة بالإنترنت لتقليل التعرض للتهديدات الإلكترونية."
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "تشفير 256 بت",
+        "description": "يحمي التشفير على مستوى المؤسسات جميع المعاملات وعمليات الاتصال."
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "المصادقة الثنائية",
+        "description": "توفر طبقة تحقق إضافية لضمان أن المستخدمين المصرح لهم فقط يمكنهم الوصول إلى الحسابات."
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "مراقبة المخاطر",
+        "description": "تقوم أنظمة المراقبة المستمرة باكتشاف الأنشطة المشبوهة في الوقت الفعلي."
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "بنية تحتية آمنة",
+        "description": "تستضيف المنصة على بنية تحتية سحابية مؤسسية قوية مزودة بطبقات متعددة من الحماية."
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "اكتشاف الاحتيال",
+        "description": "تساعد الأنظمة الآلية في اكتشاف السلوك غير الطبيعي للحسابات قبل تطور أي تهديدات."
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "الثقة والامتثال",
+    "title": "مبني وفقًا لمعايير الأمن",
+    "description": "تلتزم Orion Trade Hub بأحدث ممارسات الأمن المصممة لحماية حسابات العملاء، والبيانات الشخصية، والأصول الرقمية.",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "مراقبة مكافحة غسل الأموال",
+        "description": "تساعد المراقبة المستمرة لمكافحة غسل الأموال في اكتشاف الأنشطة المالية المشبوهة."
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "التحقق من الهوية (KYC)",
+        "description": "يساعد التحقق من الهوية على حماية المستخدمين والحفاظ على نزاهة المنصة."
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "حماية البيانات",
+        "description": "يتم تشفير بيانات العملاء الحساسة وإدارتها بأعلى معايير الأمان."
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "ضوابط إدارة المخاطر",
+        "description": "تقوم أنظمة الأمن الآلية بتحليل سلوك الحسابات باستمرار وتقييم المخاطر المحتملة."
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "مركز المساعدة",
+    "title": "الأسئلة الشائعة",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "هل حسابي آمن؟",
+        "answer": "نعم. يتم حماية كل حساب باستخدام طبقات متعددة من الأمان، بما في ذلك التشفير، والمصادقة الثنائية، والمراقبة المستمرة."
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "أين يتم حفظ الأموال؟",
+        "answer": "يتم الاحتفاظ بنسبة 98٪ من الأصول الرقمية في محافظ تخزين بارد غير متصلة بالإنترنت، مما يوفر حماية كاملة من التهديدات الإلكترونية."
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "كيف تعمل مراقبة المخاطر؟",
+        "answer": "تقوم أنظمتنا بتحليل سلوك الحسابات في الوقت الفعلي لاكتشاف الأنشطة المشبوهة ومنعها قبل أن تتحول إلى تهديد."
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "هل تدعمون العملاء المؤسسيين؟",
+        "answer": "نعم. تم تصميم Orion Trade Hub ببنية تحتية مؤسسية تدعم التداول الاحترافي وأحجام التداول الكبيرة."
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "ابدأ التداول",
+    "contactSupport": "اتصل بالدعم",
+    "fullName": "الاسم الكامل",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "messagePlaceholder": "كيف يمكننا مساعدتك؟",
+    "sendMessage": "إرسال الرسالة",
+    "sending": "جارٍ الإرسال...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "تم إرسال الرسالة بنجاح!",
+      "error": "فشل في إرسال الرسالة."
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "حول أمان Orion",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "الأمان ليس ميزة تمت إضافتها بعد تطوير المنصة، بل هو الأساس الذي بُنيت عليه Orion Trade Hub. فقد صُممت كل طبقة من بنيتنا التحتية، وكل عملية مصادقة، وكل إجراء تشغيلي بهدف حماية أصول العملاء، والحفاظ على الخصوصية، وضمان أعلى مستويات نزاهة المنصة.",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. يبدأ الأمان من البنية الأساسية",
+        "text": "تم تصميم Orion Trade Hub بحيث يكون الأمان محور كل قرار، وليس مجرد إضافة لاحقة. فمنذ إنشاء الحساب وحتى كل عملية تسجيل دخول، وطلبات الإيداع والسحب، وأنشطة التداول، تعمل طبقات متعددة من الحماية معًا لتقليل المخاطر وحماية المعلومات الحساسة."
+      },
+      {
+        "title": "2. تشفير بمستوى المؤسسات",
+        "text": "تستحق المعلومات الحساسة أعلى مستويات الحماية. تستخدم Orion Trade Hub قنوات اتصال مشفرة مصممة للحفاظ على أمن البيانات أثناء انتقالها بين جهاز المستخدم وخوادمنا."
+      },
+      {
+        "title": "3. المراقبة المستمرة",
+        "text": "الأمن السيبراني مسؤولية مستمرة وليس عملية يتم تنفيذها مرة واحدة فقط. تراقب Orion Trade Hub نشاط المنصة باستمرار لاكتشاف محاولات الوصول غير المصرح بها، وسلوك تسجيل الدخول المشبوه، والأنشطة غير المعتادة، وطلبات المعاملات غير الطبيعية."
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+            {
+        "title": "4. حماية الحساب",
+        "text": "يتم تأمين كل حساب في Orion Trade Hub من خلال عدة آليات للتحقق من الهوية، صُممت لتقليل احتمالية الوصول غير المصرح به إلى الحسابات."
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "5. موثوقية البنية التحتية",
+        "text": "تلعب البنية التحتية الموثوقة دورًا أساسيًا في حماية المنصات المالية. وقد تم بناء Orion Trade Hub مع التركيز على الاستقرار، والتكرار، والمرونة التشغيلية لضمان استمرار الخدمات بأعلى مستويات الاعتمادية."
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "6. الامتثال والعمليات المسؤولة",
+        "text": "تؤمن Orion Trade Hub بأن الخدمات المالية المسؤولة تتطلب الشفافية، والمساءلة، ومعايير تشغيلية واضحة ومحددة لحماية العملاء وتعزيز الثقة."
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "7. الحماية من الاحتيال",
+        "text": "يتطلب منع الاحتيال يقظة مستمرة. ولذلك تستخدم Orion Trade Hub إجراءات تحقق متعددة تهدف إلى اكتشاف الطلبات أو الأنشطة المشبوهة قبل تنفيذ أي إجراءات حساسة على الحسابات."
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "8. خصوصية العملاء",
+        "text": "تُعد حماية خصوصية العملاء مسؤولية أساسية. ولا يتم جمع المعلومات الشخصية إلا عند الحاجة لتقديم الخدمات، والحفاظ على أمن الحسابات، ودعم تشغيل المنصة، مع الالتزام بحماية هذه البيانات وفقًا لأفضل الممارسات الأمنية."
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "9. التحسين المستمر",
+        "text": "يتطور عالم الأمن السيبراني باستمرار، ولذلك تتطور معه استراتيجيتنا الأمنية. تلتزم Orion Trade Hub بمراجعة وتعزيز وتطوير وسائل الحماية بشكل مستمر لمواكبة أحدث التهديدات والتقنيات."
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
-
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. التزامنا",
+        "text": "فوق كل تقنية أو إجراء أو أداة أمنية، يبقى التزامنا الأساسي هو حماية الأشخاص الذين يضعون ثقتهم في Orion Trade Hub خلال رحلتهم الاستثمارية، وتوفير بيئة تداول آمنة وموثوقة."
+      }
+    ]
+  }
 }

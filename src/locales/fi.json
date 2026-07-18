@@ -9,7 +9,7 @@
   "offline": "OFFLINE",
   "disconnected": "Yhteys katkaistu",
   "market": "Markkina",
-  "markets": "Markkinat",
+  "marketsLabel": "Markkinat",
   "searchMarkets": "Hae markkinoita...",
   "selectedMarket": "Valittu markkina",
   "currentPrice": "Nykyinen hinta",
@@ -157,7 +157,7 @@
   "weakPassword": "Salasanan tulee sisältää vähintään 6 merkkiä.",
   "invalidEmail": "Anna kelvollinen sähköpostiosoite.",
   "createAccountTitle": "Luo tili",
-  "marketsSection": {
+  "markets": {
   "badge": "LIVE GLOBAALIT MARKKINAT",
   "title": "Käy Kauppaa Maailman",
   "titleHighlight": "Parhailla Markkinoilla",

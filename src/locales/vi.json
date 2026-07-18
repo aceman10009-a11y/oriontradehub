@@ -11,7 +11,7 @@
   "disconnected": "Đã ngắt kết nối",
 
   "market": "Thị trường",
-  "markets": "Các thị trường",
+  "marketsLabel": "Các thị trường",
   "searchMarkets": "Tìm kiếm thị trường...",
   "selectedMarket": "Thị trường đã chọn",
   "currentPrice": "Giá hiện tại",
@@ -202,7 +202,7 @@
 
 "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
 
-"marketsSection": {
+"markets": {
   "badge": "THỊ TRƯỜNG TOÀN CẦU TRỰC TIẾP",
   "title": "Giao dịch các",
   "titleHighlight": "Thị trường hàng đầu thế giới",

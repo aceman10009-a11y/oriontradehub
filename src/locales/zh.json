@@ -9,7 +9,7 @@
   "offline": "离线",
   "disconnected": "已断开连接",
   "market": "市场",
-  "markets": "市场",
+  "marketsLabel": "市场",
   "searchMarkets": "搜索市场...",
   "selectedMarket": "已选择市场",
   "currentPrice": "当前价格",
@@ -157,7 +157,7 @@
   "weakPassword": "密码必须至少包含6个字符。",
   "invalidEmail": "请输入有效的电子邮件地址。",
   "createAccountTitle": "创建账户",
-  "marketsSection": {
+  "markets": {
   "badge": "全球实时市场",
   "title": "交易全球",
   "titleHighlight": "顶级市场",

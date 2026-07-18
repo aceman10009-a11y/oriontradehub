@@ -11,7 +11,7 @@
   "disconnected": "Відключено",
 
   "market": "Ринок",
-  "markets": "Ринки",
+  "marketsLabel": "Ринки",
   "searchMarkets": "Пошук ринків...",
   "selectedMarket": "Обраний ринок",
   "currentPrice": "Поточна ціна",
@@ -201,7 +201,7 @@
 
 "invalidEmail": "Будь ласка, введіть дійсну адресу електронної пошти.",
 
-"marketsSection": {
+"markets": {
   "badge": "ГЛОБАЛЬНІ РИНКИ LIVE",
   "title": "Торгуйте на",
   "titleHighlight": "Найкращих Ринках Світу",

@@ -1,205 +1,203 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "機関投資家向け • 多層防御",
+    "title": "機関レベルの",
+    "titleHighlight": "セキュリティ",
+    "description": "Orion Trade Hubは、エンタープライズレベルの暗号化、24時間体制の脅威監視、多層アカウント保護、および現代の金融市場向けに設計された高耐久インフラを通じて、お客様のデジタル資産を保護します。"
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
-      "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "label": "暗号化",
+      "value": "256ビット",
+      "description": "エンドツーエンドで暗号化されたインフラ"
     },
     "uptime": {
-      "label": "Uptime",
+      "label": "稼働率",
       "value": "99.99%",
-      "description": "Continuous platform availability"
+      "description": "継続的なプラットフォーム稼働"
     },
     "monitoring": {
-      "label": "Monitoring",
-      "value": "24/7",
-      "description": "Real-time security surveillance"
+      "label": "監視",
+      "value": "24時間365日",
+      "description": "リアルタイムのセキュリティ監視"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "保護",
+      "value": "多層防御",
+      "description": "高度なリスク防御システム"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "セキュリティプロセス",
+    "title": "Orionがお客様の資産を保護する仕組み",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "アカウント認証",
+        "text": "すべての新規アカウントは、完全なプラットフォームアクセスが許可される前に認証されます。"
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "多層保護",
+        "text": "パスワード、二要素認証、および暗号化セッションが、すべてのログインを保護します。"
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "継続的な監視",
+        "text": "高度なシステムが24時間体制で不審な活動を監視します。"
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "コールドストレージ",
+        "text": "お客様の資産の大部分は、最大限の保護を実現するため安全にオフラインで保管されています。"
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "セキュリティ機能",
+    "title": "多層的な保護",
+    "description": "すべてのOrion Trade Hubアカウントは、複数の独立したセキュリティシステムによって保護されています。",
     "cards": {
       "coldStorage": {
-        "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "title": "コールドストレージ",
+        "description": "デジタル資産の98%はオンラインの脅威への露出を減らすため、安全にオフラインで保管されています。"
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "256ビット暗号化",
+        "description": "エンタープライズレベルの暗号化により、すべての取引と通信が保護されます。"
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "二要素認証",
+        "description": "追加の認証により、許可されたユーザーのみがアカウントへアクセスできます。"
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "リスク監視",
+        "description": "継続的な監視により、不審な活動をリアルタイムで検知します。"
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "安全なインフラ",
+        "description": "複数のセキュリティ層を備えた、高耐久なエンタープライズクラウドインフラ上で運用されています。"
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "不正検知",
+        "description": "自動化システムが異常なアカウント行動を早期に検出し、脅威の拡大を防ぎます。"
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "信頼とコンプライアンス",
+    "title": "セキュリティ基準に基づく設計",
+    "description": "Orion Trade Hubは、お客様のアカウント、個人情報、およびデジタル資産を保護するために設計された最新のセキュリティ対策を採用しています。",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "AML監視",
+        "description": "継続的なマネーロンダリング対策（AML）監視により、不審な活動を特定します。"
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "KYC認証",
+        "description": "本人確認により、ユーザーとプラットフォームの信頼性を保護します。"
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "データ保護",
+        "description": "機密性の高いお客様情報は暗号化され、安全に管理されています。"
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "リスク管理",
+        "description": "自動化されたセキュリティシステムが、アカウントの動作と潜在的な脅威を継続的に評価します。"
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "ヘルプセンター",
+    "title": "よくある質問",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "私のアカウントは安全ですか？",
+        "answer": "はい。すべてのアカウントは、暗号化、二要素認証、継続的な監視を含む多層セキュリティによって保護されています。"
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "資産はどこに保管されていますか？",
+        "answer": "デジタル資産の98%は、完全にオフラインで管理されるコールドウォレットに保管され、オンライン上の脅威から保護されています。"
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "リスク監視はどのように機能しますか？",
+        "answer": "当社のシステムはリアルタイムで行動を分析し、脅威となる前に不審な活動を検出・防止します。"
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "機関投資家向けサービスに対応していますか？",
+        "answer": "はい。Orion Trade Hubは、大規模取引やプロフェッショナル向けに機関レベルのインフラで構築されています。"
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "取引を開始",
+    "contactSupport": "サポートへ連絡",
+    "fullName": "氏名",
+    "emailAddress": "メールアドレス",
+    "messagePlaceholder": "どのようにお手伝いできますか？",
+    "sendMessage": "メッセージを送信",
+    "sending": "送信中...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "メッセージが正常に送信されました！",
+      "error": "メッセージの送信に失敗しました。"
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "Orionのセキュリティについて",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "セキュリティは開発後に追加された機能ではありません。それはOrion Trade Hubの設計理念そのものです。当社のインフラストラクチャのあらゆる層、すべての認証プロセス、およびすべての運用手順は、お客様の資産を保護し、プライバシーを守り、プラットフォームの最高水準の信頼性を維持するために構築されています。",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. セキュリティは設計から始まる",
+        "text": "Orion Trade Hubは、後付けではなく、すべての設計判断の中心にセキュリティを据えて構築されています。ユーザーがアカウントを作成した瞬間から、その後のログイン、入金申請、出金承認、取引活動に至るまで、複数の保護層が連携し、リスクを低減して機密情報を保護します。"
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+      {
+        "title": "2. エンタープライズレベルの暗号化",
+        "text": "機密情報には、企業レベルの保護が必要です。Orion Trade Hubでは、ユーザーのデバイスと当社サーバー間で送受信されるすべての情報を保護するため、暗号化された通信チャネルを採用しています。"
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "3. 継続的な監視",
+        "text": "サイバーセキュリティは一度きりの対策ではなく、継続的な責任です。Orion Trade Hubは、不正アクセスの試み、不審なログイン、異常なアカウント活動、不自然な取引要求などを検出するため、プラットフォーム全体を24時間365日監視しています。"
+      },
+            {
+        "title": "4. アカウント保護",
+        "text": "すべてのOrion Trade Hubアカウントは、不正アクセスの可能性を低減することを目的とした複数の本人確認メカニズムによって保護されています。"
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "5. 信頼性の高いインフラ",
+        "text": "信頼性の高いインフラは、金融プラットフォームを保護する上で重要な役割を果たします。Orion Trade Hubは、安定性、冗長性、および運用上の回復力を主要な目標として構築されています。"
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "6. コンプライアンスと責任ある運営",
+        "text": "Orion Trade Hubは、責任ある金融サービスには透明性、説明責任、そして明確に定義された運用基準が不可欠であると考えています。"
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "7. 不正行為からの保護",
+        "text": "不正防止には継続的な警戒が必要です。Orion Trade Hubでは、重要なアカウント操作が実行される前に不審な要求を特定するため、複数の認証手順を採用しています。"
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "8. お客様のプライバシー",
+        "text": "お客様のプライバシーを保護することは、当社の中核的な責任です。個人情報は、サービスの提供、アカウントの安全性維持、およびプラットフォーム運営を支援するために必要な場合にのみ収集されます。"
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
+      {
+        "title": "9. 継続的な改善",
+        "text": "サイバーセキュリティの環境は常に進化しており、当社のセキュリティ戦略もそれに合わせて進化し続けます。Orion Trade Hubは、プラットフォームのセキュリティを継続的に見直し、改善し、さらに強化することを約束します。"
+      },
 
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. 私たちの約束",
+        "text": "あらゆる技術、プロセス、セキュリティツールの根底にあるのは、Orion Trade Hubを信頼して投資の旅を託してくださるすべてのお客様を守るという、揺るぎない約束です。"
+      }
+    ]
+  }
 }

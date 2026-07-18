@@ -1,205 +1,203 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "ระดับสถาบัน • การป้องกันหลายชั้น",
+    "title": "ความปลอดภัยระดับ",
+    "titleHighlight": "สถาบันการเงิน",
+    "description": "Orion Trade Hub ปกป้องสินทรัพย์ดิจิทัลด้วยการเข้ารหัสระดับองค์กร การตรวจสอบภัยคุกคามอย่างต่อเนื่อง การป้องกันบัญชีหลายชั้น และโครงสร้างพื้นฐานที่มีความยืดหยุ่นซึ่งออกแบบมาสำหรับตลาดการเงินสมัยใหม่"
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
+      "label": "การเข้ารหัส",
       "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "description": "โครงสร้างพื้นฐานที่เข้ารหัสแบบครบวงจร"
     },
     "uptime": {
-      "label": "Uptime",
+      "label": "เวลาการให้บริการ",
       "value": "99.99%",
-      "description": "Continuous platform availability"
+      "description": "แพลตฟอร์มพร้อมใช้งานอย่างต่อเนื่อง"
     },
     "monitoring": {
-      "label": "Monitoring",
+      "label": "การตรวจสอบ",
       "value": "24/7",
-      "description": "Real-time security surveillance"
+      "description": "การเฝ้าระวังความปลอดภัยแบบเรียลไทม์"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "การป้องกัน",
+      "value": "หลายชั้น",
+      "description": "ระบบป้องกันความเสี่ยงขั้นสูง"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "กระบวนการรักษาความปลอดภัย",
+    "title": "วิธีที่ Orion ปกป้องสินทรัพย์ของคุณ",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "การยืนยันบัญชี",
+        "text": "บัญชีใหม่ทุกบัญชีจะได้รับการตรวจสอบก่อนที่จะได้รับสิทธิ์เข้าถึงแพลตฟอร์มอย่างเต็มรูปแบบ"
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "การป้องกันหลายชั้น",
+        "text": "รหัสผ่าน การยืนยันตัวตนสองขั้นตอน และเซสชันที่เข้ารหัสช่วยรักษาความปลอดภัยทุกการเข้าสู่ระบบ"
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "การตรวจสอบอย่างต่อเนื่อง",
+        "text": "ระบบขั้นสูงตรวจสอบกิจกรรมที่น่าสงสัยตลอด 24 ชั่วโมง"
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "การจัดเก็บแบบออฟไลน์",
+        "text": "สินทรัพย์ส่วนใหญ่ของลูกค้าจะถูกจัดเก็บอย่างปลอดภัยแบบออฟไลน์เพื่อการป้องกันสูงสุด"
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "คุณสมบัติด้านความปลอดภัย",
+    "title": "การป้องกันหลายระดับ",
+    "description": "บัญชี Orion Trade Hub ทุกบัญชีได้รับการปกป้องด้วยระบบรักษาความปลอดภัยอิสระหลายระบบที่ทำงานร่วมกัน",
     "cards": {
       "coldStorage": {
         "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "description": "สินทรัพย์ดิจิทัล 98% ถูกจัดเก็บแบบออฟไลน์อย่างปลอดภัยเพื่อลดความเสี่ยงจากภัยคุกคามออนไลน์"
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "การเข้ารหัส 256-bit",
+        "description": "การเข้ารหัสระดับองค์กรช่วยปกป้องทุกธุรกรรมและการสื่อสาร"
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "การยืนยันตัวตนสองขั้นตอน",
+        "description": "การตรวจสอบเพิ่มเติมช่วยให้มั่นใจว่าเฉพาะผู้ใช้ที่ได้รับอนุญาตเท่านั้นที่สามารถเข้าถึงบัญชีได้"
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "การตรวจสอบความเสี่ยง",
+        "description": "การตรวจสอบอย่างต่อเนื่องช่วยตรวจจับกิจกรรมที่น่าสงสัยแบบเรียลไทม์"
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "โครงสร้างพื้นฐานที่ปลอดภัย",
+        "description": "ทำงานบนโครงสร้างพื้นฐานคลาวด์ระดับองค์กรที่มีความเสถียรพร้อมระบบรักษาความปลอดภัยหลายชั้น"
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "การตรวจจับการฉ้อโกง",
+        "description": "ระบบอัตโนมัติช่วยระบุพฤติกรรมบัญชีที่ผิดปกติก่อนที่ภัยคุกคามจะรุนแรงขึ้น"
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "ความไว้วางใจและการปฏิบัติตามมาตรฐาน",
+    "title": "สร้างขึ้นตามมาตรฐานความปลอดภัย",
+    "description": "Orion Trade Hub ปฏิบัติตามแนวทางด้านความปลอดภัยสมัยใหม่ที่ออกแบบมาเพื่อปกป้องบัญชีลูกค้า ข้อมูลส่วนบุคคล และสินทรัพย์ดิจิทัล",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "การตรวจสอบ AML",
+        "description": "การตรวจสอบการป้องกันการฟอกเงินอย่างต่อเนื่องช่วยระบุกิจกรรมที่น่าสงสัย"
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "การยืนยัน KYC",
+        "description": "การยืนยันตัวตนช่วยปกป้องทั้งผู้ใช้และความสมบูรณ์ของแพลตฟอร์ม"
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "การปกป้องข้อมูล",
+        "description": "ข้อมูลสำคัญของลูกค้าถูกเข้ารหัสและจัดการอย่างปลอดภัย"
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "การควบคุมความเสี่ยง",
+        "description": "ระบบรักษาความปลอดภัยอัตโนมัติประเมินพฤติกรรมบัญชีและภัยคุกคามที่อาจเกิดขึ้นอย่างต่อเนื่อง"
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "ศูนย์ช่วยเหลือ",
+    "title": "คำถามที่พบบ่อย",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "บัญชีของฉันปลอดภัยหรือไม่?",
+        "answer": "ใช่ บัญชีทุกบัญชีได้รับการปกป้องด้วยระบบรักษาความปลอดภัยหลายชั้น รวมถึงการเข้ารหัส การยืนยันตัวตนสองขั้นตอน และการตรวจสอบอย่างต่อเนื่อง"
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "เงินทุนถูกจัดเก็บไว้ที่ไหน?",
+        "answer": "สินทรัพย์ดิจิทัล 98% ถูกจัดเก็บในกระเป๋าเงินแบบ Cold Wallet ซึ่งทำงานแบบออฟไลน์ทั้งหมดและได้รับการป้องกันจากภัยคุกคามออนไลน์"
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "ระบบตรวจสอบความเสี่ยงทำงานอย่างไร?",
+        "answer": "ระบบของเราวิเคราะห์พฤติกรรมแบบเรียลไทม์เพื่อค้นหาและป้องกันกิจกรรมที่น่าสงสัยก่อนที่จะกลายเป็นภัยคุกคาม"
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "คุณรองรับลูกค้าสถาบันหรือไม่?",
+        "answer": "ใช่ Orion Trade Hub ถูกสร้างด้วยโครงสร้างพื้นฐานระดับสถาบันสำหรับการซื้อขายระดับมืออาชีพและการดำเนินงานที่มีปริมาณสูง"
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "เริ่มการซื้อขาย",
+    "contactSupport": "ติดต่อฝ่ายสนับสนุน",
+    "fullName": "ชื่อเต็ม",
+    "emailAddress": "ที่อยู่อีเมล",
+    "messagePlaceholder": "เราสามารถช่วยอะไรคุณได้บ้าง?",
+    "sendMessage": "ส่งข้อความ",
+    "sending": "กำลังส่ง...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "ส่งข้อความสำเร็จ!",
+      "error": "ไม่สามารถส่งข้อความได้"
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "เกี่ยวกับความปลอดภัยของ Orion",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "ความปลอดภัยไม่ใช่คุณสมบัติที่เพิ่มเข้ามาหลังการพัฒนา แต่เป็นรากฐานที่ Orion Trade Hub ถูกสร้างขึ้น ทุกชั้นของโครงสร้างพื้นฐาน กระบวนการยืนยันตัวตน และขั้นตอนการดำเนินงานของเราได้รับการออกแบบเพื่อปกป้องสินทรัพย์ของลูกค้า รักษาความเป็นส่วนตัว และรักษาความสมบูรณ์สูงสุดของแพลตฟอร์ม",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. ความปลอดภัยเริ่มต้นจากสถาปัตยกรรม",
+        "text": "Orion Trade Hub ได้รับการออกแบบโดยให้ความปลอดภัยเป็นศูนย์กลางของทุกการตัดสินใจ ไม่ใช่สิ่งที่เพิ่มเข้ามาภายหลัง ตั้งแต่ช่วงเวลาที่ผู้ใช้สร้างบัญชี ไปจนถึงการเข้าสู่ระบบ การฝากเงิน การอนุมัติการถอนเงิน และกิจกรรมการซื้อขาย ทุกขั้นตอนมีระบบป้องกันหลายชั้นทำงานร่วมกันเพื่อลดความเสี่ยงและปกป้องข้อมูลสำคัญ"
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+      {
+        "title": "2. การเข้ารหัสระดับองค์กร",
+        "text": "ข้อมูลสำคัญต้องได้รับการปกป้องในระดับองค์กร Orion Trade Hub ใช้ช่องทางการสื่อสารที่เข้ารหัสเพื่อรักษาความปลอดภัยของข้อมูลระหว่างการส่งผ่านจากอุปกรณ์ของผู้ใช้ไปยังเซิร์ฟเวอร์ของเรา"
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "3. การตรวจสอบอย่างต่อเนื่อง",
+        "text": "ความปลอดภัยทางไซเบอร์เป็นความรับผิดชอบอย่างต่อเนื่อง ไม่ใช่การติดตั้งเพียงครั้งเดียว Orion Trade Hub ตรวจสอบกิจกรรมของแพลตฟอร์มอย่างต่อเนื่องเพื่อค้นหารูปแบบที่อาจบ่งชี้ถึงความพยายามเข้าถึงโดยไม่ได้รับอนุญาต พฤติกรรมการเข้าสู่ระบบที่น่าสงสัย กิจกรรมบัญชีที่ผิดปกติ หรือคำขอธุรกรรมที่ไม่เหมือนปกติ"
+      },
+            {
+        "title": "4. การปกป้องบัญชี",
+        "text": "บัญชี Orion Trade Hub ทุกบัญชีได้รับการปกป้องผ่านกลไกการยืนยันตัวตนหลายรูปแบบ ซึ่งออกแบบมาเพื่อลดความเป็นไปได้ของการเข้าถึงโดยไม่ได้รับอนุญาต"
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "5. โครงสร้างพื้นฐานที่เชื่อถือได้",
+        "text": "โครงสร้างพื้นฐานที่เชื่อถือได้มีบทบาทสำคัญในการปกป้องแพลตฟอร์มทางการเงิน Orion Trade Hub ถูกสร้างขึ้นโดยมีเป้าหมายหลักด้านความเสถียร ความซ้ำซ้อนของระบบ และความสามารถในการดำเนินงานอย่างต่อเนื่อง"
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "6. การปฏิบัติตามข้อกำหนดและการดำเนินงานอย่างรับผิดชอบ",
+        "text": "Orion Trade Hub เชื่อว่าบริการทางการเงินที่มีความรับผิดชอบจำเป็นต้องมีความโปร่งใส ความรับผิดชอบ และมาตรฐานการดำเนินงานที่กำหนดไว้อย่างชัดเจน"
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "7. การป้องกันการฉ้อโกง",
+        "text": "การป้องกันการฉ้อโกงจำเป็นต้องอาศัยความระมัดระวังอย่างต่อเนื่อง Orion Trade Hub ใช้ขั้นตอนการตรวจสอบหลายรูปแบบเพื่อระบุคำขอที่น่าสงสัยก่อนที่จะดำเนินการกับบัญชีที่มีความสำคัญ"
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "8. ความเป็นส่วนตัวของลูกค้า",
+        "text": "การปกป้องความเป็นส่วนตัวของลูกค้าเป็นความรับผิดชอบหลัก ข้อมูลส่วนบุคคลจะถูกเก็บรวบรวมเฉพาะเมื่อจำเป็นสำหรับการให้บริการ การรักษาความปลอดภัยของบัญชี และสนับสนุนการดำเนินงานของแพลตฟอร์ม"
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
+      {
+        "title": "9. การพัฒนาอย่างต่อเนื่อง",
+        "text": "ภูมิทัศน์ด้านความปลอดภัยทางไซเบอร์มีการเปลี่ยนแปลงอยู่เสมอ และกลยุทธ์ด้านความปลอดภัยของเราก็ต้องพัฒนาไปพร้อมกัน Orion Trade Hub มุ่งมั่นในการทบทวน ปรับปรุง และเสริมความแข็งแกร่งให้กับระบบความปลอดภัยของแพลตฟอร์มอย่างต่อเนื่อง"
+      },
 
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. คำมั่นสัญญาของเรา",
+        "text": "เหนือกว่าเทคโนโลยี กระบวนการ หรือเครื่องมือด้านความปลอดภัยทั้งหมด มีคำมั่นสัญญาที่เรียบง่ายเพียงหนึ่งเดียว คือการปกป้องผู้ที่ไว้วางใจให้ Orion Trade Hub ดูแลเส้นทางการลงทุนของพวกเขา"
+      }
+    ]
+  }
 }

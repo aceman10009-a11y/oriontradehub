@@ -11,7 +11,7 @@
   "disconnected": "ไม่ได้เชื่อมต่อ",
 
   "market": "ตลาด",
-  "markets": "ตลาดทั้งหมด",
+  "marketsLabel": "ตลาดทั้งหมด",
   "searchMarkets": "ค้นหาตลาด...",
   "selectedMarket": "ตลาดที่เลือก",
   "currentPrice": "ราคาปัจจุบัน",
@@ -154,7 +154,7 @@
 
   "invalidEmail": "กรุณากรอกอีเมลที่ถูกต้อง",
 
-  "marketsSection": {
+  "markets": {
     "badge": "ตลาดโลกแบบเรียลไทม์",
     "title": "ซื้อขายในตลาด",
     "titleHighlight": "ชั้นนำของโลก",

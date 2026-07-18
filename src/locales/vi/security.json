@@ -1,205 +1,203 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "CẤP ĐỘ TỔ CHỨC • BẢO VỆ ĐA LỚP",
+    "title": "Bảo Mật Cấp",
+    "titleHighlight": "Tổ Chức",
+    "description": "Orion Trade Hub bảo vệ tài sản kỹ thuật số bằng mã hóa cấp doanh nghiệp, giám sát mối đe dọa liên tục, bảo vệ tài khoản nhiều lớp và cơ sở hạ tầng linh hoạt được thiết kế cho các thị trường tài chính hiện đại."
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
+      "label": "Mã Hóa",
       "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "description": "Cơ sở hạ tầng được mã hóa đầu cuối"
     },
     "uptime": {
-      "label": "Uptime",
+      "label": "Thời Gian Hoạt Động",
       "value": "99.99%",
-      "description": "Continuous platform availability"
+      "description": "Nền tảng luôn sẵn sàng hoạt động"
     },
     "monitoring": {
-      "label": "Monitoring",
+      "label": "Giám Sát",
       "value": "24/7",
-      "description": "Real-time security surveillance"
+      "description": "Giám sát bảo mật theo thời gian thực"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "Bảo Vệ",
+      "value": "Đa Lớp",
+      "description": "Hệ thống phòng chống rủi ro tiên tiến"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "QUY TRÌNH BẢO MẬT",
+    "title": "Cách Orion Bảo Vệ Tài Sản Của Bạn",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "Xác Minh Tài Khoản",
+        "text": "Mỗi tài khoản mới được xác minh trước khi được cấp quyền truy cập đầy đủ vào nền tảng."
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "Bảo Vệ Đa Lớp",
+        "text": "Mật khẩu, xác thực hai yếu tố và các phiên đăng nhập được mã hóa bảo vệ mọi lần truy cập."
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "Giám Sát Liên Tục",
+        "text": "Các hệ thống tiên tiến giám sát hoạt động đáng ngờ 24 giờ mỗi ngày."
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "Lưu Trữ Ngoại Tuyến",
+        "text": "Phần lớn tài sản của khách hàng được lưu trữ an toàn ngoại tuyến để đạt mức bảo vệ tối đa."
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "TÍNH NĂNG BẢO MẬT",
+    "title": "Nhiều Lớp Bảo Vệ",
+    "description": "Mỗi tài khoản Orion Trade Hub được bảo vệ bởi nhiều hệ thống bảo mật độc lập hoạt động cùng nhau.",
     "cards": {
       "coldStorage": {
-        "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "title": "Lưu Trữ Lạnh",
+        "description": "98% tài sản kỹ thuật số được lưu trữ an toàn ngoại tuyến nhằm giảm nguy cơ từ các mối đe dọa trực tuyến."
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "Mã Hóa 256-bit",
+        "description": "Mã hóa cấp doanh nghiệp bảo vệ mọi giao dịch và thông tin liên lạc."
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "Xác Thực Hai Yếu Tố",
+        "description": "Xác minh bổ sung đảm bảo chỉ những người dùng được cấp quyền mới có thể truy cập tài khoản."
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "Giám Sát Rủi Ro",
+        "description": "Giám sát liên tục phát hiện hoạt động đáng ngờ theo thời gian thực."
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "Cơ Sở Hạ Tầng An Toàn",
+        "description": "Được vận hành trên nền tảng đám mây cấp doanh nghiệp có khả năng phục hồi với nhiều lớp bảo mật."
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "Phát Hiện Gian Lận",
+        "description": "Các hệ thống tự động giúp nhận diện hành vi tài khoản bất thường trước khi mối đe dọa trở nên nghiêm trọng."
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "NIỀM TIN & TUÂN THỦ",
+    "title": "Xây Dựng Dựa Trên Các Tiêu Chuẩn Bảo Mật",
+    "description": "Orion Trade Hub tuân thủ các phương pháp bảo mật hiện đại được thiết kế để bảo vệ tài khoản khách hàng, thông tin cá nhân và tài sản kỹ thuật số.",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "Giám Sát AML",
+        "description": "Việc giám sát chống rửa tiền liên tục giúp phát hiện các hoạt động đáng ngờ."
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "Xác Minh KYC",
+        "description": "Xác minh danh tính giúp bảo vệ người dùng và duy trì tính toàn vẹn của nền tảng."
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "Bảo Vệ Dữ Liệu",
+        "description": "Thông tin nhạy cảm của khách hàng được mã hóa và quản lý an toàn."
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "Kiểm Soát Rủi Ro",
+        "description": "Các hệ thống bảo mật tự động liên tục đánh giá hành vi tài khoản và các mối đe dọa tiềm ẩn."
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "TRUNG TÂM HỖ TRỢ",
+    "title": "Câu Hỏi Thường Gặp",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "Tài khoản của tôi có an toàn không?",
+        "answer": "Có. Mỗi tài khoản được bảo vệ bằng hệ thống bảo mật nhiều lớp bao gồm mã hóa, xác thực hai yếu tố và giám sát liên tục."
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "Tài sản được lưu trữ ở đâu?",
+        "answer": "98% tài sản kỹ thuật số được lưu trữ trong ví lạnh, hoàn toàn ngoại tuyến và được bảo vệ khỏi các mối đe dọa trực tuyến."
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "Giám sát rủi ro hoạt động như thế nào?",
+        "answer": "Hệ thống của chúng tôi phân tích hành vi theo thời gian thực để phát hiện và ngăn chặn hoạt động đáng ngờ trước khi trở thành mối đe dọa."
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "Bạn có hỗ trợ khách hàng tổ chức không?",
+        "answer": "Có. Orion Trade Hub được xây dựng với cơ sở hạ tầng cấp tổ chức dành cho giao dịch chuyên nghiệp và hoạt động với khối lượng lớn."
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "Bắt Đầu Giao Dịch",
+    "contactSupport": "Liên Hệ Hỗ Trợ",
+    "fullName": "Họ Và Tên",
+    "emailAddress": "Địa Chỉ Email",
+    "messagePlaceholder": "Chúng tôi có thể giúp gì cho bạn?",
+    "sendMessage": "Gửi Tin Nhắn",
+    "sending": "Đang Gửi...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "Tin nhắn đã được gửi thành công!",
+      "error": "Không thể gửi tin nhắn."
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "Về Bảo Mật Orion",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "Bảo mật không phải là một tính năng được thêm vào sau quá trình phát triển — đó là nền tảng mà Orion Trade Hub được xây dựng. Mọi lớp trong cơ sở hạ tầng, mọi quy trình xác thực và mọi hoạt động vận hành đều được thiết kế để bảo vệ tài sản khách hàng, duy trì quyền riêng tư và đảm bảo tính toàn vẹn cao nhất của nền tảng.",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. Bảo Mật Bắt Đầu Từ Kiến Trúc",
+        "text": "Orion Trade Hub được thiết kế với bảo mật là trọng tâm trong mọi quyết định thay vì chỉ là yếu tố bổ sung sau này. Từ thời điểm người dùng tạo tài khoản cho đến mỗi lần đăng nhập tiếp theo, yêu cầu nạp tiền, phê duyệt rút tiền và hoạt động giao dịch, nhiều lớp bảo vệ phối hợp với nhau để giảm rủi ro và bảo vệ thông tin nhạy cảm."
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+      {
+        "title": "2. Mã Hóa Cấp Doanh Nghiệp",
+        "text": "Thông tin nhạy cảm cần được bảo vệ ở cấp độ doanh nghiệp. Orion Trade Hub sử dụng các kênh liên lạc được mã hóa nhằm bảo vệ dữ liệu khi truyền tải giữa thiết bị của người dùng và máy chủ của chúng tôi."
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "3. Giám Sát Liên Tục",
+        "text": "An ninh mạng là trách nhiệm liên tục chứ không phải một lần triển khai duy nhất. Orion Trade Hub liên tục giám sát hoạt động nền tảng để phát hiện các dấu hiệu truy cập trái phép, hành vi đăng nhập đáng ngờ, hoạt động tài khoản bất thường hoặc yêu cầu giao dịch không thông thường."
+      },
+            {
+        "title": "4. Bảo Vệ Tài Khoản",
+        "text": "Mỗi tài khoản Orion Trade Hub được bảo vệ thông qua nhiều cơ chế xác minh danh tính nhằm giảm khả năng truy cập trái phép."
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "5. Cơ Sở Hạ Tầng Đáng Tin Cậy",
+        "text": "Cơ sở hạ tầng đáng tin cậy đóng vai trò quan trọng trong việc bảo vệ các nền tảng tài chính. Orion Trade Hub được xây dựng với các mục tiêu chính là tính ổn định, khả năng dự phòng và khả năng vận hành bền vững."
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "6. Tuân Thủ & Hoạt Động Có Trách Nhiệm",
+        "text": "Orion Trade Hub tin rằng các dịch vụ tài chính có trách nhiệm cần có sự minh bạch, trách nhiệm giải trình và các tiêu chuẩn vận hành được xác định rõ ràng."
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "7. Bảo Vệ Chống Gian Lận",
+        "text": "Phòng chống gian lận đòi hỏi sự cảnh giác liên tục. Orion Trade Hub sử dụng nhiều quy trình xác minh được thiết kế để phát hiện các yêu cầu đáng ngờ trước khi hoàn tất các hành động quan trọng trên tài khoản."
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "8. Quyền Riêng Tư Của Khách Hàng",
+        "text": "Bảo vệ quyền riêng tư của khách hàng là trách nhiệm cốt lõi. Thông tin cá nhân chỉ được thu thập khi cần thiết để cung cấp dịch vụ, duy trì bảo mật tài khoản và hỗ trợ hoạt động của nền tảng."
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
+      {
+        "title": "9. Cải Tiến Liên Tục",
+        "text": "Lĩnh vực an ninh mạng luôn thay đổi, vì vậy chiến lược bảo mật của chúng tôi cũng phải phát triển theo. Orion Trade Hub cam kết liên tục đánh giá, cải thiện và tăng cường khả năng bảo mật của nền tảng."
+      },
 
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. Cam Kết Của Chúng Tôi",
+        "text": "Trên tất cả công nghệ, quy trình hoặc công cụ bảo mật là một cam kết đơn giản: bảo vệ những người đã tin tưởng Orion Trade Hub trong hành trình đầu tư của họ."
+      }
+    ]
+  }
 }

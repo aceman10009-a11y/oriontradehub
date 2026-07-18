@@ -71,10 +71,10 @@ const marketAssets = [
 ];
 
 const Markets = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [assets, setAssets] = useState(marketAssets);
-  const [selectedAsset, setSelectedAsset] = useState(marketAssets[0]);
+  const [selectedAsset, setSelectedAsset] = useState(marketAssets[0]);;
 
   useEffect(() => {
     const unsubscribe = subscribeToMarkets((livePrices) => {

@@ -11,7 +11,7 @@
   "disconnected": "Deconectat",
 
   "market": "Piață",
-  "markets": "Piețe",
+  "marketsLabel": "Piețe",
   "searchMarkets": "Caută piețe...",
   "selectedMarket": "Piață selectată",
   "currentPrice": "Preț curent",
@@ -201,7 +201,7 @@
 
   "invalidEmail": "Introduceți o adresă de email validă.",
 
-  "marketsSection": {
+  "markets": {
     "badge": "PIEȚE GLOBALE LIVE",
     "title": "Tranzacționați pe Cele Mai",
     "titleHighlight": "Importante Piețe",

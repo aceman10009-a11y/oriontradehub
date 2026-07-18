@@ -9,7 +9,7 @@
   "offline": "OFFLINE",
   "disconnected": "Desconectado",
   "market": "Mercado",
-  "markets": "Mercados",
+  "marketsLabel": "Mercados",
   "searchMarkets": "Pesquisar mercados...",
   "selectedMarket": "Mercado selecionado",
   "currentPrice": "Preço atual",
@@ -157,7 +157,7 @@
   "weakPassword": "A senha deve ter pelo menos 6 caracteres.",
   "invalidEmail": "Digite um endereço de e-mail válido.",
   "createAccountTitle": "Criar conta",
-  "marketsSection": {
+  "markets": {
   "badge": "MERCADOS GLOBAIS EM TEMPO REAL",
   "title": "Negocie os",
   "titleHighlight": "Melhores Mercados do Mundo",

@@ -1,22 +1,26 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
+
 import { trackPageView } from "./services/analytics";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
+
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
-import AdminDashboard from "./pages/AdminDashboard";
-import UserDetails from "./pages/UserDetails";
 import AppModal from "./components/AppModal";
-import Security from "./pages/Security";
-import VerifyEmail from "./pages/VerifyEmail";
-import ForgotPassword from "./pages/ForgotPassword";
-import Settings from "./pages/Settings";
-import CardServices from "./pages/CardServices";
-import CardApplications from "./pages/admin/CardApplications";
 import TawkChat from "./components/chat/TawkChat";
+
+// Lazy-loaded pages
+const Home = lazy(() => import("./pages/Home"));
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Security = lazy(() => import("./pages/Security"));
+const VerifyEmail = lazy(() => import("./pages/VerifyEmail"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const Settings = lazy(() => import("./pages/Settings"));
+const CardServices = lazy(() => import("./pages/CardServices"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const UserDetails = lazy(() => import("./pages/UserDetails"));
+const CardApplications = lazy(() => import("./pages/admin/CardApplications"));
 
 function AnalyticsTracker() {
   const location = useLocation();
@@ -40,6 +44,22 @@ export default function App() {
     {/* Global modal */}
     <AppModal />
 
+    <Suspense
+      fallback={
+        <div
+          style={{
+            minHeight: "100vh",
+            display: "grid",
+            placeItems: "center",
+            background: "#070b16",
+            color: "#fff",
+            fontSize: "18px",
+          }}
+        >
+          Loading...
+        </div>
+      }
+    >
       <Routes>
         {/* Public Pages */}
         <Route path="/" element={<Home />} />
@@ -80,14 +100,14 @@ export default function App() {
         />
 
         {/* Protected Admin Pages */}
-     <Route
-  path="/admin"
-  element={
-    <AdminRoute>
-      <AdminDashboard />
-    </AdminRoute>
-  }
-/>
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
 
         <Route
           path="/admin/card-applications"
@@ -107,6 +127,7 @@ export default function App() {
           }
         />
       </Routes>
-    </>
-  );
+    </Suspense>
+  </>
+);
 }

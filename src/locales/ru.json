@@ -11,7 +11,7 @@
   "disconnected": "Отключено",
 
   "market": "Рынок",
-  "markets": "Рынки",
+  "marketsLabel": "Рынки",
   "searchMarkets": "Поиск рынков...",
   "selectedMarket": "Выбранный рынок",
   "currentPrice": "Текущая цена",
@@ -147,7 +147,7 @@
 
   "invalidEmail": "Введите действительный адрес электронной почты.",
 
-  "marketsSection": {
+  "markets": {
     "badge": "ГЛОБАЛЬНЫЕ РЫНКИ В РЕАЛЬНОМ ВРЕМЕНИ",
     "title": "Торгуйте на Лучших",
     "titleHighlight": "Мировых Рынках",

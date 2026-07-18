@@ -5,8 +5,7 @@ import { useTranslation } from "react-i18next";
 import "./Stats.css";
 
 export default function Stats() {
-
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation("security");
 
   const ref = useRef(null);
 
@@ -14,7 +13,6 @@ export default function Stats() {
     once: true,
     margin: "-100px",
   });
-
 
   const stats = [
     {
@@ -31,7 +29,6 @@ export default function Stats() {
     },
   ];
 
-
   const cardVariant = {
     hidden: {
       opacity: 0,
@@ -41,7 +38,6 @@ export default function Stats() {
     visible: (i) => ({
       opacity: 1,
       y: 0,
-
       transition: {
         delay: i * 0.15,
         duration: 0.6,
@@ -50,17 +46,14 @@ export default function Stats() {
     }),
   };
 
-
   return (
-    <section 
-      className="security-stats" 
+    <section
+      className="security-stats"
       ref={ref}
     >
-
       <div className="stats-container">
 
         {stats.map((item, i) => (
-
           <motion.div
             key={item.key}
             className="stats-card"
@@ -77,23 +70,18 @@ export default function Stats() {
               {t(`stats.${item.key}.value`)}
             </h2>
 
-
             <h4>
               {t(`stats.${item.key}.label`)}
             </h4>
-
 
             <p>
               {t(`stats.${item.key}.description`)}
             </p>
 
-
           </motion.div>
-
         ))}
 
       </div>
-
     </section>
   );
 }

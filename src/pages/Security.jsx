@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -13,6 +14,9 @@ import AboutSecurity from "../components/security/AboutSecurity";
 import CTA from "../components/security/CTA";
 
 const Security = () => {
+  // Load security translations for this page
+  useTranslation("security");
+
   return (
     <main
       style={{

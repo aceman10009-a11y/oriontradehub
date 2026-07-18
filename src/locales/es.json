@@ -9,7 +9,7 @@
   "offline": "SIN CONEXIÓN",
   "disconnected": "Desconectado",
   "market": "Mercado",
-  "markets": "Mercados",
+  "marketsLabel": "Mercados",
   "searchMarkets": "Buscar mercados...",
   "selectedMarket": "Mercado seleccionado",
   "currentPrice": "Precio actual",
@@ -157,7 +157,7 @@
   "weakPassword": "La contraseña debe tener al menos 6 caracteres.",
   "invalidEmail": "Ingrese una dirección de correo electrónico válida.",
   "createAccountTitle": "Crear cuenta",
-  "marketsSection": {
+  "markets": {
     "badge": "MERCADOS GLOBALES EN VIVO",
     "title": "Opera En Los",
 "titleHighlight": "Mejores Mercados",

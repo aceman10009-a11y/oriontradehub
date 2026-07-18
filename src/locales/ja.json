@@ -9,7 +9,7 @@
   "offline": "オフライン",
   "disconnected": "切断されました",
   "market": "市場",
-  "markets": "市場一覧",
+ "marketsLabel": "市場一覧",
   "searchMarkets": "市場を検索...",
   "selectedMarket": "選択された市場",
   "currentPrice": "現在価格",
@@ -157,12 +157,15 @@
   "weakPassword": "パスワードは6文字以上である必要があります。",
   "invalidEmail": "有効なメールアドレスを入力してください。",
   "createAccountTitle": "アカウント作成",
-  "marketsSection": {
+
+  
+ "markets": {
   "badge": "ライブグローバルマーケット",
   "title": "世界の",
   "titleHighlight": "主要市場で取引",
   "description": "Orion Trade Hubの機関投資家レベルの取引プラットフォームを通じて、暗号資産、外国為替、コモディティ、主要指数へアクセスできます。リアルタイムで価格変動を監視し、自信を持って取引を実行できます。"
 },
+
 "features": {
   "header": {
     "badge": "プラットフォーム機能",

@@ -8,8 +8,8 @@
   "liveUpper": "LIVE",
   "offline": "OFFLINE",
   "disconnected": "Disconnesso",
-  "market": "Mercato",
-  "markets": "Mercati",
+"market": "Mercato",
+"marketsLabel": "Mercati",
   "searchMarkets": "Cerca mercati...",
   "selectedMarket": "Mercato selezionato",
   "currentPrice": "Prezzo attuale",
@@ -157,13 +157,13 @@
   "weakPassword": "La password deve contenere almeno 6 caratteri.",
   "invalidEmail": "Inserisci un indirizzo email valido.",
   "createAccountTitle": "Crea account",
-   "marketsSection": {
+   
+ "markets": {
   "badge": "MERCATI GLOBALI LIVE",
   "title": "Opera Nei",
   "titleHighlight": "Migliori Mercati",
   "description": "Accedi a criptovalute, forex, materie prime e principali indici attraverso la piattaforma di trading istituzionale di Orion Trade Hub. Monitora i movimenti dei prezzi in tempo reale ed esegui operazioni con sicurezza."
-   },
-
+},
   
 
   "features": {

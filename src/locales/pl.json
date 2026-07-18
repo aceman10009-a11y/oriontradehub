@@ -9,7 +9,7 @@
   "offline": "OFFLINE",
   "disconnected": "Rozłączono",
   "market": "Rynek",
-  "markets": "Rynki",
+ "marketsLabel": "Rynki",
   "searchMarkets": "Szukaj rynków...",
   "selectedMarket": "Wybrany rynek",
   "currentPrice": "Aktualna cena",
@@ -157,7 +157,7 @@
   "weakPassword": "Hasło musi zawierać co najmniej 6 znaków.",
   "invalidEmail": "Wprowadź prawidłowy adres e-mail.",
   "createAccountTitle": "Utwórz konto",
-  "marketsSection": {
+  "markets": {
   "badge": "GLOBALNE RYNKI NA ŻYWO",
   "title": "Handluj Na",
   "titleHighlight": "Najlepszych Rynkach Świata",

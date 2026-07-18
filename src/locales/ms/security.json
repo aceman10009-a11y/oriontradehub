@@ -1,205 +1,203 @@
 {
   "hero": {
-    "badge": "INSTITUTIONAL • MULTI-LAYER PROTECTION",
-    "title": "Institutional-Grade",
-    "titleHighlight": "Security",
-    "description": "Orion Trade Hub protects digital assets using enterprise-grade encryption, continuous threat monitoring, multi-layer account protection, and resilient infrastructure designed for modern financial markets."
+    "badge": "INSTITUSI • PERLINDUNGAN BERBILANG LAPIS",
+    "title": "Keselamatan Bertaraf",
+    "titleHighlight": "Institusi",
+    "description": "Orion Trade Hub melindungi aset digital menggunakan penyulitan bertaraf perusahaan, pemantauan ancaman berterusan, perlindungan akaun berbilang lapis, dan infrastruktur kukuh yang direka untuk pasaran kewangan moden."
   },
 
   "stats": {
     "encryption": {
-      "label": "Encryption",
+      "label": "Penyulitan",
       "value": "256-bit",
-      "description": "End-to-end encrypted infrastructure"
+      "description": "Infrastruktur disulitkan dari hujung ke hujung"
     },
     "uptime": {
-      "label": "Uptime",
+      "label": "Masa Operasi",
       "value": "99.99%",
-      "description": "Continuous platform availability"
+      "description": "Ketersediaan platform berterusan"
     },
     "monitoring": {
-      "label": "Monitoring",
+      "label": "Pemantauan",
       "value": "24/7",
-      "description": "Real-time security surveillance"
+      "description": "Pemantauan keselamatan masa nyata"
     },
     "protection": {
-      "label": "Protection",
-      "value": "Multi-Layer",
-      "description": "Advanced risk defense system"
+      "label": "Perlindungan",
+      "value": "Berbilang Lapis",
+      "description": "Sistem pertahanan risiko lanjutan"
     }
   },
 
   "timeline": {
-    "badge": "SECURITY PROCESS",
-    "title": "How Orion Protects Your Assets",
+    "badge": "PROSES KESELAMATAN",
+    "title": "Bagaimana Orion Melindungi Aset Anda",
     "steps": [
       {
-        "title": "Account Verification",
-        "text": "Every new account is verified before full platform access is granted."
+        "title": "Pengesahan Akaun",
+        "text": "Setiap akaun baharu disahkan sebelum akses penuh ke platform diberikan."
       },
       {
-        "title": "Multi-Layer Protection",
-        "text": "Passwords, two-factor authentication, and encrypted sessions secure every login."
+        "title": "Perlindungan Berbilang Lapis",
+        "text": "Kata laluan, pengesahan dua faktor dan sesi yang disulitkan melindungi setiap log masuk."
       },
       {
-        "title": "Continuous Monitoring",
-        "text": "Advanced systems monitor suspicious activity 24 hours a day."
+        "title": "Pemantauan Berterusan",
+        "text": "Sistem canggih memantau aktiviti mencurigakan sepanjang masa."
       },
       {
-        "title": "Cold Asset Storage",
-        "text": "Most customer assets remain securely stored offline for maximum protection."
+        "title": "Penyimpanan Aset Secara Cold Storage",
+        "text": "Sebahagian besar aset pelanggan disimpan secara luar talian untuk perlindungan maksimum."
       }
     ]
   },
 
   "protectionGrid": {
-    "badge": "SECURITY FEATURES",
-    "title": "Multiple Layers of Protection",
-    "description": "Every Orion Trade Hub account is protected by multiple independent security systems working together.",
+    "badge": "CIRI-CIRI KESELAMATAN",
+    "title": "Pelbagai Lapisan Perlindungan",
+    "description": "Setiap akaun Orion Trade Hub dilindungi oleh pelbagai sistem keselamatan bebas yang berfungsi bersama.",
     "cards": {
       "coldStorage": {
         "title": "Cold Storage",
-        "description": "98% of digital assets remain securely stored offline to reduce exposure to online threats."
+        "description": "98% aset digital disimpan secara luar talian bagi mengurangkan pendedahan kepada ancaman dalam talian."
       },
       "encryption": {
-        "title": "256-bit Encryption",
-        "description": "Enterprise-grade encryption protects every transaction and communication."
+        "title": "Penyulitan 256-bit",
+        "description": "Penyulitan bertaraf perusahaan melindungi setiap transaksi dan komunikasi."
       },
       "twoFactor": {
-        "title": "Two-Factor Authentication",
-        "description": "Additional verification ensures only authorized users can access accounts."
+        "title": "Pengesahan Dua Faktor",
+        "description": "Pengesahan tambahan memastikan hanya pengguna yang dibenarkan boleh mengakses akaun."
       },
       "monitoring": {
-        "title": "Risk Monitoring",
-        "description": "Continuous monitoring detects suspicious activity in real time."
+        "title": "Pemantauan Risiko",
+        "description": "Pemantauan berterusan mengesan aktiviti mencurigakan secara masa nyata."
       },
       "infrastructure": {
-        "title": "Secure Infrastructure",
-        "description": "Hosted on resilient enterprise cloud infrastructure with multiple security layers."
+        "title": "Infrastruktur Selamat",
+        "description": "Dihoskan pada infrastruktur awan perusahaan yang kukuh dengan pelbagai lapisan keselamatan."
       },
       "fraud": {
-        "title": "Fraud Detection",
-        "description": "Automated systems help identify abnormal account behaviour before threats escalate."
+        "title": "Pengesanan Penipuan",
+        "description": "Sistem automatik membantu mengenal pasti tingkah laku akaun yang luar biasa sebelum ancaman menjadi lebih serius."
       }
     }
   },
-
-  "compliance": {
-    "badge": "TRUST & COMPLIANCE",
-    "title": "Built Around Security Standards",
-    "description": "Orion Trade Hub follows modern security practices designed to protect customer accounts, personal information, and digital assets.",
+    "compliance": {
+    "badge": "KEPERCAYAAN & PEMATUHAN",
+    "title": "Dibina Berasaskan Piawaian Keselamatan",
+    "description": "Orion Trade Hub mengamalkan amalan keselamatan moden yang direka untuk melindungi akaun pelanggan, maklumat peribadi dan aset digital.",
     "cards": {
       "aml": {
-        "title": "AML Monitoring",
-        "description": "Continuous anti-money laundering monitoring helps identify suspicious activity."
+        "title": "Pemantauan AML",
+        "description": "Pemantauan Anti Pengubahan Wang Haram (AML) yang berterusan membantu mengenal pasti aktiviti yang mencurigakan."
       },
       "kyc": {
-        "title": "KYC Verification",
-        "description": "Identity verification protects both users and the integrity of the platform."
+        "title": "Pengesahan KYC",
+        "description": "Pengesahan identiti melindungi pengguna serta memastikan integriti platform."
       },
       "dataProtection": {
-        "title": "Data Protection",
-        "description": "Sensitive customer information is encrypted and securely managed."
+        "title": "Perlindungan Data",
+        "description": "Maklumat pelanggan yang sensitif disulitkan dan diuruskan dengan selamat."
       },
       "riskControls": {
-        "title": "Risk Controls",
-        "description": "Automated security systems continuously assess account behaviour and potential threats."
+        "title": "Kawalan Risiko",
+        "description": "Sistem keselamatan automatik sentiasa menilai tingkah laku akaun dan potensi ancaman."
       }
     }
   },
 
   "faq": {
-    "badge": "HELP CENTER",
-    "title": "Frequently Asked Questions",
+    "badge": "PUSAT BANTUAN",
+    "title": "Soalan Lazim",
     "questions": {
       "account": {
-        "question": "Is my account secure?",
-        "answer": "Yes. Every account is protected by multi-layer security including encryption, two-factor authentication, and continuous monitoring."
+        "question": "Adakah akaun saya selamat?",
+        "answer": "Ya. Setiap akaun dilindungi oleh keselamatan berbilang lapis termasuk penyulitan, pengesahan dua faktor dan pemantauan berterusan."
       },
       "funds": {
-        "question": "Where are funds stored?",
-        "answer": "98% of digital assets are stored in cold wallets, completely offline and protected from online threats."
+        "question": "Di manakah dana disimpan?",
+        "answer": "98% aset digital disimpan di dalam dompet cold storage yang sepenuhnya luar talian dan dilindungi daripada ancaman dalam talian."
       },
       "monitoring": {
-        "question": "How does risk monitoring work?",
-        "answer": "Our systems analyze behavior in real time to detect and prevent suspicious activity before it becomes a threat."
+        "question": "Bagaimanakah pemantauan risiko berfungsi?",
+        "answer": "Sistem kami menganalisis tingkah laku secara masa nyata untuk mengesan dan menghalang aktiviti mencurigakan sebelum ia menjadi ancaman."
       },
       "institutional": {
-        "question": "Do you support institutional clients?",
-        "answer": "Yes. Orion Trade Hub is built with institutional-grade infrastructure for high-volume and professional trading."
+        "question": "Adakah anda menyokong pelanggan institusi?",
+        "answer": "Ya. Orion Trade Hub dibina menggunakan infrastruktur bertaraf institusi untuk perdagangan profesional dan berjumlah tinggi."
       }
     }
   },
 
   "cta": {
-    "startTrading": "Start Trading",
-    "contactSupport": "Contact Support",
-    "fullName": "Full Name",
-    "emailAddress": "Email Address",
-    "messagePlaceholder": "How can we help?",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
+    "startTrading": "Mulakan Dagangan",
+    "contactSupport": "Hubungi Sokongan",
+    "fullName": "Nama Penuh",
+    "emailAddress": "Alamat E-mel",
+    "messagePlaceholder": "Bagaimana kami boleh membantu anda?",
+    "sendMessage": "Hantar Mesej",
+    "sending": "Menghantar...",
     "alerts": {
-      "success": "Message sent successfully!",
-      "error": "Failed to send message."
+      "success": "Mesej berjaya dihantar!",
+      "error": "Gagal menghantar mesej."
     }
   },
 
-"aboutSecurity": {
-  "title": "About Orion Security",
+  "aboutSecurity": {
+    "title": "Mengenai Keselamatan Orion",
 
-  "intro": "Security is not a feature added after development—it is the foundation upon which Orion Trade Hub is designed. Every layer of our infrastructure, every authentication process, and every operational procedure is built around protecting client assets, preserving privacy, and maintaining the highest level of platform integrity.",
+    "intro": "Keselamatan bukanlah ciri yang ditambah selepas pembangunan—ia merupakan asas kepada reka bentuk Orion Trade Hub. Setiap lapisan infrastruktur kami, setiap proses pengesahan, dan setiap prosedur operasi dibina untuk melindungi aset pelanggan, menjaga privasi, dan mengekalkan tahap integriti platform yang tertinggi.",
 
-  "sections": [
-    {
-      "title": "1. Security Begins With Architecture",
-      "text": "Orion Trade Hub is designed with security at the center of every decision rather than as an afterthought. From the moment a user creates an account until every subsequent login, deposit request, withdrawal approval, and trading activity, multiple layers of protection work together to reduce risk and safeguard sensitive information."
-    },
+    "sections": [
+      {
+        "title": "1. Keselamatan Bermula Dengan Seni Bina",
+        "text": "Orion Trade Hub direka dengan meletakkan keselamatan sebagai teras setiap keputusan, bukannya sebagai tambahan kemudian. Dari saat pengguna mencipta akaun sehingga setiap log masuk, permintaan deposit, kelulusan pengeluaran dan aktiviti dagangan, pelbagai lapisan perlindungan bekerjasama untuk mengurangkan risiko dan melindungi maklumat sensitif."
+      },
 
-    {
-      "title": "2. Enterprise Encryption",
-      "text": "Sensitive information deserves enterprise-grade protection. Orion Trade Hub uses encrypted communication channels designed to keep information protected whenever it travels between a visitor's device and our servers."
-    },
+      {
+        "title": "2. Penyulitan Bertaraf Perusahaan",
+        "text": "Maklumat sensitif memerlukan perlindungan bertaraf perusahaan. Orion Trade Hub menggunakan saluran komunikasi yang disulitkan bagi memastikan maklumat sentiasa dilindungi ketika dihantar antara peranti pengguna dan pelayan kami."
+      },
 
-    {
-      "title": "3. Continuous Monitoring",
-      "text": "Cybersecurity is an ongoing responsibility rather than a one-time deployment. Orion Trade Hub continuously monitors platform activity for patterns that may indicate unauthorized access attempts, suspicious login behavior, unusual account activity, or abnormal transaction requests."
-    },
+      {
+        "title": "3. Pemantauan Berterusan",
+        "text": "Keselamatan siber adalah tanggungjawab yang berterusan dan bukannya pelaksanaan sekali sahaja. Orion Trade Hub sentiasa memantau aktiviti platform bagi mengenal pasti corak yang mungkin menunjukkan cubaan akses tanpa kebenaran, tingkah laku log masuk yang mencurigakan, aktiviti akaun yang luar biasa atau permintaan transaksi yang tidak normal."
+      },
+            {
+        "title": "4. Perlindungan Akaun",
+        "text": "Setiap akaun Orion Trade Hub dilindungi melalui pelbagai mekanisme pengesahan identiti yang direka untuk mengurangkan kemungkinan akses tanpa kebenaran."
+      },
 
-    {
-      "title": "4. Account Protection",
-      "text": "Every Orion Trade Hub account is protected through multiple identity verification mechanisms intended to reduce the likelihood of unauthorized access."
-    },
+      {
+        "title": "5. Kebolehpercayaan Infrastruktur",
+        "text": "Infrastruktur yang boleh dipercayai memainkan peranan penting dalam melindungi platform kewangan. Orion Trade Hub dibina dengan objektif utama iaitu kestabilan, redundansi dan daya tahan operasi."
+      },
 
-    {
-      "title": "5. Infrastructure Reliability",
-      "text": "Reliable infrastructure plays an essential role in protecting financial platforms. Orion Trade Hub is built with stability, redundancy, and operational resilience as primary objectives."
-    },
+      {
+        "title": "6. Pematuhan & Operasi Bertanggungjawab",
+        "text": "Orion Trade Hub percaya bahawa perkhidmatan kewangan yang bertanggungjawab memerlukan ketelusan, akauntabiliti dan piawaian operasi yang ditakrifkan dengan jelas."
+      },
 
-    {
-      "title": "6. Compliance & Responsible Operations",
-      "text": "Orion Trade Hub believes that responsible financial services require transparency, accountability, and clearly defined operational standards."
-    },
+      {
+        "title": "7. Perlindungan Daripada Penipuan",
+        "text": "Pencegahan penipuan memerlukan kewaspadaan yang berterusan. Orion Trade Hub menggunakan pelbagai prosedur pengesahan yang direka untuk mengenal pasti permintaan yang mencurigakan sebelum tindakan sensitif pada akaun diselesaikan."
+      },
 
-    {
-      "title": "7. Protection Against Fraud",
-      "text": "Fraud prevention requires constant vigilance. Orion Trade Hub employs multiple verification procedures designed to identify suspicious requests before sensitive account actions are completed."
-    },
+      {
+        "title": "8. Privasi Pelanggan",
+        "text": "Melindungi privasi pelanggan merupakan tanggungjawab utama kami. Maklumat peribadi hanya dikumpulkan apabila perlu untuk menyediakan perkhidmatan, mengekalkan keselamatan akaun dan menyokong operasi platform."
+      },
 
-    {
-      "title": "8. Client Privacy",
-      "text": "Protecting client privacy is a core responsibility. Personal information is collected only when necessary to provide services, maintain account security, and support platform operations."
-    },
+      {
+        "title": "9. Penambahbaikan Berterusan",
+        "text": "Landskap keselamatan siber sentiasa berkembang, begitu juga strategi keselamatan kami. Orion Trade Hub komited untuk sentiasa menyemak, menambah baik dan memperkukuh keselamatan platform secara berterusan."
+      },
 
-    {
-      "title": "9. Continuous Improvement",
-      "text": "The cybersecurity landscape evolves constantly, and so must our security strategy. Orion Trade Hub is committed to continuously reviewing, improving, and strengthening platform security."
-    },
-
-    {
-      "title": "10. Our Commitment",
-      "text": "Above every technology, process, or security tool stands a simple commitment: protecting the people who trust Orion Trade Hub with their investment journey."
-    }
-  ]
-}
+      {
+        "title": "10. Komitmen Kami",
+        "text": "Di sebalik setiap teknologi, proses dan alat keselamatan terdapat satu komitmen yang mudah: melindungi setiap individu yang mempercayai Orion Trade Hub dalam perjalanan pelaburan mereka."
+      }
+    ]
+  }
 }
